@@ -1,2 +1,4 @@
 *.pyc
+.svn
 requirements.txt
+migrations
