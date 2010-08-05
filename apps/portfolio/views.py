@@ -1,7 +1,14 @@
-from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
+from portfolio.models import Project, PortfolioPiece
+from annoying.decorators import render_to
 
-def index(request):
-	return HttpResponse("Portfolio index page")
+@render_to('portfolio/portfolio_home.html')
+def portfolio_home(request):
+	projects = Project.objects.select_related().all()
+	return {'projects':projects}
 
-def project(request, project_slug):
-	return HttpResponse("Project slug: %s" % project_slug)
+@render_to('portfolio/portfolio_single.html')
+def portfolio_single(request, project_slug):
+	project = get_object_or_404(Project, slug=project_slug)
+	pieces = project.pieces.all()
+	return {'project':project,'pieces':pieces}

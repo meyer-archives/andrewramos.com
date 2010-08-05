@@ -1,0 +1,10 @@
+{% load typogrify %}
+
+{% block blog_content %}
+<div class="entry quote">
+<div class="entry-body">{{ entry.content|typogrify }}</div>
+{% if entry.author %}
+<p class="author">{{ entry.author|typogrify }}</p>
+{% endif %}
+</div>
+{% endblock %}

@@ -20,5 +20,6 @@ DATABASES = {
 # 	}
 # }
 
-MEDIA_URL = 'http://armedia'
-ADMIN_MEDIA_PREFIX = 'http://armedia/admin/'
+MEDIA_URL = 'http://hotsauce.local:9007/'
+ADMIN_MEDIA_PREFIX = 'http://hotsauce.local:9007/admin/'
+TEMPLATE_DEBUG = True

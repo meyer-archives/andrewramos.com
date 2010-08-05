@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import *
+from portfolio.views import portfolio_home, portfolio_single
 
 urlpatterns = patterns('portfolio.views',
-    (r'^$', 'index'),
-    (r'^(?P<project_slug>\w[\w-]+\w)/$', 'project'),
+    url(r'^$', portfolio_home, name='portfolio-home'),
+    url(r'^(?P<project_slug>[\w-]+)/$', portfolio_single),
 )

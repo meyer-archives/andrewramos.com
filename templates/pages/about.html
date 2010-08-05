@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block bodyid %}page-about{% endblock %}
+{% block bodyclass %}grey{% endblock %}
+{% block content %}
+<div id="about-content">
+	<h2>The basic idea: trying to live a simple life and create beautiful things.</h2>
+	<div class="about-text">
+		{{ page.content }}
+	<p class="edit-link"><a href="#"></a></p>
+	</div>
+	<div class="elsewhere">
+		<h3>Find me elsewhere:</h3>
+		<ul>
+			<li class="flickr"><a href="#">Flickr</a></li>
+			<li class="twitter"><a href="http://twitter.com/andrewramos">Twitter</a></li>
+			<li class="dribbble"><a href="http://dribbble.com/players/andrewramos">Dribbble</a></li>
+		</ul>
+	</div>
+</div>
+{% endblock %}

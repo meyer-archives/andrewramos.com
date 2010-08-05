@@ -2,3 +2,4 @@
 .svn
 requirements.txt
 migrations
+pip-log.txt

@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% load shorturl %}
+{% block blog_content %}
+	
+<ul>
+{% for entry in entries %}
+	<li>
+		<a href="{% shorturl entry %}">{{ entry.title }}</a>
+	</li>
+{% empty %}
+	<li>No posts</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load shorturl typogrify thumbnail %}
+{% block content %}
+	
+<h1>Portfolio Index</h1>
+
+<ul>
+{% for project in projects %}
+	<li>
+		{% filter typogrify %}			
+		<a href="{{ project.get_absolute_url }}">{{ project.title }} -- A project I did <em>all by myself</em> for {{ project.client }}</a>
+		{% endfilter %}
+	</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

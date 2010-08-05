@@ -50,6 +50,7 @@ TEMPLATE_LOADERS = (
 TEMPLATE_CONTEXT_PROCESSORS = (
 	"django.core.context_processors.auth",
 	"django.core.context_processors.request",
+	"django.core.context_processors.media",
 )
 
 MIDDLEWARE_CLASSES = (
@@ -59,7 +60,7 @@ MIDDLEWARE_CLASSES = (
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
 	'django.contrib.auth.backends.RemoteUserBackend',
 	'django.contrib.messages.middleware.MessageMiddleware',
-	'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+#	'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 	'mobile.middleware.MobileMiddleware',
 )
 
@@ -83,20 +84,34 @@ INSTALLED_APPS = (
 	'django.contrib.contenttypes',
 	'django.contrib.sessions',
 	'django.contrib.sites',
-	'django.contrib.flatpages',
+#	'django.contrib.flatpages',
 	'django.contrib.messages',
 	'django.contrib.admin',
 	'django.contrib.admindocs',
 	'south',
 	'easy_thumbnails',
-	'rpc4django',
 	'tagging',
 	'django_wysiwyg',
+	'shorturls',
+	'annoying',
+	'typogrify',
+	'django_extensions',
 
 	# My apps
+	'utils',
 	'blog',
 	'portfolio',
+	'contact_form',
+	'pages',
 )
+
+# models with shortened URLs
+SHORTEN_MODELS = {
+	'a': 'blog.article',
+	'c': 'blog.casestudy',
+	's': 'blog.shortpost',
+	'q': 'blog.quote',
+}
 
 try:
 	from settings_local import *

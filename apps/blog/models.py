@@ -17,10 +17,14 @@ class BlogPost(models.Model):
 	is_featured = models.BooleanField(default=False,verbose_name="featured post")
 	date_added = models.DateTimeField(auto_now_add=True, default=datetime.now)
 	date_modified = models.DateTimeField(auto_now=True, default=datetime.now)
-#	status = models.CharField(blank=True, max_length=1, choices=POST_STATUS)
-	is_published = models.BooleanField(default=True,verbose_name="published")
+	date_published = models.DateTimeField(blank=False, default=datetime.now,verbose_name="Publish date")
+	post_status = models.CharField(default="p",max_length=1,choices=POST_STATUS)
 	tags = TagField()
-	parent = models.ForeignKey('self', null=True, blank=True)
+
+	def view_on_site(self):
+		return "<a class='view-on-site-link' href='%s'>View on site</a>" % self.get_absolute_url()
+	view_on_site.short_description = ''
+	view_on_site.allow_tags = 'True'
 
 	class Meta:
 		abstract = True
@@ -28,50 +32,42 @@ class BlogPost(models.Model):
 	def __unicode__(self):
 		return self.title
 
+
 class Article(BlogPost):
 	"""Article"""
-
 	excerpt = models.TextField(blank=True)
+	display_title = models.BooleanField(default=True)
 	subtitle = models.CharField(blank=True, max_length=100, verbose_name="subtitle")
 	featured_image = models.ImageField(blank=True,upload_to="featured-images/")
 
-	class Meta:
-		verbose_name, verbose_name_plural = "article", "articles"
-
-	def __unicode__(self):
-		return self.title
-
+	@models.permalink
+	def get_absolute_url(self):
+		return ('blog.views.article_single',[str(self.slug)])
 
 class CaseStudy(BlogPost):
 	"""Case Study"""
-
 	excerpt = models.TextField(blank=True)
 	featured_image = models.ImageField(upload_to="case-studies/")
 
+	@models.permalink
+	def get_absolute_url(self):
+		return ('blog.views.casestudy_single',[str(self.slug)])
+
 	class Meta:
-		verbose_name, verbose_name_plural = "case study", "case studies"
-
-	def __unicode__(self):
-		return self.title
-
+		verbose_name_plural = "case studies"
 
 class ShortPost(BlogPost):
 	"""Short post with an optional link"""
 	link = models.URLField(blank=True, verify_exists=False)
 
-	class Meta:
-		verbose_name, verbose_name_plural = "short post", "short posts"
-
-	def __unicode__(self):
-		return self.title
-
+	@models.permalink
+	def get_absolute_url(self):
+		return ('blog.views.shortpost_single',[str(self.slug)])
 
 class Quote(BlogPost):
 	"""Quote post type"""
 	author = models.CharField(blank=True, max_length=100)
 
-	class Meta:
-		verbose_name, verbose_name_plural = "quote", "quotes"
-
-	def __unicode__(self):
-		return self.title
+	@models.permalink
+	def get_absolute_url(self):
+		return ('blog.views.quote_single',[str(self.slug)])

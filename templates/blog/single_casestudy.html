@@ -1,0 +1,16 @@
+{% load typogrify thumbnail %}
+
+<div class="entry case-study">
+{% if entry.featured_image %}
+	<div class="featured-image">
+		<div style="background-image:url({% thumbnail entry.featured_image 700x440 crop %})"></div>
+	</div>
+{% endif %}
+	<div class="entry-header">
+		<h2>{{ entry.title }}</h2>
+	</div>
+	<div class="entry-body">{{ entry.content|typogrify }}</div>
+{% if entry.author %}
+	<p class="author">{{ entry.author|typogrify }}</p>
+{% endif %}
+</div>

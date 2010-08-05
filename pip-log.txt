@@ -329,3 +329,209 @@ Traceback (most recent call last):
   File "/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/socket.py", line 395, in readline
     data = recv(1)
 KeyboardInterrupt
+------------------------------------------------------------
+/Users/michael/.env/andrewramos/bin/pip run on Tue Aug  3 16:40:43 2010
+Downloading/unpacking typogrify
+  Getting page http://pypi.python.org/simple/typogrify
+  Could not fetch URL http://pypi.python.org/simple/typogrify: HTTP Error 404: Not Found (typogrify does not have any releases)
+  Will skip URL http://pypi.python.org/simple/typogrify when looking for download links for typogrify
+  Getting page http://pypi.python.org/simple/
+  URLs to search for versions for typogrify:
+  * http://pypi.python.org/simple/typogrify/
+  Getting page http://pypi.python.org/simple/typogrify/
+  Could not fetch URL http://pypi.python.org/simple/typogrify/: HTTP Error 404: Not Found (typogrify does not have any releases)
+  Will skip URL http://pypi.python.org/simple/typogrify/ when looking for download links for typogrify
+  Could not find any downloads that satisfy the requirement typogrify
+No distributions at all found for typogrify
+Exception information:
+Traceback (most recent call last):
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 675, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 2421, in install_files
+    url = finder.find_requirement(req_to_install, upgrade=self.upgrade)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 1485, in find_requirement
+    raise DistributionNotFound('No distributions at all found for %s' % req)
+DistributionNotFound: No distributions at all found for typogrify
+------------------------------------------------------------
+/Users/michael/.env/andrewramos/bin/pip run on Tue Aug  3 16:41:31 2010
+Downloading/unpacking django-typogrify
+  Getting page http://pypi.python.org/simple/django-typogrify
+  Could not fetch URL http://pypi.python.org/simple/django-typogrify: HTTP Error 404: Not Found (django-typogrify does not have any releases)
+  Will skip URL http://pypi.python.org/simple/django-typogrify when looking for download links for django-typogrify
+  Getting page http://pypi.python.org/simple/
+  URLs to search for versions for django-typogrify:
+  * http://pypi.python.org/simple/django-typogrify/
+  Getting page http://pypi.python.org/simple/django-typogrify/
+  Could not fetch URL http://pypi.python.org/simple/django-typogrify/: HTTP Error 404: Not Found (django-typogrify does not have any releases)
+  Will skip URL http://pypi.python.org/simple/django-typogrify/ when looking for download links for django-typogrify
+  Could not find any downloads that satisfy the requirement django-typogrify
+No distributions at all found for django-typogrify
+Exception information:
+Traceback (most recent call last):
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 675, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 2421, in install_files
+    url = finder.find_requirement(req_to_install, upgrade=self.upgrade)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 1485, in find_requirement
+    raise DistributionNotFound('No distributions at all found for %s' % req)
+DistributionNotFound: No distributions at all found for django-typogrify
+------------------------------------------------------------
+/Users/michael/.env/andrewramos/bin/pip run on Tue Aug  3 17:37:58 2010
+--editable=git+http://github.com/mintchaos/typogrify.git#Typogrify is not the right format; it must have #egg=Package
+Exception information:
+Traceback (most recent call last):
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 671, in run
+    InstallRequirement.from_editable(name, default_vcs=options.default_vcs))
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 1682, in from_editable
+    name, url = parse_editable(editable_req, default_vcs)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 4478, in parse_editable
+    % editable_req)
+InstallationError: --editable=git+http://github.com/mintchaos/typogrify.git#Typogrify is not the right format; it must have #egg=Package
+------------------------------------------------------------
+/Users/michael/.env/andrewramos/bin/pip run on Tue Aug  3 17:44:48 2010
+Downloading/unpacking django-typogrify
+  Getting page http://pypi.python.org/simple/django-typogrify
+  Could not fetch URL http://pypi.python.org/simple/django-typogrify: HTTP Error 404: Not Found (django-typogrify does not have any releases)
+  Will skip URL http://pypi.python.org/simple/django-typogrify when looking for download links for django-typogrify
+  Getting page http://pypi.python.org/simple/
+  URLs to search for versions for django-typogrify:
+  * http://pypi.python.org/simple/django-typogrify/
+  Getting page http://pypi.python.org/simple/django-typogrify/
+  Could not fetch URL http://pypi.python.org/simple/django-typogrify/: HTTP Error 404: Not Found (django-typogrify does not have any releases)
+  Will skip URL http://pypi.python.org/simple/django-typogrify/ when looking for download links for django-typogrify
+  Could not find any downloads that satisfy the requirement django-typogrify
+No distributions at all found for django-typogrify
+Exception information:
+Traceback (most recent call last):
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 675, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 2421, in install_files
+    url = finder.find_requirement(req_to_install, upgrade=self.upgrade)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 1485, in find_requirement
+    raise DistributionNotFound('No distributions at all found for %s' % req)
+DistributionNotFound: No distributions at all found for django-typogrify
+------------------------------------------------------------
+/Users/michael/.env/andrewramos/bin/pip run on Tue Aug  3 17:47:04 2010
+Downloading/unpacking django-smartypants
+  Getting page http://pypi.python.org/simple/django-smartypants
+  Could not fetch URL http://pypi.python.org/simple/django-smartypants: HTTP Error 404: Not Found (django-smartypants does not have any releases)
+  Will skip URL http://pypi.python.org/simple/django-smartypants when looking for download links for django-smartypants
+  Getting page http://pypi.python.org/simple/
+  URLs to search for versions for django-smartypants:
+  * http://pypi.python.org/simple/django-smartypants/
+  Getting page http://pypi.python.org/simple/django-smartypants/
+  Could not fetch URL http://pypi.python.org/simple/django-smartypants/: HTTP Error 404: Not Found (django-smartypants does not have any releases)
+  Will skip URL http://pypi.python.org/simple/django-smartypants/ when looking for download links for django-smartypants
+  Could not find any downloads that satisfy the requirement django-smartypants
+No distributions at all found for django-smartypants
+Exception information:
+Traceback (most recent call last):
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 675, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 2421, in install_files
+    url = finder.find_requirement(req_to_install, upgrade=self.upgrade)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 1485, in find_requirement
+    raise DistributionNotFound('No distributions at all found for %s' % req)
+DistributionNotFound: No distributions at all found for django-smartypants
+------------------------------------------------------------
+/Users/michael/.env/andrewramos/bin/pip run on Tue Aug  3 17:48:57 2010
+Obtaining Typogrify from git+http://github.com/chrisdrackett/django-typogrify.git#egg=Typogrify
+  Found command git at /usr/local/bin/git
+  Running command /usr/local/bin/git config remote.origin.url
+  http://github.com/mintchaos/typogrify.git
+  git clone in /Users/michael/.env/andrewramos/src/typogrify exists with URL http://github.com/mintchaos/typogrify.git
+  The plan is to install the git repository http://github.com/chrisdrackett/django-typogrify.git
+Exception:
+Traceback (most recent call last):
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 675, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 2408, in install_files
+    req_to_install.update_editable(not self.is_download)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 1970, in update_editable
+    vcs_backend.obtain(self.source_dir)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 3655, in obtain
+    if self.check_destination(dest, url, rev_options, rev_display):
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 3284, in check_destination
+    response = ask('What to do?  %s' % prompt[0], prompt[1])
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 4503, in ask
+    response = raw_input(message)
+KeyboardInterrupt
+------------------------------------------------------------
+/Users/michael/.env/andrewramos/bin/pip run on Tue Aug  3 17:49:04 2010
+Cannot uninstall requirement typogrify, not installed
+Exception information:
+Traceback (most recent call last):
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 723, in run
+    requirement_set.uninstall(auto_confirm=options.yes)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 2367, in uninstall
+    req.uninstall(auto_confirm=auto_confirm)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 1992, in uninstall
+    raise UninstallationError("Cannot uninstall requirement %s, not installed" % (self.name,))
+UninstallationError: Cannot uninstall requirement typogrify, not installed
+------------------------------------------------------------
+/Users/michael/.env/andrewramos/bin/pip run on Tue Aug  3 17:49:14 2010
+Obtaining Typogrify from git+http://github.com/chrisdrackett/django-typogrify.git#egg=Typogrify
+  Found command git at /usr/local/bin/git
+  Running command /usr/local/bin/git config remote.origin.url
+  http://github.com/mintchaos/typogrify.git
+  git clone in /Users/michael/.env/andrewramos/src/typogrify exists with URL http://github.com/mintchaos/typogrify.git
+  The plan is to install the git repository http://github.com/chrisdrackett/django-typogrify.git
+Exception:
+Traceback (most recent call last):
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 675, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 2408, in install_files
+    req_to_install.update_editable(not self.is_download)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 1970, in update_editable
+    vcs_backend.obtain(self.source_dir)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 3655, in obtain
+    if self.check_destination(dest, url, rev_options, rev_display):
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 3284, in check_destination
+    response = ask('What to do?  %s' % prompt[0], prompt[1])
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 4503, in ask
+    response = raw_input(message)
+KeyboardInterrupt
+------------------------------------------------------------
+/Users/michael/.env/andrewramos/bin/pip run on Tue Aug  3 17:56:46 2010
+--editable=git+http://github.com/mintchaos/typogrify.git#Typogrify is not the right format; it must have #egg=Package
+Exception information:
+Traceback (most recent call last):
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 671, in run
+    InstallRequirement.from_editable(name, default_vcs=options.default_vcs))
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 1682, in from_editable
+    name, url = parse_editable(editable_req, default_vcs)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 4478, in parse_editable
+    % editable_req)
+InstallationError: --editable=git+http://github.com/mintchaos/typogrify.git#Typogrify is not the right format; it must have #egg=Package
+------------------------------------------------------------
+/Users/michael/.env/andrewramos/bin/pip run on Wed Aug  4 11:41:57 2010
+Cannot uninstall requirement short-urls, not installed
+Exception information:
+Traceback (most recent call last):
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 482, in main
+    self.run(options, args)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 723, in run
+    requirement_set.uninstall(auto_confirm=options.yes)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 2367, in uninstall
+    req.uninstall(auto_confirm=auto_confirm)
+  File "/Users/michael/.env/andrewramos/lib/python2.6/site-packages/pip-0.6-py2.6.egg/pip.py", line 1992, in uninstall
+    raise UninstallationError("Cannot uninstall requirement %s, not installed" % (self.name,))
+UninstallationError: Cannot uninstall requirement short-urls, not installed
