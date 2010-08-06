@@ -8,15 +8,29 @@
 	<meta charset="utf-8">
 	<title>Andrew Ramos</title>
 	<link rel="stylesheet" href="{{ MEDIA_URL }}style.css" media="screen">
-	<link rel="alternate" href="{{ SITE_URL }}blog/feed/">
-
+	<link rel="alternate" type="application/rss+xml" title="AndrewRamos.com RSS" href="{{ SITE_URL }}blog/feed/">
+	<!-- iPhone/iPad -->
+	<meta name="format-detection" content="telephone=no">
+	<meta name = "viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!-- Google AJAX API -->
 	<script src="http://www.google.com/jsapi"></script>
 	<script>google.load("jquery","1");</script>
 
+	{% if request.ipad %}
+		<script src="{{ MEDIA_URL }}touchscroll.min.js"></script>
+		<script>
+		$(document).ready(function() {
+			var scroller = new TouchScroll(document.querySelector("#wrapper"), {elastic:true});
+		});
+		</script>
+	{% endif %}
+
+	{% block head %}
+	{% endblock %}
+
 	<script src="{{ MEDIA_URL }}site.js" type="text/javascript" charset="utf-8"></script>
 </head>
-<body id="{% block bodyid %}page-generic{% endblock %}">
+<body{% if request.ipad %} class="ipad"{% endif %} id="{% block bodyid %}page-generic{% endblock %}">
 
 <div id="container">
 	<div id="header">
@@ -38,6 +52,5 @@
 		</div>
 	</div>
 </div>
-
 </body>
 </html>

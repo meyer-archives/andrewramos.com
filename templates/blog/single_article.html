@@ -2,7 +2,7 @@
 
 {% block blog_content %}
 <div class="entry article">
-{% if entry.featured_image %}
+{% if entry.content_type %}
 	<div class="featured-image">
 		<div style="background-image:url({% thumbnail entry.featured_image 700x440 crop %})"></div>
 	</div>

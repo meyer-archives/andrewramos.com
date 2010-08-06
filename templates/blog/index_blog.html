@@ -5,10 +5,10 @@
 <ul>
 {% for entry in entries %}
 	<li>
-		<a href="{% shorturl entry %}">{{ entry.title }}</a>
+{% include entry.template_name %}
 	</li>
 {% empty %}
-	<li>No posts</li>
+	<li>:C</li>
 {% endfor %}
 </ul>
 

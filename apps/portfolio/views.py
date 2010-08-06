@@ -4,7 +4,7 @@ from annoying.decorators import render_to
 
 @render_to('portfolio/portfolio_home.html')
 def portfolio_home(request):
-	projects = Project.objects.select_related().all()
+	projects = Project.objects.all().select_related()
 	return {'projects':projects}
 
 @render_to('portfolio/portfolio_single.html')

@@ -5,13 +5,6 @@
 <h1>{{ project.title }}</h1>
 <h2>A project I did for {{ project.client }}</h2>
 
-<ul>
-{% for piece in pieces %}
-	<li>
-		<h2>{{ piece.title|typogrify }}</h2>
-		<img src="{% thumbnail piece.image 700x370 quality=90 crop %}">
-	</li>
-{% endfor %}
-</ul>
+{% include 'portfolio/project_single.html' %}
 
 {% endblock %}

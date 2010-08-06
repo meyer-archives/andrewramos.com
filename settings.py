@@ -96,6 +96,7 @@ INSTALLED_APPS = (
 	'annoying',
 	'typogrify',
 	'django_extensions',
+#	'djapian',
 
 	# My apps
 	'utils',
@@ -112,6 +113,11 @@ SHORTEN_MODELS = {
 	's': 'blog.shortpost',
 	'q': 'blog.quote',
 }
+
+DJAPIAN_DATABASE_PATH = './search_index/'
+
+#THUMBNAIL_PREFIX = "thumb_"
+THUMBNAIL_BASEDIR = 'resized'
 
 try:
 	from settings_local import *

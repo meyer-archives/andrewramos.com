@@ -1,5 +1,22 @@
 {% extends "base.html" %}
 
+{% block head %}
+<script>
+$(function(){
+	var images = [];
+	$("div.featured-image div").each(function(){
+		images.push( $(this).css("background") );
+	});
+	if( images ){
+		console.log(images);
+		var img = new Image();
+	} else {
+		console.log("No featured images to preload.");
+	}
+});
+</script>
+{% endblock %}
+
 {% block content %}
 
 <div id="blog-menu">

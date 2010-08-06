@@ -2,10 +2,8 @@
 
 {% block blog_content %}
 <div class="entry short-post">
-	<p>
 		<h2>{{ entry.title|typogrify }}.</h2>
-		{{ entry.content|typogrify }}
+		<p>{{ entry.content|typogrify }}</p>
 		{% if entry.link %}{{ entry.link|urlize }}{% endif %}
-	</p>
 </div>
 {% endblock %}

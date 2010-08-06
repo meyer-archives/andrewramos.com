@@ -1,0 +1,13 @@
+{% load thumbnail typogrify %}
+<div class="portfolio-item">
+	<h2>{% filter typogrify %}{{ project.title }} -- {{ project.client }}{% endfilter %}</h2>
+	<ul>
+	{% for piece in project.pieces.all %}
+		<li>
+			<img src="{% thumbnail piece.image 700x370 crop %}" alt="{{ piece.title }}">
+			<h3>{{ piece.title|typogrify }}</h3>
+			<p>{{ piece.description|typogrify }}</p>
+		</li>
+	{% endfor %}
+	</ul>
+</div>

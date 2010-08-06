@@ -11,7 +11,7 @@ class MobileMiddleware(object):
 		request.iphone = False
 		request.ipad = False
 		request.mobile_device = False
-		
+
 #		 if request.GET.has_key('mobile'):
 #			 request.session['enable_mobile'] = request.GET.get('mobile')
 		

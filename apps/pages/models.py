@@ -1,10 +1,7 @@
 from django.db import models
 from datetime import datetime
+from pages.widgets import WYMEditor
 
-PAGE_TYPES = (
-	('pages/default.html','grey page'),
-	('pages/white.html','white page')
-)
 PAGE_STATUS = (
 	('p','published'),
 	('d','draft'),
@@ -13,7 +10,6 @@ PAGE_STATUS = (
 class Page(models.Model):
 	title = models.CharField(max_length=200)
 	slug = models.SlugField(max_length=100, db_index=True)
-	template = models.CharField(default="g",max_length=30,choices=PAGE_TYPES)
 	content = models.TextField(blank=True)
 	date_added = models.DateTimeField(auto_now_add=True, default=datetime.now)
 	date_modified = models.DateTimeField(auto_now=True, default=datetime.now)

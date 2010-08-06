@@ -13,7 +13,7 @@ class PortfolioPieceInline(admin.StackedInline):
 class ProjectAdmin(admin.ModelAdmin):
 	prepopulated_fields = {"slug":("title",)}
 	list_display = ('title','client','view_on_site')
-	list_filter = ('date_modified','date_added',)
+#	list_filter = ('date_modified','date_added',)
 	inlines = [PortfolioPieceInline]
 
 admin.site.register(Project, ProjectAdmin)

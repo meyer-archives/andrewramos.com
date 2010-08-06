@@ -2,7 +2,8 @@ from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
 from tagging.fields import TagField
-from easy_thumbnails.files import ThumbnailFile, Thumbnailer, get_thumbnailer
+from easy_thumbnails.files import get_thumbnailer
+from django.conf import settings
 
 class Project(models.Model):
 	title = models.CharField(blank=False, max_length=100)
@@ -47,9 +48,9 @@ class PortfolioPiece(models.Model):
 	def thumbnail(self):
 		if self.image:
 			# try:
-			thumbnail_options = dict(size=(100, 100), crop=True, bw=True)
-			img = get_thumbnailer(self.image).generate_thumbnail(thumbnail_options)
-			return img
+			thumbnail_options = dict(size=(100,100), crop=False)
+			img = get_thumbnailer(self.image).get_thumbnail(thumbnail_options)
+			return "<img style='border:1px solid #CCC;padding:1px;background:#FFF;float:left' src='%s%s'>" % (settings.MEDIA_URL,img)
 			# except:
 				# return "(thumbnail error)"
 		else:

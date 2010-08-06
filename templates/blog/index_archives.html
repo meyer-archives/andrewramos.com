@@ -13,8 +13,7 @@
 	<ul class="entry-list">
 
 {% for entry in entries_m.list %}
-	
-		<li class="entry {% cycle 'odd' 'even' %}">
+		<li class="entry {% if forloop.counter|divisibleby:2 %}even{% else %}odd{% endif %}">
 			<a href="{{ entry.get_absolute_url }}">
 				<span class="title">{{ entry.title|typogrify }}</span>
 				<span class="content">{{ entry.content|striptags|truncatewords:30 }}</span>
