@@ -1,9 +1,6 @@
 {% load typogrify %}
-
-{% block blog_content %}
 <div class="entry short-post">
-		<h2>{{ entry.title|typogrify }}.</h2>
-		<p>{{ entry.content|typogrify }}</p>
-		{% if entry.link %}{{ entry.link|urlize }}{% endif %}
+	<h2>{{ entry.title|typogrify }}.</h2>
+	<p>{{ entry.content|typogrify }}</p>
+	{% if entry.link %}{{ entry.link|urlize }}{% endif %}
 </div>
-{% endblock %}

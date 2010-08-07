@@ -1,11 +1,20 @@
 {% load typogrify thumbnail %}
 
-{% block blog_content %}
 <div class="entry article">
-{% if entry.content_type %}
-	<div class="featured-image">
-		<div style="background-image:url({% thumbnail entry.featured_image 700x440 crop %})"></div>
-	</div>
+{% if entry.images.all %}
+<div class="featured-image{% if entry.image_width == 'p' %} post-width{% else %} full-width{% endif %}">
+{% if entry.image_width == 'p' %}
+{% for img_object in entry.images.all %}
+	<div style="background-image:url({% thumbnail img_object.image 480x440 crop %})"></div>
+{% endfor %}
+{% else %}
+{% for img_object in entry.images.all %}
+	<div style="background-image:url({% thumbnail img_object.image 700x440 crop %})"></div>
+{% endfor %}
+{% endif %}
+
+</div>
+
 {% endif %}
 	<div class="entry-header">
 		<h2{% if entry.subtitle %} class="with-subtitle"{% endif %}>{{ entry.title }}</h2>
@@ -13,6 +22,5 @@
 		<h3>{{ entry.subtitle }}</h3>
 {% endif %}
 	</div>
-	<div class="entry-body">{{ entry.content|typogrify }}</div>
+	<div class="entry-body">{{ entry.content|typogrify|linebreaks }}</div>
 </div>
-{% endblock %}

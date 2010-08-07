@@ -406,6 +406,15 @@ a.post-edit-link:hover{
 	color: #52514a;
 }
 
+#content div.entry.short-post{
+	padding-top: 57px;
+	padding-bottom: 60px;
+}
+
+div.entry-body p {
+	margin-bottom: 15px;
+}
+
 #content .short-post h2{
 	font-weight: bold;
 	text-rendering: optimizeLegibility;
@@ -563,11 +572,17 @@ ul.entries-list li.entry.odd span.fade{
 
 #content .quote .entry-body{
 	border-left: 1px solid #f3c1ab;
-	padding: 8px 10px;
+	padding: 0 10px;
+	overflow: hidden;
 	font-size: 24px;
 	line-height: 30px;
 	color: #52514b;
 	text-rendering: optimizeLegibility;
+}
+
+#content .quote .entry-body p{
+	margin-bottom: 8px;
+	margin-top: 8px;
 }
 
 ul.post-list {
@@ -608,6 +623,7 @@ ul.post-list li{
 
 #content .featured-image{
 	margin-bottom: 20px;
+	overflow: hidden;
 }
 
 #content .featured-image,
@@ -615,16 +631,46 @@ ul.post-list li{
 	height: 440px;
 	width: 700px;
 	-webkit-border-radius: 3px;
+	-webkit-transition: all 200ms ease-in-out;
+	-webkit-background-size: 700px 440px;
+	-moz-border-radius: 3px;
+	-moz-transition: all 200ms ease-in-out;
+	-moz-background-size: 700px 440px;
 }
 
-@media screen and (orientation:portrait){
-	#content .featured-image,
-	#content .featured-image div{
+#content .featured-image.post-width,
+#content .featured-image.post-width div{
+	width: 480px;
+	-webkit-background-size: 480px 440px;
+	-moz-background-size: 480px 440px;
+}
+
+ul.entry-list li.entry {
+	position: relative;
+}
+
+ul.entry-list li.entry a.permalink{
+	position: absolute;
+	background: url(images/arrow-small.png) no-repeat center center;
+	display: block;
+	width: 30px;
+	height: 20px;
+	text-indent: -1000px;
+	overflow: hidden;
+	top: 58px;
+	left: -36px;
+}
+
+@media screen and (max-width:960px),
+screen and (orientation:portrait){
+	#content .featured-image.full-width,
+	#content .featured-image.full-width div{
 		height: 300px;
 		width: 480px;
 	}
-	#content .featured-image div{
+	#content .featured-image.full-width div{
 		-webkit-background-size: 480px 300px;
+		-moz-background-size: 480px 300px;
 	}
 }
 
@@ -684,6 +730,7 @@ ul.post-list li{
 	padding: 4px;
 	background-color: #fafaf9;
 	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
 }
 
 #blog-menu #search-input input{
@@ -704,12 +751,17 @@ ul.post-list li{
 	-webkit-transition: all 150ms linear;
 	-webkit-box-shadow: 0 0 4px #fafaf9,
 	0 0 0px #d7d5d5;
+	-moz-box-shadow: 0 0 4px #fafaf9,
+	0 0 0px #d7d5d5;
+	-moz-transition: all 150ms linear;
 }
 
 #blog-menu #search-input input:focus{
 	border-color: #76c7e0;
 	color: #666;
 	-webkit-box-shadow: 0 0 4px #add8e1,
+	0 0 0 #76c7e0;
+	-moz-box-shadow: 0 0 4px #add8e1,
 	0 0 0 #76c7e0;
 
 }

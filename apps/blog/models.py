@@ -6,6 +6,12 @@ from easy_thumbnails.files import get_thumbnailer
 from django.conf import settings
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
+from django.utils.safestring import mark_safe
+
+IMAGES_SIZES = (
+	('f',mark_safe('Full width (700&times;440px)')),
+	('p',mark_safe('Post width (480&times;440px)')),
+)
 
 class BlogPost(models.Model):
 	"""Generic post model."""
@@ -21,10 +27,9 @@ class BlogPost(models.Model):
 	is_featured = models.BooleanField(default=False,verbose_name="featured post")
 	date_added = models.DateTimeField(auto_now_add=True, default=datetime.now)
 	date_modified = models.DateTimeField(auto_now=True, default=datetime.now)
-	date_published = models.DateTimeField(blank=False, default=datetime.now,verbose_name="Publish date")
-	post_status = models.CharField(default="p",max_length=1,choices=POST_STATUS)
+	date_published = models.DateTimeField(blank=False, default=datetime.now,verbose_name="Publish date",help_text='Dates set in the future will only be published at the date specified.')
+	post_status = models.CharField(default="d",max_length=1,choices=POST_STATUS)
 	tags = TagField()
-	images = generic.GenericRelation(Image)
 
 	def template_name(self):
 		return "blog/single_%s.html" % self._meta.module_name
@@ -40,27 +45,23 @@ class BlogPost(models.Model):
 	def __unicode__(self):
 		return self.title
 
+class Image(models.Model):
+	image = models.ImageField(upload_to="uploads/blog")
+	content_type = models.ForeignKey(ContentType)
+	object_id = models.PositiveIntegerField()
+	content_object = generic.GenericForeignKey("content_type", "object_id")
+
+	class Meta:
+		verbose_name, verbose_name_plural = 'image', 'attached images'
+
 
 class Article(BlogPost):
 	"""Article"""
-	excerpt = models.TextField(blank=True)
+	excerpt = models.TextField(blank=True,help_text='Optional teaser content to show in the site RSS feed.')
 	display_title = models.BooleanField(default=True)
 	subtitle = models.CharField(blank=True, max_length=100, verbose_name="subtitle")
 	images = generic.GenericRelation(Image)
-	# featured_image = models.ImageField(blank=True,upload_to="featured-images/")
-
-	# def featured_image_preview(self):
-	# 	if self.featured_image:
-	# 		try:
-	# 			thumbnail_options = dict(size=(150, 150), crop=False)
-	# 			img = get_thumbnailer(self.featured_image).get_thumbnail(thumbnail_options)
-	# 			return "<img style='border:1px solid #CCC;padding:1px;background:#FFF;float:left' src='%s%s'>" % (settings.MEDIA_URL,img)
-	# 		except:
-	# 			return "None"
-	# 	else:
-	# 		return "None"
-	# featured_image_preview.short_description = 'Featured image'
-	# featured_image_preview.allow_tags = 'True'
+	image_width = models.CharField(blank=False, default='f', max_length=1, choices=IMAGES_SIZES,help_text='Select a size at which any attached images should be displayed.')
 
 	@models.permalink
 	def get_absolute_url(self):
@@ -69,20 +70,8 @@ class Article(BlogPost):
 class CaseStudy(BlogPost):
 	"""Case Study"""
 	excerpt = models.TextField(blank=True)
-	# featured_image = models.ImageField(upload_to="case-studies/")
-
-	# def featured_image_preview(self):
-	# 	if self.featured_image:
-	# 		try:
-	# 			thumbnail_options = dict(size=(150, 150), crop=False)
-	# 			img = get_thumbnailer(self.featured_image).get_thumbnail(thumbnail_options)
-	# 			return "<img style='border:1px solid #CCC;padding:1px;background:#FFF;float:left' src='%s%s'>" % (settings.MEDIA_URL,img)
-	# 		except:
-	# 			return "None"
-	# 	else:
-	# 		return "None"
-	# featured_image_preview.short_description = 'Featured image'
-	# featured_image_preview.allow_tags = 'True'
+	images = generic.GenericRelation(Image)
+	image_width = models.CharField(blank=False, default='f', max_length=1, choices=IMAGES_SIZES,help_text='Select a size at which any attached images should be displayed.')
 
 	@models.permalink
 	def get_absolute_url(self):
@@ -93,7 +82,7 @@ class CaseStudy(BlogPost):
 
 class ShortPost(BlogPost):
 	"""Short post with an optional link"""
-	link = models.URLField(blank=True, verify_exists=False)
+	link = models.URLField(blank=True, verify_exists=False,help_text='Optional link to append to the end of the post.')
 
 	@models.permalink
 	def get_absolute_url(self):
@@ -106,13 +95,3 @@ class Quote(BlogPost):
 	@models.permalink
 	def get_absolute_url(self):
 		return ('blog.views.quote_single',[str(self.slug)])
-
-
-class Image(models.Model):
-	image = models.ImageField(upload_to="uploads/blog")
-	content_type = models.ForeignKey(ContentType)
-	object_id = models.PositiveIntegerField()
-	content_object = generic.GenericForeignKey("content_type", "object_id")
-
-	class Meta:
-		verbose_name_plural = "images"

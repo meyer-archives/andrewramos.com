@@ -102,7 +102,7 @@ INSTALLED_APPS = (
 	'utils',
 	'blog',
 	'portfolio',
-	'contact_form',
+#	'contact_form',
 	'pages',
 )
 
@@ -116,8 +116,8 @@ SHORTEN_MODELS = {
 
 DJAPIAN_DATABASE_PATH = './search_index/'
 
-#THUMBNAIL_PREFIX = "thumb_"
-THUMBNAIL_BASEDIR = 'resized'
+THUMBNAIL_PREFIX = "r_"
+#THUMBNAIL_BASEDIR = 'uploads/resized'
 
 try:
 	from settings_local import *

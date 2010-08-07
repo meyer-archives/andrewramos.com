@@ -2,9 +2,10 @@
 {% load shorturl %}
 {% block blog_content %}
 	
-<ul>
+<ul class="entry-list">
 {% for entry in entries %}
-	<li>
+	<li class="entry">
+	<a class="permalink" href="{{ entry.get_absolute_url }}">Permalink to {{ entry.title }}</a>
 {% include entry.template_name %}
 	</li>
 {% empty %}

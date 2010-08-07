@@ -4,6 +4,7 @@ from blog.models import Article, CaseStudy, ShortPost, Quote, Image
 from django.contrib.contenttypes import generic
 
 META_INFO = ('Meta Information', {
+	'classes': ('collapse',),
 	'fields': ('tags','is_featured','post_status','date_published','date_added', 'date_modified',),
 })
 
@@ -19,13 +20,14 @@ class BlogPostAdmin(admin.ModelAdmin):
 	list_filter = ('date_modified','date_added','is_featured','post_status',)
 	readonly_fields = ('date_added','date_modified',)
 	date_hierarchy = 'date_added'
+	save_on_top = True
 
 class ArticleAdmin(BlogPostAdmin):
 	list_display = ('title','is_featured','post_status','view_on_site',)
 	inlines = [ImageInline,]
 	fieldsets = (
 		(None, {
-			'fields': (('title','slug'),'display_title','subtitle',('content','excerpt'),),
+			'fields': (('title','slug'),'display_title','subtitle',('content','excerpt'),'image_width',),
 		}),
 		META_INFO,
 	)
@@ -35,7 +37,7 @@ class CaseStudyAdmin(BlogPostAdmin):
 	inlines = [ImageInline,]
 	fieldsets = (
 		(None, {
-			'fields': (('title','slug'),'content','excerpt',),
+			'fields': (('title','slug'),'content','excerpt','image_width',),
 		}),
 		META_INFO,
 	)

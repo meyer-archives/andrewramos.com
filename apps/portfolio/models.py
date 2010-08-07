@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from tagging.fields import TagField
 from easy_thumbnails.files import get_thumbnailer
 from django.conf import settings
+from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.models import ContentType
 
 class Project(models.Model):
 	title = models.CharField(blank=False, max_length=100)
@@ -11,6 +13,7 @@ class Project(models.Model):
 	client = models.ForeignKey("Client")
 	active = models.BooleanField(default=True, verbose_name="Visible")
 	tags = TagField()
+	pieces = generic.GenericRelation('PortfolioPiece')
 
 	date_added = models.DateTimeField(auto_now_add=True, default=datetime.now)
 	date_modified = models.DateTimeField(auto_now=True, default=datetime.now)
@@ -30,12 +33,15 @@ class Project(models.Model):
 	def __unicode__(self):
 		return self.title
 
+
 class PortfolioPiece(models.Model):
 	title = models.CharField(blank=False, max_length=100)
-	description = models.TextField(blank=True, verbose_name="description")
-	image = models.ImageField(upload_to="portfolio/")
-	project = models.ForeignKey(Project,related_name="pieces")
-	tags = TagField()
+	description = models.CharField(blank=True, max_length=150)
+	image = models.ImageField(upload_to="uploads/portfolio")
+
+	content_type = models.ForeignKey(ContentType)
+	object_id = models.PositiveIntegerField()
+	content_object = generic.GenericForeignKey("content_type", "object_id")
 
 	date_added = models.DateTimeField(auto_now_add=True, default=datetime.now)
 	date_modified = models.DateTimeField(auto_now=True, default=datetime.now)
@@ -63,6 +69,7 @@ class PortfolioPiece(models.Model):
 
 	def __unicode__(self):
 		return self.title
+
 
 class Client(models.Model):
 	"""
