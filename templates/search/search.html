@@ -1,0 +1,46 @@
+{% extends 'blog/base.html' %}
+{% load typogrify %}
+
+{% block blog_content %}
+
+<form method="get" action="/search/">
+
+{% if query %}
+<ul class="entries-list search">
+
+<li class="month-list">
+	<h2>Search Results for &ldquo;{{ request.GET.q }}&rdquo;</h2>
+	<ul class="entry-list">
+
+{% for result in page.object_list %}
+		<li class="entry {% if forloop.counter|divisibleby:2 %}even{% else %}odd{% endif %}">
+			<a href="{{ result.object.get_absolute_url }}">
+				<span class="title">{{ result.object.title|typogrify }}</span>
+				<span class="content">{{ result.object.content|striptags|truncatewords:30 }}</span>
+			</a>
+			<span class="fade"></span>
+		</li>
+{% empty %}
+		<li class="entry empty odd"><span>No blog posts found. Try a different search?</span></li>
+{% endfor %}
+
+	</ul>
+</li>
+
+</ul>
+
+{% else %}
+	<h2>You need to search for something.</h2>
+{% endif %}
+{% endblock %}
+
+
+{% comment %}
+{% if page.has_previous or page.has_next %}
+<div>
+{% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
+|
+{% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
+</div>
+{% endif %}
+{% endcomment %}

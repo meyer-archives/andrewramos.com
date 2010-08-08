@@ -2,10 +2,13 @@ from django.shortcuts import get_object_or_404
 from portfolio.models import Project, PortfolioPiece
 from annoying.decorators import render_to
 
-@render_to('portfolio/portfolio_home.html')
+@render_to()
 def portfolio_home(request):
-	projects = Project.objects.all().select_related()
-	return {'projects':projects}
+	if request.user.is_authenticated():
+		projects = Project.objects.all().select_related()
+		return {'projects':projects, 'TEMPLATE':'portfolio/portfolio_home.html'}
+	else:
+		return {'TEMPLATE':'portfolio/coming_soon.html'}
 
 @render_to('portfolio/portfolio_single.html')
 def portfolio_single(request, project_slug):

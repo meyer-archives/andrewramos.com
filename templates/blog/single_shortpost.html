@@ -1,6 +1,26 @@
 {% load typogrify %}
+
+{% if entry.post_status == 'd' %}
+	<div class="draft-warning">
+		<p>This post is a draft and is not visible to site visitors. <a href="{% url admin:blog_shortpost_change entry.id %}">Fix that problem.</a></p>
+	</div>
+{% endif %}
+
+{% with entry.title|slice:"-1:" as punctuation %}
+
 <div class="entry short-post">
-	<h2>{{ entry.title|typogrify }}.</h2>
+
+	{% if request.user.is_authenticated %}
+	<a class="post-edit-link" href="{% url admin:blog_shortpost_change entry.id %}">Edit</a>
+	{% endif %}
+
+{% if punctuation == "!" or punctuation == "?" %}
+	<h2>{{ entry.title }}</h2>
+{% else %}
+	<h2>{{ entry.title }}.</h2>
+{% endif %}
+{% endwith %}
 	<p>{{ entry.content|typogrify }}</p>
 	{% if entry.link %}{{ entry.link|urlize }}{% endif %}
+
 </div>

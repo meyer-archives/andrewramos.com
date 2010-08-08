@@ -1,8 +1,20 @@
 {% load typogrify %}
 
+{% if entry.post_status == 'd' %}
+	<div class="draft-warning">
+		<p>This post is a draft and is not visible to site visitors. <a href="{% url admin:blog_quote_change entry.id %}">Fix that problem.</a></p>
+	</div>
+{% endif %}
+
 <div class="entry quote">
-	<div class="entry-body">{{ entry.content|typogrify|linebreaks }}</div>
+
+	{% if request.user.is_authenticated %}
+	<a class="post-edit-link" href="{% url admin:blog_quote_change entry.id %}">Edit</a>
+	{% endif %}
+
+	<div class="entry-body">{{ entry.content|typogrify }}</div>
 {% if entry.author %}
 	<p class="author">{{ entry.author|typogrify }}</p>
 {% endif %}
+
 </div>

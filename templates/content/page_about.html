@@ -1,12 +1,21 @@
 {% extends "base.html" %}
+{% load typogrify %}
 {% block bodyid %}page-about{% endblock %}
-{% block bodyclass %}grey{% endblock %}
+{% block bodyclass %}{% if page.page_status == 'd' %}draft-page{% endif %}{% endblock %}
 {% block content %}
+
+{% if page.page_status == 'd' %}
+	<div class="draft-warning">
+		<p>This page is a draft and is not visible to site visitors. <a href="{% url admin:content_staticpage_change page.id %}">Fix that problem.</a></p>
+	</div>
+{% endif %}
 <div id="about-content">
 	<h2>The basic idea: trying to live a simple life and create beautiful things.</h2>
 	<div class="about-text">
-		{{ page.content }}
-	<p class="edit-link"><a href="#"></a></p>
+		{{ page.content|typogrify }}
+	{% if request.user.is_authenticated %}
+	<p class="edit-link"><a class="post-edit-link" href="{% url admin:content_staticpage_change page.id %}">Edit</a></p>
+	{% endif %}
 	</div>
 	<div class="elsewhere">
 		<h3>Find me elsewhere:</h3>
@@ -17,4 +26,5 @@
 		</ul>
 	</div>
 </div>
+
 {% endblock %}

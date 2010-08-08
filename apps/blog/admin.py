@@ -18,16 +18,22 @@ class BlogPostAdmin(admin.ModelAdmin):
 	search_fields = ('title',)
 	list_editable = ('is_featured','post_status',)
 	list_filter = ('date_modified','date_added','is_featured','post_status',)
-	readonly_fields = ('date_added','date_modified',)
+	readonly_fields = ('date_added','date_modified','content')
 	date_hierarchy = 'date_added'
 	save_on_top = True
+
+	class Media: 
+		js = ('showdown.js','showdown-textarea.js',)
+		css = {
+			'all': ('showdown-textarea.css',)
+		}
 
 class ArticleAdmin(BlogPostAdmin):
 	list_display = ('title','is_featured','post_status','view_on_site',)
 	inlines = [ImageInline,]
 	fieldsets = (
 		(None, {
-			'fields': (('title','slug'),'display_title','subtitle',('content','excerpt'),'image_width',),
+			'fields': (('title','slug'),'display_title','subtitle','content_markdown','image_width',),
 		}),
 		META_INFO,
 	)
@@ -37,7 +43,7 @@ class CaseStudyAdmin(BlogPostAdmin):
 	inlines = [ImageInline,]
 	fieldsets = (
 		(None, {
-			'fields': (('title','slug'),'content','excerpt','image_width',),
+			'fields': (('title','slug'),'content_markdown','image_width',),
 		}),
 		META_INFO,
 	)
@@ -45,7 +51,7 @@ class CaseStudyAdmin(BlogPostAdmin):
 class ShortPostAdmin(BlogPostAdmin):
 	fieldsets = (
 		(None, {
-			'fields': (('title','slug'),'content','link'),
+			'fields': (('title','slug'),'content_markdown','link'),
 		}),
 		META_INFO,
 	)
@@ -53,7 +59,7 @@ class ShortPostAdmin(BlogPostAdmin):
 class QuoteAdmin(BlogPostAdmin):
 	fieldsets = (
 		(None, {
-			'fields': (('title','slug'),'author','content',),
+			'fields': (('title','slug'),'author','content_markdown',),
 		}),
 		META_INFO,
 	)

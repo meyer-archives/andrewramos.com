@@ -4,3 +4,4 @@ migrations
 pip-log.txt
 media/uploads
 media/resized
+data.db

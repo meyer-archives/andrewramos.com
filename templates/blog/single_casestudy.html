@@ -1,6 +1,17 @@
 {% load typogrify thumbnail %}
 
+{% if entry.post_status == 'd' %}
+	<div class="draft-warning">
+		<p>This post is a draft and is not visible to site visitors. <a href="{% url admin:blog_casestudy_change entry.id %}">Fix that problem.</a></p>
+	</div>
+{% endif %}
+
 <div class="entry case-study">
+
+{% if request.user.is_authenticated %}
+<a class="post-edit-link" href="{% url admin:blog_casestudy_change entry.id %}">Edit</a>
+{% endif %}
+
 {% if entry.images.all %}
 
 	<div class="featured-image{% if entry.image_width == 'p' %} post-width{% else %} full-width{% endif %}">
@@ -19,8 +30,9 @@
 	<div class="entry-header">
 		<h2>{{ entry.title }}</h2>
 	</div>
-	<div class="entry-body">{{ entry.content|typogrify|linebreaks }}</div>
+	<div class="entry-body">{{ entry.content|typogrify }}</div>
 {% if entry.author %}
 	<p class="author">{{ entry.author|typogrify }}</p>
 {% endif %}
+
 </div>

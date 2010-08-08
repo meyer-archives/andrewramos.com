@@ -22,4 +22,6 @@ DATABASES = {
 
 MEDIA_URL = 'http://hotsauce.local:9007/'
 ADMIN_MEDIA_PREFIX = 'http://hotsauce.local:9007/admin/'
-TEMPLATE_DEBUG = True
+
+# DEBUG = True
+# TEMPLATE_DEBUG = DEBUG

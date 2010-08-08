@@ -1,1 +1,13 @@
 {% extends "base.html" %}
+
+{% block content %}
+
+<ul class="featured-posts">
+{% for post in featured_posts %}
+	<li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+{% empty %}
+	<li class="empty">No posts have been marked as featured.</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

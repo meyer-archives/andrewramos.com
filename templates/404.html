@@ -1,1 +1,19 @@
-Not found.
+{% extends "base.html" %}
+{% block bodyclass %}grey{% endblock %}
+{% block bodyid %}page-404{% endblock %}
+{% block content %}
+
+
+<h1>Someone has made a huge mistake.</h1>
+<p>Unfortunately, the page you were looking for can&rsquo;t be found, but don&rsquo;t 
+worry&thinsp;&mdash;&thinsp;you&rsquo;ve got several options. You can view the <a href="{% url portfolio-home %}">Portfolio</a> to see 
+the recent projects, learn more on the <a href="{% url content.views.page_single page_slug='about' %}">About</a> page, or go to the <a href="{% url blog-home %}">Blog</a> 
+to find some new illustrations, thoughts on design and, well, general 
+awesomeness from around the web. If none of those sound like what 
+you&rsquo;re looking for, try searching the blog below.</p>
+
+<form id="search-form" action="/search/" method="get" accept-charset="utf-8">
+	<div id="search-input"><input type="text" name="q" placeholder="Search" autocapitalize="off" autocorrect="off" {% if request.GET.q %} value="{{ request.GET.q }}"{% endif %}></div>
+</form>
+
+{% endblock %}

@@ -4,7 +4,7 @@ import sys
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -84,7 +84,6 @@ INSTALLED_APPS = (
 	'django.contrib.contenttypes',
 	'django.contrib.sessions',
 	'django.contrib.sites',
-#	'django.contrib.flatpages',
 	'django.contrib.messages',
 	'django.contrib.admin',
 	'django.contrib.admindocs',
@@ -96,14 +95,13 @@ INSTALLED_APPS = (
 	'annoying',
 	'typogrify',
 	'django_extensions',
-#	'djapian',
+	'haystack',
 
 	# My apps
 	'utils',
 	'blog',
 	'portfolio',
-#	'contact_form',
-	'pages',
+	'content',
 )
 
 # models with shortened URLs
@@ -114,10 +112,12 @@ SHORTEN_MODELS = {
 	'q': 'blog.quote',
 }
 
-DJAPIAN_DATABASE_PATH = './search_index/'
-
 THUMBNAIL_PREFIX = "r_"
-#THUMBNAIL_BASEDIR = 'uploads/resized'
+THUMBNAIL_BASEDIR = 'resized'
+
+HAYSTACK_SEARCH_ENGINE = 'whoosh'
+HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'search_index')
+HAYSTACK_SITECONF = 'search_sites'
 
 try:
 	from settings_local import *

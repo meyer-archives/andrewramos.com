@@ -23,7 +23,8 @@ class BlogPost(models.Model):
 
 	title = models.CharField(blank=False, max_length=150)
 	slug = models.SlugField(unique=True)
-	content = models.TextField(blank=False)
+	content_markdown = models.TextField(blank=False,help_text='Text is formatted using Markdown.',verbose_name='content')
+	content = models.TextField(blank=True, null=True)
 	is_featured = models.BooleanField(default=False,verbose_name="featured post")
 	date_added = models.DateTimeField(auto_now_add=True, default=datetime.now)
 	date_modified = models.DateTimeField(auto_now=True, default=datetime.now)
@@ -39,6 +40,11 @@ class BlogPost(models.Model):
 	view_on_site.short_description = ''
 	view_on_site.allow_tags = 'True'
 
+	def save(self):
+		import markdown
+		self.content = markdown.markdown(self.content_markdown, ['extra','footnotes'])
+		super(BlogPost, self).save()
+
 	class Meta:
 		abstract = True
 
@@ -46,7 +52,7 @@ class BlogPost(models.Model):
 		return self.title
 
 class Image(models.Model):
-	image = models.ImageField(upload_to="uploads/blog")
+	image = models.ImageField(upload_to="uploads/blog",verbose_name="image")
 	content_type = models.ForeignKey(ContentType)
 	object_id = models.PositiveIntegerField()
 	content_object = generic.GenericForeignKey("content_type", "object_id")

@@ -1,33 +1,23 @@
 {% extends "base.html" %}
 
-{% block head %}
-<script>
-$(function(){
-	var images = [];
-	$("div.featured-image div").each(function(){
-		images.push( $(this).css("background") );
-	});
-	if( images ){
-		console.log(images);
-		var img = new Image();
-	} else {
-		console.log("No featured images to preload.");
-	}
-});
-</script>
-{% endblock %}
-
 {% block content %}
 
 <div id="blog-menu">
 	<a class="archives-link" href="{% url blog-archives %}">Archives</a>
 	<a class="rss-link" href="{% url rss-feed %}">RSS Feed</a>
-	<form id="search-form" action="base_submit" method="post" accept-charset="utf-8">
-		<div id="search-input"><input type="text" name="q" placeholder="Search"></div>
+	<form id="search-form" action="/search/" method="get" accept-charset="utf-8">
+		<div id="search-input"><input type="text" name="q" placeholder="Search" autocapitalize="off" autocorrect="off" {% if request.GET.q %} value="{{ request.GET.q }}"{% endif %}></div>
 	</form>
 </div>
 
 {% block blog_content %}
+
 {% endblock %}
+
+<div id="footer">
+	<p>Blog content/images copyright Andrew Ramos, 2010. All rights reserved.</p>
+	<p><em>Thanks for stopping by.</em></p>
+	<a href="#top">Back to the top</a>
+</div>
 
 {% endblock %}
