@@ -19,7 +19,7 @@ class ImageInline(generic.GenericTabularInline):
 
 class BlogPostAdmin(admin.ModelAdmin):
 	prepopulated_fields = {"slug":("title",)}
-	list_display = ('title','is_featured','status','view_on_site',)
+	list_display = ('title','is_featured','status','short_url','view_on_site',)
 	search_fields = ('title',)
 	list_editable = ('is_featured','status',)
 	list_filter = ('date_modified','date_added','is_featured','status',)
@@ -34,7 +34,6 @@ class BlogPostAdmin(admin.ModelAdmin):
 		}
 
 class ArticleAdmin(BlogPostAdmin):
-	list_display = ('title','is_featured','status','view_on_site',)
 	inlines = [ImageInline,]
 	fieldsets = (
 		(None, {
@@ -44,7 +43,6 @@ class ArticleAdmin(BlogPostAdmin):
 	)
 
 class CaseStudyAdmin(BlogPostAdmin):
-	list_display = ('title','is_featured','status','view_on_site',)
 	inlines = [ImageInline,]
 	fieldsets = (
 		(None, {

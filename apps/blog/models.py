@@ -7,6 +7,8 @@ from django.conf import settings
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
 from django.utils.safestring import mark_safe
+from shorturls.magic import get_short_url_for_object
+from django.contrib.sites.models import Site
 
 __all__ = ['Article','CaseStudy','ShortPost','Quote','Image',]
 
@@ -36,6 +38,13 @@ class BlogPost(models.Model):
 
 	def template_name(self):
 		return "blog/single_%s.html" % self._meta.module_name
+
+	def short_url(self):
+		current_site = Site.objects.get_current()
+		return '<input onmouseup="this.select()" value="http://%s%s">' % (current_site.domain, get_short_url_for_object(self))
+
+	short_url.short_description = 'Short URL'
+	short_url.allow_tags = 'True'
 
 	def view_on_site(self):
 		return "<a class='view-on-site-link' href='%s'>View on site</a>" % self.get_absolute_url()
