@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate
 from django.conf import settings
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponseForbidden
+#from blog.models import *
 
 @rpcmethod(name='wp.getUsersBlogs')
 def get_blogs(*args):

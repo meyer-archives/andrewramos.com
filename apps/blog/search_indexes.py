@@ -1,7 +1,7 @@
 import datetime
 from haystack.indexes import *
 from haystack import site
-from blog.models import Article, CaseStudy, ShortPost, Quote
+from blog.models import *
 
 
 class ArticleIndex(SearchIndex): # SearchIndex
@@ -10,7 +10,7 @@ class ArticleIndex(SearchIndex): # SearchIndex
 
 	def get_queryset(self):
 		"""Used when the entire index for model is updated."""
-		return Article.objects.filter(post_status='p',date_published__lte=datetime.datetime.now())
+		return Article.objects.filter(status='p',date_published__lte=datetime.datetime.now())
 
 class CaseStudyIndex(SearchIndex):
 	text = CharField(document=True, use_template=True)
@@ -18,7 +18,7 @@ class CaseStudyIndex(SearchIndex):
 
 	def get_queryset(self):
 		"""Used when the entire index for model is updated."""
-		return CaseStudy.objects.filter(post_status='p',date_published__lte=datetime.datetime.now())
+		return CaseStudy.objects.filter(status='p',date_published__lte=datetime.datetime.now())
 
 class ShortPostIndex(SearchIndex): # SearchIndex
 	text = CharField(document=True, use_template=True)
@@ -26,7 +26,7 @@ class ShortPostIndex(SearchIndex): # SearchIndex
 
 	def get_queryset(self):
 		"""Used when the entire index for model is updated."""
-		return ShortPost.objects.filter(post_status='p',date_published__lte=datetime.datetime.now())
+		return ShortPost.objects.filter(status='p',date_published__lte=datetime.datetime.now())
 
 class QuoteIndex(SearchIndex): # SearchIndex
 	text = CharField(document=True, use_template=True)
@@ -34,7 +34,7 @@ class QuoteIndex(SearchIndex): # SearchIndex
 
 	def get_queryset(self):
 		"""Used when the entire index for model is updated."""
-		return Quote.objects.filter(post_status='p',date_published__lte=datetime.datetime.now())
+		return Quote.objects.filter(status='p',date_published__lte=datetime.datetime.now())
 
 site.register(Article, ArticleIndex)
 site.register(CaseStudy, CaseStudyIndex)

@@ -59,18 +59,20 @@ django.jQuery(function($){
 	};
 
 	var $t = $("textarea#id_content_markdown").attr({rows:10}).autoResize();
-	var $markdown_preview = $("<div class='markdown-preview'></div>");
-	var converter = new Showdown.converter();
-	var timer = false;
+	if( $t.length ){
+		var $markdown_preview = $("<div class='markdown-preview'></div>");
+		var converter = new Showdown.converter();
+		var timer = false;
 
-	function render_html(){
-		var html = converter.makeHtml($t.val());
-		$markdown_preview.html(html)
+		function render_html(){
+			var html = converter.makeHtml($t.val());
+			$markdown_preview.html(html)
+		}
+		setTimeout(render_html,300)
+
+		$t.keyup(function(){
+			clearTimeout(timer);
+			timer = setTimeout(render_html,300)
+		}).wrap("<div class='markdown-preview-container'></div>").after($markdown_preview);
 	}
-	setTimeout(render_html,300)
-
-	$t.keyup(function(){
-		clearTimeout(timer);
-		timer = setTimeout(render_html,300)
-	}).wrap("<div class='markdown-preview-container'></div>").after($markdown_preview);
 })

@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+{% load typogrify %}
+
+{% block blog_content %}
+
+<ul class="entries-list search">
+
+<li class="month-list">
+	<h2>All blog posts tagged &ldquo;{{ tag }}&rdquo;</h2>
+	<ul class="entry-list">
+
+{% for entry in entries %}
+		<li class="entry {% if forloop.counter|divisibleby:2 %}even{% else %}odd{% endif %}">
+			<a href="{{ entry.get_absolute_url }}">
+				<span class="title">{{ entry.title|typogrify }}</span>
+				<span class="content">{{ entry.content|striptags|truncatewords:30 }}</span>
+			</a>
+			<span class="fade"></span>
+		</li>
+{% empty %}
+		<li class="entry empty odd"><span>No blog posts found.</span></li>
+{% endfor %}
+
+	</ul>
+</li>
+
+</ul>
+
+{% endblock %}

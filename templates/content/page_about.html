@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load typogrify %}
 {% block bodyid %}page-about{% endblock %}
-{% block bodyclass %}{% if page.page_status == 'd' %}draft-page{% endif %}{% endblock %}
+{% block bodyclass %}{% if page.status == 'd' %}draft-page{% endif %}{% endblock %}
 {% block content %}
 
-{% if page.page_status == 'd' %}
+{% if page.status == 'd' %}
 	<div class="draft-warning">
 		<p>This page is a draft and is not visible to site visitors. <a href="{% url admin:content_staticpage_change page.id %}">Fix that problem.</a></p>
 	</div>

@@ -1,13 +1,17 @@
 {% load thumbnail typogrify %}
 <div class="portfolio-item">
-	<h2>{% filter typogrify %}{{ project.title }} -- {{ project.client }}{% endfilter %}</h2>
-	<ul>
+	<ul class="slideshow">
 	{% for piece in project.pieces.all %}
-		<li>
-			<img src="{% thumbnail piece.image 700x370 crop %}" alt="{{ piece.title }}">
-			<h3>{{ piece.title|typogrify }}</h3>
-			<p>{{ piece.description|typogrify }}</p>
-		</li>
+		<li><div class="portfolio-image" style="background-image:url({% thumbnail piece.image 700x370 crop %})"></div></li>
 	{% endfor %}
 	</ul>
+	<div class="portfolio-info">
+		<h2>{{ project.title|typogrify }}</h2>
+{% if project.description %}
+		<p>{{ project.description|typogrify }}</p>
+{% endif %}
+	</div>
+	{% if request.user.is_authenticated %}
+	<p class="edit-link"><a class="post-edit-link" href="{% url admin:portfolio_project_change project.id %}">Edit</a></p>
+	{% endif %}
 </div>

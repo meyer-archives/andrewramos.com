@@ -1,6 +1,6 @@
 {% extends "blog/base.html" %}
 
-{% block bodyclass %}{% if entry.post_status == 'd' %}draft-page{% endif %}{% endblock %}
+{% block bodyclass %}{% if entry.status == 'd' %}draft-page{% endif %}{% endblock %}
 
 {% block blog_content %}
 <div id="blog-post-single">

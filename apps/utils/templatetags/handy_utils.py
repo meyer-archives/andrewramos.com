@@ -2,9 +2,26 @@ from django.template import Library, Node, Variable, loader, TemplateSyntaxError
 from django.template.context import Context
 from django.utils.safestring import mark_safe
 from django.contrib.admin.templatetags.admin_list import result_headers
+from string import capitalize
 import re
 
 register = Library()
+
+@register.filter
+def camelcase(value):
+	if value.lower() == "iphone":
+		return "iPhone"
+	if value.lower() == "ipad":
+		return "iPad"
+	if value.lower() == "ipod":
+		return "iPod"
+	if value.lower() == "imac":
+		return "iMac"
+	if value.lower() == "macbook":
+		return "MacBook"
+	if value.lower() == "macbook pro":
+		return "MacBookPro"
+	return "".join([capitalize(w) for w in re.split(re.compile("[\W_]*"), value)])
 
 @register.simple_tag
 def is_current(request, pattern, return_class='current'):

@@ -1,13 +1,39 @@
 {% extends "base.html" %}
-
+{% load thumbnail %}
+{% block bodyid %}front-page{% endblock %}
 {% block content %}
 
-<ul class="featured-posts">
-{% for post in featured_posts %}
-	<li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
-{% empty %}
-	<li class="empty">No posts have been marked as featured.</li>
-{% endfor %}
-</ul>
+<div id="featured-image">
+	<h2>Pencil, Paper, &amp; Plenty of Coffee</h2>
+	<p>Simply trying to explore and understand the world around me.</p>
+</div>
+
+<div id="feature-container">
+	<div id="featured-posts">
+	<h2>Recommended Blog Articles</h2>
+	<ul>
+	{% for post in featured_posts %}
+		<li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+	{% empty %}
+		<li class="empty">No posts have been marked as featured.</li>
+	{% endfor %}
+	</ul>
+	<a class="rss-link" href={% url rss-feed %}>RSS Feed</a>
+	</div>
+
+	<div id="featured-content">
+		<h2>Work in Progress</h2>
+		<ul>
+	{% for item in featured_content %}
+		<li{% if forloop.first %} class="first"{% endif %}>
+			{% thumbnail item.image 220x800 as item_thumb %}
+			{% if item.link %}<a href="{{ item.link }}"{% else %}<span{% endif %}
+			style="background-image:url({{ MEDIA_URL }}{{ item_thumb }}); height:{{ item_thumb.height|add:'-2' }}px;"
+			{% if item.link %}>{{ item.link }}</a>{% else %}></span>{% endif %}
+		</li>
+	{% endfor %}
+		</ul>
+	</div>
+</div>
 
 {% endblock %}

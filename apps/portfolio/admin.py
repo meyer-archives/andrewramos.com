@@ -1,6 +1,8 @@
 from django.contrib import admin
 from portfolio.models import Project, PortfolioPiece, Client
 from django.contrib.contenttypes import generic
+from utils.widgets import AdminImageFieldWithThumbWidget
+from django.db import models
 
 #class PortfolioPieceAdmin(admin.ModelAdmin):
 #	pass
@@ -8,13 +10,16 @@ from django.contrib.contenttypes import generic
 #	readonly_fields = ('date_added','date_modified',)
 
 class PortfolioPieceInline(generic.GenericTabularInline):
+	formfield_overrides = {
+		models.ImageField: {'widget':AdminImageFieldWithThumbWidget},
+	}
 	model = PortfolioPiece
-#	list_display = ('title','project_link','thumbnail',)
 	extra = 1
 
 class ProjectAdmin(admin.ModelAdmin):
 	prepopulated_fields = {"slug":("title",)}
-	list_display = ('title','client','view_on_site')
+	list_display = ('title','client','status','view_on_site')
+	list_editable = ['status',]
 #	list_filter = ('date_modified','date_added',)
 	inlines = [PortfolioPieceInline]
 	save_on_top = True

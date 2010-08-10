@@ -1,5 +1,5 @@
 from django.contrib.syndication.views import Feed
-from blog.models import Article, CaseStudy, ShortPost, Quote
+from blog.models import *
 from itertools import chain
 from django.utils.feedgenerator import Atom1Feed
 import datetime

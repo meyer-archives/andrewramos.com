@@ -1,17 +1,17 @@
 from django.shortcuts import get_object_or_404
+from django.http import Http404
 from portfolio.models import Project, PortfolioPiece
-from annoying.decorators import render_to
+from utils.decorators import render_to
 
-@render_to()
+@render_to('portfolio/portfolio_home.html')
 def portfolio_home(request):
-	if request.user.is_authenticated():
-		projects = Project.objects.all().select_related()
-		return {'projects':projects, 'TEMPLATE':'portfolio/portfolio_home.html'}
-	else:
-		return {'TEMPLATE':'portfolio/coming_soon.html'}
+	projects = Project.objects.filter(status='p').select_related()
+	return {'projects':projects}
 
 @render_to('portfolio/portfolio_single.html')
 def portfolio_single(request, project_slug):
 	project = get_object_or_404(Project, slug=project_slug)
-	pieces = project.pieces.all()
-	return {'project':project,'pieces':pieces}
+	if project.status == 'd' and not request.user.is_authenticated():
+		raise Http404
+	else:
+		return {'project':project}

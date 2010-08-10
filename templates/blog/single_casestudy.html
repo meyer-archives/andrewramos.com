@@ -1,6 +1,6 @@
-{% load typogrify thumbnail %}
+{% load typogrify thumbnail tagging_tags handy_utils %}
 
-{% if entry.post_status == 'd' %}
+{% if entry.status == 'd' %}
 	<div class="draft-warning">
 		<p>This post is a draft and is not visible to site visitors. <a href="{% url admin:blog_casestudy_change entry.id %}">Fix that problem.</a></p>
 	</div>
@@ -17,11 +17,11 @@
 	<div class="featured-image{% if entry.image_width == 'p' %} post-width{% else %} full-width{% endif %}">
 		{% if entry.image_width == 'p' %}
 		{% for img_object in entry.images.all %}
-			<div style="background-image:url({% thumbnail img_object.image 480x440 crop %})"></div>
+			<div style="background-image:url({% thumbnail img_object.image 480x440 upscale crop %})"></div>
 		{% endfor %}
 		{% else %}
 		{% for img_object in entry.images.all %}
-			<div style="background-image:url({% thumbnail img_object.image 700x440 crop %})"></div>
+			<div style="background-image:url({% thumbnail img_object.image 700x440 upscale crop %})"></div>
 		{% endfor %}
 		{% endif %}
 	</div>
@@ -30,7 +30,13 @@
 	<div class="entry-header">
 		<h2>{{ entry.title }}</h2>
 	</div>
-	<div class="entry-body">{{ entry.content|typogrify }}</div>
+	<div class="entry-body">
+		{{ entry.content|typogrify }}
+		{% tags_for_object entry as tags %}
+		{% if tags %}
+		<p class="tag-list">{% for tag in tags %}{% if not forloop.first %}, {% endif %}<a href="/blog/tags/{{tag.name|slugify}}/">#{{ tag.name|camelcase }}</a>{% endfor %}</p>
+		{% endif %}
+	</div>
 {% if entry.author %}
 	<p class="author">{{ entry.author|typogrify }}</p>
 {% endif %}

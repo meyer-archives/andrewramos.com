@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<a name="top" id="top"></a>
+
 <div id="blog-menu">
 	<a class="archives-link" href="{% url blog-archives %}">Archives</a>
 	<a class="rss-link" href="{% url rss-feed %}">RSS Feed</a>
@@ -17,7 +19,7 @@
 <div id="footer">
 	<p>Blog content/images copyright Andrew Ramos, 2010. All rights reserved.</p>
 	<p><em>Thanks for stopping by.</em></p>
-	<a href="#top">Back to the top</a>
+	<a id="back-to-top" href="#top">Back to the top</a>
 </div>
 
 {% endblock %}

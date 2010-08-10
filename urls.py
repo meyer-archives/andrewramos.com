@@ -11,5 +11,6 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 	(r'^s/', include('shorturls.urls')),
 	(r'^search/', include('haystack.urls')),
+	url(r'^xmlrpc/$', 'rpc4django.views.serve_rpc_request'),
 	(r'', include('content.urls')),
 )

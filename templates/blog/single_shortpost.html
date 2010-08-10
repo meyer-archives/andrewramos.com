@@ -1,6 +1,6 @@
-{% load typogrify %}
+{% load typogrify thumbnail tagging_tags handy_utils %}
 
-{% if entry.post_status == 'd' %}
+{% if entry.status == 'd' %}
 	<div class="draft-warning">
 		<p>This post is a draft and is not visible to site visitors. <a href="{% url admin:blog_shortpost_change entry.id %}">Fix that problem.</a></p>
 	</div>
@@ -21,6 +21,11 @@
 {% endif %}
 {% endwith %}
 	<p>{{ entry.content|typogrify }}</p>
-	{% if entry.link %}{{ entry.link|urlize }}{% endif %}
+	{% if entry.link %}<a class="short-post-link" href="{{ entry.link }}">{{ entry.link }}</a>{% endif %}
+
+	{% tags_for_object entry as tags %}
+	{% if tags %}
+	<p class="tag-list">{% for tag in tags %}{% if not forloop.first %}, {% endif %}<a href="/blog/tags/{{tag.name|slugify}}/">#{{ tag.name|camelcase }}</a>{% endfor %}</p>
+	{% endif %}
 
 </div>

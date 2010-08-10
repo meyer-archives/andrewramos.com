@@ -87,12 +87,12 @@ INSTALLED_APPS = (
 	'django.contrib.messages',
 	'django.contrib.admin',
 	'django.contrib.admindocs',
+	'rpc4django',
 	'south',
 	'easy_thumbnails',
 	'tagging',
 	'django_wysiwyg',
 	'shorturls',
-	'annoying',
 	'typogrify',
 	'django_extensions',
 	'haystack',
@@ -114,6 +114,7 @@ SHORTEN_MODELS = {
 
 THUMBNAIL_PREFIX = "r_"
 THUMBNAIL_BASEDIR = 'resized'
+THUMBNAIL_EXTENSION = 'png'
 
 HAYSTACK_SEARCH_ENGINE = 'whoosh'
 HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'search_index')

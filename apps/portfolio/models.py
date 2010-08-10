@@ -6,14 +6,24 @@ from easy_thumbnails.files import get_thumbnailer
 from django.conf import settings
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
+from blog.models import CaseStudy
+
+PROJECT_STATUS = (
+	('p','published'),
+	('d','draft'),
+)
 
 class Project(models.Model):
 	title = models.CharField(blank=False, max_length=100)
+	description = models.CharField(blank=True, max_length=150)
 	slug = models.SlugField()
 	client = models.ForeignKey("Client")
-	active = models.BooleanField(default=True, verbose_name="Visible")
-	tags = TagField()
+	status = models.CharField(blank=False, default='d', max_length=1, choices=PROJECT_STATUS)
+	# tags = TagField()
+	category = generic.GenericRelation('Category')
 	pieces = generic.GenericRelation('PortfolioPiece')
+
+	case_study = models.ForeignKey(CaseStudy,blank=True,null=True)
 
 	date_added = models.DateTimeField(auto_now_add=True, default=datetime.now)
 	date_modified = models.DateTimeField(auto_now=True, default=datetime.now)
@@ -34,9 +44,22 @@ class Project(models.Model):
 		return self.title
 
 
-class PortfolioPiece(models.Model):
+class Category(models.Model):
 	title = models.CharField(blank=False, max_length=100)
-	description = models.CharField(blank=True, max_length=150)
+	image = models.ImageField(upload_to="uploads/portfolio",help_text='The nav item to show for the portfolio category.',verbose_name='Nav image')
+
+	content_type = models.ForeignKey(ContentType)
+	object_id = models.PositiveIntegerField()
+	content_object = generic.GenericForeignKey("content_type", "object_id")
+
+	class Meta:
+		verbose_name, verbose_name_plural = 'image', 'attached images'
+
+	def __unicode__(self):
+		return self.title
+
+
+class PortfolioPiece(models.Model):
 	image = models.ImageField(upload_to="uploads/portfolio")
 
 	content_type = models.ForeignKey(ContentType)
@@ -46,10 +69,10 @@ class PortfolioPiece(models.Model):
 	date_added = models.DateTimeField(auto_now_add=True, default=datetime.now)
 	date_modified = models.DateTimeField(auto_now=True, default=datetime.now)
 
-	def project_link(self):
-		return "%s <a class='view-on-site-link' href='%s'>(view on site)</a>" % (self.project,self.project.get_absolute_url(),)
-	project_link.short_description = 'Project'
-	project_link.allow_tags = 'True'
+	# def project_link(self):
+	# 	return "%s <a class='view-on-site-link' href='%s'>(view on site)</a>" % (self.project,self.project.get_absolute_url(),)
+	# project_link.short_description = 'Project'
+	# project_link.allow_tags = 'True'
 
 	def thumbnail(self):
 		if self.image:
@@ -68,7 +91,7 @@ class PortfolioPiece(models.Model):
 		verbose_name, verbose_name_plural = "portfolio piece", "portfolio pieces"
 
 	def __unicode__(self):
-		return self.title
+		return "Image %s" % self.pk
 
 
 class Client(models.Model):

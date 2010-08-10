@@ -15,23 +15,29 @@ class StaticPage(models.Model):
 	content = models.TextField(blank=True, null=True,verbose_name='rendered content')
 	date_added = models.DateTimeField(auto_now_add=True, default=datetime.now)
 	date_modified = models.DateTimeField(auto_now=True, default=datetime.now)
-	page_status = models.CharField(default="d",max_length=1,choices=PAGE_STATUS)
+	status = models.CharField(default="d",max_length=1,choices=PAGE_STATUS)
 
 	def save(self):
 		import markdown
 		self.content = markdown.markdown(self.content_markdown, ['extra','footnotes'])
 		super(StaticPage, self).save()
 
+	@models.permalink
+	def get_absolute_url(self):
+		return ('content.views.page_single',[str(self.slug)])
+
+	def view_on_site(self):
+		print self.get_absolute_url()
+		return "<a class='view-on-site-link' href='%s'>View on site</a>" % self.get_absolute_url()
+	view_on_site.short_description = 'Page link'
+	view_on_site.allow_tags = 'True'
+
 	class Meta:
 		verbose_name, verbose_name_plural = 'static page', 'static pages'
-		ordering = ('page_status','slug',)
+		ordering = ('status','slug',)
 
 	def __unicode__(self):
 		return "%s (%s)" % (self.title,self.slug,)
-
-		@models.permalink
-		def get_absolute_url(self):
-			return ('content.views.page',[str(self.url)])
 
 class EmailMessage(models.Model):
 	"""Emails from the contact form"""

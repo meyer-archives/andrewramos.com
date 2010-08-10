@@ -8,6 +8,8 @@ from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
 from django.utils.safestring import mark_safe
 
+__all__ = ['Article','CaseStudy','ShortPost','Quote','Image',]
+
 IMAGES_SIZES = (
 	('f',mark_safe('Full width (700&times;440px)')),
 	('p',mark_safe('Post width (480&times;440px)')),
@@ -29,7 +31,7 @@ class BlogPost(models.Model):
 	date_added = models.DateTimeField(auto_now_add=True, default=datetime.now)
 	date_modified = models.DateTimeField(auto_now=True, default=datetime.now)
 	date_published = models.DateTimeField(blank=False, default=datetime.now,verbose_name="Publish date",help_text='Dates set in the future will only be published at the date specified.')
-	post_status = models.CharField(default="d",max_length=1,choices=POST_STATUS)
+	status = models.CharField(default="d",max_length=1,choices=POST_STATUS)
 	tags = TagField()
 
 	def template_name(self):
@@ -60,6 +62,9 @@ class Image(models.Model):
 	class Meta:
 		verbose_name, verbose_name_plural = 'image', 'attached images'
 
+	def __unicode__(self):
+		return "Image %s" % self.pk
+			
 
 class Article(BlogPost):
 	"""Article"""
