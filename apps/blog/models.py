@@ -41,7 +41,7 @@ class BlogPost(models.Model):
 
 	def short_url(self):
 		current_site = Site.objects.get_current()
-		return '<input onmouseup="this.select()" value="http://%s%s">' % (current_site.domain, get_short_url_for_object(self))
+		return '<input onmouseup="this.select()" style="width:200px" value="http://%s%s">' % (current_site.domain, get_short_url_for_object(self))
 
 	short_url.short_description = 'Short URL'
 	short_url.allow_tags = 'True'

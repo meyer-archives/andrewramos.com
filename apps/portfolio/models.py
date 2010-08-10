@@ -5,12 +5,18 @@ from tagging.fields import TagField
 from easy_thumbnails.files import get_thumbnailer
 from django.conf import settings
 from django.contrib.contenttypes import generic
+from django.utils.safestring import mark_safe
 from django.contrib.contenttypes.models import ContentType
 from blog.models import CaseStudy
 
 PROJECT_STATUS = (
 	('p','published'),
 	('d','draft'),
+)
+
+IMAGES_SIZES = (
+	('f',mark_safe('Full width (700&times;440px)')),
+	('p',mark_safe('Post width (480&times;440px)')),
 )
 
 class Project(models.Model):
@@ -22,6 +28,8 @@ class Project(models.Model):
 	# tags = TagField()
 	category = generic.GenericRelation('Category')
 	pieces = generic.GenericRelation('PortfolioPiece')
+
+	image_width = models.CharField(blank=False, default='f', max_length=1, choices=IMAGES_SIZES,help_text='Select a size at which the portfolio pieces for this project should be displayed.')
 
 	case_study = models.ForeignKey(CaseStudy,blank=True,null=True)
 

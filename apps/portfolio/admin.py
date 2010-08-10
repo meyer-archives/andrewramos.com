@@ -20,6 +20,13 @@ class ProjectAdmin(admin.ModelAdmin):
 	prepopulated_fields = {"slug":("title",)}
 	list_display = ('title','client','status','view_on_site')
 	list_editable = ['status',]
+
+	fieldsets = (
+		(None, {
+			'fields': (('title', 'slug',), 'description', 'client', 'status', 'image_width', 'case_study',),
+		}),
+	)
+
 #	list_filter = ('date_modified','date_added',)
 	inlines = [PortfolioPieceInline]
 	save_on_top = True
