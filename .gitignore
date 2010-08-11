@@ -8,3 +8,4 @@ media/resized
 data.db
 logs/
 settings_local.py
+search_index

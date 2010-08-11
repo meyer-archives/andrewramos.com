@@ -335,7 +335,64 @@ body.draft-page{
 #about-content{
 	margin-top: 100px;
 	position: relative;
-	height: 460px;
+	padding-bottom: 50px;
+}
+
+#page-about #contact h3{
+	text-indent: -9999px;
+	background-image: url(images/contact-heading.png);
+	height: 64px;
+}
+
+#page-about #contact{
+	margin-top: 30px;
+}
+
+#page-about #contact ul{
+	height: 58px;
+	position: relative;
+/*	border-top: 1px solid #e1b197;*/
+	padding-top: 12px;
+}
+
+#page-about #contact ul li{
+	position: absolute;
+}
+
+#page-about #contact ul li.phone,
+#page-about #contact ul li a{
+	background: url(images/contact-links.png) no-repeat;
+	text-indent: -10000px;
+	overflow: hidden;
+	display: block;
+	height: 58px;
+}
+
+#page-about #contact ul li.email{
+	left: 0;
+	border-right: 1px solid #d1d1cf;
+	width: 181px;
+}
+
+#page-about #contact ul li.email a{
+	width: 161px;
+	background-position: 0 8px;
+}
+
+#page-about #contact ul li.phone{
+	width: 113px;
+	left: 199px;
+	background-position: -180px 8px;
+}
+
+#page-about #contact ul li.snail-mail{
+	border-left: 1px solid #d1d1cf;
+	right: 0;
+}
+
+#page-about #contact ul li.snail-mail a{
+	width: 149px;
+	background-position: right 8px;
 }
 
 #page-about #content h2{
@@ -346,12 +403,15 @@ body.draft-page{
 	text-indent: -10000px;
 	position: relative;
 	left: -1px;
+	margin-bottom: 40px;
 }
 
 #page-about #content .about-text{
 	width: 220px;
-	margin-top: 40px;
+
 	font-size: 14px;
+	float: left;
+	margin-bottom: 40px;
 }
 
 .short-post a.short-post-link{
@@ -448,13 +508,15 @@ div#footer a{
 	padding-right: 15px;
 }
 
+#page-about #content {
+	
+}
+
 #page-about #content .elsewhere{
 	width: 241px;
-	position: absolute;
-	top: 117px;
-	right: -6px;
 	padding-top: 179px;
 	background: url(images/andrew-pic.jpg) no-repeat;
+	margin-left: 248px;
 }
 
 #page-about #content .elsewhere h3{
@@ -473,6 +535,14 @@ div#footer a{
 	position: relative;
 	border: 1px solid #dbdbdb;
 	-webkit-border-radius: 4px;
+}
+
+div.draft-warning p a{
+	color: #4e2816;
+	-webkit-box-shadow: none;
+	border-bottom: none;
+	text-decoration: underline;
+	font-weight: bold;
 }
 
 #page-about #content .elsewhere ul li a{
@@ -918,6 +988,7 @@ screen and (orientation:portrait){
 
 #content .featured-image{
 	background: #f5f5f5;
+	-webkit-border-radius: 3px;
 }
 
 #content .featured-image div{
@@ -1345,3 +1416,17 @@ div.slideshow {
 
 /* @end */
 
+#featured-posts ul li.empty,
+#featured-content ul li.empty,
+ul.entry-list li.empty{
+	background: #faa67b;
+	line-height: 16px;
+	border-bottom: 1px solid #f59463;
+	border-top: 1px solid #f59463;
+	color: #000;
+	padding: 6px 10px;
+}
+
+ul.entry-list li.empty{
+	margin-top: 30px;
+}

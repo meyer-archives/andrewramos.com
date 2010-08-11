@@ -15,7 +15,7 @@
 	{% for post in featured_posts %}
 		<li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
 	{% empty %}
-		<li class="empty">No posts have been marked as featured.</li>
+		<li class="empty">No posts have been&nbsp;featured.</li>
 	{% endfor %}
 	</ul>
 	<a class="rss-link" href={% url rss-feed %}>RSS Feed</a>
@@ -31,6 +31,8 @@
 			style="background-image:url({{ MEDIA_URL }}{{ item_thumb }}); height:{{ item_thumb.height|add:'-2' }}px;"
 			{% if item.link %}>{{ item.link }}</a>{% else %}></span>{% endif %}
 		</li>
+	{% empty %}
+		<li class="first empty">No work in progress has been&nbsp;featured.</li>
 	{% endfor %}
 		</ul>
 	</div>

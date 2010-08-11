@@ -4,7 +4,7 @@ from haystack import site
 from blog.models import *
 
 
-class ArticleIndex(SearchIndex): # SearchIndex
+class ArticleIndex(RealTimeSearchIndex): # SearchIndex
 	text = CharField(document=True, use_template=True)
 	date_published = DateTimeField(model_attr='date_published')
 
@@ -12,7 +12,7 @@ class ArticleIndex(SearchIndex): # SearchIndex
 		"""Used when the entire index for model is updated."""
 		return Article.objects.filter(status='p',date_published__lte=datetime.datetime.now())
 
-class CaseStudyIndex(SearchIndex):
+class CaseStudyIndex(RealTimeSearchIndex):
 	text = CharField(document=True, use_template=True)
 	date_published = DateTimeField(model_attr='date_published')
 
@@ -20,7 +20,7 @@ class CaseStudyIndex(SearchIndex):
 		"""Used when the entire index for model is updated."""
 		return CaseStudy.objects.filter(status='p',date_published__lte=datetime.datetime.now())
 
-class ShortPostIndex(SearchIndex): # SearchIndex
+class ShortPostIndex(RealTimeSearchIndex): # SearchIndex
 	text = CharField(document=True, use_template=True)
 	date_published = DateTimeField(model_attr='date_published')
 
@@ -28,7 +28,7 @@ class ShortPostIndex(SearchIndex): # SearchIndex
 		"""Used when the entire index for model is updated."""
 		return ShortPost.objects.filter(status='p',date_published__lte=datetime.datetime.now())
 
-class QuoteIndex(SearchIndex): # SearchIndex
+class QuoteIndex(RealTimeSearchIndex): # SearchIndex
 	text = CharField(document=True, use_template=True)
 	date_published = DateTimeField(model_attr='date_published')
 
