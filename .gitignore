@@ -1,5 +1,6 @@
 *.pyc
 .svn
+.DS_Store
 migrations
 pip-log.txt
 media/uploads
