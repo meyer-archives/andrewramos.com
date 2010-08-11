@@ -1,6 +1,8 @@
-/* @override http://hotsauce.local:9007/style.css */
-
-/* @override http://hotsauce.local:9007/style.css */
+/* @override 
+	http://hotsauce.local:9007/style.css
+	http://hotsauce.local:9007/style.css
+	http://dev.andrewramos.com/media/style.css
+*/
 
 /* @group YUI Reset */
 
@@ -466,10 +468,11 @@ div#footer a{
 }
 
 #page-about #content .elsewhere ul{
-	width: 241px;
-	background: url(images/elsewhere-bkg.png) no-repeat 0 0;
-	height: 118px;
+	width: 239px;
+	height: 83px;
 	position: relative;
+	border: 1px solid #dbdbdb;
+	-webkit-border-radius: 4px;
 }
 
 #page-about #content .elsewhere ul li a{
@@ -482,12 +485,16 @@ div#footer a{
 
 #page-about #content .elsewhere ul li{
 	position: absolute;
-	left: 4px;
-	top: 4px;
+	left: 3px;
+	top: 3px;
+}
+
+#page-about #content .elsewhere ul li.flickr{
+	display: none;
 }
 
 #page-about #content .elsewhere ul li.twitter{
-	top: 40px;
+	top: 3px;
 }
 
 #page-about #content .elsewhere ul li.twitter a{
@@ -495,7 +502,7 @@ div#footer a{
 }
 
 #page-about #content .elsewhere ul li.dribbble{
-	top: 76px;
+	top: 41px;
 }
 
 #page-about #content .elsewhere ul li.dribbble a{
