@@ -6,3 +6,4 @@ media/uploads
 media/resized
 data.db
 logs/
+settings_local.py
