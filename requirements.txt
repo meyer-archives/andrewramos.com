@@ -9,7 +9,6 @@ Whoosh>=1.0.0b2
 django-extensions>=0.5
 django-haystack>=1.0.1-final
 django-pagination>=1.0.7
-django-shorturls>=1.0.1
 django-tagging>=0.3.1
 docutils>=0.7
 easy-thumbnails>=1.0-alpha-8
