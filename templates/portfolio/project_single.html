@@ -1,17 +1,28 @@
 {% load thumbnail typogrify %}
+
+
 <div class="portfolio-item">
-	<ul class="slideshow">
-	{% for piece in project.pieces.all %}
-		<li><div class="portfolio-image" style="background-image:url({% thumbnail piece.image 700x370 crop %})"></div></li>
-	{% endfor %}
-	</ul>
+
+	<div class="slideshow">
+		<ul class="slides {% if project.image_width == 'p' %}post-width{% else %}full-width{% endif %}">
+{% if project.image_width == 'p' %}
+{% for piece in project.pieces.all %}
+			<li><div style="background-image:url({% thumbnail piece.image 480x440 upscale crop %})"></div></li>
+{% endfor %}
+{% else %}
+{% for piece in project.pieces.all %}
+			<li><div style="background-image:url({% thumbnail piece.image 700x440 upscale crop %})"></div></li>
+{% endfor %}
+{% endif %}
+		</ul>
+	</div>
+
 	<div class="portfolio-info">
 		<h2>{{ project.title|typogrify }}</h2>
-{% if project.description %}
-		<p>{{ project.description|typogrify }}</p>
-{% endif %}
+		<p>{% if project.description %}<span>{{ project.description|typogrify }}</span>{% endif %}{% if project.case_study %}{% if project.description %}&nbsp;&middot;&nbsp;{% endif %}<a href="{{ project.case_study.get_absolute_url }}">View the case&nbsp;study</a>{% endif %}</p>
 	</div>
 	{% if request.user.is_authenticated %}
 	<p class="edit-link"><a class="post-edit-link" href="{% url admin:portfolio_project_change project.id %}">Edit</a></p>
 	{% endif %}
+
 </div>

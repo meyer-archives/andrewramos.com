@@ -409,6 +409,7 @@ a.post-edit-link{
 	margin-bottom: 10px;
 	bottom: 18px;
 	-webkit-transition: all 200ms linear;
+	position: absolute;
 }
 
 .project-single a.post-edit-link{
@@ -841,13 +842,22 @@ ul.post-list li{
 
 #content .featured-image{
 	margin-bottom: 20px;
-	overflow: hidden;
 }
 
-#content .featured-image,
-#content .featured-image div{
-	height: 440px;
-	width: 700px;
+div.slideshow ul{
+	position: relative;
+}
+
+div.slideshow ul,
+div.slideshow ul li{
+	-webkit-transition: width 200ms ease-in-out,
+	height 200ms ease-in-out;
+	-moz-transition: width 200ms ease-in-out,
+	height 200ms ease-in-out;
+}
+
+.slideshow ul li div{
+	border: 1px solid rgba(0,0,0,0.05);
 	-webkit-border-radius: 3px;
 	-webkit-transition: all 200ms ease-in-out;
 	-webkit-background-size: 700px 440px;
@@ -855,19 +865,11 @@ ul.post-list li{
 	-moz-transition: all 200ms ease-in-out;
 	-moz-background-size: 700px 440px;
 	background-position: -1px -1px;
-}
-
-#content .featured-image div{
-	border: 1px solid rgba(0,0,0,0.05);
 	height: 438px;
 	width: 698px;
 }
 
-#content .featured-image.post-width{
-	width: 480px;
-}
-
-#content .featured-image.post-width div{
+.slideshow ul.post-width li div{
 	width: 478px;
 	-webkit-background-size: 480px 440px;
 	-moz-background-size: 480px 440px;
@@ -892,12 +894,16 @@ ul.entry-list li.entry a.permalink{
 
 @media screen and (max-width:960px),
 screen and (orientation:portrait){
-	#content .featured-image.full-width,
-	#content .featured-image.full-width div{
+	.slideshow ul.full-width,
+	.slideshow ul.full-width li{
 		height: 300px;
 		width: 480px;
 	}
-	#content .featured-image.full-width div{
+	.slideshow ul.full-width li div{
+		height: 298px;
+		width: 478px;
+	}
+	.slideshow ul.full-width li div{
 		-webkit-background-size: 480px 300px;
 		-moz-background-size: 480px 300px;
 	}
@@ -916,13 +922,13 @@ screen and (orientation:portrait){
 
 /* @group Blog */
 
-#blog-menu{
+#header-menu{
 	height: 60px;
 	position: relative;
 }
 
-#blog-menu a.archives-link,
-#blog-menu a.rss-link{
+#header-menu a.archives-link,
+#header-menu a.rss-link{
 	display: block;
 	text-indent: -1000px;
 	overflow: hidden;
@@ -934,21 +940,21 @@ screen and (orientation:portrait){
 	left: 0;
 }
 
-#blog-menu a.archives-link:hover{
+#header-menu a.archives-link:hover{
 	background-position: 0 -30px;
 }
 
-#blog-menu a.rss-link{
+#header-menu a.rss-link{
 	background-position: -76px 0;
 	width: 27px;
 	left: 87px;
 }
 
-#blog-menu a.rss-link:hover{
+#header-menu a.rss-link:hover{
 	background-position: -76px -30px;
 }
 
-#blog-menu form#search-form{
+#header-menu form#search-form{
 	overflow: hidden;
 	position: absolute;
 	left: 123px;
@@ -1185,6 +1191,7 @@ body#front-page #content{
 	text-indent: -1000px;
 	-webkit-background-clip: border-box;
 	-webkit-transition: border-color 150ms linear;
+	-webkit-border-radius: 3px;
 	background: #FAFAFA no-repeat -1px -1px;
 }
 
@@ -1218,10 +1225,17 @@ body#front-page #content{
 
 /* @group Portfolio */
 
-div.portfolio-item ul{
+ul.slideshow{
 	height: 370px;
 	overflow: hidden;
+	position: ;
 	width: 700px;
+}
+
+ul.slideshow li{
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .project-single {
@@ -1229,12 +1243,27 @@ div.portfolio-item ul{
 	margin-left: -50px;
 	background: url(images/page-corner.png) no-repeat 0 0;
 	padding-top: 45px;
-	padding-bottom: 30px;
+	padding-bottom: 80px;
+	float: left;
+	position: relative;
 }
 
-div.portfolio-item ul li{
-	height: 370px;
-	position: relative;
+div.slideshow ul,
+div.slideshow ul li{
+	width: 700px;
+	height: 440px;
+	overflow: hidden;
+}
+
+div.slideshow ul li{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+div.slideshow ul.post-width,
+div.slideshow ul.post-width li{
+	width: 480px;
 }
 
 div.portfolio-item h2{
@@ -1245,34 +1274,66 @@ div.portfolio-item h2{
 	text-transform: uppercase;
 }
 
-div.portfolio-item{
-	position: relative;
-}
-
 div.portfolio-info p{
 	float: left;
 	color: #a8a6a3;
 	font-size: 12px;
-	background: url(images/portfolio-title-separator.png) no-repeat left center;
+}
+
+div.portfolio-info p span{
 	padding-left: 18px;
 	margin-left: 6px;
+	background: url(images/portfolio-title-separator.png) no-repeat left center;
+	display: block;
+	height: 24px;
+	line-height: 24px;
 }
 
 div.portfolio-info{
-	height: 40px;
+	height: 24px;
 	overflow: hidden;
-	line-height: 40px;
-	left: 5px;
+	line-height: 24px;
+	left: 56px;
+	bottom: 50px;
+	position: absolute;
 }
 
-div.portfolio-image{
-	width: 698px;
-	height: 368px;
-	background-repeat: no-repeat;
-	background-color: #FAFAFA;
-	-webkit-border-radius: 3px;
-	background-position: -1px -1px;
-	border: 1px solid rgba(0,0,0,0.05);
+div.slideshow-links{
+	overflow: hidden;
+	position: absolute;
+	z-index: 10000;
+	right: 0;
+	padding-right: 10px;
+	padding-left: 20px;
+	height: 19px;
+	background: url(images/20px-gradient.png) repeat-y 0 0;
+	bottom: -27px;
+}
+
+div.slideshow-links a{
+	width: 19px;
+	height: 19px;
+	display: inline-block;
+	overflow: hidden;
+	text-indent: -1000px;
+	background: #FFF url(images/slideshow-nav.png) no-repeat 5px 4px;
+}
+
+div.slideshow-links a:hover{
+	background-position: 5px -16px;
+}
+
+div.slideshow-links a.current{
+	background-position: -15px 4px;
+}
+
+div.slideshow-links a.current:hover{
+	background-position: -15px -16px;
+}
+
+div.slideshow {
+	float: left;
+	position: relative;
 }
 
 /* @end */

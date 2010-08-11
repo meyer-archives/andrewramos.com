@@ -13,17 +13,19 @@
 {% endif %}
 
 {% if entry.images.all %}
-<div class="featured-image{% if entry.image_width == 'p' %} post-width{% else %} full-width{% endif %}">
+
+<div class="slideshow featured-image">
+	<ul class="slides {% if entry.image_width == 'p' %}post-width{% else %}full-width{% endif %}">
 {% if entry.image_width == 'p' %}
-{% for img_object in entry.images.all %}
-	<div style="background-image:url({% thumbnail img_object.image 480x440 upscale crop %})"></div>
+{% for item in entry.images.all %}
+		<li><div style="background-image:url({% thumbnail item.image 480x440 upscale crop %})"></div></li>
 {% endfor %}
 {% else %}
-{% for img_object in entry.images.all %}
-	<div style="background-image:url({% thumbnail img_object.image 700x440 upscale crop %})"></div>
+{% for item in entry.images.all %}
+		<li><div style="background-image:url({% thumbnail item.image 700x440 upscale crop %})"></div></li>
 {% endfor %}
 {% endif %}
-
+	</ul>
 </div>
 
 {% endif %}
