@@ -16,9 +16,9 @@ MANAGERS = ADMINS
 DATABASES = {
 	'default': {
 		'ENGINE':	'django.db.backends.postgresql_psycopg2',
-		'NAME':		'andrewramos',
-		'USER':		'webdev',
-		'PASSWORD':	'password',
+		'NAME':		'ramos_db',
+		'USER':		'ramos_pg',
+		'PASSWORD':	'[REDACTED]',
 		'HOST':		'localhost',
 		'PORT':		'5432',
 	}
@@ -91,7 +91,6 @@ INSTALLED_APPS = (
 	'south',
 	'easy_thumbnails',
 	'tagging',
-	'django_wysiwyg',
 	'shorturls',
 	'typogrify',
 	'django_extensions',
