@@ -33,9 +33,10 @@ body,html,#container{
 	margin-top: 0;
 }
 
-body.iphone,body.iphone#container{
+body.iphone,body.iphone #container{
 	height: auto;
 	overflow: visible;
+	min-height: 100%;
 }
 
 @font-face {
@@ -185,6 +186,7 @@ p#copyright-notice{
 
 body.iphone #wrapper{
 	overflow: hidden;
+	min-height: 100%;
 	height: auto;
 }
 
@@ -334,6 +336,10 @@ body.draft-page{
 	position: relative;
 	left: 0%;
 	width: 480px;
+	min-height: 100%;
+}
+
+body.iphone #content{
 	min-height: 100%;
 }
 
