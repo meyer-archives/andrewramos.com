@@ -497,6 +497,8 @@ div#footer {
 	line-height: 16px;
 	position: relative;
 	margin-top: 50px;
+	float: left;
+	width: 480px;
 }
 
 div#footer a{
@@ -1423,8 +1425,7 @@ div.slideshow {
 /* @end */
 
 #featured-posts ul li.empty,
-#featured-content ul li.empty,
-ul.entry-list li.empty{
+#featured-content ul li.empty{
 	background: #faa67b;
 	line-height: 16px;
 	border-bottom: 1px solid #f59463;
