@@ -29,12 +29,15 @@
 </div>
 
 {% endif %}
+{% if entry.display_title %}
 	<div class="entry-header">
 		<h2{% if entry.subtitle %} class="with-subtitle"{% endif %}>{{ entry.title|typogrify }}</h2>
 {% if entry.subtitle %}
 		<h3>{{ entry.subtitle|typogrify }}</h3>
 {% endif %}
 	</div>
+{% endif %}
+
 	<div class="entry-body">
 		{{ entry.content|typogrify }}
 		{% tags_for_object entry as tags %}

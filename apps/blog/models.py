@@ -27,7 +27,7 @@ class BlogPost(models.Model):
 
 	title = models.CharField(blank=False, max_length=150)
 	slug = models.SlugField(unique=True)
-	content_markdown = models.TextField(blank=False,help_text='Text is formatted using Markdown.',verbose_name='content')
+	content_markdown = models.TextField(blank=True,help_text='Text is formatted using Markdown.',verbose_name='content')
 	content = models.TextField(blank=True, null=True)
 	is_featured = models.BooleanField(default=False,verbose_name="featured post")
 	date_added = models.DateTimeField(auto_now_add=True, default=datetime.now)
@@ -73,7 +73,6 @@ class Image(models.Model):
 
 	def __unicode__(self):
 		return "Image %s" % self.pk
-			
 
 class Article(BlogPost):
 	"""Article"""
