@@ -36,9 +36,9 @@ FIXTURE_DIRS = (
 	os.path.join(PROJECT_ROOT, "fixtures"),
 )
 
-MEDIA_URL = '/media/'
+MEDIA_URL = 'http://andrewramos.com/media/'
 
-ADMIN_MEDIA_PREFIX = '/media/admin/'
+ADMIN_MEDIA_PREFIX = 'http://andrewramos.com/media/admin/'
 
 SECRET_KEY = '[REDACTED]'
 
