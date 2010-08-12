@@ -605,6 +605,7 @@ div.draft-warning p a{
 	padding: 46px 0 35px 50px;
 	color: #52514a;
 	position: relative;
+	float: left;
 }
 
 #content div.entry.short-post{
