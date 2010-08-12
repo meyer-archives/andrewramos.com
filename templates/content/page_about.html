@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load typogrify %}
 {% block bodyid %}page-about{% endblock %}
-{% block page_title %} &rsaquo; {{ page.title|typogrify }}{% endblock %}
+{% block page_title %} &rsaquo; {{ page.title|smartypants }}{% endblock %}
 {% block bodyclass %}{% if page.status == 'd' %}draft-page{% endif %}{% endblock %}
 {% block content %}
 

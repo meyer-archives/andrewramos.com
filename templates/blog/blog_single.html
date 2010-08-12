@@ -2,7 +2,7 @@
 
 {% load typogrify %}
 
-{% block page_title %}{{ block.super }} &rsaquo; {{ entry.title|typogrify }}{% endblock %}
+{% block page_title %} &rsaquo; {{ entry.title|smartypants }}{% endblock %}
 
 {% block bodyclass %}{% if entry.status == 'd' %}draft-page{% endif %}{% endblock %}
 

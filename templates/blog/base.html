@@ -6,7 +6,7 @@
 
 <div id="header-menu">
 	<a class="archives-link" href="{% url blog-archives %}">Archives</a>
-	<a class="rss-link" href="{% url rss-feed %}">RSS Feed</a>
+	<a class="rss-link" href="http://feeds.feedburner.com/andrewramos">RSS Feed</a>
 	<form id="search-form" action="/search/" method="get" accept-charset="utf-8">
 		<div id="search-input"><input type="text" name="q" placeholder="Search" autocapitalize="off" autocorrect="off" {% if request.GET.q %} value="{{ request.GET.q }}"{% endif %}></div>
 	</form>

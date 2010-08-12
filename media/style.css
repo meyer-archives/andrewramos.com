@@ -482,6 +482,7 @@ a.post-edit-link{
 
 .project-single a.post-edit-link{
 	margin: 0;
+	left: 50px;
 }
 
 a.post-edit-link:hover{
@@ -613,11 +614,10 @@ div.draft-warning p a{
 #content div.entry{
 	color: #52514a;
 	position: relative;
-	padding-top: 46px;
-	padding-bottom: 35px;
-	padding-right: 0;
-	width: 700px;
+	width: 730px;
 	overflow: hidden;
+	padding: 46px 0 35px 50px;
+	margin-left: -50px;
 }
 
 div.entry-header,
@@ -961,7 +961,6 @@ div.slideshow ul li{
 	-moz-border-radius: 3px;
 	-moz-transition: all 200ms ease-in-out;
 	-moz-background-size: 700px 440px;
-	background-position: -1px -1px;
 	height: 440px;
 	width: 700px;
 }
@@ -970,6 +969,18 @@ div.slideshow ul li{
 	width: 480px;
 	-webkit-background-size: 480px 440px;
 	-moz-background-size: 480px 440px;
+}
+
+.portfolio-item .slideshow ul li div{
+	background-position: -1px -1px;
+	border: 1px solid rgba(0,0,0,.05);
+	width: 698px;
+	height: 438px;
+}
+
+.portfolio-item .slideshow ul li.post-width div{
+	width: 478px;
+	height: 438px;
 }
 
 ul.entry-list li.entry {
@@ -981,6 +992,7 @@ ul.entry-list li.entry {
 	padding-left: 50px;
 	margin-left: -50px;
 	overflow: hidden;
+	padding-right: 50px;
 }
 
 ul.entry-list li.entry a.permalink{
@@ -996,6 +1008,12 @@ ul.entry-list li.entry a.permalink{
 	z-index: 10000;
 }
 
+.slideshow ul,
+.slideshow ul li,
+.slideshow ul li div{
+	-webkit-border-radius: 3px;
+}
+
 @media screen and (max-width:960px),
 screen and (orientation:portrait){
 	.slideshow ul.full-width,
@@ -1007,6 +1025,10 @@ screen and (orientation:portrait){
 	.slideshow ul.full-width li div{
 		-webkit-background-size: 480px 300px;
 		-moz-background-size: 480px 300px;
+	}
+	.portfolio-item .slideshow ul.full-width li div{
+		height: 298px;
+		width: 478px;
 	}
 }
 
@@ -1205,7 +1227,7 @@ form#search-form input::-webkit-input-placeholder {
 }
 
 body#front-page #content{
-	background: url(images/page-corner.png) no-repeat 0 55px;
+	background: url(images/page-corner.png) no-repeat 0 60px;
 }
 
 #featured-posts{
@@ -1431,6 +1453,35 @@ div.slideshow-links a.current:hover{
 div.slideshow {
 	float: left;
 	position: relative;
+}
+
+div.slideshow .prev-slide,
+div.slideshow .next-slide{
+	position: absolute;
+	top: 0;
+	z-index: 1000;
+	width: 50%;
+	height: 100%;
+	text-indent: -10000px;
+	overflow: hidden;
+}
+
+div.slideshow .prev-slide{
+	left: -23px;
+	padding-left: 23px;
+}
+
+div.slideshow .next-slide{
+	right: -23px;
+	padding-right: 23px;
+}
+
+div.slideshow:hover .prev-slide{
+	background: url(images/prev.png) no-repeat left center;
+}
+
+div.slideshow:hover .next-slide{
+	background: url(images/next.png) no-repeat right center;
 }
 
 /* @end */

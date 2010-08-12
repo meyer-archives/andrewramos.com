@@ -3,6 +3,7 @@ from blog.models import *
 from itertools import chain
 from django.utils.feedgenerator import Atom1Feed
 import datetime
+import smartypants
 
 class LatestEntriesFeed(Feed):
 	domain = 'andrewramos.com'
@@ -25,30 +26,30 @@ class LatestEntriesFeed(Feed):
 		quotes = Quote.objects.all().order_by("-date_published")
 
 		results = chain(
-			articles[:5],
-			case_studies[:5],
-			short_posts[:5],
-			quotes[:5],
+			articles,
+			case_studies,
+			short_posts,
+			quotes,
 		)
 
 		return sorted(results, key=lambda x: x.date_published, reverse=True)
 
 	def item_title(self, item):
-		return "%s%s: %s" % (item._meta.verbose_name[0].upper(), item._meta.verbose_name[1:], item.title)
+		return "%s%s: %s" % (item._meta.verbose_name[0].upper(), item._meta.verbose_name[1:], smartypants.smartyPants(item.title))
 
 	def item_description(self, item):
 		if item._meta.verbose_name == "article":
-			return item.content
+			return smartypants.smartyPants(item.content)
 		elif item._meta.verbose_name == "short post":
 			if item.link:
-				return "%s: <a href='%s'>%s</a>" % (item.content,item.link,item.link,)
+				return "%s <a href='%s'>%s</a>" % (smartypants.smartyPants(item.content),item.link,item.link,)
 			else:
 				return item.content
 		elif item._meta.verbose_name == "quote":
 			if item.author:
-				return "&ldquo;%s&rdquo; &mdash; %s" % (item.content,item.author)
+				return "%s <p>&mdash; %s</p>" % (smartypants.smartyPants(item.content),item.author)
 			else:
-				return "&ldquo;%s&rdquo;" % item.content
+				return "%s" % item.content
 		elif item._meta.verbose_name == "case study":
 			return item.content
 		else:

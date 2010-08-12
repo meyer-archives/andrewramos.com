@@ -9,7 +9,7 @@
 	<meta charset="utf-8">
 	<title>Andrew Ramos{% block page_title %}{% endblock %}</title>
 	<link rel="stylesheet" href="{{ MEDIA_URL }}style.css" media="screen">
-	<link rel="alternate" type="application/rss+xml" title="AndrewRamos.com RSS" href="{{ SITE_URL }}blog/feed/">
+	<link rel="alternate" type="application/rss+xml" title="AndrewRamos.com RSS" href="http://feeds.feedburner.com/andrewramos">
 	<!-- iPhone/iPad -->
 	<meta name="format-detection" content="telephone=no">
 	<meta name = "viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -17,19 +17,30 @@
 	<script src="http://www.google.com/jsapi"></script>
 	<script>google.load("jquery","1");</script>
 
-	{% if request.ipad %}
-		<script src="{{ MEDIA_URL }}touchscroll.min.js"></script>
-		<script>
-		$(document).ready(function() {
-			var scroller = new TouchScroll(document.querySelector("#wrapper"), {elastic:true});
-		});
-		</script>
-	{% endif %}
+{% if request.ipad %}
+	<script src="{{ MEDIA_URL }}touchscroll.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		var scroller = new TouchScroll(document.querySelector("#wrapper"), {elastic:true});
+	});
+	</script>
+{% endif %}
 
 	{% block head %}
 	{% endblock %}
 
 	<script src="{{ MEDIA_URL }}site.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-17943844-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 </head>
 <body class="{% if request.ipad %}ipad{% endif %} {% block bodyclass %}{% endblock %}" id="{% block bodyid %}page-generic{% endblock %}">
 
