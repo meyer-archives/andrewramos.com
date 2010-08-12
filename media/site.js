@@ -9,7 +9,7 @@ $.fn.extend({
 				var $slides = $g.addClass("slideshow-active").find("ul>li").hide();
 				var $clickers = $("<div class='slideshow-links'></div>");
 				var currentSlide;
-				var animating;
+				var animating = false;
 				var currentClicker;
 
 				var $next = $("<a href='#' class='next-slide'>Next slide</a>").click(function(){
@@ -28,6 +28,7 @@ $.fn.extend({
 					var $clicker = $("<a href='#slide-"+(i+1)+"'>Show slide "+(i+1)+"</a>").click(function(){
 						if( animating || currentSlide == $slide.index() )
 							return false;
+						animating = true;
 						currentClicker = $clicker;
 						if( $clicker.next().length ){
 							$next.show();
