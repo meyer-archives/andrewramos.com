@@ -366,8 +366,6 @@ ul.entry-list {
 
 #page-about #contact ul li.phone,
 #page-about #contact ul li a{
-	background: url(images/contact-links.png) no-repeat;
-	text-indent: -10000px;
 	overflow: hidden;
 	display: block;
 	height: 58px;
@@ -380,23 +378,58 @@ ul.entry-list {
 }
 
 #page-about #contact ul li.email a{
-	width: 161px;
-	background-position: 0 8px;
+	margin-bottom: 0;
+	margin-right: 20px;
+}
+
+#page-about #contact ul li a,
+#page-about #contact ul li span{
+	color: #7e7d78;
+	white-space: nowrap;
+	text-decoration: none;
+}
+
+#page-about #contact ul li span{
+	display: block;
+	-webkit-transition: color 160ms linear;
+}
+
+#page-about #contact ul li span.title{
+	text-transform: uppercase;
+	font-size: 10px;
+	letter-spacing: 1px;
+	line-height: 18px;
+}
+
+#page-about #contact ul li span.content{
+	line-height: 14px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #d66b48;
+}
+
+#page-about #contact ul li a:hover span.title{
+	color: #585754;
+}
+
+#page-about #contact ul li a:hover span.content{
+	color: #a85136;
 }
 
 #page-about #contact ul li.phone{
 	width: 113px;
-	left: 199px;
+	left: 205px;
 	background-position: -180px 8px;
 }
 
 #page-about #contact ul li.snail-mail{
 	border-left: 1px solid #d1d1cf;
 	right: 0;
+	width: 149px;
 }
 
 #page-about #contact ul li.snail-mail a{
-	width: 149px;
+	margin-left: 22px;
 	background-position: right 8px;
 }
 
@@ -449,7 +482,7 @@ div.entry li a{
 
 p a:hover,
 div.entry li a:hover{
-	color: #446f7a;
+	color: #345760;
 	border-bottom-color: #a8bec8;
 }
 
@@ -547,6 +580,7 @@ div#footer a{
 	height: 83px;
 	position: relative;
 	border: 1px solid #dbdbdb;
+	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 }
 
@@ -803,10 +837,6 @@ ul.result-list li.excerpt a span{
 	-webkit-transition: color 150ms linear;
 }
 
-ul.result-list li.excerpt a:hover span.content{
-	color: #cecdca;
-}
-
 ul.result-list li.excerpt span.fade{
 	display: block;
 	position: absolute;
@@ -858,7 +888,7 @@ ul.result-list li.excerpt.odd a span.title{
 }
 
 ul.result-list li.excerpt a:hover span.title{
-	color: #99d6eb;
+	color: #537683;
 	border-bottom: 1px solid #e1eff3;
 }
 
@@ -1012,6 +1042,7 @@ ul.entry-list li.entry a.permalink{
 .slideshow ul,
 .slideshow ul li,
 .slideshow ul li div{
+	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 }
 
@@ -1105,6 +1136,7 @@ form#search-form #search-input input{
 	padding-left: 28px;
 	padding-right: 20px;
 	width: 300px;
+	-moz-border-radius: 3px;
 	-webkit-border-radius: 13px;
 	-webkit-background-clip: padding-box;
 	font-size: 13px;

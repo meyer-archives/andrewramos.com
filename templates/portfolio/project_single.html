@@ -4,14 +4,19 @@
 
 	<div class="slideshow">
 		<ul class="slides {% if project.image_width == 'p' %}post-width{% else %}full-width{% endif %}">
+
 {% if project.image_width == 'p' %}
-{% for piece in project.pieces.all %}
-			<li><div style="background-image:url({% thumbnail piece.image 480x440 upscale crop %})"></div></li>
+{% with project.pieces.all|dictsort:"order" as pieces %}
+{% for piece in pieces %}
+		<li>{{ piece.order }}<div style="background-image:url({% thumbnail piece.image 480x440 upscale crop %})"></div></li>
 {% endfor %}
+{% endwith %}
 {% else %}
-{% for piece in project.pieces.all %}
-			<li><div style="background-image:url({% thumbnail piece.image 700x440 upscale crop %})"></div></li>
+{% with project.pieces.all|dictsort:"order" as pieces %}
+{% for piece in pieces %}
+		<li><div style="background-image:url({% thumbnail piece.image 700x440 upscale crop %})"></div></li>
 {% endfor %}
+{% endwith %}
 {% endif %}
 		</ul>
 	</div>
