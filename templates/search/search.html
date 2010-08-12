@@ -8,14 +8,14 @@
 <form method="get" action="/search/">
 
 {% if query %}
-<ul class="entries-list search">
+<ul class="result-list search">
 
 <li class="month-list">
 	<h2>Search Results for &ldquo;{{ request.GET.q }}&rdquo;</h2>
-	<ul class="entry-list">
+	<ul class="excerpt-list">
 
 {% for result in page.object_list %}
-		<li class="entry {% if forloop.counter|divisibleby:2 %}even{% else %}odd{% endif %}">
+		<li class="excerpt {% if forloop.counter|divisibleby:2 %}even{% else %}odd{% endif %}">
 			<a href="{{ result.object.get_absolute_url }}">
 				<span class="title">{{ result.object.title|typogrify }}</span>
 				<span class="content">{{ result.object.content|striptags|truncatewords:30 }}</span>

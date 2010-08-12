@@ -20,9 +20,10 @@
 	<h2>{{ entry.title }}.</h2>
 {% endif %}
 {% endwith %}
+<div class="entry-body">
 	<p>{{ entry.content|typogrify }}</p>
 	{% if entry.link %}<a class="short-post-link" href="{{ entry.link }}">{{ entry.link }}</a>{% endif %}
-
+</div>
 	{% tags_for_object entry as tags %}
 	{% if tags %}
 	<p class="tag-list">{% for tag in tags %}{% if not forloop.first %}, {% endif %}<a href="/blog/tags/{{tag.name|slugify}}/">#{{ tag.name|camelcase }}</a>{% endfor %}</p>
