@@ -456,6 +456,7 @@ div.entry li a:hover{
 div.entry a.post-edit-link{
 	position: absolute;
 	margin: 0;
+	left: 50px;
 }
 
 a.post-edit-link{
@@ -1004,7 +1005,7 @@ ul.entry-list li.entry a.permalink{
 	text-indent: -1000px;
 	overflow: hidden;
 	top: 58px;
-	left: 0;
+	left: 10px;
 	z-index: 10000;
 }
 
@@ -1219,7 +1220,7 @@ form#search-form input::-webkit-input-placeholder {
 /* @group Front Page */
 
 #featured-image{
-	background: url(images/headers/pencil-paper-coffee.png) no-repeat 0 0;
+	background: url(images/headers/lots-of-coffee.png) no-repeat 0 0;
 	height: 380px;
 	width: 480px;
 	text-indent: -10000px;

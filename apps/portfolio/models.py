@@ -69,6 +69,7 @@ class Category(models.Model):
 
 class PortfolioPiece(models.Model):
 	image = models.ImageField(upload_to="uploads/portfolio")
+	order = models.IntegerField(blank=True, null=True,default=1)
 
 	content_type = models.ForeignKey(ContentType)
 	object_id = models.PositiveIntegerField()
