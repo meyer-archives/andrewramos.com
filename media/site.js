@@ -49,10 +49,8 @@ $.fn.extend({
 					}).appendTo($clickers);
 				});
 
-				if( $slides.length > 1 ){
-					console.log($slides.length+" slides in total.");
+				if( $slides.length > 1 )
 					$g.append($clickers).append($next).append($prev);
-				}
 				$clickers.find("a:first").click();
 
 				return this;

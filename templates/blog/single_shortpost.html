@@ -6,21 +6,20 @@
 	</div>
 {% endif %}
 
-{% with entry.title|slice:"-1:" as punctuation %}
-
 <div class="entry short-post">
 
 	{% if request.user.is_authenticated %}
 	<a class="post-edit-link" href="{% url admin:blog_shortpost_change entry.id %}">Edit</a>
 	{% endif %}
 
-{% if punctuation == "!" or punctuation == "?" %}
-	<h2>{{ entry.title }}</h2>
-{% else %}
-	<h2>{{ entry.title }}.</h2>
-{% endif %}
-{% endwith %}
 <div class="entry-body">
+	{% with entry.title|slice:"-1:" as punctuation %}
+	{% if punctuation == "!" or punctuation == "?" %}
+		<h2>{{ entry.title }}</h2>
+	{% else %}
+		<h2>{{ entry.title }}.</h2>
+	{% endif %}
+	{% endwith %}
 	<p>{{ entry.content|typogrify }}</p>
 	{% if entry.link %}<a class="short-post-link" href="{{ entry.link }}">{{ entry.link }}</a>{% endif %}
 </div>
