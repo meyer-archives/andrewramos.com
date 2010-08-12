@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load shorturl thumbnail typogrify %}
+{% block page_title %}{{ block.super }} &rsaquo; {{ project.title|typogrify }}{% endblock %}
 {% block content %}
 {% if project.status == 'd' %}
 	<div class="draft-warning">

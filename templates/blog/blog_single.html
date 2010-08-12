@@ -1,5 +1,7 @@
 {% extends "blog/base.html" %}
 
+{% block page_title %}{{ block.super }} &rsaquo; {{ entry.title|typogrify }}{% endblock %}
+
 {% block bodyclass %}{% if entry.status == 'd' %}draft-page{% endif %}{% endblock %}
 
 {% block blog_content %}
