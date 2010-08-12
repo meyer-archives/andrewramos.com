@@ -33,6 +33,11 @@ body,html,#container{
 	margin-top: 0;
 }
 
+body.iphone,body.iphone#container{
+	height: auto;
+	overflow: visible;
+}
+
 @font-face {
 	font-family: 'ar-heading';
 	src: url('trade-gothic/font.eot');
@@ -51,6 +56,10 @@ body,html,#container{
 }
 
 /* @group Webkit Scrollbar Magic */
+
+body.ipad #wrapper::-webkit-scrollbar{
+	display: none;
+}
 
 #wrapper::-webkit-scrollbar {
     width: 20px;
@@ -172,6 +181,11 @@ p#copyright-notice{
 	padding-left: 56px;
 	overflow-y: scroll;
 	overflow-x: hidden;
+}
+
+body.iphone #wrapper{
+	overflow: hidden;
+	height: auto;
 }
 
 body.ipad #wrapper::-webkit-scrollbar{
