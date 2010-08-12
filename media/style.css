@@ -608,6 +608,11 @@ div.draft-warning p a{
 	float: left;
 }
 
+div.entry-header,
+div.entry-body {
+	width: 480px;
+}
+
 #content div.entry.short-post{
 	padding-top: 57px;
 	padding-bottom: 60px;
