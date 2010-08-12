@@ -8,7 +8,7 @@
 {% if project.image_width == 'p' %}
 {% with project.pieces.all|dictsort:"order" as pieces %}
 {% for piece in pieces %}
-		<li>{{ piece.order }}<div style="background-image:url({% thumbnail piece.image 480x440 upscale crop %})"></div></li>
+		<li><div style="background-image:url({% thumbnail piece.image 480x440 upscale crop %})"></div></li>
 {% endfor %}
 {% endwith %}
 {% else %}
