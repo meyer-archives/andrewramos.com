@@ -5,7 +5,6 @@ from django.conf import settings
 
 class AdminImageFieldWithThumbWidget(AdminFileWidget): 
 	def render(self, name, value, attrs=None):
-		print "%s || %s" % (name,value,)
 		thumb_html = '' 
 		if value:
 			thumbnail_options = dict(size=(100,100), crop=False)
