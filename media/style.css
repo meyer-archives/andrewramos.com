@@ -1,7 +1,7 @@
 /* @override 
 	http://hotsauce.local:9007/style.css
 	http://hotsauce.local:9007/style.css
-	http://dev.andrewramos.com/media/style.css
+	http://andrewramos.com/media/style.css
 */
 
 /* @group YUI Reset */
@@ -328,7 +328,6 @@ body.draft-page{
 	left: 0;
 	margin-left: -50px;
 	padding-left: 50px;
-	-webkit-transition: left 200ms ease-in-out;
 }
 
 #content-inner{
@@ -341,6 +340,7 @@ body.draft-page{
 
 body.iphone #content{
 	min-height: 100%;
+	height: auto;
 }
 
 #content.show-contact-form{

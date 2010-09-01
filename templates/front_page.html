@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load thumbnail %}
+{% load thumbnail typogrify %}
 {% block bodyid %}front-page{% endblock %}
 {% block content %}
 
@@ -13,7 +13,7 @@
 	<h2>Recommended Blog Articles</h2>
 	<ul>
 	{% for post in featured_posts %}
-		<li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+		<li><a href="{{ post.get_absolute_url }}">{{ post.title|typogrify }}</a></li>
 	{% empty %}
 		<li class="empty">No posts have been&nbsp;featured.</li>
 	{% endfor %}
@@ -27,9 +27,11 @@
 	{% for item in featured_content %}
 		<li{% if forloop.first %} class="first"{% endif %}>
 			{% thumbnail item.image 220x800 as item_thumb %}
-			{% if item.link %}<a href="{{ item.link }}"{% else %}<span{% endif %}
-			style="background-image:url({{ MEDIA_URL }}{{ item_thumb }}); height:{{ item_thumb.height|add:'-2' }}px;"
-			{% if item.link %}>{{ item.link }}</a>{% else %}></span>{% endif %}
+			{% if item.link %}<a href="{{ item.link }}"{% else %}<span{% endif %}{% spaceless %}
+
+{% endspaceless %} style="background-image:url({{ MEDIA_URL }}{{ item_thumb }}); height:{{ item_thumb.height|add:'-2' }}px;"{% spaceless %}
+
+{% endspaceless %}{% if item.link %}>{{ item.link }}</a>{% else %}></span>{% endif %}
 		</li>
 	{% empty %}
 		<li class="first empty">No work in progress has been&nbsp;featured.</li>

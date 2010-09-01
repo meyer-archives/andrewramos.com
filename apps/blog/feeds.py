@@ -4,11 +4,12 @@ from itertools import chain
 from django.utils.feedgenerator import Atom1Feed
 import datetime
 import smartypants
+import pprint
 
 class LatestEntriesFeed(Feed):
 	domain = 'andrewramos.com'
 	title = 'AndrewRamos.com'
-	link = '/blog/feed/'
+	link = 'http://feeds.feedburner.com/andrewramos'
 	description = 'The blog of Andrew Ramos'
 	feed_type = Atom1Feed
 
@@ -38,20 +39,25 @@ class LatestEntriesFeed(Feed):
 		return "%s%s: %s" % (item._meta.verbose_name[0].upper(), item._meta.verbose_name[1:], smartypants.smartyPants(item.title))
 
 	def item_description(self, item):
+		content = []
 		if item._meta.verbose_name == "article":
-			return smartypants.smartyPants(item.content)
+			for image in item.images.all():
+				content.append('<img src="%s">' % image)
+				print dir(content)
+			content.append(smartypants.smartyPants(item.content))
+			return "".join(content)
 		elif item._meta.verbose_name == "short post":
 			if item.link:
 				return "%s <a href='%s'>%s</a>" % (smartypants.smartyPants(item.content),item.link,item.link,)
 			else:
-				return item.content
+				return smartypants.smartyPants(item.content)
 		elif item._meta.verbose_name == "quote":
 			if item.author:
-				return "%s <p>&mdash; %s</p>" % (smartypants.smartyPants(item.content),item.author)
+				return "%s <p><em>&mdash; %s</em></p>" % (smartypants.smartyPants(item.content),item.author)
 			else:
-				return "%s" % item.content
+				return "%s" % smartypants.smartyPants(item.content)
 		elif item._meta.verbose_name == "case study":
-			return item.content
+			return smartypants.smartyPants(item.content)
 		else:
 			return "Error: blog post type not supported!"
 
