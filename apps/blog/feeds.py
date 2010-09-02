@@ -37,7 +37,7 @@ class LatestEntriesFeed(Feed):
 		return sorted(results, key=lambda x: x.date_published, reverse=True)
 
 	def item_title(self, item):
-		return "%s%s: %s" % (item._meta.verbose_name[0].upper(), item._meta.verbose_name[1:], smartypants.smartyPants(item.title))
+		return smartypants.smartyPants(item.title)
 
 	def item_description(self, item):
 		content = []
