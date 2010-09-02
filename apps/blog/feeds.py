@@ -1,5 +1,6 @@
 from django.contrib.syndication.views import Feed
 from blog.models import *
+from django.conf import settings
 from itertools import chain
 from django.utils.feedgenerator import Atom1Feed
 import datetime
@@ -42,8 +43,8 @@ class LatestEntriesFeed(Feed):
 		content = []
 		if item._meta.verbose_name == "article":
 			for image in item.images.all():
-				content.append('<img src="%s">' % image)
-				print dir(content)
+				content.append('<img src="%s%s">' % (settings.MEDIA_URL, image.image))
+				print '<img src="%s%s">' % (settings.MEDIA_URL, image.image)
 			content.append(smartypants.smartyPants(item.content))
 			return "".join(content)
 		elif item._meta.verbose_name == "short post":
