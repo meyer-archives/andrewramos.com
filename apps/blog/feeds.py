@@ -19,7 +19,7 @@ class LatestEntriesFeed(Feed):
 
 	def feed_copyright(self):
 		now = datetime.datetime.now()
-		return 'Copyright (c) %s Andrew Ramos' % now.year
+		return 'Copyright &copy; %s Andrew Ramos' % now.year
 
 	def items(self):
 		articles = Article.objects.all().order_by("-date_published")
