@@ -1,5 +1,7 @@
 /* @override http://andrewramos.com/media/style.css */
 
+/* @override http://andrewramos.com/media/style.css */
+
 /* @override 
 	http://hotsauce.local:9007/style.css
 	http://hotsauce.local:9007/style.css
@@ -976,8 +978,8 @@ ul.post-list li{
 #content .case-study .entry-header{
 	border-bottom: 1px solid #f0b499;
 	margin-bottom: 19px;
-	padding-top: 6px;
 	padding-bottom: 8px;
+	overflow: hidden;
 }
 
 #content .article .entry-header h2,
