@@ -684,6 +684,7 @@ div.draft-warning p a{
 	overflow: hidden;
 	padding: 46px 0 35px 50px;
 	margin-left: -50px;
+	background: url(images/page-corner.png) no-repeat 0 0;
 }
 
 div.entry-header,
@@ -1053,7 +1054,7 @@ ul.entry-list li.entry {
 	width: 700px;
 	-webkit-transition: width 200ms ease-in-out;
 	-moz-transition: width 200ms ease-in-out;
-	background: url(images/page-corner.png) no-repeat 0 0;
+/*	background: url(images/page-corner.png) no-repeat 0 0;*/
 	padding-left: 50px;
 	margin-left: -50px;
 	overflow: hidden;
