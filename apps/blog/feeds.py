@@ -22,10 +22,10 @@ class LatestEntriesFeed(Feed):
 		return 'Copyright &copy; %s Andrew Ramos' % now.year
 
 	def items(self):
-		articles = Article.objects.all().order_by("-date_published")
-		case_studies = CaseStudy.objects.all().order_by("-date_published")
-		short_posts = ShortPost.objects.all().order_by("-date_published")
-		quotes = Quote.objects.all().order_by("-date_published")
+		articles = Article.objects.filter(status='p').all().order_by("-date_published")
+		case_studies = CaseStudy.objects.filter(status='p').all().order_by("-date_published")
+		short_posts = ShortPost.objects.filter(status='p').all().order_by("-date_published")
+		quotes = Quote.objects.filter(status='p').all().order_by("-date_published")
 
 		results = chain(
 			articles,
