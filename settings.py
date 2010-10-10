@@ -4,7 +4,7 @@ import sys
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -54,6 +54,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 MIDDLEWARE_CLASSES = (
+	'django.middleware.cache.UpdateCacheMiddleware',
 	'django.middleware.common.CommonMiddleware',
 	'django.contrib.sessions.middleware.SessionMiddleware',
 	'django.middleware.csrf.CsrfViewMiddleware',
@@ -62,6 +63,7 @@ MIDDLEWARE_CLASSES = (
 	'django.contrib.messages.middleware.MessageMiddleware',
 #	'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 	'mobile.middleware.MobileMiddleware',
+	'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 URL_FILEBROWSER_MEDIA = MEDIA_URL + 'filebrowser/'
@@ -95,6 +97,7 @@ INSTALLED_APPS = (
 	'typogrify',
 	'django_extensions',
 	'haystack',
+	'memcache_status',
 
 	# My apps
 	'utils',
@@ -118,6 +121,8 @@ THUMBNAIL_EXTENSION = 'png'
 HAYSTACK_SEARCH_ENGINE = 'whoosh'
 HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'search_index')
 HAYSTACK_SITECONF = 'search_sites'
+
+CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
 
 try:
 	from settings_local import *
