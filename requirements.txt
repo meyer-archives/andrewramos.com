@@ -1,20 +1,21 @@
-BeautifulSoup>=3.1.0.1
--e svn+http://code.djangoproject.com/svn/django/trunk#egg=django
+Django
+BeautifulSoup
+Markdown
+PIL
+South
+django-extensions
+django-haystack
+django-pagination
+django-memcache-status
+django-tagging
+docutils
+easy-thumbnails
+pycrypto
+python-dateutil
+psycopg2
+rpc4django
+smartypants
 -e git+http://github.com/mikemeyer/django-shorturls.git#egg=django-shorturls
-Fabric>=0.9.1
-Markdown>=2.0.3
-PIL>=1.1.7
-South>=0.7.1
-Whoosh>=1.0.0b2
-django-extensions>=0.5
-django-haystack>=1.0.1-final
-django-pagination>=1.0.7
-django-tagging>=0.3.1
-docutils>=0.7
-easy-thumbnails>=1.0-alpha-8
-pycrypto>=2.2
-python-dateutil>=1.5
-rpc4django>=0.1.7
-smartypants>=1.6.0.3
 -e git+http://github.com/mintchaos/typogrify.git#egg=typogrify
-wsgiref>=0.1.2
+wsgiref
+xapian-haystack

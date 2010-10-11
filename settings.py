@@ -118,9 +118,11 @@ THUMBNAIL_PREFIX = "r_"
 THUMBNAIL_BASEDIR = 'resized'
 THUMBNAIL_EXTENSION = 'png'
 
-HAYSTACK_SEARCH_ENGINE = 'whoosh'
-HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'search_index')
+#HAYSTACK_SEARCH_ENGINE = 'whoosh'
+#HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'search_index')
 HAYSTACK_SITECONF = 'search_sites'
+HAYSTACK_XAPIAN_PATH = os.path.join(PROJECT_ROOT, 'xapian_index')
+HAYSTACK_SEARCH_ENGINE = 'xapian'
 
 CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
 
