@@ -4,7 +4,7 @@ import sys
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -98,6 +98,7 @@ INSTALLED_APPS = (
 	'django_extensions',
 	'haystack',
 	'memcache_status',
+	'pagination',
 
 	# My apps
 	'utils',

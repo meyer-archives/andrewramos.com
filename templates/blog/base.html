@@ -1,5 +1,26 @@
 {% extends "base.html" %}
 {% block page_title %} &rsaquo; Blog{% endblock %}
+{% block head %}
+	<script src="{{ MEDIA_URL }}jquery.infinitescroll.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('ul#infinite').infinitescroll({
+			loadText: {
+				prev			: "Load newer blog posts",
+				next			: "Load older blog posts"
+			},
+			loadingText: {
+				prev			: "Loading newer blog posts&hellip;",
+				next			: "Loading older blog posts&hellip;"
+			},
+			doneText: {
+				prev			: "No more blog posts to load.",
+				next			: "No more blog posts to load."
+			}
+		});
+	});
+	</script>
+{% endblock %}
 {% block content %}
 
 <a name="top" id="top"></a>

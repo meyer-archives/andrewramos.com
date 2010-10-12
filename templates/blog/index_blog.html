@@ -1,8 +1,10 @@
 {% extends "blog/base.html" %}
-{% load shorturl %}
+{% load pagination_tags shorturl %}
 {% block blog_content %}
+
+{% comment %}{% autopaginate entries 2 %}{% endcomment %}
 	
-<ul class="entry-list">
+<ul class="entry-list" id="infinite">
 {% for entry in entries %}
 	<li class="entry">
 	<a class="permalink" href="{{ entry.get_absolute_url }}">Permalink to {{ entry.title }}</a>
@@ -12,5 +14,11 @@
 	<li class="empty">No posts have been published to the blog (yet!).</li>
 {% endfor %}
 </ul>
+
+{% comment %}
+<div id="pagination">
+	{% paginate %}
+</div>
+{% endcomment %}
 
 {% endblock %}

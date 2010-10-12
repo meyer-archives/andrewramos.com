@@ -2,6 +2,8 @@
 
 /* @override http://andrewramos.com/media/style.css */
 
+/* @override http://andrewramos.com/media/style.css */
+
 /* @override 
 	http://hotsauce.local:9007/style.css
 	http://hotsauce.local:9007/style.css
@@ -72,7 +74,7 @@ body.ipad #wrapper::-webkit-scrollbar{
 }
 
 #wrapper::-webkit-scrollbar:disabled{
-/*	display: none;*/
+	display: none;
 }
 
 #wrapper::-webkit-scrollbar-track-piece:disabled,
@@ -88,7 +90,7 @@ body.ipad #wrapper::-webkit-scrollbar{
 }
 
 #wrapper::-webkit-scrollbar-button{
-	height: 12px;
+	height: 0px;
 	width: 12px;
 }
 
