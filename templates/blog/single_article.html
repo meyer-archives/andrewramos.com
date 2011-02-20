@@ -1,9 +1,9 @@
 {% load typogrify thumbnail tagging_tags handy_utils %}
 
 {% if entry.status == 'd' %}
-	<div class="draft-warning">
-		<p>This post is a draft and is not visible to site visitors. <a href="{% url admin:blog_article_change entry.id %}">Fix that problem.</a></p>
-	</div>
+    <div class="draft-warning">
+        <p>This post is a draft and is not visible to site visitors. <a href="{% url admin:blog_article_change entry.id %}">Fix that problem.</a></p>
+    </div>
 {% endif %}
 
 <div class="entry article">
@@ -15,36 +15,36 @@
 {% if entry.images.all %}
 
 <div class="slideshow featured-image">
-	<ul class="slides {% if entry.image_width == 'p' %}post-width{% else %}full-width{% endif %}">
+    <ul class="slides {% if entry.image_width == 'p' %}post-width{% else %}full-width{% endif %}">
 {% if entry.image_width == 'p' %}
 {% for item in entry.images.all %}
-		<li><div style="background-image:url({% thumbnail item.image 480x440 upscale crop %})"></div></li>
+        <li><div style="background-image:url({% thumbnail item.image 480x440 upscale crop %})"></div></li>
 {% endfor %}
 {% else %}
 {% for item in entry.images.all %}
-		<li><div style="background-image:url({% thumbnail item.image 700x440 upscale crop %})"></div></li>
+        <li><div style="background-image:url({% thumbnail item.image 700x440 upscale crop %})"></div></li>
 {% endfor %}
 {% endif %}
-	</ul>
+    </ul>
 </div>
 
 {% endif %}
 {% if entry.display_title %}
-	<div class="entry-header">
-		<h2{% if entry.subtitle %} class="with-subtitle"{% endif %}>{{ entry.title|typogrify }}</h2>
+    <div class="entry-header">
+        <h2{% if entry.subtitle %} class="with-subtitle"{% endif %}>{{ entry.title|typogrify }}</h2>
 {% if entry.subtitle %}
-		<h3>{{ entry.subtitle|typogrify }}</h3>
+        <h3>{{ entry.subtitle|typogrify }}</h3>
 {% endif %}
-	</div>
+    </div>
 {% endif %}
 
-	<div class="entry-body">
-		{{ entry.content|typogrify }}
-		{% tags_for_object entry as tags %}
-		{% if tags %}
-		<p class="tag-list">{% for tag in tags %}{% if not forloop.first %}, {% endif %}<a href="/blog/tags/{{tag.name|slugify}}/">#{{ tag.name|camelcase }}</a>{% endfor %}</p>
-		{% endif %}
-	</div>
+    <div class="entry-body">
+        {{ entry.content|typogrify }}
+        {% tags_for_object entry as tags %}
+        {% if tags %}
+        <p class="tag-list">{% for tag in tags %}{% if not forloop.first %}, {% endif %}<a href="/blog/tags/{{tag.name|slugify}}/">#{{ tag.name|camelcase }}</a>{% endfor %}</p>
+        {% endif %}
+    </div>
 
 {% if request.user.is_authenticated %}
 <p class="edit-link"><a class="post-edit-link" href="{% url admin:blog_article_change entry.id %}">Edit</a></p>

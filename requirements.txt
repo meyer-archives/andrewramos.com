@@ -8,6 +8,7 @@ django-haystack
 django-pagination
 django-memcache-status
 django-tagging
+django-taggit
 docutils
 easy-thumbnails
 pycrypto
@@ -18,4 +19,5 @@ smartypants
 -e git+http://github.com/mikemeyer/django-shorturls.git#egg=django-shorturls
 -e git+http://github.com/mintchaos/typogrify.git#egg=typogrify
 wsgiref
+werkzeug
 xapian-haystack

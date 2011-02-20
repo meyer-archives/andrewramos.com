@@ -1,31 +1,31 @@
 upstream ramos {
-	server 127.0.0.1:8000;
+    server 127.0.0.1:8000;
 }
 
 server {
-	listen 80 default;
-	client_max_body_size 4G;
-	server_name _;
+    listen 80 default;
+    client_max_body_size 4G;
+    server_name _;
 
-	keepalive_timeout 5;
+    keepalive_timeout 5;
 
-#	root /home/webdev/django/andrewramos/media/;
+#    root /home/webdev/django/andrewramos/media/;
 
-	access_log /home/webdev/django/andrewramos/logs/nginx_access.log
-	error_log /home/webdev/django/andrewramos/logs/nginx_access.log
+    access_log /home/webdev/django/andrewramos/logs/nginx_access.log
+    error_log /home/webdev/django/andrewramos/logs/nginx_access.log
 
-	location /media/ {
-		root /home/webdev/django/andrewramos/media/;
-	}
+    location /media/ {
+        root /home/webdev/django/andrewramos/media/;
+    }
 
-	location / {
-		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-		proxy_set_header Host $http_host;
-		proxy_redirect off;
+    location / {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
 
-		if (!-f $request_filename) {
-			proxy_pass http://ramos;
-			break;
-		}
-	}
+        if (!-f $request_filename) {
+            proxy_pass http://ramos;
+            break;
+        }
+    }
 }

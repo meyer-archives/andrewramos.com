@@ -1,36 +1,36 @@
 {% extends "base.html" %}
 {% block page_title %} &rsaquo; Blog{% endblock %}
 {% block head %}
-	<script src="{{ MEDIA_URL }}jquery.infinitescroll.js"></script>
-	<script type="text/javascript">
-	$(document).ready(function() {
-		$('ul#infinite').infinitescroll({
-			loadText: {
-				prev			: "Load newer blog posts",
-				next			: "Load older blog posts"
-			},
-			loadingText: {
-				prev			: "Loading newer blog posts&hellip;",
-				next			: "Loading older blog posts&hellip;"
-			},
-			doneText: {
-				prev			: "No more blog posts to load.",
-				next			: "No more blog posts to load."
-			}
-		});
-	});
-	</script>
+    <script src="{{ MEDIA_URL }}jquery.infinitescroll.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('ul#infinite').infinitescroll({
+            loadText: {
+                prev            : "Load newer blog posts",
+                next            : "Load older blog posts"
+            },
+            loadingText: {
+                prev            : "Loading newer blog posts&hellip;",
+                next            : "Loading older blog posts&hellip;"
+            },
+            doneText: {
+                prev            : "No more blog posts to load.",
+                next            : "No more blog posts to load."
+            }
+        });
+    });
+    </script>
 {% endblock %}
 {% block content %}
 
 <a name="top" id="top"></a>
 
 <div id="header-menu">
-	<a class="archives-link" href="{% url blog-archives %}">Archives</a>
-	<a class="rss-link" href="http://feeds.feedburner.com/andrewramos">RSS Feed</a>
-	<form id="search-form" action="/search/" method="get" accept-charset="utf-8">
-		<div id="search-input"><input type="text" name="q" placeholder="Search" autocapitalize="off" autocorrect="off" {% if request.GET.q %} value="{{ request.GET.q }}"{% endif %}></div>
-	</form>
+    <a class="archives-link" href="{% url blog-archives %}">Archives</a>
+    <a class="rss-link" href="http://feeds.feedburner.com/andrewramos">RSS Feed</a>
+    <form id="search-form" action="/search/" method="get" accept-charset="utf-8">
+        <div id="search-input"><input type="text" name="q" placeholder="Search" autocapitalize="off" autocorrect="off" {% if request.GET.q %} value="{{ request.GET.q }}"{% endif %}></div>
+    </form>
 </div>
 
 {% block blog_content %}
@@ -38,9 +38,9 @@
 {% endblock %}
 
 <div id="footer">
-	<p>Blog content/images copyright Andrew Ramos, 2010. All rights reserved.</p>
-	<p><em>Thanks for stopping by.</em></p>
-	<a id="back-to-top" href="#top">Back to the top</a>
+    <p>Blog content/images copyright Andrew Ramos, 2010. All rights reserved.</p>
+    <p><em>Thanks for stopping by.</em></p>
+    <a id="back-to-top" href="#top">Back to the top</a>
 </div>
 
 {% endblock %}

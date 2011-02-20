@@ -3,21 +3,21 @@
 {% block blog_content %}
 
 {% comment %}{% autopaginate entries 2 %}{% endcomment %}
-	
+
 <ul class="entry-list" id="infinite">
 {% for entry in entries %}
-	<li class="entry">
-	<a class="permalink" href="{{ entry.get_absolute_url }}">Permalink to {{ entry.title }}</a>
+    <li class="entry">
+    <a class="permalink" href="{{ entry.get_absolute_url }}">Permalink to {{ entry.title }}</a>
 {% include entry.template_name %}
-	</li>
+    </li>
 {% empty %}
-	<li class="empty">No posts have been published to the blog (yet!).</li>
+    <li class="empty">No posts have been published to the blog (yet!).</li>
 {% endfor %}
 </ul>
 
 {% comment %}
 <div id="pagination">
-	{% paginate %}
+    {% paginate %}
 </div>
 {% endcomment %}
 
