@@ -38,7 +38,7 @@ class Project(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('portfolio.views.portfolio_single',[str(self.slug)])
+        return ('portfolio_single',[str(self.slug)])
 
     def view_on_site(self):
         return "<a class='view-on-site-link' href='%s'>View on site</a>" % self.get_absolute_url()
