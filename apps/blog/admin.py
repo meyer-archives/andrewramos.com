@@ -7,7 +7,7 @@ from django.db import models
 
 META_INFO = ('Meta Information', {
 #    'classes': ('collapse',),
-    'fields': ('tags','is_featured','status','date_published','date_added', 'date_modified',),
+    'fields': ('is_featured','status','date_published','date_added', 'date_modified',),
 })
 
 class ImageInline(generic.GenericTabularInline):

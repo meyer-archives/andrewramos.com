@@ -1,7 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
-from tagging.fields import TagField
+from taggit.managers import TaggableManager
 from easy_thumbnails.files import get_thumbnailer
 from django.conf import settings
 from django.contrib.contenttypes import generic
@@ -34,7 +34,7 @@ class BlogPost(models.Model):
     date_modified = models.DateTimeField(auto_now=True, default=datetime.now)
     date_published = models.DateTimeField(blank=False, default=datetime.now,verbose_name="Publish date",help_text='Dates set in the future will only be published at the date specified.')
     status = models.CharField(default="d",max_length=1,choices=POST_STATUS)
-    tags = TaggableManager()
+#    tags = TaggableManager()
 
     def template_name(self):
         return "blog/single_%s.html" % self._meta.module_name

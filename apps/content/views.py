@@ -1,22 +1,9 @@
 from django.shortcuts import get_object_or_404
 from django.http import Http404
-from content.models import StaticPage
 from blog.models import *
 from content.models import FrontPageContent
 from utils.decorators import render_to
 from itertools import chain
-
-@render_to()
-def page_single(request, page_slug):
-    single_page = get_object_or_404(StaticPage, slug=page_slug)
-    if single_page.status == 'd' and not request.user.is_authenticated():
-        raise Http404
-
-    if single_page.slug == 'about':
-        page_template = 'content/page_about.html'
-    else:
-        page_template = 'content/page_default.html'
-    return { 'page': single_page, 'TEMPLATE': page_template }
 
 @render_to('front_page.html')
 def front_page(request):

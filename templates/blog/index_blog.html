@@ -2,7 +2,7 @@
 {% load pagination_tags shorturl %}
 {% block blog_content %}
 
-{% comment %}{% autopaginate entries 2 %}{% endcomment %}
+{% autopaginate entries 10 %}
 
 <ul class="entry-list" id="infinite">
 {% for entry in entries %}
@@ -15,10 +15,8 @@
 {% endfor %}
 </ul>
 
-{% comment %}
 <div id="pagination">
     {% paginate %}
 </div>
-{% endcomment %}
 
 {% endblock %}

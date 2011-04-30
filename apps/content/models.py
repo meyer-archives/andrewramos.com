@@ -3,57 +3,6 @@ from datetime import datetime
 from easy_thumbnails.files import get_thumbnailer
 from django.conf import settings
 
-PAGE_STATUS = (
-    ('p','published'),
-    ('d','draft'),
-)
-
-class StaticPage(models.Model):
-    title = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=100, db_index=True)
-    content_markdown = models.TextField(blank=False,help_text='Text is formatted using Markdown.',verbose_name='content')
-    content = models.TextField(blank=True, null=True,verbose_name='rendered content')
-    date_added = models.DateTimeField(auto_now_add=True, default=datetime.now)
-    date_modified = models.DateTimeField(auto_now=True, default=datetime.now)
-    status = models.CharField(default="d",max_length=1,choices=PAGE_STATUS)
-
-    def save(self):
-        import markdown
-        self.content = markdown.markdown(self.content_markdown, ['extra','footnotes'])
-        super(StaticPage, self).save()
-
-    @models.permalink
-    def get_absolute_url(self):
-        return ('content.views.page_single',[str(self.slug)])
-
-    def view_on_site(self):
-        print self.get_absolute_url()
-        return "<a class='view-on-site-link' href='%s'>View on site</a>" % self.get_absolute_url()
-    view_on_site.short_description = 'Page link'
-    view_on_site.allow_tags = 'True'
-
-    class Meta:
-        verbose_name, verbose_name_plural = 'static page', 'static pages'
-        ordering = ('status','slug',)
-
-    def __unicode__(self):
-        return "%s (%s)" % (self.title,self.slug,)
-
-class EmailMessage(models.Model):
-    """Emails from the contact form"""
-
-    email_address = models.EmailField()
-    subject = models.CharField(blank=False, max_length=100)
-    message = models.TextField(blank=False)
-    date_added = models.DateTimeField(auto_now_add=True, default=datetime.now)
-    date_modified = models.DateTimeField(auto_now=True, default=datetime.now)
-
-    class Meta:
-        verbose_name, verbose_name_plural = 'email', 'emails'
-
-    def __unicode__(self):
-        return u"%s (from %s)" % (self.subject,self.email_address)
-
 class FrontPageContent(models.Model):
     """(FrontPageContent description)"""
 

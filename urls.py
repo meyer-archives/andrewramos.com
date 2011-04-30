@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import *
+from django.views.generic.simple import direct_to_template
 
 from django.contrib import admin
 admin.autodiscover()
@@ -12,5 +13,6 @@ urlpatterns = patterns('',
     (r'^s/', include('shorturls.urls')),
     (r'^search/', include('haystack.urls')),
     url(r'^xmlrpc/$', 'rpc4django.views.serve_rpc_request'),
-    (r'', include('content.urls')),
+	url(r'^about/$', direct_to_template, {'template': 'about.html'}, name='about_url'),
+    # (r'', include('content.urls')),
 )
