@@ -128,7 +128,12 @@ HAYSTACK_SITECONF = 'search_sites'
 HAYSTACK_XAPIAN_PATH = os.path.join(PROJECT_ROOT, 'xapian_index')
 HAYSTACK_SEARCH_ENGINE = 'xapian'
 
-CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
+CACHES = {
+	'default': {
+		'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+		'LOCATION': '127.0.0.1:11211',
+	}
+}
 
 try:
 	from settings_local import *
