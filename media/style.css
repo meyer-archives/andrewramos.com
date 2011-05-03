@@ -4,6 +4,8 @@
 
 /* @override http://andrewramos.com/media/style.css */
 
+/* @override http://andrewramos.com/media/style.css */
+
 /* @override 
     http://hotsauce.local:9007/style.css
     http://hotsauce.local:9007/style.css
@@ -328,12 +330,12 @@ body.draft-page{
 }
 
 #content{
-    height: 100%;
     z-index: 10;
     position: relative;
     left: 0;
     margin-left: -50px;
     padding-left: 50px;
+    float: left;
 }
 
 #content-inner{
@@ -341,8 +343,9 @@ body.draft-page{
     position: relative;
     left: 0%;
     width: 480px;
-    min-height: 100%;
+
     padding-bottom: 1px;
+	height: 100%;
 }
 
 body.iphone #content{
@@ -401,7 +404,7 @@ ul.entry-list {
 #page-about #contact ul li.email{
     left: 0;
     border-right: 1px solid #d1d1cf;
-    width: 181px;
+    width: 176px;
 }
 
 #page-about #contact ul li.email a{
@@ -445,14 +448,14 @@ ul.entry-list {
 
 #page-about #contact ul li.phone{
     width: 113px;
-    left: 205px;
+    left: 200px;
     background-position: -180px 8px;
 }
 
 #page-about #contact ul li.snail-mail{
     border-left: 1px solid #d1d1cf;
-    right: 0;
-    width: 149px;
+    width: 179px;
+	left: 325px;
 }
 
 #page-about #contact ul li.snail-mail a{
