@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load thumbnail typogrify_tags %}
+{% load typogrify_tags %}
 {% block bodyid %}front-page{% endblock %}
 {% block content %}
 
@@ -25,8 +25,8 @@
 		<h2>Work in Progress</h2>
 		<ul>
 {% for item in featured_content %}
-			<li{% if forloop.first %} class="first"{% endif %}>
-				{% if item.link %}<a href="{{ item.link }}"{% else %}<span{% endif %}{% if item.link %}><img src="{% thumbnail item.image "220" %}"></a>{% else %}></span>{% endif %}
+			<li>
+				{% if item.link %}<a href="{{ item.link }}"{% else %}<span{% endif %}{% if item.link %}><img src="{{ item.image.url }}"></a>{% else %}></span>{% endif %}
 			</li>
 {% empty %}
 			<li class="first empty">No work in progress has been&nbsp;featured.</li>

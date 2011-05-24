@@ -1,31 +1,29 @@
-{% load typogrify_tags markup thumbnail handy_utils %}
+{% load typogrify_tags utils_tags %}
 
 {% if entry.status == 'd' %}
-    <div class="draft-warning">
-        <p>This post is a draft and is not visible to site visitors. <a href="{% url 'admin:blog_shortpost_change' entry.id %}">Fix that problem.</a></p>
-    </div>
+<div class="draft-warning">
+	<p>This post is a draft and is not visible to site visitors. <a href="{% url 'admin:blog_shortpost_change' entry.id %}">Fix that problem.</a></p>
+</div>
 {% endif %}
 
 <div class="entry short-post">
-
-    {% if request.user.is_authenticated %}
-    <a class="post-edit-link" href="{% url 'admin:blog_shortpost_change' entry.id %}">Edit</a>
-    {% endif %}
-
+{% if request.user.is_authenticated %}
+	<a class="post-edit-link" href="{% url 'admin:blog_shortpost_change' entry.id %}">Edit</a>
+{% endif %}
 <div class="entry-body">
-    {% with entry.title|slice:"-1:" as punctuation %}
-    {% if punctuation == "!" or punctuation == "?" %}
-        <h2>{{ entry.title }}</h2>
-    {% else %}
-        <h2>{{ entry.title }}.</h2>
-    {% endif %}
-    {% endwith %}
-    <p>{{ entry.content_markdown|markdown|typogrify }}</p>
-    {% if entry.link %}<a class="short-post-link" href="{{ entry.link }}">{{ entry.link }}</a>{% endif %}
-</div>
+{% filter markdown|typogrify %}
 
-    {% if tags %}
-    <p class="tag-list">{% for tag in tags %}{% if not forloop.first %}, {% endif %}<a href="/blog/tags/{{tag.name|slugify}}/">#{{ tag.name|camelcase }}</a>{% endfor %}</p>
-    {% endif %}
+{% with entry.title|slice:"-1:" as punctuation %}{% if punctuation == "!" or punctuation == "?" %}
+**{{ entry.title }}**
+{% else %}
+**{{ entry.title }}.**
+{% endif %}{% endwith %}{{ entry.content_markdown|safe }}
 
+{% endfilter %}
+
+	{% if entry.link %}
+	<a class="short-post-link" href="{{ entry.link }}">{{ entry.link }}</a>{% endif %}
+</div>{% if tags %}
+	<p class="tag-list">{% for tag in tags %}{% if not forloop.first %}, {% endif %}<a href="/blog/tags/{{tag.name|slugify}}/">#{{ tag.name|camelcase }}</a>{% endfor %}</p>
+{% endif %}
 </div>

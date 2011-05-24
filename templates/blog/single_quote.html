@@ -1,20 +1,20 @@
-{% load typogrify_tags markup thumbnail handy_utils %}
+{% load typogrify_tags utils_tags %}
 
 {% if entry.status == 'd' %}
-    <div class="draft-warning">
-        <p>This post is a draft and is not visible to site visitors. <a href="{% url 'admin:blog_quote_change' entry.id %}">Fix that problem.</a></p>
-    </div>
+	<div class="draft-warning">
+		<p>This post is a draft and is not visible to site visitors. <a href="{% url 'admin:blog_quote_change' entry.id %}">Fix that problem.</a></p>
+	</div>
 {% endif %}
 
 <div class="entry quote">
 
-    {% if request.user.is_authenticated %}
-    <a class="post-edit-link" href="{% url 'admin:blog_quote_change' entry.id %}">Edit</a>
-    {% endif %}
+	{% if request.user.is_authenticated %}
+	<a class="post-edit-link" href="{% url 'admin:blog_quote_change' entry.id %}">Edit</a>
+	{% endif %}
 
-    <div class="entry-body">{{ entry.content_markdown|markdown|typogrify }}</div>
+	<div class="entry-body">{{ entry.content_markdown|markdown|typogrify }}</div>
 {% if entry.author %}
-    <p class="author">{{ entry.author|typogrify }}</p>
+	<p class="author">{{ entry.author|typogrify }}</p>
 {% endif %}
 
 

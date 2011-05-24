@@ -1,7 +1,7 @@
 Django
 BeautifulSoup
 Markdown
-#PIL
+PIL
 South
 django-athumb
 django-extensions
@@ -19,7 +19,6 @@ python-dateutil
 psycopg2
 smartypants
 -e git+http://github.com/meyer/django-shorturls.git#egg=django-shorturls
-# -e git+http://github.com/toastdriven/django-haystack.git#egg=django-haystack
 wsgiref
 werkzeug
 xapian-haystack

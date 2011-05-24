@@ -7,7 +7,6 @@ from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.utils.safestring import mark_safe
 
-from athumb.fields import ImageWithThumbsField
 from taggit.managers import TaggableManager
 
 from blog.models import CaseStudy
@@ -56,17 +55,12 @@ class Project(models.Model):
 
 class Category(models.Model):
 	title = models.CharField(blank=False, max_length=100)
-	image = ImageWithThumbsField(
+	image = models.ImageField(
 		upload_to="uploads/portfolio",
 		help_text='The nav item to show for the portfolio category.',
-		thumbs=(
-			('admin_thumb', {'size': (100, 100), 'crop': True}),
-			# ('700x440', {'size': (700, 440)}),
-			# ('480x440', {'size': (480, 440)}),
-		),
 		verbose_name='Nav image',
-		blank=True, null=True, thumbnail_format='png'
-		)
+		blank=True, null=True,
+	)
 
 	content_type = models.ForeignKey(ContentType)
 	object_id = models.PositiveIntegerField()
@@ -80,15 +74,10 @@ class Category(models.Model):
 
 
 class PortfolioPiece(models.Model):
-	image = ImageWithThumbsField(
+	image = models.ImageField(
 		upload_to="uploads/portfolio",
-		thumbs=(
-			('admin_thumb', {'size': (100, 100), 'crop': True}),
-			('700x440', {'size': (700, 440)}),
-			('480x440', {'size': (480, 440)}),
-		),
-		blank=True, null=True, thumbnail_format='png'
-		)
+		blank=True, null=True,
+	)
 	order = models.IntegerField(blank=True, null=True,default=1)
 
 	content_type = models.ForeignKey(ContentType)
@@ -99,7 +88,7 @@ class PortfolioPiece(models.Model):
 	date_modified = models.DateTimeField(auto_now=True, default=datetime.now)
 
 	# def project_link(self):
-	#     return "%s <a class='view-on-site-link' href='%s'>(view on site)</a>" % (self.project,self.project.get_absolute_url(),)
+	#	 return "%s <a class='view-on-site-link' href='%s'>(view on site)</a>" % (self.project,self.project.get_absolute_url(),)
 	# project_link.short_description = 'Project'
 	# project_link.allow_tags = 'True'
 
@@ -108,8 +97,8 @@ class PortfolioPiece(models.Model):
 			# try:
 			# thumbnail_options = dict(size=(100,100), crop=False)
 			# img = get_thumbnailer(self.image).get_thumbnail(thumbnail_options)
-			return ''
-			# return "<img style='border:1px solid #CCC;padding:1px;background:#FFF;float:left' src='%s%s'>" % (settings.MEDIA_URL,img)
+			# return 'test'
+			return "<img style='border:1px solid #CCC;padding:1px;background:#FFF;float:left' src='%s'>" % (self.image.url,)
 			# except:
 				# return "(thumbnail error)"
 		else:

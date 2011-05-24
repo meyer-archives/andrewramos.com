@@ -6,7 +6,9 @@ media/*
 data.db
 logs/
 settings_local.py
+static_cache/*
 whoosh_index
 xapian_index
 *.log
 *.pid
+*.psd

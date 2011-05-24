@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% load shorturl thumbnail typogrify_tags %}
+{% load shorturl typogrify_tags %}
 {% block page_title %}{{ block.super }} &rsaquo; {{ project.title|smartypants }}{% endblock %}
 {% block content %}
 {% if project.status == 'd' %}
-    <div class="draft-warning">
-        <p>This portfolio project is a draft and is not visible to site visitors. <a href="{% url 'admin:portfolio_project_change' project.id %}">Fix that problem.</a></p>
-    </div>
+	<div class="draft-warning">
+		<p>This portfolio project is a draft and is not visible to site visitors. <a href="{% url 'admin:portfolio_project_change' project.id %}">Fix that problem.</a></p>
+	</div>
 {% endif %}
 <div class="project-single">
 {% include 'portfolio/project_single.html' %}

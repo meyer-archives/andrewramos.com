@@ -8,7 +8,6 @@ from django.contrib.sites.models import Site
 from django.db import models
 from django.utils.safestring import mark_safe
 
-from athumb.fields import ImageWithThumbsField
 from taggit.managers import TaggableManager
 from shorturls.magic import get_short_url_for_object
 
@@ -36,7 +35,7 @@ class BlogPost(models.Model):
 	date_modified = models.DateTimeField(auto_now=True, default=datetime.now)
 	date_published = models.DateTimeField(blank=False, default=datetime.now,verbose_name="Publish date",help_text='Dates set in the future will only be published at the date specified.')
 	status = models.CharField(default="d",max_length=1,choices=POST_STATUS)
-#    tags = TaggableManager()
+#	tags = TaggableManager()
 
 	def template_name(self):
 		return "blog/single_%s.html" % self._meta.module_name
@@ -65,15 +64,10 @@ class BlogPost(models.Model):
 		return self.title
 
 class Image(models.Model):
-	image = ImageWithThumbsField(
+	image = models.ImageField(
 		upload_to="uploads/blog",
-		thumbs=(
-			('admin_thumb', {'size': (100, 100), 'crop': True}),
-			('700x440', {'size': (700, 440)}),
-			('480x440', {'size': (480, 440)}),
-		),
-		blank=True, null=True, thumbnail_format='png'
-		)
+		blank=True, null=True,
+	)
 
 	content_type = models.ForeignKey(ContentType)
 	object_id = models.PositiveIntegerField()

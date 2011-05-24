@@ -1,49 +1,53 @@
 {% extends "base.html" %}
-{% load typogrify_tags markup %}
+{% load typogrify_tags utils_tags %}
 {% block bodyid %}page-about{% endblock %}
 {% block page_title %} &rsaquo; About Andrew{% endblock %}
 
 {% block content %}
 
 <div id="about-content">
-    <h2>The basic idea: trying to live a simple life and create beautiful things.</h2>
-    <div class="about-text">{% filter markdown|typogrify %}
+
+<h2>The basic idea: trying to live a simple life and create beautiful things.</h2>
+<div class="about-text">{% filter markdown|typogrify %}
 Andrew Ramos is an illustrator, designer and maker of things living in Greenville, SC. He's a fan of beautiful pencils, thin lines, and smart remarks and has an insatiable desire to understand how things work. He enjoys seeing new places, and plotting world domination with the [CoWork][1] crew, but usually opts for a night at home with his amazingly creative wife, [Elizabeth][2].
 
 [1]:http://coworkgreenville.com
 [2]:http://elizabethramos.com
 {% endfilter %}
-    </div>
-    <div class="elsewhere">
-        <h3>Find me elsewhere:</h3>
-        <ul>
-            <li class="flickr"><a href="#">Flickr</a></li>
-            <li class="twitter"><a href="http://twitter.com/andrewramos">Twitter</a></li>
-            <li class="dribbble"><a href="http://dribbble.com/players/andrewramos">Dribbble</a></li>
-        </ul>
-    </div>
-    <div id="contact">
-        <h3>Think I&rsquo;d be a good fit for your project? Let&rsquo;s chat.</h3>
-        <ul>
-            <li class="email">
-                <a href="mailto:studio@andrewramos.com?subject=Project%20Inquiry">
-                    <span class="title">Send an email</span>
-                    <span class="content">studio@andrewramos.com</span>
-                </a>
-            </li>
-            <li class="phone">
-                <span class="title">Call the studio</span>
-                <span class="content">(864) 735-7438</span>
-            </li>
-            <li class="snail-mail">
-                <a href="http://maps.google.com/maps?z=17&amp;cid=10876130586920751822">
-                    <span class="title">Drop by/snail mail</span>
-                    <span class="content">1040 W. Washington St.</span>
-                    <span class="content">Greenville, SC 29601</span>
-                </a>
-            </li>
-        </ul>
-    </div>
 </div>
+<div class="elsewhere">
+	<h3>Find me elsewhere:</h3>
+	<ul>
+		<li class="flickr"><a href="#">Flickr</a></li>
+		<li class="twitter"><a href="http://twitter.com/andrewramos">Twitter</a></li>
+		<li class="dribbble"><a href="http://dribbble.com/andrewramos">Dribbble</a></li>
+	</ul>
+</div>
+<div id="contact">
+	<h3>Think I’d be a good fit for your project? Let’s chat.</h3>
+	<ul>
+		<li class="email">
+			<a href="mailto:studio@andrewramos.com?subject=Project%20Inquiry">
+				<span class="title">Send an email</span>
+				<span class="content">studio@andrewramos.com</span>
+			</a>
+		</li>
+		<li class="phone">
+			<span class="title">Call the studio</span>
+			<span class="content">(864) 735-7438</span>
+		</li>
+		<li class="snail-mail">
+			<a href="http://maps.google.com/maps?z=17&amp;cid=10876130586920751822">
+				<span class="title">Drop by/snail mail</span>
+				<span class="content">1040 W. Washington St.</span>
+				<span class="content">Greenville, SC 29601</span>
+			</a>
+		</li>
+	</ul>
+</div>
+
+</div>
+
+<a style="position:absolute;width:0;height:0;display:block;bottom:0;left:0" href="/error.html"><!-- for staticgenerator --></a>
 
 {% endblock %}

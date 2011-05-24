@@ -1,32 +1,32 @@
-{% load thumbnail typogrify_tags %}
+{% load typogrify_tags %}
 
 <div class="portfolio-item">
 
-    <div class="slideshow">
-        <ul class="slides {% if project.image_width == 'p' %}post-width{% else %}full-width{% endif %}">
+	<div class="slideshow">
+		<ul class="slides {% if project.image_width == 'p' %}post-width{% else %}full-width{% endif %}">
 
 {% if project.image_width == 'p' %}
 {% with project.pieces.all|dictsort:"order" as pieces %}
 {% for piece in pieces %}
-        <li><div style="background-image:url({% thumbnail piece.image '480x440' %})"></div></li>
+		<li><div style="background-image:url({{ piece.image.url }})"></div></li>
 {% endfor %}
 {% endwith %}
 {% else %}
 {% with project.pieces.all|dictsort:"order" as pieces %}
 {% for piece in pieces %}
-        <li><div style="background-image:url({% thumbnail piece.image '700x440' %})"></div></li>
+		<li><div style="background-image:url({{ piece.image.url }})"></div></li>
 {% endfor %}
 {% endwith %}
 {% endif %}
-        </ul>
-    </div>
+		</ul>
+	</div>
 
-    <div class="portfolio-info">
-        <h2>{{ project.title|typogrify }}</h2>
-        <p>{% if project.description %}<span>{{ project.description|typogrify }}</span>{% endif %}{% if project.case_study %}{% if project.description %}&nbsp;&middot;&nbsp;{% endif %}<a href="{{ project.case_study.get_absolute_url }}">View the case&nbsp;study</a>{% endif %}</p>
-    </div>
-    {% if request.user.is_authenticated %}
-    <p class="edit-link"><a class="post-edit-link" href="{% url 'admin:portfolio_project_change' project.id %}">Edit</a></p>
-    {% endif %}
+	<div class="portfolio-info">
+		<h2>{{ project.title|typogrify }}</h2>
+		<p>{% if project.description %}<span>{{ project.description|typogrify }}</span>{% endif %}{% if project.case_study %}{% if project.description %}&nbsp;&middot;&nbsp;{% endif %}<a href="{{ project.case_study.get_absolute_url }}">View the case&nbsp;study</a>{% endif %}</p>
+	</div>
+	{% if request.user.is_authenticated %}
+	<p class="edit-link"><a class="post-edit-link" href="{% url 'admin:portfolio_project_change' project.id %}">Edit</a></p>
+	{% endif %}
 
 </div>

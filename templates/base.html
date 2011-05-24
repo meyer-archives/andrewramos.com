@@ -1,20 +1,24 @@
-{% load handy_utils %}<!doctype html>
+{% load utils_tags compress %}<!doctype html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Andrew Ramos{% block page_title %}{% endblock %}</title>
 	<link rel="alternate" type="application/rss+xml" title="AndrewRamos.com RSS" href="{% url 'rss-feed' %}">
 	<link rel="shortcut icon" href="{{ STATIC_URL }}i/favicon.ico" />
-
+{% compress css %}
 	<link rel="stylesheet" href="{{ STATIC_URL }}c/style.css">
+{% endcompress %}
+{% if request.user.is_authenticated %}
+	<link rel="stylesheet" href="{{ STATIC_URL }}c/logged-in.css">{% endif %}
 	<meta name="format-detection" content="telephone=no">
 
 	<meta name = "viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 {#	<meta name = "viewport" content="width=768, user-scalable=1"> #}
 	<meta name="google-site-verification" content="KI2Yk1GWtBV3dpjfnVLrPLR0upx7J3d7W3KTyDApt4M" />
-
+{% compress js %}
 	<script src="{{ STATIC_URL }}j/jquery-1.6.1.js"></script>
 	<script src="{{ STATIC_URL }}j/site.js"></script>
+{% endcompress %}
 {% block head %}{% endblock %}
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
@@ -32,9 +36,9 @@
 	<div id="header">
 		<h1><a href="{% url 'home-url' %}"><span>The Notebook of Andrew Ramos</span></a></h1>
 		<ul id="main-nav">
-			<li{% current 'blog_url' %}><a href="{% url 'blog-home' %}">The Blog</a></li>
-			<li{% current 'portfolio_url' %}><a href="{% url 'portfolio-home' %}">Portfolio</a></li>
-			<li{% current 'about_url' %}><a href="{% url 'about-url' %}">About</a></li>
+			<li{% current '^/blog/' %}><a href="{% url 'blog-home' %}">The Blog</a></li>
+			<li{% current '^/portfolio/' %}><a href="{% url 'portfolio-home' %}">Portfolio</a></li>
+			<li{% current '^/about/' %}><a href="{% url 'about-url' %}">About</a></li>
 		</ul>
 		<p id="copyright-notice">&copy; {% now "Y" %} Andrew Ramos</p>
 	</div>

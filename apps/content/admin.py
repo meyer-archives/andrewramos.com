@@ -4,10 +4,10 @@ from utils.widgets import AdminImageFieldWithThumbWidget
 from django.db import models
 
 class FrontPageAdmin(admin.ModelAdmin):
-    list_display = ('thumbnail','link_formatted','enabled',)
-    list_editable = ('enabled',)
-    formfield_overrides = {
-        models.ImageField: {'widget':AdminImageFieldWithThumbWidget},
-    }
+	list_display = ('thumbnail','link_formatted','enabled',)
+	list_editable = ('enabled',)
+	formfield_overrides = {
+		models.ImageField: {'widget':AdminImageFieldWithThumbWidget},
+	}
 
 admin.site.register(FrontPageContent, FrontPageAdmin)

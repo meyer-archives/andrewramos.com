@@ -11,28 +11,28 @@
 <ul class="result-list search">
 
 <li class="month-list">
-    <h2>Search Results for &ldquo;{{ request.GET.q }}&rdquo;</h2>
-    <ul class="excerpt-list">
+	<h2>Search Results for &ldquo;{{ request.GET.q }}&rdquo;</h2>
+	<ul class="excerpt-list">
 
 {% for result in page.object_list %}
-        <li class="excerpt {% if forloop.counter|divisibleby:2 %}even{% else %}odd{% endif %}">
-            <a href="{{ result.object.get_absolute_url }}">
-                <span class="title">{{ result.object.title|typogrify }}</span>
-                <span class="content">{{ result.object.content|striptags|truncatewords:30 }}</span>
-            </a>
-            <span class="fade"></span>
-        </li>
+		<li class="excerpt">
+			<a href="{{ result.object.get_absolute_url }}">
+				<span class="title">{{ result.object.title|typogrify }}</span>
+				<span class="content">{{ result.object.content|striptags|truncatewords:30 }}</span>
+			</a>
+			<span class="fade"></span>
+		</li>
 {% empty %}
-        <li class="entry empty odd"><span>No blog posts found. Try a different search?</span></li>
+		<li class="entry empty odd"><span>No blog posts found. Try a different search?</span></li>
 {% endfor %}
 
-    </ul>
+	</ul>
 </li>
 
 </ul>
 
 {% else %}
-    <h2>You need to search for something.</h2>
+	<h2>You need to search for something.</h2>
 {% endif %}
 {% endblock %}
 

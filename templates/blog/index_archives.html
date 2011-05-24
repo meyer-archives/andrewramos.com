@@ -12,21 +12,21 @@
 {% for entries_m in entries_d %}
 
 <li class="month-list">
-    <h2>Archived entries for {{ entries_m.grouper }}</h2>
-    <ul class="excerpt-list">
+	<h2>Archived entries for {{ entries_m.grouper }}</h2>
+	<ul class="excerpt-list">
 
 {% for entry in entries_m.list %}
-        <li class="excerpt {% if forloop.counter|divisibleby:2 %}even{% else %}odd{% endif %}">
-            <a href="{{ entry.get_absolute_url }}">
-                <span class="title">{{ entry.title|typogrify }}</span>
-                <span class="content">{{ entry.content|striptags|truncatewords:30 }}</span>
-            </a>
-            <span class="fade"></span>
-        </li>
+		<li class="excerpt">
+			<a href="{{ entry.get_absolute_url }}">
+				<span class="title">{{ entry.title|typogrify }}</span>
+				<span class="content">{{ entry.content|striptags|truncatewords:30 }}</span>
+			</a>
+			<span class="fade"></span>
+		</li>
 
 {% endfor %}
 
-    </ul>
+	</ul>
 </li>
 
 {% endfor %}
@@ -34,25 +34,25 @@
 </ul>
 
 {% comment %}
-    
+
 {% for entry in entries %}
 
 {% ifchanged entry.date_published.month %}
 <li class="month-list year-{{ entry.date_published|date:"Y" }} month-{{ entry.date_published|date:"m" }} {{ entry.date_published|date:"F"|lower }}">
 <h2>Archived entries for {{ entry.date_published|date:"F, Y" }}</h2>
-    <ul class="entry-list">
+	<ul class="entry-list">
 {% endifchanged %}
 
-        <li class="entry">
-            <a href="{{ entry.get_absolute_url }}">
-                <span class="title">{{ entry.title|typogrify }}</span>
-                <span class="content">{{ entry.content|striptags|truncatewords:30 }}</span>
-            </a>
-            <span class="fade"></span>
-        </li>
+		<li class="entry">
+			<a href="{{ entry.get_absolute_url }}">
+				<span class="title">{{ entry.title|typogrify }}</span>
+				<span class="content">{{ entry.content|striptags|truncatewords:30 }}</span>
+			</a>
+			<span class="fade"></span>
+		</li>
 
 {% ifchanged entry.date_published.month %}
-    </ul>
+	</ul>
 </li>
 {% endifchanged %}
 
