@@ -1,6 +1,7 @@
 Django
 BeautifulSoup
 Markdown
+PIL
 South
 django-extensions
 django-fabtastic
