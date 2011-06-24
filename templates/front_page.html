@@ -26,8 +26,7 @@
 		<ul>
 	{% for item in featured_content %}
 		<li{% if forloop.first %} class="first"{% endif %}>
-			{% thumbnail item.image "220" as item_thumb %}
-			{% if item.link %}<a href="{{ item.link }}"{% else %}<span{% endif %} style="background-image:url({{ item_thumb }});"{% if item.link %}>{{ item.link }}</a>{% else %}></span>{% endif %}
+			{% if item.link %}<a href="{{ item.link }}"{% else %}<span{% endif %}{% if item.link %}><img src="{% thumbnail item.image "220" %}"></a>{% else %}></span>{% endif %}
 		</li>
 	{% empty %}
 		<li class="first empty">No work in progress has been&nbsp;featured.</li>
