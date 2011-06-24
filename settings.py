@@ -69,7 +69,7 @@ MIDDLEWARE_CLASSES = (
 
 URL_FILEBROWSER_MEDIA = MEDIA_URL + 'filebrowser/'
 
-ROOT_URLCONF = 'andrewramos.urls'
+ROOT_URLCONF = 'urls'
 
 MOBILE_TEMPLATE_DIRS = (
 	os.path.join(PROJECT_ROOT, "templates_mobile"),
