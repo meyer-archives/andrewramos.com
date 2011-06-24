@@ -1,9 +1,9 @@
 Django
 BeautifulSoup
 Markdown
-PIL
 South
 django-extensions
+django-fabtastic
 django-haystack
 django-pagination
 django-memcache-status

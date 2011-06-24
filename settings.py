@@ -98,8 +98,8 @@ INSTALLED_APPS = (
 	'shorturls',
 	'typogrify',
 	'django_extensions',
-	'haystack',
-	'memcache_status',
+	# 'haystack',
+	# 'memcache_status',
 	'pagination',
 	'fabtastic',
 
@@ -122,18 +122,18 @@ THUMBNAIL_PREFIX = "r_"
 THUMBNAIL_BASEDIR = 'resized'
 THUMBNAIL_EXTENSION = 'png'
 
-#HAYSTACK_SEARCH_ENGINE = 'whoosh'
-#HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'search_index')
-HAYSTACK_SITECONF = 'search_sites'
-HAYSTACK_XAPIAN_PATH = os.path.join(PROJECT_ROOT, 'xapian_index')
-HAYSTACK_SEARCH_ENGINE = 'xapian'
+# HAYSTACK_SEARCH_ENGINE = 'whoosh'
+# HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'search_index')
+# HAYSTACK_SITECONF = 'search_sites'
+# HAYSTACK_XAPIAN_PATH = os.path.join(PROJECT_ROOT, 'xapian_index')
+# HAYSTACK_SEARCH_ENGINE = 'xapian'
 
-CACHES = {
-	'default': {
-		'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-		'LOCATION': '127.0.0.1:11211',
-	}
-}
+# CACHES = {
+# 	'default': {
+# 		'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+# 		'LOCATION': '127.0.0.1:11211',
+# 	}
+# }
 
 try:
 	from settings_local import *

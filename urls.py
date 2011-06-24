@@ -14,7 +14,7 @@ urlpatterns = patterns('',
 	(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 	(r'^admin/', include(admin.site.urls)),
 	(r'^s/', include('shorturls.urls')),
-	(r'^search/', include('haystack.urls')),
+	# (r'^search/', include('haystack.urls')),
 	# url(r'^xmlrpc/$', 'rpc4django.views.serve_rpc_request'),
 	url(r'^about/$', direct_to_template, {'template': 'about.html'}, name='about_url'),
 )
