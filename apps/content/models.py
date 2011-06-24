@@ -9,7 +9,7 @@ class FrontPageContent(models.Model):
     """(FrontPageContent description)"""
 
     image = ImageWithThumbsField(
-        upload_to="front-page",
+        upload_to="uploads/front-page",
         thumbs=(
             ('admin_thumb', {'size': (100, 100), 'crop': True}),
             ('220', {'size': (220, 1000)}),

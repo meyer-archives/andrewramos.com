@@ -57,7 +57,17 @@ class Project(models.Model):
 
 class Category(models.Model):
 	title = models.CharField(blank=False, max_length=100)
-	image = models.ImageField(upload_to="uploads/portfolio",help_text='The nav item to show for the portfolio category.',verbose_name='Nav image')
+	image = ImageWithThumbsField(
+		upload_to="uploads/portfolio",
+		help_text='The nav item to show for the portfolio category.',
+		thumbs=(
+			('admin_thumb', {'size': (100, 100), 'crop': True}),
+			# ('700x440', {'size': (700, 440)}),
+			# ('480x440', {'size': (480, 440)}),
+		),
+		verbose_name='Nav image',
+		blank=True, null=True, thumbnail_format='png'
+		)
 
 	content_type = models.ForeignKey(ContentType)
 	object_id = models.PositiveIntegerField()
@@ -72,7 +82,7 @@ class Category(models.Model):
 
 class PortfolioPiece(models.Model):
 	image = ImageWithThumbsField(
-		upload_to="portfolio",
+		upload_to="uploads/portfolio",
 		thumbs=(
 			('admin_thumb', {'size': (100, 100), 'crop': True}),
 			('700x440', {'size': (700, 440)}),

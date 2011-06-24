@@ -66,7 +66,7 @@ class BlogPost(models.Model):
 
 class Image(models.Model):
 	image = ImageWithThumbsField(
-		upload_to="blog",
+		upload_to="uploads/blog",
 		thumbs=(
 			('admin_thumb', {'size': (100, 100), 'crop': True}),
 			('700x440', {'size': (700, 440)}),
