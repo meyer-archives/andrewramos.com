@@ -19,7 +19,7 @@ psycopg2
 smartypants
 -e git+http://github.com/mikemeyer/django-shorturls.git#egg=django-shorturls
 -e git+http://github.com/mintchaos/typogrify.git#egg=typogrify
--e git+http://github.com:duointeractive/django-athumb.git#egg=athumb
+-e git+http://github.com/duointeractive/django-athumb.git#egg=athumb
 wsgiref
 werkzeug
 xapian-haystack
