@@ -30,15 +30,17 @@ SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
 
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, "media")
-
 FIXTURE_DIRS = (
 	os.path.join(PROJECT_ROOT, "fixtures"),
 )
 
-MEDIA_URL = 'http://andrewramos.com/media/'
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, "media")
+STATIC_ROOT = os.path.join(PROJECT_ROOT, "static_cache")
 
-ADMIN_MEDIA_PREFIX = 'http://andrewramos.com/media/admin/'
+MEDIA_URL = 'http://andrewramos.s3.amazonaws.com/media/'
+STATIC_URL = 'http://andrewramos.s3.amazonaws.com/static/'
+
+ADMIN_MEDIA_PREFIX = 'http://andrewramos.s3.amazonaws.com/static/admin/'
 
 SECRET_KEY = '[REDACTED]'
 
