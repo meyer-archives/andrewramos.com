@@ -91,7 +91,7 @@ INSTALLED_APPS = (
 	'django.contrib.admin',
 	'django.contrib.admindocs',
 	'django.contrib.markup',
-	'rpc4django',
+	# 'rpc4django',
 	'south',
 	'easy_thumbnails',
 	'taggit',

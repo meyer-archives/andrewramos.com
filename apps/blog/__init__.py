@@ -1,1 +1,1 @@
-import blog.xmlrpc_views
+# import blog.xmlrpc_views
