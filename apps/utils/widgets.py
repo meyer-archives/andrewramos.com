@@ -1,6 +1,5 @@
 from django.contrib.admin.widgets import AdminFileWidget 
 from django.utils.safestring import mark_safe
-from easy_thumbnails.files import get_thumbnailer
 from django.conf import settings
 
 class AdminImageFieldWithThumbWidget(AdminFileWidget): 

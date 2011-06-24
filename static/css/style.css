@@ -22,7 +22,7 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 
 body{
     font: 14px/22px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-    background: #e5e5e5 url(images/body-bkg.jpg) no-repeat;
+    background: #e5e5e5 url(../images/body-bkg.jpg) no-repeat;
     -webkit-font-smoothing: antialiased;
      -webkit-text-size-adjust: none;
 }
@@ -49,11 +49,11 @@ body.iphone,body.iphone #container{
 
 @font-face {
     font-family: 'ar-heading';
-    src: url('trade-gothic/font.eot');
+    src: url('../fonts/trade-gothic/font.eot');
     src: local('☺'),
-    url('trade-gothic/font.woff') format('woff'),
-    url('trade-gothic/font.ttf') format('truetype'),
-    url('trade-gothic/font.svg#webfontnzGfCVZJ') format('svg');
+    url('../fonts/trade-gothic/font.woff') format('woff'),
+    url('../fonts/trade-gothic/font.ttf') format('truetype'),
+    url('../fonts/trade-gothic/font.svg#webfontnzGfCVZJ') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -97,13 +97,13 @@ body.ipad #wrapper::-webkit-scrollbar{
 }
 
 #wrapper::-webkit-scrollbar-thumb:vertical {
-    -webkit-border-image: url(images/scrollbar-track.png) 7 0;
+    -webkit-border-image: url(../images/scrollbar-track.png) 7 0;
     border-color: transparent;
     border-width: 7px 0;
 }
 
 #wrapper::-webkit-scrollbar-thumb:vertical{
-    -webkit-border-image: url(images/scrollbar.png) 7 0;
+    -webkit-border-image: url(../images/scrollbar.png) 7 0;
 }
 
 /* @end */
@@ -130,7 +130,7 @@ body#page-404 #header{
 }
 
 body#page-404 #content h1{
-    background-image: url(images/pencil-404.png);
+    background-image: url(../images/pencil-404.png);
     width: 490px;
     height: 320px;
     display: block;
@@ -146,7 +146,7 @@ body#page-404 #content h1{
     height: 170px;
     display: block;
     text-indent: -1000px;
-    background: url(images/header-logo.png) no-repeat -128px 11px;
+    background: url(../images/header-logo.png) no-repeat -128px 11px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 45px;
@@ -154,7 +154,7 @@ body#page-404 #content h1{
 }
 
 #header h1 a:hover{
-    background: url(images/header-logo.png) no-repeat 12px 11px;
+    background: url(../images/header-logo.png) no-repeat 12px 11px;
 }
 
 #header h1 a:active{
@@ -186,7 +186,7 @@ p#copyright-notice{
     height: 100%;
     position: relative;
     z-index: 1;
-    background: #FFF url(images/band-left.png) repeat-y 0 0;
+    background: #FFF url(../images/band-left.png) repeat-y 0 0;
     padding-left: 56px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -236,7 +236,7 @@ body.grey #wrapper,
 #main-nav li,
 #page-404 #main-nav li.current{
     height: 51px;
-    background: url(images/nav-bkg.png) 0 -51px;
+    background: url(../images/nav-bkg.png) 0 -51px;
     margin-bottom: -11px;
     margin-top: -11px;
     line-height: 56px;
@@ -251,7 +251,7 @@ body.grey #wrapper,
 }
 
 #main-nav li.current{
-    background: url(images/nav-bkg.png) no-repeat 0 0px;
+    background: url(../images/nav-bkg.png) no-repeat 0 0px;
     position: relative;
     z-index: 1;
     text-shadow: #83cbdd 0 1px 1px;
@@ -286,7 +286,7 @@ ul#sub-nav li a:hover{
 }
 
 ul#sub-nav li#contact-link a{
-    background: url(images/contact-arrow.png) no-repeat right 6px;
+    background: url(../images/contact-arrow.png) no-repeat right 6px;
 }
 
 ul#sub-nav li#contact-link a:hover{
@@ -372,7 +372,7 @@ body.iphone #content{
     text-indent: -9999px;
     height: 73px;
     border-top: 1px solid #e1b197;
-    background: url(images/contact-heading.png) no-repeat 0 13px;
+    background: url(../images/contact-heading.png) no-repeat 0 13px;
 }
 
 ul.entry-list {
@@ -467,7 +467,7 @@ ul.entry-list {
     display: block;
     height: 77px;
     width: 480px;
-    background-image: url(images/about-heading.png);
+    background-image: url(../images/about-heading.png);
     text-indent: -10000px;
     position: relative;
     left: -1px;
@@ -572,7 +572,7 @@ div#footer {
     width: 480px;
     padding-left: 50px;
     margin-left: -50px;
-    background: url(images/page-corner.png) no-repeat;
+    background: url(../images/page-corner.png) no-repeat;
 }
 
 div#footer a{
@@ -581,7 +581,7 @@ div#footer a{
     right: 0;
     top: 35px;
     text-decoration: none;
-    background: url(images/back-to-top.png) no-repeat right center;
+    background: url(../images/back-to-top.png) no-repeat right center;
     padding-right: 15px;
     -webkit-transition: all 200ms linear;
 }
@@ -597,14 +597,14 @@ div#footer a:hover{
 #page-about #content .elsewhere{
     width: 241px;
     padding-top: 179px;
-    background: url(images/andrew-pic.jpg) no-repeat;
+    background: url(../images/andrew-pic.jpg) no-repeat;
     margin-left: 248px;
 }
 
 #page-about #content .elsewhere h3{
     display: block;
     text-indent: -10000px;
-    background-image: url(images/elsewhere.png);
+    background-image: url(../images/elsewhere.png);
     width: 71px;
     height: 7px;
     margin-bottom: 9px;
@@ -631,7 +631,7 @@ div.draft-warning p a{
 #page-about #content .elsewhere ul li a{
     display: block;
     width: 233px;
-    background: url(images/elsewhere-links.gif) no-repeat -466px 0;
+    background: url(../images/elsewhere-links.gif) no-repeat -466px 0;
     height: 37px;
     text-indent: -10000px;
 }
@@ -689,7 +689,7 @@ div.draft-warning p a{
     overflow: hidden;
     padding: 46px 0 35px 50px;
     margin-left: -50px;
-    background: url(images/page-corner.png) no-repeat 0 0;
+    background: url(../images/page-corner.png) no-repeat 0 0;
 }
 
 div.entry-header,
@@ -826,7 +826,7 @@ a{
 
 ul.result-list h2 {
     padding-left: 50px;
-    background: url(images/arrow-small.png) no-repeat 15px center;
+    background: url(../images/arrow-small.png) no-repeat 15px center;
     text-transform: uppercase;
     font-size: 11px;
     color: #6c6a60;
@@ -838,7 +838,7 @@ ul.result-list h2 {
 
 ul.result-list li.month-list{
     padding-top: 50px;
-    background: url(images/page-corner.png) no-repeat 0 0;
+    background: url(../images/page-corner.png) no-repeat 0 0;
     padding-left: 50px;
     margin-left: -50px;
 }
@@ -884,7 +884,7 @@ ul.result-list li.excerpt span.fade{
     width: 40px;
     right: 0;
     top: 0;
-    background: url(images/entry-bkg.png) right top;
+    background: url(../images/entry-bkg.png) right top;
 }
 
 #blog-post-single{
@@ -1006,7 +1006,7 @@ ul.post-list li{
 
 #content .case-study h2{
     padding-left: 70px;
-    background: url(images/case-study.png) no-repeat 0 5px;
+    background: url(../images/case-study.png) no-repeat 0 5px;
 }
 
 #content .featured-image{
@@ -1059,7 +1059,7 @@ ul.entry-list li.entry {
     width: 700px;
     -webkit-transition: width 200ms ease-in-out;
     -moz-transition: width 200ms ease-in-out;
-/*    background: url(images/page-corner.png) no-repeat 0 0;*/
+/*    background: url(../images/page-corner.png) no-repeat 0 0;*/
     padding-left: 50px;
     margin-left: -50px;
     overflow: hidden;
@@ -1068,7 +1068,7 @@ ul.entry-list li.entry {
 
 ul.entry-list li.entry a.permalink{
     position: absolute;
-    background: url(images/arrow-small.png) no-repeat center center;
+    background: url(../images/arrow-small.png) no-repeat center center;
     display: block;
     width: 30px;
     height: 20px;
@@ -1123,7 +1123,7 @@ screen and (orientation:portrait){
     display: block;
     text-indent: -1000px;
     overflow: hidden;
-    background: url(images/blog-header-links.png) no-repeat 0 0;
+    background: url(../images/blog-header-links.png) no-repeat 0 0;
     height: 29px;
     width: 75px;
     position: absolute;
@@ -1169,7 +1169,7 @@ body#page-404 form#search-form #search-input{
 
 form#search-form #search-input input{
     -webkit-appearance: none;
-    background: #FFF url(images/search-icon.png) no-repeat 7px 5px;
+    background: #FFF url(../images/search-icon.png) no-repeat 7px 5px;
     border: 1px solid #cbc9c9;
     height: 25px;
     vertical-align: middle;
@@ -1292,7 +1292,7 @@ form#search-form input::-webkit-input-placeholder {
 /* @group Front Page */
 
 #featured-image{
-    background: url(images/headers/lots-of-coffee.png) no-repeat 0 0;
+    background: url(../images/headers/lots-of-coffee.png) no-repeat 0 0;
     height: 380px;
     width: 480px;
     text-indent: -10000px;
@@ -1300,19 +1300,19 @@ form#search-form input::-webkit-input-placeholder {
 }
 
 body#front-page #content{
-    background: url(images/page-corner.png) no-repeat 0 60px;
+    background: url(../images/page-corner.png) no-repeat 0 60px;
 }
 
 #featured-posts{
     width: 239px;
     float: left;
-    background: url(images/fp-image-separator.gif) repeat-x 0 16px;
+    background: url(../images/fp-image-separator.gif) repeat-x 0 16px;
     position: relative;
 }
 
 #featured-content{
     border-left: 1px solid #f3c1ab;
-    background: url(images/fp-image-separator.gif) repeat-x 0 16px;
+    background: url(../images/fp-image-separator.gif) repeat-x 0 16px;
     float: left;
     width: 220px;
     padding-left: 20px;
@@ -1329,7 +1329,7 @@ body#front-page #content{
 
 #featured-content ul li{
     padding-top: 20px;
-    background: url(images/fp-image-separator.gif) no-repeat center 10px;
+    background: url(../images/fp-image-separator.gif) no-repeat center 10px;
 }
 
 #featured-content ul li.first{
@@ -1355,7 +1355,7 @@ body#front-page #content{
 }
 
 #featured-posts a.rss-link{
-    background: url(images/rss-link.png) no-repeat 0 -30px;
+    background: url(../images/rss-link.png) no-repeat 0 -30px;
     display: block;
     width: 84px;
     height: 28px;
@@ -1401,7 +1401,7 @@ body#front-page #content{
     margin-bottom: 25px;
     margin-left: -50px;
     padding-left: 50px;
-    background: url(images/arrow-small.png) no-repeat 18px 5px;
+    background: url(../images/arrow-small.png) no-repeat 18px 5px;
 }
 
 #feature-container h2{
@@ -1433,7 +1433,7 @@ ul.slideshow li{
 .project-single {
     padding-left: 50px;
     margin-left: -50px;
-    background: url(images/page-corner.png) no-repeat 0 0;
+    background: url(../images/page-corner.png) no-repeat 0 0;
     padding-top: 45px;
     padding-bottom: 80px;
     float: left;
@@ -1475,7 +1475,7 @@ div.portfolio-info p{
 div.portfolio-info p span{
     padding-left: 18px;
     margin-left: 6px;
-    background: url(images/portfolio-title-separator.png) no-repeat left center;
+    background: url(../images/portfolio-title-separator.png) no-repeat left center;
     display: block;
     height: 24px;
     line-height: 24px;
@@ -1498,7 +1498,7 @@ div.slideshow-links{
     padding-right: 10px;
     padding-left: 20px;
     height: 19px;
-    background: url(images/20px-gradient.png) repeat-y 0 0;
+    background: url(../images/20px-gradient.png) repeat-y 0 0;
     bottom: -27px;
 }
 
@@ -1508,7 +1508,7 @@ div.slideshow-links a{
     display: inline-block;
     overflow: hidden;
     text-indent: -1000px;
-    background: #FFF url(images/slideshow-nav.png) no-repeat 5px 4px;
+    background: #FFF url(../images/slideshow-nav.png) no-repeat 5px 4px;
 }
 
 div.slideshow-links a:hover{
@@ -1550,11 +1550,11 @@ div.slideshow .next-slide{
 }
 
 div.slideshow:hover .prev-slide{
-    background: url(images/prev.png) no-repeat left center;
+    background: url(../images/prev.png) no-repeat left center;
 }
 
 div.slideshow:hover .next-slide{
-    background: url(images/next.png) no-repeat right center;
+    background: url(../images/next.png) no-repeat right center;
 }
 
 /* @end */

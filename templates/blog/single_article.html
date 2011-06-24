@@ -12,7 +12,10 @@
 <a class="post-edit-link" href="{% url admin:blog_article_change entry.id %}">Edit</a>
 {% endif %}
 
-{% if entry.images.all %}
+
+{% if entry.images %}
+
+{{ entry.images }}
 
 <div class="slideshow featured-image">
     <ul class="slides {% if entry.image_width == 'p' %}post-width{% else %}full-width{% endif %}">

@@ -1,7 +1,6 @@
 from django.contrib.admin.templatetags.admin_list import items_for_result, result_headers
 from django.template import Library
 from django.utils.safestring import mark_safe
-from easy_thumbnails.templatetags import thumbnail
 
 register = Library()
 

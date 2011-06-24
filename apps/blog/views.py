@@ -9,8 +9,8 @@ from utils.qschain import QuerySetChain
 
 @render_to('blog/index_blog.html')
 def index(request):
-    a = Article.objects.filter(status='p').select_related('content_type').all().order_by("-date_published")
-    c = CaseStudy.objects.filter(status='p').select_related('content_type').all().order_by("-date_published")
+    a = Article.objects.filter(status='p').select_related().all().order_by("-date_published")
+    c = CaseStudy.objects.filter(status='p').select_related().all().order_by("-date_published")
     s = ShortPost.objects.filter(status='p').all().order_by("-date_published")
     q = Quote.objects.filter(status='p').all().order_by("-date_published")
 

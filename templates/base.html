@@ -1,4 +1,4 @@
-{% load handy_utils %}
+{% load handy_utils media %}
 {% url home-url as home_url %}
 {% url blog-home as blog_url %}
 {% url portfolio_home as portfolio_url %}
@@ -6,70 +6,73 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Andrew Ramos{% block page_title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{{ MEDIA_URL }}style.css" media="screen">
-    <link rel="alternate" type="application/rss+xml" title="AndrewRamos.com RSS" href="http://feeds.feedburner.com/andrewramos">
-    <link rel="shortcut icon" href="{{ MEDIA_URL }}favicon.ico" />
-    <!-- iPhone/iPad -->
-    <meta name="format-detection" content="telephone=no">
+	<meta charset="utf-8">
+	<title>Andrew Ramos{% block page_title %}{% endblock %}</title>
+	{% css "all.css" %}
+	<link rel="alternate" type="application/rss+xml" title="AndrewRamos.com RSS" href="http://feeds.feedburner.com/andrewramos">
+	<link rel="shortcut icon" href="{% media_url "images/favicon.ico" %}" />
+	<!-- iPhone/iPad -->
+	<meta name="format-detection" content="telephone=no">
 {% if request.ipad %}
-    <meta name = "viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name = "viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 {% else %}
-    <meta name = "viewport" content="width=768, user-scalable=1">
+	<meta name = "viewport" content="width=768, user-scalable=1">
 {% endif %}
-    <!-- Google AJAX API -->
-    <script src="http://www.google.com/jsapi"></script>
-    <script>google.load("jquery","1");</script>
+{% comment %}
+	<!-- Google AJAX API -->
+	<script src="http://www.google.com/jsapi"></script>
+	<script>google.load("jquery","1");</script>
+{% endcomment %}
+
+	{% js "all.js" %}
 
 {% if request.ipad %}
-    <script src="{{ MEDIA_URL }}touchscroll.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        var scroller = new TouchScroll(document.querySelector("#wrapper"), {elastic:true});
-    });
-    </script>
+	{% js "touchscroll.min.js" %}
+	<script>
+	$(document).ready(function(){
+		var scroller = new TouchScroll(document.querySelector("#wrapper"), {elastic:true});
+	});
+	</script>
 {% endif %}
 
-    {% block head %}
-    {% endblock %}
+	{% block head %}
+	{% endblock %}
 
-    <script src="{{ MEDIA_URL }}site.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-17943844-1']);
-        _gaq.push(['_trackPageview']);
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-17943844-1']);
+		_gaq.push(['_trackPageview']);
 
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 </head>
 <body class="{% if request.ipad %}ipad{% endif %}{% if request.iphone %}iphone{% endif %} {% block bodyclass %}{% endblock %}" id="{% block bodyid %}page-generic{% endblock %}">
 
 <div id="container">
-    <div id="header">
-        <h1><a href="{{ home_url }}"><span>The Notebook of Andrew Ramos</span></a></h1>
-        <ul id="main-nav">
-            <li{% is_current request blog_url ' class="current"' %}><a href="{{ blog_url }}">The Blog</a></li>
-            <li{% is_current request portfolio_url ' class="current"' %}><a href="{{ portfolio_url }}">Portfolio</a></li>
-            <li{% is_current request about_url ' class="current"' %}><a href="{{ about_url }}">About</a></li>
+	<div id="header">
+		<h1><a href="{{ home_url }}"><span>The Notebook of Andrew Ramos</span></a></h1>
+		<ul id="main-nav">
+			<li{% is_current request blog_url ' class="current"' %}><a href="{{ blog_url }}">The Blog</a></li>
+			<li{% is_current request portfolio_url ' class="current"' %}><a href="{{ portfolio_url }}">Portfolio</a></li>
+			<li{% is_current request about_url ' class="current"' %}><a href="{{ about_url }}">About</a></li>
 {% comment %}
-            <li><a href="{{ contact }}">Contact</a></li>
+			<li><a href="{{ contact }}">Contact</a></li>
 {% endcomment %}
-        </ul>
-        <p id="copyright-notice">&copy; {% now "Y" %} Andrew Ramos</p>
-    </div>
-    <div id="wrapper">
-        <div id="content">
-            <div id="content-inner">
+		</ul>
+		<p id="copyright-notice">&copy; {% now "Y" %} Andrew Ramos</p>
+	</div>
+	<div id="wrapper">
+		<div id="content">
+			<div id="content-inner">
 {% block content %}
 {% endblock %}
-            </div>
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
 </div>
 </body>
 </html>

@@ -2,8 +2,7 @@
 .svn
 .DS_Store
 pip-log.txt
-media/uploads
-media/resized
+media/*
 data.db
 logs/
 settings_local.py

@@ -4,7 +4,7 @@ import sys
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -35,12 +35,12 @@ FIXTURE_DIRS = (
 )
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, "media")
-STATIC_ROOT = os.path.join(PROJECT_ROOT, "static_cache")
+STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
 
 MEDIA_URL = 'http://andrewramos.s3.amazonaws.com/media/'
 STATIC_URL = 'http://andrewramos.s3.amazonaws.com/static/'
 
-ADMIN_MEDIA_PREFIX = 'http://andrewramos.s3.amazonaws.com/static/admin/'
+ADMIN_MEDIA_PREFIX = 'http://andrewramos.s3.amazonaws.com/admin/'
 
 SECRET_KEY = '[REDACTED]'
 
@@ -69,8 +69,6 @@ MIDDLEWARE_CLASSES = (
 	'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
-URL_FILEBROWSER_MEDIA = MEDIA_URL + 'filebrowser/'
-
 ROOT_URLCONF = 'urls'
 
 MOBILE_TEMPLATE_DIRS = (
@@ -95,7 +93,6 @@ INSTALLED_APPS = (
 	'django.contrib.markup',
 	# 'rpc4django',
 	'south',
-	'easy_thumbnails',
 	'taggit',
 	'shorturls',
 	'typogrify',
@@ -105,6 +102,7 @@ INSTALLED_APPS = (
 	'pagination',
 	'fabtastic',
 	'athumb',
+	'mediasync',
 
 	# My apps
 	'utils',
@@ -118,6 +116,36 @@ DEFAULT_FILE_STORAGE = 'athumb.backends.s3boto.S3BotoStorage_AllPublic'
 AWS_ACCESS_KEY_ID = '[REDACTED]'
 AWS_SECRET_ACCESS_KEY = '[REDACTED]'
 AWS_STORAGE_BUCKET_NAME = 'andrewramos'
+
+DJANGO_STATIC_CLOSURE_COMPILER = 'closure --warning_level QUIET --third_party'
+DJANGO_STATIC_YUI_COMPRESSOR = 'yuicompressor'
+
+MEDIASYNC = {
+	'BACKEND': 'mediasync.backends.s3',
+	'AWS_KEY': AWS_ACCESS_KEY_ID,
+	'AWS_SECRET': AWS_SECRET_ACCESS_KEY,
+	'AWS_BUCKET': 'andrewramos',
+	'SERVE_REMOTE': True,
+	'EMULATE_COMBO': False,
+	'DOCTYPE': 'html5',
+	'EXPIRATION_DAYS': 365 * 10,
+	'AWS_BUCKET_CNAME': False,
+	'CSS_PATH': 'css',
+	'JS_PATH': 'js',
+	'JOINED': {
+		'all.css': [
+			 'style.css',
+		],
+		'all.js': [
+			'jquery-1.6.1.js',
+			'site.js',
+		],
+	},
+	'PROCESSORS': (
+		'utils.mediasync_processors.css_minifier',
+		'utils.mediasync_processors.js_minifier',
+	),
+}
 
 # models with shortened URLs
 SHORTEN_MODELS = {
@@ -139,6 +167,8 @@ SHORTEN_MODELS = {
 # 		'LOCATION': '127.0.0.1:11211',
 # 	}
 # }
+
+MEDIA_CACHE_BUSTER = '1'
 
 try:
 	from local_settings import *
