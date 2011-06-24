@@ -1,0 +1,33 @@
+[ { "fields" : { "date_joined" : "2010-08-11 00:43:32",
+        "email" : "[REDACTED]",
+        "first_name" : "Michael",
+        "groups" : [  ],
+        "is_active" : true,
+        "is_staff" : true,
+        "is_superuser" : true,
+        "last_login" : "2011-06-24 00:30:38",
+        "last_name" : "Meyer",
+        "password" : "[REDACTED]",
+        "user_permissions" : [  ],
+        "username" : "mikemeyer"
+      },
+    "model" : "auth.user",
+    "pk" : 1
+  },
+  { "fields" : { "date_joined" : "2010-08-11 01:09:37",
+        "email" : "[REDACTED]",
+        "first_name" : "Andrew",
+        "groups" : [  ],
+        "is_active" : true,
+        "is_staff" : true,
+        "is_superuser" : true,
+        "last_login" : "2011-06-17 18:40:38",
+        "last_name" : "Ramos",
+        "password" : "[REDACTED]",
+        "user_permissions" : [  ],
+        "username" : "andrew"
+      },
+    "model" : "auth.user",
+    "pk" : 2
+  }
+]

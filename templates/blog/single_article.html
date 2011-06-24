@@ -18,11 +18,11 @@
     <ul class="slides {% if entry.image_width == 'p' %}post-width{% else %}full-width{% endif %}">
 {% if entry.image_width == 'p' %}
 {% for item in entry.images.all %}
-        <li><div style="background-image:url({% thumbnail item.image 480x440 upscale crop %})"></div></li>
+        <li><div style="background-image:url({% thumbnail item.image '480x440' %})"></div></li>
 {% endfor %}
 {% else %}
 {% for item in entry.images.all %}
-        <li><div style="background-image:url({% thumbnail item.image 700x440 upscale crop %})"></div></li>
+        <li><div style="background-image:url({% thumbnail item.image '700x440' %})"></div></li>
 {% endfor %}
 {% endif %}
     </ul>

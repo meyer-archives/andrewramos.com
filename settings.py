@@ -16,9 +16,9 @@ MANAGERS = ADMINS
 DATABASES = {
 	'default': {
 		'ENGINE':	 'django.db.backends.postgresql_psycopg2',
-		'NAME':		   'ramos_db',
-		'USER':		   'ramos_pg',
-		'PASSWORD':	   '[REDACTED]',
+		'NAME':		   'andrewramos',
+		'USER':		   'andrewramos',
+		'PASSWORD':	   'andrewramos',
 		'HOST':		   'localhost',
 		'PORT':		   '5432',
 	}
@@ -102,6 +102,7 @@ INSTALLED_APPS = (
 	# 'memcache_status',
 	'pagination',
 	'fabtastic',
+	'athumb',
 
 	# My apps
 	'utils',
@@ -110,6 +111,12 @@ INSTALLED_APPS = (
 	'content',
 )
 
+DEFAULT_FILE_STORAGE = 'athumb.backends.s3boto.S3BotoStorage_AllPublic'
+
+AWS_ACCESS_KEY_ID = '[REDACTED]'
+AWS_SECRET_ACCESS_KEY = '[REDACTED]'
+AWS_STORAGE_BUCKET_NAME = 'andrewramos'
+
 # models with shortened URLs
 SHORTEN_MODELS = {
 	'a': 'blog.article',
@@ -117,10 +124,6 @@ SHORTEN_MODELS = {
 	's': 'blog.shortpost',
 	'q': 'blog.quote',
 }
-
-THUMBNAIL_PREFIX = "r_"
-THUMBNAIL_BASEDIR = 'resized'
-THUMBNAIL_EXTENSION = 'png'
 
 # HAYSTACK_SEARCH_ENGINE = 'whoosh'
 # HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'search_index')
