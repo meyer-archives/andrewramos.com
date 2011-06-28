@@ -11,7 +11,7 @@ class Migration(SchemaMigration):
         # Adding model 'Image'
         db.create_table('blog_image', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('image', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
+            ('image', self.gf('athumb.fields.ImageWithThumbsField')(max_length=255, null=True, blank=True)),
             ('content_type', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['contenttypes.ContentType'])),
             ('object_id', self.gf('django.db.models.fields.PositiveIntegerField')()),
         ))
@@ -29,7 +29,6 @@ class Migration(SchemaMigration):
             ('date_modified', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now, auto_now=True, blank=True)),
             ('date_published', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now)),
             ('status', self.gf('django.db.models.fields.CharField')(default='d', max_length=1)),
-            ('tags', self.gf('tagging.fields.TagField')()),
             ('excerpt', self.gf('django.db.models.fields.TextField')(blank=True)),
             ('display_title', self.gf('django.db.models.fields.BooleanField')(default=True)),
             ('subtitle', self.gf('django.db.models.fields.CharField')(max_length=100, blank=True)),
@@ -49,7 +48,6 @@ class Migration(SchemaMigration):
             ('date_modified', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now, auto_now=True, blank=True)),
             ('date_published', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now)),
             ('status', self.gf('django.db.models.fields.CharField')(default='d', max_length=1)),
-            ('tags', self.gf('tagging.fields.TagField')()),
             ('excerpt', self.gf('django.db.models.fields.TextField')(blank=True)),
             ('image_width', self.gf('django.db.models.fields.CharField')(default='f', max_length=1)),
         ))
@@ -67,7 +65,6 @@ class Migration(SchemaMigration):
             ('date_modified', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now, auto_now=True, blank=True)),
             ('date_published', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now)),
             ('status', self.gf('django.db.models.fields.CharField')(default='d', max_length=1)),
-            ('tags', self.gf('tagging.fields.TagField')()),
             ('link', self.gf('django.db.models.fields.URLField')(max_length=200, blank=True)),
         ))
         db.send_create_signal('blog', ['ShortPost'])
@@ -84,7 +81,6 @@ class Migration(SchemaMigration):
             ('date_modified', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now, auto_now=True, blank=True)),
             ('date_published', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now)),
             ('status', self.gf('django.db.models.fields.CharField')(default='d', max_length=1)),
-            ('tags', self.gf('tagging.fields.TagField')()),
             ('author', self.gf('django.db.models.fields.CharField')(max_length=100, blank=True)),
         ))
         db.send_create_signal('blog', ['Quote'])
@@ -124,7 +120,6 @@ class Migration(SchemaMigration):
             'slug': ('django.db.models.fields.SlugField', [], {'unique': 'True', 'max_length': '50', 'db_index': 'True'}),
             'status': ('django.db.models.fields.CharField', [], {'default': "'d'", 'max_length': '1'}),
             'subtitle': ('django.db.models.fields.CharField', [], {'max_length': '100', 'blank': 'True'}),
-            'tags': ('tagging.fields.TagField', [], {}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '150'})
         },
         'blog.casestudy': {
@@ -140,14 +135,13 @@ class Migration(SchemaMigration):
             'is_featured': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'slug': ('django.db.models.fields.SlugField', [], {'unique': 'True', 'max_length': '50', 'db_index': 'True'}),
             'status': ('django.db.models.fields.CharField', [], {'default': "'d'", 'max_length': '1'}),
-            'tags': ('tagging.fields.TagField', [], {}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '150'})
         },
         'blog.image': {
             'Meta': {'object_name': 'Image'},
             'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'image': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
+            'image': ('athumb.fields.ImageWithThumbsField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'}),
             'object_id': ('django.db.models.fields.PositiveIntegerField', [], {})
         },
         'blog.quote': {
@@ -162,7 +156,6 @@ class Migration(SchemaMigration):
             'is_featured': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'slug': ('django.db.models.fields.SlugField', [], {'unique': 'True', 'max_length': '50', 'db_index': 'True'}),
             'status': ('django.db.models.fields.CharField', [], {'default': "'d'", 'max_length': '1'}),
-            'tags': ('tagging.fields.TagField', [], {}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '150'})
         },
         'blog.shortpost': {
@@ -177,7 +170,6 @@ class Migration(SchemaMigration):
             'link': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
             'slug': ('django.db.models.fields.SlugField', [], {'unique': 'True', 'max_length': '50', 'db_index': 'True'}),
             'status': ('django.db.models.fields.CharField', [], {'default': "'d'", 'max_length': '1'}),
-            'tags': ('tagging.fields.TagField', [], {}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '150'})
         },
         'contenttypes.contenttype': {

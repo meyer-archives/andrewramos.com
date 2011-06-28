@@ -28,7 +28,6 @@ class Project(models.Model):
 	slug = models.SlugField()
 	client = models.ForeignKey("Client")
 	status = models.CharField(blank=False, default='d', max_length=1, choices=PROJECT_STATUS)
-	# tags = TagField()
 	category = generic.GenericRelation('Category')
 	pieces = generic.GenericRelation('PortfolioPiece')
 

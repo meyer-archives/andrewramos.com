@@ -9,15 +9,6 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 SET escape_string_warning = off;
 
---
--- Name: plpgsql; Type: PROCEDURAL LANGUAGE; Schema: -; Owner: michael
---
-
-CREATE OR REPLACE PROCEDURAL LANGUAGE plpgsql;
-
-
-ALTER PROCEDURAL LANGUAGE plpgsql OWNER TO michael;
-
 SET search_path = public, pg_catalog;
 
 SET default_tablespace = '';
@@ -43,8 +34,8 @@ ALTER TABLE public.auth_group OWNER TO andrewramos;
 CREATE SEQUENCE auth_group_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -84,8 +75,8 @@ ALTER TABLE public.auth_group_permissions OWNER TO andrewramos;
 CREATE SEQUENCE auth_group_permissions_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -125,8 +116,8 @@ ALTER TABLE public.auth_message OWNER TO andrewramos;
 CREATE SEQUENCE auth_message_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -167,8 +158,8 @@ ALTER TABLE public.auth_permission OWNER TO andrewramos;
 CREATE SEQUENCE auth_permission_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -229,8 +220,8 @@ ALTER TABLE public.auth_user_groups OWNER TO andrewramos;
 CREATE SEQUENCE auth_user_groups_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -257,8 +248,8 @@ SELECT pg_catalog.setval('auth_user_groups_id_seq', 1, false);
 CREATE SEQUENCE auth_user_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -298,8 +289,8 @@ ALTER TABLE public.auth_user_user_permissions OWNER TO andrewramos;
 CREATE SEQUENCE auth_user_user_permissions_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -330,9 +321,9 @@ CREATE TABLE blog_article (
     content_markdown text NOT NULL,
     content text,
     is_featured boolean DEFAULT false NOT NULL,
-    date_added timestamp with time zone DEFAULT '2010-08-10 21:43:37.001186-07'::timestamp with time zone NOT NULL,
-    date_modified timestamp with time zone DEFAULT '2010-08-10 21:43:37.001423-07'::timestamp with time zone NOT NULL,
-    date_published timestamp with time zone DEFAULT '2010-08-10 21:43:37.001623-07'::timestamp with time zone NOT NULL,
+    date_added timestamp with time zone DEFAULT '2010-08-11 04:43:37.001186+00'::timestamp with time zone NOT NULL,
+    date_modified timestamp with time zone DEFAULT '2010-08-11 04:43:37.001423+00'::timestamp with time zone NOT NULL,
+    date_published timestamp with time zone DEFAULT '2010-08-11 04:43:37.001623+00'::timestamp with time zone NOT NULL,
     status character varying(1) DEFAULT 'd'::character varying NOT NULL,
     excerpt text NOT NULL,
     display_title boolean DEFAULT true NOT NULL,
@@ -350,8 +341,8 @@ ALTER TABLE public.blog_article OWNER TO andrewramos;
 CREATE SEQUENCE blog_article_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -382,9 +373,9 @@ CREATE TABLE blog_casestudy (
     content_markdown text NOT NULL,
     content text,
     is_featured boolean DEFAULT false NOT NULL,
-    date_added timestamp with time zone DEFAULT '2010-08-10 21:43:37.017691-07'::timestamp with time zone NOT NULL,
-    date_modified timestamp with time zone DEFAULT '2010-08-10 21:43:37.017943-07'::timestamp with time zone NOT NULL,
-    date_published timestamp with time zone DEFAULT '2010-08-10 21:43:37.018151-07'::timestamp with time zone NOT NULL,
+    date_added timestamp with time zone DEFAULT '2010-08-11 04:43:37.017691+00'::timestamp with time zone NOT NULL,
+    date_modified timestamp with time zone DEFAULT '2010-08-11 04:43:37.017943+00'::timestamp with time zone NOT NULL,
+    date_published timestamp with time zone DEFAULT '2010-08-11 04:43:37.018151+00'::timestamp with time zone NOT NULL,
     status character varying(1) DEFAULT 'd'::character varying NOT NULL,
     excerpt text NOT NULL,
     image_width character varying(1) DEFAULT 'f'::character varying NOT NULL
@@ -400,8 +391,8 @@ ALTER TABLE public.blog_casestudy OWNER TO andrewramos;
 CREATE SEQUENCE blog_casestudy_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -443,8 +434,8 @@ ALTER TABLE public.blog_image OWNER TO andrewramos;
 CREATE SEQUENCE blog_image_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -475,9 +466,9 @@ CREATE TABLE blog_quote (
     content_markdown text NOT NULL,
     content text,
     is_featured boolean DEFAULT false NOT NULL,
-    date_added timestamp with time zone DEFAULT '2010-08-10 21:43:37.049662-07'::timestamp with time zone NOT NULL,
-    date_modified timestamp with time zone DEFAULT '2010-08-10 21:43:37.049876-07'::timestamp with time zone NOT NULL,
-    date_published timestamp with time zone DEFAULT '2010-08-10 21:43:37.050061-07'::timestamp with time zone NOT NULL,
+    date_added timestamp with time zone DEFAULT '2010-08-11 04:43:37.049662+00'::timestamp with time zone NOT NULL,
+    date_modified timestamp with time zone DEFAULT '2010-08-11 04:43:37.049876+00'::timestamp with time zone NOT NULL,
+    date_published timestamp with time zone DEFAULT '2010-08-11 04:43:37.050061+00'::timestamp with time zone NOT NULL,
     status character varying(1) DEFAULT 'd'::character varying NOT NULL,
     author character varying(100) NOT NULL
 );
@@ -492,8 +483,8 @@ ALTER TABLE public.blog_quote OWNER TO andrewramos;
 CREATE SEQUENCE blog_quote_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -524,9 +515,9 @@ CREATE TABLE blog_shortpost (
     content_markdown text NOT NULL,
     content text,
     is_featured boolean DEFAULT false NOT NULL,
-    date_added timestamp with time zone DEFAULT '2010-08-10 21:43:37.034905-07'::timestamp with time zone NOT NULL,
-    date_modified timestamp with time zone DEFAULT '2010-08-10 21:43:37.035118-07'::timestamp with time zone NOT NULL,
-    date_published timestamp with time zone DEFAULT '2010-08-10 21:43:37.035304-07'::timestamp with time zone NOT NULL,
+    date_added timestamp with time zone DEFAULT '2010-08-11 04:43:37.034905+00'::timestamp with time zone NOT NULL,
+    date_modified timestamp with time zone DEFAULT '2010-08-11 04:43:37.035118+00'::timestamp with time zone NOT NULL,
+    date_published timestamp with time zone DEFAULT '2010-08-11 04:43:37.035304+00'::timestamp with time zone NOT NULL,
     status character varying(1) DEFAULT 'd'::character varying NOT NULL,
     link character varying(200) NOT NULL
 );
@@ -541,8 +532,8 @@ ALTER TABLE public.blog_shortpost OWNER TO andrewramos;
 CREATE SEQUENCE blog_shortpost_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -583,8 +574,8 @@ ALTER TABLE public.content_frontpagecontent OWNER TO andrewramos;
 CREATE SEQUENCE content_frontpagecontent_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -630,8 +621,8 @@ ALTER TABLE public.django_admin_log OWNER TO andrewramos;
 CREATE SEQUENCE django_admin_log_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -672,8 +663,8 @@ ALTER TABLE public.django_content_type OWNER TO andrewramos;
 CREATE SEQUENCE django_content_type_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -726,8 +717,8 @@ ALTER TABLE public.django_site OWNER TO andrewramos;
 CREATE SEQUENCE django_site_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -754,7 +745,7 @@ SELECT pg_catalog.setval('django_site_id_seq', 1, true);
 CREATE TABLE easy_thumbnails_source (
     id integer NOT NULL,
     name character varying(255) NOT NULL,
-    modified timestamp with time zone DEFAULT '2009-11-22 18:16:23.523494-08'::timestamp with time zone NOT NULL,
+    modified timestamp with time zone DEFAULT '2009-11-23 02:16:23.523494+00'::timestamp with time zone NOT NULL,
     storage_id integer NOT NULL,
     storage_hash character varying(40) NOT NULL
 );
@@ -769,8 +760,8 @@ ALTER TABLE public.easy_thumbnails_source OWNER TO andrewramos;
 CREATE SEQUENCE easy_thumbnails_source_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -810,8 +801,8 @@ ALTER TABLE public.easy_thumbnails_storage OWNER TO andrewramos;
 CREATE SEQUENCE easy_thumbnails_storage_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -838,7 +829,7 @@ SELECT pg_catalog.setval('easy_thumbnails_storage_id_seq', 4, true);
 CREATE TABLE easy_thumbnails_thumbnail (
     id integer NOT NULL,
     name character varying(255) NOT NULL,
-    modified timestamp with time zone DEFAULT '2009-11-22 18:16:23.523494-08'::timestamp with time zone NOT NULL,
+    modified timestamp with time zone DEFAULT '2009-11-23 02:16:23.523494+00'::timestamp with time zone NOT NULL,
     source_id integer NOT NULL,
     storage_id integer NOT NULL,
     storage_hash character varying(40) NOT NULL
@@ -854,8 +845,8 @@ ALTER TABLE public.easy_thumbnails_thumbnail OWNER TO andrewramos;
 CREATE SEQUENCE easy_thumbnails_thumbnail_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -898,8 +889,8 @@ ALTER TABLE public.portfolio_category OWNER TO andrewramos;
 CREATE SEQUENCE portfolio_category_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -938,8 +929,8 @@ ALTER TABLE public.portfolio_client OWNER TO andrewramos;
 CREATE SEQUENCE portfolio_client_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -968,8 +959,8 @@ CREATE TABLE portfolio_portfoliopiece (
     image character varying(100) NOT NULL,
     content_type_id integer NOT NULL,
     object_id integer NOT NULL,
-    date_added timestamp with time zone DEFAULT '2010-08-10 21:43:37.417242-07'::timestamp with time zone NOT NULL,
-    date_modified timestamp with time zone DEFAULT '2010-08-10 21:43:37.417485-07'::timestamp with time zone NOT NULL,
+    date_added timestamp with time zone DEFAULT '2010-08-11 04:43:37.417242+00'::timestamp with time zone NOT NULL,
+    date_modified timestamp with time zone DEFAULT '2010-08-11 04:43:37.417485+00'::timestamp with time zone NOT NULL,
     "order" integer,
     CONSTRAINT portfolio_portfoliopiece_object_id_check CHECK ((object_id >= 0))
 );
@@ -984,8 +975,8 @@ ALTER TABLE public.portfolio_portfoliopiece OWNER TO andrewramos;
 CREATE SEQUENCE portfolio_portfoliopiece_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -1018,8 +1009,8 @@ CREATE TABLE portfolio_project (
     status character varying(1) DEFAULT 'd'::character varying NOT NULL,
     image_width character varying(1) DEFAULT 'f'::character varying NOT NULL,
     case_study_id integer,
-    date_added timestamp with time zone DEFAULT '2010-08-10 21:43:37.374237-07'::timestamp with time zone NOT NULL,
-    date_modified timestamp with time zone DEFAULT '2010-08-10 21:43:37.374566-07'::timestamp with time zone NOT NULL
+    date_added timestamp with time zone DEFAULT '2010-08-11 04:43:37.374237+00'::timestamp with time zone NOT NULL,
+    date_modified timestamp with time zone DEFAULT '2010-08-11 04:43:37.374566+00'::timestamp with time zone NOT NULL
 );
 
 
@@ -1032,8 +1023,8 @@ ALTER TABLE public.portfolio_project OWNER TO andrewramos;
 CREATE SEQUENCE portfolio_project_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -1074,8 +1065,8 @@ ALTER TABLE public.south_migrationhistory OWNER TO andrewramos;
 CREATE SEQUENCE south_migrationhistory_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -1092,7 +1083,7 @@ ALTER SEQUENCE south_migrationhistory_id_seq OWNED BY south_migrationhistory.id;
 -- Name: south_migrationhistory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
 --
 
-SELECT pg_catalog.setval('south_migrationhistory_id_seq', 3, true);
+-- SELECT pg_catalog.setval('south_migrationhistory_id_seq', 18, true);
 
 
 --
@@ -1114,8 +1105,8 @@ ALTER TABLE public.tagging_tag OWNER TO andrewramos;
 CREATE SEQUENCE tagging_tag_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -1157,8 +1148,8 @@ ALTER TABLE public.tagging_taggeditem OWNER TO andrewramos;
 CREATE SEQUENCE tagging_taggeditem_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -1198,8 +1189,8 @@ ALTER TABLE public.taggit_tag OWNER TO andrewramos;
 CREATE SEQUENCE taggit_tag_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -1240,8 +1231,8 @@ ALTER TABLE public.taggit_taggeditem OWNER TO andrewramos;
 CREATE SEQUENCE taggit_taggeditem_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
     NO MAXVALUE
+    NO MINVALUE
     CACHE 1;
 
 
@@ -1569,9 +1560,9 @@ INSERT INTO auth_permission VALUES (84, 'Can delete Tagged Item', 28, 'delete_ta
 -- Data for Name: auth_user; Type: TABLE DATA; Schema: public; Owner: andrewramos
 --
 
-INSERT INTO auth_user VALUES (1, 'mikemeyer', 'Michael', 'Meyer', '[REDACTED]', '[REDACTED]', true, true, true, '2011-06-23 21:30:38.33026-07', '2010-08-10 21:43:32-07');
-INSERT INTO auth_user VALUES (4, 'demouser', '', '', '', '[REDACTED]', false, true, false, '2011-02-07 14:23:00.231517-08', '2011-02-07 14:23:00.231536-08');
-INSERT INTO auth_user VALUES (2, 'andrew', 'Andrew', 'Ramos', '[REDACTED]', '[REDACTED]', true, true, false, '2011-06-17 15:40:38.531654-07', '2010-08-10 22:09:37-07');
+INSERT INTO auth_user VALUES (1, 'mikemeyer', 'Michael', 'Meyer', '[REDACTED]', '[REDACTED]', true, true, true, '2011-06-24 04:30:38.33026+00', '2010-08-11 04:43:32+00');
+INSERT INTO auth_user VALUES (4, 'demouser', '', '', '', '[REDACTED]', false, true, false, '2011-02-07 22:23:00.231517+00', '2011-02-07 22:23:00.231536+00');
+INSERT INTO auth_user VALUES (2, 'andrew', 'Andrew', 'Ramos', '[REDACTED]', '[REDACTED]', true, true, false, '2011-06-17 22:40:38.531654+00', '2010-08-11 05:09:37+00');
 
 
 --
@@ -1657,19 +1648,19 @@ INSERT INTO blog_article VALUES (1, 'The Glass Bottle Effect', 'glass-bottle-eff
 
 Here in the States, the Coca-Cola brand means little to nothing for me. It''s a simple soft drink (or soda, or pop depending on your geographical persuasion). It''s a cheap drink that''s delivered in an equally cheap plastic package. But in Prague, glass bottles were the norm. And not just any glass bottles mind you—heavy, re-used glass bottles. The kind of glass bottle that would literally bounce if you dropped it. The kind of glass bottle where the logo was actually raised from the side creating a wonderful tactile quality. When it was actually brought to the table, it was poured into another glass like it was some fine wine, like maybe I would need to approve the bottle before it was poured. And it was incredibly good. This wasn''t a cheap drink, this was something everyone looked forward to. Can a simple change in presentation make that much of a difference? *Absolutely.*
 ', '<p>The presentation of a product is so important. How it looks and feels conveys a level of quality about the product and what you can expect from it. But even how you''re introduced to it can play into your evaluation of the product or brand. While in Prague this last summer, we noticed there seemed to be much less advertising than what we are used to Stateside. Instead of brands being able to <em>tell</em> me how good they were, they had to <em>prove</em> it to me.</p>
-<p>Here in the States, the Coca-Cola brand means little to nothing for me. It''s a simple soft drink (or soda, or pop depending on your geographical persuasion). It''s a cheap drink that''s delivered in an equally cheap plastic package. But in Prague, glass bottles were the norm. And not just any glass bottles mind you—heavy, re-used glass bottles. The kind of glass bottle that would literally bounce if you dropped it. The kind of glass bottle where the logo was actually raised from the side creating a wonderful tactile quality. When it was actually brought to the table, it was poured into another glass like it was some fine wine, like maybe I would need to approve the bottle before it was poured. And it was incredibly good. This wasn''t a cheap drink, this was something everyone looked forward to. Can a simple change in presentation make that much of a difference? <em>Absolutely.</em></p>', true, '2010-08-11 15:47:36.045215-07', '2010-08-14 12:33:22.067889-07', '2010-08-11 15:41:38-07', 'p', '', true, '', 'p');
-INSERT INTO blog_article VALUES (2, 'GVL / PRG', 'gvl-prg', 'A few travel details from our flight to Prague this last summer. ', '<p>A few travel details from our flight to Prague this last summer. </p>', false, '2010-08-11 16:17:47.450515-07', '2010-09-13 11:00:15.797452-07', '2010-08-07 16:16:38-07', 'p', '', false, '', 'f');
+<p>Here in the States, the Coca-Cola brand means little to nothing for me. It''s a simple soft drink (or soda, or pop depending on your geographical persuasion). It''s a cheap drink that''s delivered in an equally cheap plastic package. But in Prague, glass bottles were the norm. And not just any glass bottles mind you—heavy, re-used glass bottles. The kind of glass bottle that would literally bounce if you dropped it. The kind of glass bottle where the logo was actually raised from the side creating a wonderful tactile quality. When it was actually brought to the table, it was poured into another glass like it was some fine wine, like maybe I would need to approve the bottle before it was poured. And it was incredibly good. This wasn''t a cheap drink, this was something everyone looked forward to. Can a simple change in presentation make that much of a difference? <em>Absolutely.</em></p>', true, '2010-08-11 22:47:36.045215+00', '2010-08-14 19:33:22.067889+00', '2010-08-11 22:41:38+00', 'p', '', true, '', 'p');
+INSERT INTO blog_article VALUES (2, 'GVL / PRG', 'gvl-prg', 'A few travel details from our flight to Prague this last summer. ', '<p>A few travel details from our flight to Prague this last summer. </p>', false, '2010-08-11 23:17:47.450515+00', '2010-09-13 18:00:15.797452+00', '2010-08-07 23:16:38+00', 'p', '', false, '', 'f');
 INSERT INTO blog_article VALUES (9, 'iTV and the Apple Cloud', 'apple-cloud', 'As an Apple TV user for the last two years, it''s been particularly interesting to hear the speculation of an updated device. Overall, I''ve enjoyed the experience of the Apple TV. It has a relatively limited offering, but what it does, it does well. It''s allowed us to comfortably ditch cable for the last two years and still enjoy the shows we like, when we want them—with no commercials. The tv shows and movies are ready to watch within seconds, so it''s all around pretty enjoyable. 
 
 There are a few areas it stumbles in though, one being storage. I rarely watch a tv show a second time, but also have a hard time deleting that content, so it sits on the device taking up valuable space. Movies take up even more space and we only watch them a few times a year. I see a disconnect there. Is there any real value in owning the physical data, whether disc or digital? Personally, I have no interest in having tv shows and movies stored locally. I suppose you could argue music is a little different since you may listen to it more often than you would watch videos, but even then the music I''m listening to right now is streaming via Pandora. If the rumors are true, we''ll soon be able to upload our music, tv shows and movies to an account on the Apple Cloud and then access it from a computer, iTV, iPad, etc while having the *option* to save it to a device if needed. You then have access to all your purchased content, without sacrificing hard drive space. With companies like Pandora and Hulu leading the way, the idea of local media storage is quickly becoming a thing of the past.
 ', '<p>As an Apple TV user for the last two years, it''s been particularly interesting to hear the speculation of an updated device. Overall, I''ve enjoyed the experience of the Apple TV. It has a relatively limited offering, but what it does, it does well. It''s allowed us to comfortably ditch cable for the last two years and still enjoy the shows we like, when we want them—with no commercials. The tv shows and movies are ready to watch within seconds, so it''s all around pretty enjoyable. </p>
-<p>There are a few areas it stumbles in though, one being storage. I rarely watch a tv show a second time, but also have a hard time deleting that content, so it sits on the device taking up valuable space. Movies take up even more space and we only watch them a few times a year. I see a disconnect there. Is there any real value in owning the physical data, whether disc or digital? Personally, I have no interest in having tv shows and movies stored locally. I suppose you could argue music is a little different since you may listen to it more often than you would watch videos, but even then the music I''m listening to right now is streaming via Pandora. If the rumors are true, we''ll soon be able to upload our music, tv shows and movies to an account on the Apple Cloud and then access it from a computer, iTV, iPad, etc while having the <em>option</em> to save it to a device if needed. You then have access to all your purchased content, without sacrificing hard drive space. With companies like Pandora and Hulu leading the way, the idea of local media storage is quickly becoming a thing of the past.</p>', false, '2010-08-31 08:23:13.644829-07', '2011-01-25 13:07:08.134102-08', '2010-08-31 08:16:50-07', 'p', '', true, '', 'f');
+<p>There are a few areas it stumbles in though, one being storage. I rarely watch a tv show a second time, but also have a hard time deleting that content, so it sits on the device taking up valuable space. Movies take up even more space and we only watch them a few times a year. I see a disconnect there. Is there any real value in owning the physical data, whether disc or digital? Personally, I have no interest in having tv shows and movies stored locally. I suppose you could argue music is a little different since you may listen to it more often than you would watch videos, but even then the music I''m listening to right now is streaming via Pandora. If the rumors are true, we''ll soon be able to upload our music, tv shows and movies to an account on the Apple Cloud and then access it from a computer, iTV, iPad, etc while having the <em>option</em> to save it to a device if needed. You then have access to all your purchased content, without sacrificing hard drive space. With companies like Pandora and Hulu leading the way, the idea of local media storage is quickly becoming a thing of the past.</p>', false, '2010-08-31 15:23:13.644829+00', '2011-01-25 21:07:08.134102+00', '2010-08-31 15:16:50+00', 'p', '', true, '', 'f');
 INSERT INTO blog_article VALUES (3, 'Specialty Shops', 'specialty-shops', 'Most Saturday mornings I can be found at my city''s Downtown Market. Loads of fresh food available directly from the local farmers themselves. I was thinking this week how each booth there is like it''s own little specialty shop: They''re focused on a small niche, passionate about what they are doing, and are intensely focused on providing value to their customers. I love that. Other shops or stores may offer more products--they may even cost less--but that doesn''t mean it''s valuable. Honestly, It''s tough to match the passion for quality and the deep desire to make something better that comes with running a small shop. 
 
 The same thing goes for my business. I don''t want to be the shop that offers everything possible. Generic products and ideas wrapped with a shiny ribbon of business jargon. I want to provide a niche offering of identity and illustration that''s focused on the client, meeting them where they are at and helping them move forward. Carefully crafting a brand that pays attention to the small things, all those little details that add up to so much—because that''s *worth* something. Because that *is* valuable.', '<p>Most Saturday mornings I can be found at my city''s Downtown Market. Loads of fresh food available directly from the local farmers themselves. I was thinking this week how each booth there is like it''s own little specialty shop: They''re focused on a small niche, passionate about what they are doing, and are intensely focused on providing value to their customers. I love that. Other shops or stores may offer more products--they may even cost less--but that doesn''t mean it''s valuable. Honestly, It''s tough to match the passion for quality and the deep desire to make something better that comes with running a small shop. </p>
-<p>The same thing goes for my business. I don''t want to be the shop that offers everything possible. Generic products and ideas wrapped with a shiny ribbon of business jargon. I want to provide a niche offering of identity and illustration that''s focused on the client, meeting them where they are at and helping them move forward. Carefully crafting a brand that pays attention to the small things, all those little details that add up to so much—because that''s <em>worth</em> something. Because that <em>is</em> valuable.</p>', false, '2010-08-11 17:01:50.258669-07', '2011-01-25 13:07:08.526992-08', '2010-08-08 16:58:49-07', 'p', '', true, '', 'f');
-INSERT INTO blog_article VALUES (8, 'Alarm', 'alarm', '', '', false, '2010-08-26 11:05:58.991378-07', '2010-08-27 11:11:54.742254-07', '2010-08-26 11:05:09-07', 'p', '', false, '', 'f');
-INSERT INTO blog_article VALUES (4, 'Inspiration: Opened House', 'inspiration-opened-house', '[Via](http://www.dwell.com/articles/Opened-House.html)', '<p><a href="http://www.dwell.com/articles/Opened-House.html">Via</a></p>', false, '2010-08-20 12:00:34.249118-07', '2010-08-27 11:12:12.266877-07', '2010-08-20 11:56:02-07', 'p', '', false, '', 'p');
+<p>The same thing goes for my business. I don''t want to be the shop that offers everything possible. Generic products and ideas wrapped with a shiny ribbon of business jargon. I want to provide a niche offering of identity and illustration that''s focused on the client, meeting them where they are at and helping them move forward. Carefully crafting a brand that pays attention to the small things, all those little details that add up to so much—because that''s <em>worth</em> something. Because that <em>is</em> valuable.</p>', false, '2010-08-12 00:01:50.258669+00', '2011-01-25 21:07:08.526992+00', '2010-08-08 23:58:49+00', 'p', '', true, '', 'f');
+INSERT INTO blog_article VALUES (8, 'Alarm', 'alarm', '', '', false, '2010-08-26 18:05:58.991378+00', '2010-08-27 18:11:54.742254+00', '2010-08-26 18:05:09+00', 'p', '', false, '', 'f');
+INSERT INTO blog_article VALUES (4, 'Inspiration: Opened House', 'inspiration-opened-house', '[Via](http://www.dwell.com/articles/Opened-House.html)', '<p><a href="http://www.dwell.com/articles/Opened-House.html">Via</a></p>', false, '2010-08-20 19:00:34.249118+00', '2010-08-27 18:12:12.266877+00', '2010-08-20 18:56:02+00', 'p', '', false, '', 'p');
 INSERT INTO blog_article VALUES (10, 'Southern Savers', 'southern-savers', 'Southern Savers is a site that makes saving money easy and rewarding. When Jenny Martin decided it was time to give the brand a new look, she first tapped Matthew Smith of Squared Eye for the web design, who then brought me in for the identity and illustration. What a great project to work on! Jenny has done such a good job of building up this business and works so hard to make saving money easy for the rest of us. 
 
 My part started with a call and questionnaire to learn more about Jenny, Southern Savers and how she interacted with visitors and fans. Next came a mood board, which gives me a really good feel for what the client likes and dislikes, and Jenny gave us really great feedback—She was excellent to work with! Because Jenny is such a big part of the Southern Saver brand,  her personality and likes/dislikes played a bigger part than normal in this particular project. 
@@ -1692,14 +1683,14 @@ Project Management: Jamin Jantz
 Website Design: Squared Eye
 Strategy and IA: Emily Smith
 Development: Kevin Smith
-Project Management: Jamin Jantz</p>', false, '2010-09-08 08:59:18.904135-07', '2010-09-08 12:58:29.988722-07', '2010-09-08 06:01:00-07', 'd', '', true, 'Southern Deals & Frugal Steals', 'f');
+Project Management: Jamin Jantz</p>', false, '2010-09-08 15:59:18.904135+00', '2010-09-08 19:58:29.988722+00', '2010-09-08 13:01:00+00', 'd', '', true, 'Southern Deals & Frugal Steals', 'f');
 INSERT INTO blog_article VALUES (12, 'Outsourcing Surprise & Delight', 'outsourcing-surprise-delight', 'The act of comping, or compensating, customers by occasionally giving them free drinks is a fairly routine action by Starbucks coffee shops as a way to Surprise & Delight their customers. It''s such a small gesture yet one that has big payoff. Surprise & Delight. The perfect description.
 
 This morning a manager at my local starbucks told me that with their new rewards program, they are no longer allowing employees to comp drinks; the card system takes care of that automatically. Once you purchase 15 drinks, you''ll get a free one. But doesn''t that go against everything that ''Surprise & Delight'' tries to achieve? Why the decision to suddenly outsource the personal connection? Now there is no surprise, only expectations—and instead of delight a mere system of card-swipes.
 ', '<p>The act of comping, or compensating, customers by occasionally giving them free drinks is a fairly routine action by Starbucks coffee shops as a way to Surprise &amp; Delight their customers. It''s such a small gesture yet one that has big payoff. Surprise &amp; Delight. The perfect description.</p>
-<p>This morning a manager at my local starbucks told me that with their new rewards program, they are no longer allowing employees to comp drinks; the card system takes care of that automatically. Once you purchase 15 drinks, you''ll get a free one. But doesn''t that go against everything that ''Surprise &amp; Delight'' tries to achieve? Why the decision to suddenly outsource the personal connection? Now there is no surprise, only expectations—and instead of delight a mere system of card-swipes.</p>', false, '2010-09-17 09:01:01.654282-07', '2010-09-17 09:03:57.723821-07', '2010-09-17 09:00:16-07', 'p', '', true, '', 'f');
-INSERT INTO blog_article VALUES (13, 'Time to stop', 'time-stop', '', '', false, '2010-10-09 07:52:12.480854-07', '2010-10-09 07:57:23.94092-07', '2010-10-09 07:51:21-07', 'p', '', false, '', 'p');
-INSERT INTO blog_article VALUES (16, 'Christmas Traditions', 'christmas-traditions', '', '', false, '2010-11-11 13:54:09.839537-08', '2011-03-30 07:38:04.046632-07', '2010-11-11 13:53:22-08', 'p', '', false, '', 'f');
+<p>This morning a manager at my local starbucks told me that with their new rewards program, they are no longer allowing employees to comp drinks; the card system takes care of that automatically. Once you purchase 15 drinks, you''ll get a free one. But doesn''t that go against everything that ''Surprise &amp; Delight'' tries to achieve? Why the decision to suddenly outsource the personal connection? Now there is no surprise, only expectations—and instead of delight a mere system of card-swipes.</p>', false, '2010-09-17 16:01:01.654282+00', '2010-09-17 16:03:57.723821+00', '2010-09-17 16:00:16+00', 'p', '', true, '', 'f');
+INSERT INTO blog_article VALUES (13, 'Time to stop', 'time-stop', '', '', false, '2010-10-09 14:52:12.480854+00', '2010-10-09 14:57:23.94092+00', '2010-10-09 14:51:21+00', 'p', '', false, '', 'p');
+INSERT INTO blog_article VALUES (16, 'Christmas Traditions', 'christmas-traditions', '', '', false, '2010-11-11 21:54:09.839537+00', '2011-03-30 14:38:04.046632+00', '2010-11-11 21:53:22+00', 'p', '', false, '', 'f');
 INSERT INTO blog_article VALUES (18, 'Panel Discussion', 'panel-discussion', 'Last night I was able to sit on a panel of three designers giving a Q&A with design students. The panel consisted of an ad agency designer, an in-house designer, and a freelancer (me). Questions varied from "where do you find your inspiration?" and "how do you stay creative?" to "what''s most important in a client relationship?" and "what is the average salary?" One question I found interesting:
 
 He asked\\*: "What things were you lacking when you started [designing]?" <br>
@@ -1715,8 +1706,8 @@ I would have added: It''s more important to focus on what you do know than what 
 I said**: "Well. Lot''s of things. So many things. But the important part is I didn''t <em>know</em> I was lacking those things. After school I just started working. We all start somewhere, and then you keep learning. </p>
 <p>I would have added: It''s more important to focus on what you do know than what you don''t. We start each day thinking we have things figured out and it''s not until tomorrow that we realize we never did. </p>
 <p>*Not verbatim.<br>
-**Very much not verbatim.</p>', false, '2011-01-27 13:55:32.236155-08', '2011-06-14 09:21:41.666051-07', '2011-01-27 13:02:46-08', 'p', '', false, '', 'p');
-INSERT INTO blog_article VALUES (15, '4 Shots', '4-shots', '', '', false, '2010-10-25 15:42:30.157855-07', '2010-10-25 15:44:13.246392-07', '2010-10-25 15:41:30-07', 'p', '', false, '', 'p');
+**Very much not verbatim.</p>', false, '2011-01-27 21:55:32.236155+00', '2011-06-14 16:21:41.666051+00', '2011-01-27 21:02:46+00', 'p', '', false, '', 'p');
+INSERT INTO blog_article VALUES (15, '4 Shots', '4-shots', '', '', false, '2010-10-25 22:42:30.157855+00', '2010-10-25 22:44:13.246392+00', '2010-10-25 22:41:30+00', 'p', '', false, '', 'p');
 INSERT INTO blog_article VALUES (19, 'Designspiration', 'designspiration', 'I get a lot of questions about where to find inspiration. The usual answer is Everywhere, which is true. But it''s also just not. I <em>can</em> find inspiration everywhere, but it''s usually from a few specific sources: FFFFound, Dieline, Dribbble, Barnes & Noble, and most recently: <b>Designspiration</b>.
 
 Hence this post. Designspiration has been great for finding new inspiration and cataloguing it for later. My dashboard is always a great starting place when I need a jumpstart for a new project. I can see what others are finding plus add great design pieces that I find elsewhere. So while you won''t see me posting on this blog about those design inspiration pieces, you''ll now know where to go to find a small piece of my inspiration collection. 
@@ -1724,17 +1715,17 @@ Hence this post. Designspiration has been great for finding new inspiration and 
 <a href="http://ds.pn/andrewramos">My Designspiration Dashboard</a>
 ', '<p>I get a lot of questions about where to find inspiration. The usual answer is Everywhere, which is true. But it''s also just not. I <em>can</em> find inspiration everywhere, but it''s usually from a few specific sources: FFFFound, Dieline, Dribbble, Barnes &amp; Noble, and most recently: <b>Designspiration</b>.</p>
 <p>Hence this post. Designspiration has been great for finding new inspiration and cataloguing it for later. My dashboard is always a great starting place when I need a jumpstart for a new project. I can see what others are finding plus add great design pieces that I find elsewhere. So while you won''t see me posting on this blog about those design inspiration pieces, you''ll now know where to go to find a small piece of my inspiration collection. </p>
-<p><a href="http://ds.pn/andrewramos">My Designspiration Dashboard</a></p>', true, '2011-03-30 07:27:07.501582-07', '2011-03-30 07:38:03.950756-07', '2011-03-30 07:16:34-07', 'p', '', false, '', 'f');
+<p><a href="http://ds.pn/andrewramos">My Designspiration Dashboard</a></p>', true, '2011-03-30 14:27:07.501582+00', '2011-03-30 14:38:03.950756+00', '2011-03-30 14:16:34+00', 'p', '', false, '', 'f');
 INSERT INTO blog_article VALUES (21, 'Vintage Denim Neckties', 'vintage-denim-neckties', 'These spectacular <a href="http://jachristensen-maker.blogspot.com/">ties by J. A. Christensen</a> are made of vintage denim from the 30s and 40s and are made on a single-needle sewing machine. While the first run has sold out, I''m hoping to pick one up when his second run comes out in May.
-', '<p>These spectacular <a href="http://jachristensen-maker.blogspot.com/">ties by J. A. Christensen</a> are made of vintage denim from the 30s and 40s and are made on a single-needle sewing machine. While the first run has sold out, I''m hoping to pick one up when his second run comes out in May.</p>', false, '2011-04-30 08:25:26.320441-07', '2011-04-30 08:27:21.270638-07', '2011-04-30 08:16:20-07', 'p', '', true, '', 'f');
+', '<p>These spectacular <a href="http://jachristensen-maker.blogspot.com/">ties by J. A. Christensen</a> are made of vintage denim from the 30s and 40s and are made on a single-needle sewing machine. While the first run has sold out, I''m hoping to pick one up when his second run comes out in May.</p>', false, '2011-04-30 15:25:26.320441+00', '2011-04-30 15:27:21.270638+00', '2011-04-30 15:16:20+00', 'p', '', true, '', 'f');
 INSERT INTO blog_article VALUES (23, 'Introducing Wren for Mac', 'wren', 'Today I''m proud to announce Wren for Mac, a small Twitter app for the Mac desktop. Wren keeps you focused on what you''re doing by not showing the timeline. It lets you quickly jot down a thought, link or comment to someone and then get back to what you were doing. You can even save a tweet for later to get just the right wording, or to spread your tweets throughout the day. Learn a bit more at <a href="http://www.wrenapp.com/">wrenapp.com</a> and pick up a copy on the [Mac app store](http://j.mp/wrenapp). <b>$4.99 for a limited time!</b>
 
 This app is the result of many months of work by myself and [Kevin Smith](http://www.kevinsmith.cc). It has been a lot of time, work and late nights—but it''s also been a lot of fun. It was honestly something we just saw a need for. I can read the timeline on several awesome apps (Twitter and Tweetbot coming to mind first), but when I''m working I want a quick way to simply share something new. Wren was my first app to design and seeing it finally launch feels *absolutely* fantastic—but there''s a lot more in store for Wren. For now, I hope you enjoy using it as much as I do. ', '<p>Today I''m proud to announce Wren for Mac, a small Twitter app for the Mac desktop. Wren keeps you focused on what you''re doing by not showing the timeline. It lets you quickly jot down a thought, link or comment to someone and then get back to what you were doing. You can even save a tweet for later to get just the right wording, or to spread your tweets throughout the day. Learn a bit more at <a href="http://www.wrenapp.com/">wrenapp.com</a> and pick up a copy on the <a href="http://j.mp/wrenapp">Mac app store</a>. <b>$4.99 for a limited time!</b></p>
-<p>This app is the result of many months of work by myself and <a href="http://www.kevinsmith.cc">Kevin Smith</a>. It has been a lot of time, work and late nights—but it''s also been a lot of fun. It was honestly something we just saw a need for. I can read the timeline on several awesome apps (Twitter and Tweetbot coming to mind first), but when I''m working I want a quick way to simply share something new. Wren was my first app to design and seeing it finally launch feels <em>absolutely</em> fantastic—but there''s a lot more in store for Wren. For now, I hope you enjoy using it as much as I do. </p>', true, '2011-06-10 11:23:39.560398-07', '2011-06-21 13:57:11.815965-07', '2011-06-21 13:47:13-07', 'p', '', true, 'A tiny Twitter client that keeps you focused on your work', 'f');
+<p>This app is the result of many months of work by myself and <a href="http://www.kevinsmith.cc">Kevin Smith</a>. It has been a lot of time, work and late nights—but it''s also been a lot of fun. It was honestly something we just saw a need for. I can read the timeline on several awesome apps (Twitter and Tweetbot coming to mind first), but when I''m working I want a quick way to simply share something new. Wren was my first app to design and seeing it finally launch feels <em>absolutely</em> fantastic—but there''s a lot more in store for Wren. For now, I hope you enjoy using it as much as I do. </p>', true, '2011-06-10 18:23:39.560398+00', '2011-06-21 20:57:11.815965+00', '2011-06-21 20:47:13+00', 'p', '', true, 'A tiny Twitter client that keeps you focused on your work', 'f');
 INSERT INTO blog_article VALUES (24, 'All Things Must End', 'all-things-must-end', 'I recently sold my first car. Well, it wasn''t *really* my first car. But it was the first one that got me excited about cars rather than just having a license. It was a 1987 Honda CRX Si, a quick and nimble two-seater that was a sheer blast to drive. So many good memories with that car: delivering pizzas, <s>running from cops</s> *exploring backroads quickly* and surviving 1 (almost 2) engine swaps. From the beginning I had planned to restore the CRX back to her former glory. New seats, interior, wheels and paint. A new motor for more power, new shocks/struts/sway bars for stability and new brakes/pads/brake-lines to bring it to a stop. I even found some parts from the european market that were never available here. I can''t count the number of hours I spent finding parts and planning the details of the project. 
 
 Fast-forward four years and life looks a bit different. Goals have changed, my business is growing (read: *I have no time*) and weeks are passing faster than you can spend them. My once prominent dream of a restored CRX has been overshadowed by new and exciting things. The rebuilt D16 engine that was last swapped in will now power a pretty little red 3rd Gen hatchback, and all the parts I had sourced have gone to new homes. All that''s left is the Si emblem that once adorned the back hatch, a memento of my younger days and my first car.', '<p>I recently sold my first car. Well, it wasn''t <em>really</em> my first car. But it was the first one that got me excited about cars rather than just having a license. It was a 1987 Honda CRX Si, a quick and nimble two-seater that was a sheer blast to drive. So many good memories with that car: delivering pizzas, <s>running from cops</s> <em>exploring backroads quickly</em> and surviving 1 (almost 2) engine swaps. From the beginning I had planned to restore the CRX back to her former glory. New seats, interior, wheels and paint. A new motor for more power, new shocks/struts/sway bars for stability and new brakes/pads/brake-lines to bring it to a stop. I even found some parts from the european market that were never available here. I can''t count the number of hours I spent finding parts and planning the details of the project. </p>
-<p>Fast-forward four years and life looks a bit different. Goals have changed, my business is growing (read: <em>I have no time</em>) and weeks are passing faster than you can spend them. My once prominent dream of a restored CRX has been overshadowed by new and exciting things. The rebuilt D16 engine that was last swapped in will now power a pretty little red 3rd Gen hatchback, and all the parts I had sourced have gone to new homes. All that''s left is the Si emblem that once adorned the back hatch, a memento of my younger days and my first car.</p>', true, '2011-06-10 13:36:45.525904-07', '2011-06-14 09:21:12.04629-07', '2011-06-10 13:23:47-07', 'p', '', true, '', 'f');
+<p>Fast-forward four years and life looks a bit different. Goals have changed, my business is growing (read: <em>I have no time</em>) and weeks are passing faster than you can spend them. My once prominent dream of a restored CRX has been overshadowed by new and exciting things. The rebuilt D16 engine that was last swapped in will now power a pretty little red 3rd Gen hatchback, and all the parts I had sourced have gone to new homes. All that''s left is the Si emblem that once adorned the back hatch, a memento of my younger days and my first car.</p>', true, '2011-06-10 20:36:45.525904+00', '2011-06-14 16:21:12.04629+00', '2011-06-10 20:23:47+00', 'p', '', true, '', 'f');
 
 
 --
@@ -1771,7 +1762,7 @@ Website Design: <a href="http://www.squaredeye.com/">Squared Eye</a><br>
 Strategy and IA: <a href="http://www.emilysmith.cc/">Emily Smith</a><br>
 Development: <a href="http://www.kevinsmith.cc/">Kevin Smith</a><br>
 Print Collateral: <a href="http://www.elizabethramos.com/">Elizabeth Ramos</a><br>
-Project Management: <a href="http://www.twitter.com/jaminjantz">Jamin Jantz</a><br><br></p>', false, '2010-09-08 13:05:35.562288-07', '2011-01-25 13:07:21.52122-08', '2010-09-08 12:52:58-07', 'p', '', 'f');
+Project Management: <a href="http://www.twitter.com/jaminjantz">Jamin Jantz</a><br><br></p>', false, '2010-09-08 20:05:35.562288+00', '2011-01-25 21:07:21.52122+00', '2010-09-08 19:52:58+00', 'p', '', 'f');
 
 
 --
@@ -1807,25 +1798,25 @@ INSERT INTO blog_image VALUES (27, 'uploads/blog/Wren-Launch2.jpg', 16, 23);
 -- Data for Name: blog_quote; Type: TABLE DATA; Schema: public; Owner: andrewramos
 --
 
-INSERT INTO blog_quote VALUES (2, 'Decisions are progress', 'decisions-are-progress', 'You can''t build on top of "We''ll decide later," but you can build on top of "Done." Decisions are progress.', '<p>You can''t build on top of "We''ll decide later," but you can build on top of "Done." Decisions are progress.</p>', false, '2010-08-18 06:29:41.14096-07', '2010-08-21 21:15:41.340785-07', '2010-08-18 06:24:29-07', 'p', ' <a href="http://37signals.com/rework/">Rework</a>, 37 Signals');
-INSERT INTO blog_quote VALUES (1, 'The Scariest Moment', 'scariest-moment', 'The scariest moment is always just before you start.', '<p>The scariest moment is always just before you start.</p>', false, '2010-08-11 15:52:37.077108-07', '2010-09-13 11:00:29.494973-07', '2010-08-06 15:51:07-07', 'p', 'Stephen King');
-INSERT INTO blog_quote VALUES (3, 'Fortnight', 'fortnight', 'I like when good things happen to me, but I wait two weeks to tell anyone because I like to use the word fortnight.', '<p>I like when good things happen to me, but I wait two weeks to tell anyone because I like to use the word fortnight.</p>', false, '2011-04-30 08:35:54.804345-07', '2011-04-30 08:36:26.293268-07', '2011-04-30 08:28:32-07', 'p', 'Demetri Martin');
-INSERT INTO blog_quote VALUES (5, 'Texting & Driving', 'texting-driving', 'Maybe the reason texting and driving is so dangerous is we just don''t practice enough.', '<p>Maybe the reason texting and driving is so dangerous is we just don''t practice enough.</p>', false, '2011-06-10 06:04:56.004548-07', '2011-06-10 06:08:53.087825-07', '2011-06-10 06:03:11-07', 'p', '@WhollySchmidt');
-INSERT INTO blog_quote VALUES (4, 'The Art of Living', 'the-art-of-living', 'A master in the art of living draws no sharp distinction between his work and his play; his labor and his leisure; his mind and his body; his education and his recreation. He hardly knows which is which. He simply pursues his vision of excellence through whatever he is doing, and leaves others to determine whether he is working or playing. To himself, he always appears to be doing both.', '<p>A master in the art of living draws no sharp distinction between his work and his play; his labor and his leisure; his mind and his body; his education and his recreation. He hardly knows which is which. He simply pursues his vision of excellence through whatever he is doing, and leaves others to determine whether he is working or playing. To himself, he always appears to be doing both.</p>', false, '2011-05-22 11:56:39.262025-07', '2011-06-14 09:22:01.042328-07', '2011-05-22 11:55:03-07', 'p', 'François Auguste René Chateaubriand');
+INSERT INTO blog_quote VALUES (2, 'Decisions are progress', 'decisions-are-progress', 'You can''t build on top of "We''ll decide later," but you can build on top of "Done." Decisions are progress.', '<p>You can''t build on top of "We''ll decide later," but you can build on top of "Done." Decisions are progress.</p>', false, '2010-08-18 13:29:41.14096+00', '2010-08-22 04:15:41.340785+00', '2010-08-18 13:24:29+00', 'p', ' <a href="http://37signals.com/rework/">Rework</a>, 37 Signals');
+INSERT INTO blog_quote VALUES (1, 'The Scariest Moment', 'scariest-moment', 'The scariest moment is always just before you start.', '<p>The scariest moment is always just before you start.</p>', false, '2010-08-11 22:52:37.077108+00', '2010-09-13 18:00:29.494973+00', '2010-08-06 22:51:07+00', 'p', 'Stephen King');
+INSERT INTO blog_quote VALUES (3, 'Fortnight', 'fortnight', 'I like when good things happen to me, but I wait two weeks to tell anyone because I like to use the word fortnight.', '<p>I like when good things happen to me, but I wait two weeks to tell anyone because I like to use the word fortnight.</p>', false, '2011-04-30 15:35:54.804345+00', '2011-04-30 15:36:26.293268+00', '2011-04-30 15:28:32+00', 'p', 'Demetri Martin');
+INSERT INTO blog_quote VALUES (5, 'Texting & Driving', 'texting-driving', 'Maybe the reason texting and driving is so dangerous is we just don''t practice enough.', '<p>Maybe the reason texting and driving is so dangerous is we just don''t practice enough.</p>', false, '2011-06-10 13:04:56.004548+00', '2011-06-10 13:08:53.087825+00', '2011-06-10 13:03:11+00', 'p', '@WhollySchmidt');
+INSERT INTO blog_quote VALUES (4, 'The Art of Living', 'the-art-of-living', 'A master in the art of living draws no sharp distinction between his work and his play; his labor and his leisure; his mind and his body; his education and his recreation. He hardly knows which is which. He simply pursues his vision of excellence through whatever he is doing, and leaves others to determine whether he is working or playing. To himself, he always appears to be doing both.', '<p>A master in the art of living draws no sharp distinction between his work and his play; his labor and his leisure; his mind and his body; his education and his recreation. He hardly knows which is which. He simply pursues his vision of excellence through whatever he is doing, and leaves others to determine whether he is working or playing. To himself, he always appears to be doing both.</p>', false, '2011-05-22 18:56:39.262025+00', '2011-06-14 16:22:01.042328+00', '2011-05-22 18:55:03+00', 'p', 'François Auguste René Chateaubriand');
 
 
 --
 -- Data for Name: blog_shortpost; Type: TABLE DATA; Schema: public; Owner: andrewramos
 --
 
-INSERT INTO blog_shortpost VALUES (1, 'Dropbox', 'dropbox', 'If you haven''t tried Dropbox yet, I highly recommend it. It''s a great way to share files with others and backup your work. Also, sign up via this link and we''ll both get some complimentary MBs:', '<p>If you haven''t tried Dropbox yet, I highly recommend it. It''s a great way to share files with others and backup your work. Also, sign up via this link and we''ll both get some complimentary MBs:</p>', true, '2010-08-11 15:55:07.325778-07', '2010-08-12 12:43:18.529578-07', '2010-08-09 15:54:08-07', 'p', 'http://tiny.cc/morespace');
-INSERT INTO blog_shortpost VALUES (3, 'Today I wish I had a bicycle', 'today-i-wish-i-had-bicycle', 'Not because the weather is particularly beautiful, although it is a fine day out. And not for the sake of exercise, even though it''s a great benefit. Today I simply want to feel the wind rushing against my face as I peddle as fast and hard as I''m able, stopping only when I''m completely out of breath. Today a car feels like cheating, like I''m missing the point of movement.', '<p>Not because the weather is particularly beautiful, although it is a fine day out. And not for the sake of exercise, even though it''s a great benefit. Today I simply want to feel the wind rushing against my face as I peddle as fast and hard as I''m able, stopping only when I''m completely out of breath. Today a car feels like cheating, like I''m missing the point of movement.</p>', false, '2011-04-26 07:58:34.571282-07', '2011-04-26 08:00:14.140928-07', '2011-04-26 07:49:27-07', 'p', '');
-INSERT INTO blog_shortpost VALUES (11, 'What''s making me laugh this week', 'whats-making-me-laugh-this-week', 'This Canadian Border Patrol sketch from HBO. It''s an oldie, but well worth watching this very minute.', '<p>This Canadian Border Patrol sketch from HBO. It''s an oldie, but well worth watching this very minute.</p>', false, '2011-05-14 10:45:22.131269-07', '2011-05-14 10:46:07.41886-07', '2011-05-14 10:44:22-07', 'p', 'http://youtu.be/DFcIH2tK2iM');
+INSERT INTO blog_shortpost VALUES (1, 'Dropbox', 'dropbox', 'If you haven''t tried Dropbox yet, I highly recommend it. It''s a great way to share files with others and backup your work. Also, sign up via this link and we''ll both get some complimentary MBs:', '<p>If you haven''t tried Dropbox yet, I highly recommend it. It''s a great way to share files with others and backup your work. Also, sign up via this link and we''ll both get some complimentary MBs:</p>', true, '2010-08-11 22:55:07.325778+00', '2010-08-12 19:43:18.529578+00', '2010-08-09 22:54:08+00', 'p', 'http://tiny.cc/morespace');
+INSERT INTO blog_shortpost VALUES (3, 'Today I wish I had a bicycle', 'today-i-wish-i-had-bicycle', 'Not because the weather is particularly beautiful, although it is a fine day out. And not for the sake of exercise, even though it''s a great benefit. Today I simply want to feel the wind rushing against my face as I peddle as fast and hard as I''m able, stopping only when I''m completely out of breath. Today a car feels like cheating, like I''m missing the point of movement.', '<p>Not because the weather is particularly beautiful, although it is a fine day out. And not for the sake of exercise, even though it''s a great benefit. Today I simply want to feel the wind rushing against my face as I peddle as fast and hard as I''m able, stopping only when I''m completely out of breath. Today a car feels like cheating, like I''m missing the point of movement.</p>', false, '2011-04-26 14:58:34.571282+00', '2011-04-26 15:00:14.140928+00', '2011-04-26 14:49:27+00', 'p', '');
+INSERT INTO blog_shortpost VALUES (11, 'What''s making me laugh this week', 'whats-making-me-laugh-this-week', 'This Canadian Border Patrol sketch from HBO. It''s an oldie, but well worth watching this very minute.', '<p>This Canadian Border Patrol sketch from HBO. It''s an oldie, but well worth watching this very minute.</p>', false, '2011-05-14 17:45:22.131269+00', '2011-05-14 17:46:07.41886+00', '2011-05-14 17:44:22+00', 'p', 'http://youtu.be/DFcIH2tK2iM');
 INSERT INTO blog_shortpost VALUES (12, 'Fear', 'smoke-monster', 'Every once in a while, I can hear a distant motorbike''s high-pitched groaning as it tears down a neighboring street. The throaty rumble of the exhaust, the whine of the engine and the sound of leaves and twigs being crushed as it moves along it''s path. <br>
 <br>
 In my mind, I fear the smoke monster is coming.', '<p>Every once in a while, I can hear a distant motorbike''s high-pitched groaning as it tears down a neighboring street. The throaty rumble of the exhaust, the whine of the engine and the sound of leaves and twigs being crushed as it moves along it''s path. <br>
 <br>
-In my mind, I fear the smoke monster is coming.</p>', false, '2011-06-03 10:06:06.901961-07', '2011-06-03 10:13:35.934263-07', '2011-06-03 09:57:14-07', 'p', '');
+In my mind, I fear the smoke monster is coming.</p>', false, '2011-06-03 17:06:06.901961+00', '2011-06-03 17:13:35.934263+00', '2011-06-03 16:57:14+00', 'p', '');
 
 
 --
@@ -1846,281 +1837,281 @@ INSERT INTO content_frontpagecontent VALUES (12, 'uploads/front-page/Screen_shot
 -- Data for Name: django_admin_log; Type: TABLE DATA; Schema: public; Owner: andrewramos
 --
 
-INSERT INTO django_admin_log VALUES (1, '2010-08-10 21:57:57.040192-07', 1, 24, '1', 'About (about)', 1, '');
-INSERT INTO django_admin_log VALUES (2, '2010-08-10 21:58:18.982843-07', 1, 7, '1', 'andrewramos.com', 2, 'Changed domain and name.');
-INSERT INTO django_admin_log VALUES (3, '2010-08-10 22:09:37.38298-07', 1, 3, '2', 'andrewramos', 1, '');
-INSERT INTO django_admin_log VALUES (4, '2010-08-10 22:10:18.274587-07', 1, 3, '2', 'andrewramos', 2, 'Changed first_name, last_name, email, is_staff and user_permissions.');
-INSERT INTO django_admin_log VALUES (5, '2010-08-10 22:11:18.493456-07', 1, 3, '2', 'andrew', 2, 'Changed username.');
-INSERT INTO django_admin_log VALUES (6, '2010-08-11 07:00:23.550782-07', 1, 7, '1', 'dev.andrewramos.com', 2, 'Changed domain.');
-INSERT INTO django_admin_log VALUES (7, '2010-08-11 11:48:17.688751-07', 1, 24, '1', 'About (about)', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (8, '2010-08-11 15:47:36.321071-07', 2, 16, '1', 'Glass Bottle Delicacy', 1, '');
-INSERT INTO django_admin_log VALUES (9, '2010-08-11 15:50:55.384262-07', 2, 16, '1', 'Glass Bottle Delicacy', 2, 'No fields changed.');
-INSERT INTO django_admin_log VALUES (10, '2010-08-11 15:52:37.170266-07', 2, 19, '1', 'The Scariest Moment', 1, '');
-INSERT INTO django_admin_log VALUES (11, '2010-08-11 15:53:59.442007-07', 2, 17, '1', 'Southern Savers', 1, '');
-INSERT INTO django_admin_log VALUES (12, '2010-08-11 15:55:07.364823-07', 2, 18, '1', 'Dropbox', 1, '');
-INSERT INTO django_admin_log VALUES (13, '2010-08-11 16:05:46.869333-07', 1, 26, '1', 'Front page image', 1, '');
-INSERT INTO django_admin_log VALUES (14, '2010-08-11 16:08:17.061514-07', 2, 26, '2', 'Front page image', 1, '');
-INSERT INTO django_admin_log VALUES (15, '2010-08-11 16:09:09.484922-07', 2, 26, '2', 'Front page image', 2, 'Changed link.');
-INSERT INTO django_admin_log VALUES (16, '2010-08-11 16:09:51.056709-07', 2, 18, '1', 'Dropbox', 2, 'Changed is_featured.');
-INSERT INTO django_admin_log VALUES (17, '2010-08-11 16:13:35.606115-07', 2, 23, '1', 'Personal', 1, '');
-INSERT INTO django_admin_log VALUES (18, '2010-08-11 16:13:43.277274-07', 2, 20, '1', 'Teaser images', 1, '');
-INSERT INTO django_admin_log VALUES (19, '2010-08-11 16:13:53.741458-07', 2, 20, '1', 'Teaser Images', 2, 'Changed title.');
-INSERT INTO django_admin_log VALUES (20, '2010-08-11 16:16:26.750991-07', 2, 20, '1', 'Teaser Images', 2, 'No fields changed.');
-INSERT INTO django_admin_log VALUES (21, '2010-08-11 16:17:47.459334-07', 2, 16, '2', 'GVL / PRG', 1, '');
-INSERT INTO django_admin_log VALUES (22, '2010-08-11 16:18:22.277148-07', 2, 16, '2', 'GVL / PRG', 2, 'Added image "Image 1".');
-INSERT INTO django_admin_log VALUES (23, '2010-08-11 16:22:21.85273-07', 2, 20, '1', 'Teaser Images', 2, 'Changed case_study.');
-INSERT INTO django_admin_log VALUES (24, '2010-08-11 16:31:52.885106-07', 2, 16, '1', 'Glass Bottle Delicacy', 2, 'Changed content_markdown. Added image "Image 2".');
-INSERT INTO django_admin_log VALUES (25, '2010-08-11 16:32:36.706972-07', 2, 17, '1', 'Southern Savers', 3, '');
-INSERT INTO django_admin_log VALUES (26, '2010-08-11 16:46:15.503845-07', 2, 26, '2', 'Front page image', 2, 'Changed image and link.');
-INSERT INTO django_admin_log VALUES (27, '2010-08-11 16:46:36.014383-07', 2, 26, '1', 'Front page image', 2, 'Changed image and link.');
-INSERT INTO django_admin_log VALUES (28, '2010-08-11 16:51:48.595084-07', 2, 19, '1', 'The Scariest Moment', 2, 'Changed is_featured.');
-INSERT INTO django_admin_log VALUES (29, '2010-08-11 16:51:59.03364-07', 2, 16, '2', 'GVL / PRG', 2, 'Changed is_featured.');
-INSERT INTO django_admin_log VALUES (30, '2010-08-11 16:51:59.082002-07', 2, 16, '1', 'Glass Bottle Delicacy', 2, 'Changed is_featured.');
-INSERT INTO django_admin_log VALUES (31, '2010-08-11 16:54:36.390586-07', 1, 16, '1', 'Glass Bottle Delicacy', 2, 'Changed tags.');
-INSERT INTO django_admin_log VALUES (32, '2010-08-11 16:56:05.379271-07', 1, 16, '1', 'Glass Bottle Delicacy', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (33, '2010-08-11 17:01:50.275473-07', 2, 16, '3', 'Specialty Shops', 1, '');
-INSERT INTO django_admin_log VALUES (34, '2010-08-11 17:04:25.974647-07', 1, 16, '3', 'Specialty Shops', 2, 'Changed tags.');
-INSERT INTO django_admin_log VALUES (35, '2010-08-11 17:22:48.84394-07', 2, 16, '1', 'Glass Bottle Delicacy', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (36, '2010-08-11 17:31:33.395036-07', 2, 16, '1', 'Glass Bottle Delicacy', 2, 'Changed image for image "Image 2".');
-INSERT INTO django_admin_log VALUES (37, '2010-08-11 20:18:03.907399-07', 2, 24, '1', 'About (about)', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (38, '2010-08-11 21:16:40.253129-07', 1, 20, '1', 'Teaser Images', 2, 'Changed image_width.');
-INSERT INTO django_admin_log VALUES (39, '2010-08-11 21:17:00.117561-07', 1, 20, '1', 'Teaser Images', 2, 'Changed image_width.');
-INSERT INTO django_admin_log VALUES (40, '2010-08-11 21:34:58.443227-07', 1, 20, '1', 'Teaser Images', 2, 'Changed order for portfolio piece "Image 1". Changed order for portfolio piece "Image 2".');
-INSERT INTO django_admin_log VALUES (41, '2010-08-11 21:35:33.34505-07', 1, 20, '1', 'Teaser Images', 2, 'Changed order for portfolio piece "Image 2".');
-INSERT INTO django_admin_log VALUES (42, '2010-08-11 21:45:40.34414-07', 1, 16, '2', 'GVL / PRG', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (43, '2010-08-11 21:46:45.197672-07', 1, 16, '3', 'Specialty Shops', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (44, '2010-08-11 21:47:14.387031-07', 1, 16, '3', 'Specialty Shops', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (45, '2010-08-11 21:47:52.22264-07', 1, 16, '3', 'Specialty Shops', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (46, '2010-08-11 22:57:19.080024-07', 1, 20, '1', 'Teaser Images', 2, 'Changed order for portfolio piece "Image 1".');
-INSERT INTO django_admin_log VALUES (47, '2010-08-11 22:57:28.633394-07', 1, 20, '1', 'Teaser Images', 2, 'Changed order for portfolio piece "Image 1".');
-INSERT INTO django_admin_log VALUES (48, '2010-08-12 11:41:08.571966-07', 2, 26, '1', 'Front page image', 2, 'Changed enabled.');
-INSERT INTO django_admin_log VALUES (49, '2010-08-12 12:03:55.426415-07', 2, 20, '1', 'Teaser Images', 2, 'Added portfolio piece "Image 3". Added portfolio piece "Image 4". Added portfolio piece "Image 5".');
-INSERT INTO django_admin_log VALUES (50, '2010-08-12 12:05:31.629594-07', 2, 20, '1', 'Teaser Images', 2, 'Changed order for portfolio piece "Image 3". Changed order for portfolio piece "Image 4". Changed order for portfolio piece "Image 5".');
-INSERT INTO django_admin_log VALUES (51, '2010-08-12 12:09:52.757849-07', 2, 16, '2', 'GVL / PRG', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (52, '2010-08-12 12:10:30.191807-07', 2, 16, '2', 'GVL / PRG', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (53, '2010-08-12 12:13:19.970142-07', 2, 16, '3', 'Specialty Shops', 2, 'Changed content_markdown and tags.');
-INSERT INTO django_admin_log VALUES (54, '2010-08-12 12:14:49.004585-07', 2, 16, '3', 'Specialty Shops', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (55, '2010-08-12 12:36:17.487145-07', 2, 16, '1', 'The Glass Bottle Effect', 2, 'Changed title, content_markdown and tags.');
-INSERT INTO django_admin_log VALUES (56, '2010-08-12 12:43:18.618516-07', 2, 18, '1', 'Dropbox', 2, 'Changed content_markdown and link.');
-INSERT INTO django_admin_log VALUES (57, '2010-08-14 12:33:22.170422-07', 1, 16, '1', 'The Glass Bottle Effect', 2, 'Changed slug.');
-INSERT INTO django_admin_log VALUES (58, '2010-08-14 12:40:30.369821-07', 1, 7, '1', 'andrewramos.com', 2, 'Changed domain.');
-INSERT INTO django_admin_log VALUES (59, '2010-08-14 12:42:04.65026-07', 1, 19, '1', 'The Scariest Moment', 2, 'No fields changed.');
-INSERT INTO django_admin_log VALUES (60, '2010-08-14 12:42:22.570432-07', 1, 16, '3', 'Specialty Shops', 2, 'No fields changed.');
-INSERT INTO django_admin_log VALUES (61, '2010-08-14 12:42:48.530278-07', 1, 19, '1', 'The Scariest Moment', 2, 'No fields changed.');
-INSERT INTO django_admin_log VALUES (62, '2010-08-14 12:43:15.597949-07', 1, 19, '1', 'The Scariest Moment', 2, 'No fields changed.');
-INSERT INTO django_admin_log VALUES (63, '2010-08-18 06:29:41.260368-07', 2, 19, '2', 'Decisions are progress', 1, '');
-INSERT INTO django_admin_log VALUES (64, '2010-08-20 12:00:34.380636-07', 2, 16, '4', 'Inspiration: Opened House', 1, '');
-INSERT INTO django_admin_log VALUES (65, '2010-08-20 12:01:01.751098-07', 2, 16, '4', 'Inspiration: Opened House', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (66, '2010-08-21 21:15:41.460727-07', 1, 19, '2', 'Decisions are progress', 2, 'Changed author.');
-INSERT INTO django_admin_log VALUES (67, '2010-08-26 11:05:59.008351-07', 2, 16, '8', 'Alarm', 1, '');
-INSERT INTO django_admin_log VALUES (68, '2010-08-26 11:06:34.183338-07', 2, 16, '8', 'Alarm', 3, '');
-INSERT INTO django_admin_log VALUES (69, '2010-08-26 11:07:01.638412-07', 2, 16, '8', 'Alarm', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (70, '2010-08-27 10:33:11.351438-07', 1, 3, '1', 'mikemeyer', 2, 'Changed first_name and last_name.');
-INSERT INTO django_admin_log VALUES (71, '2010-08-27 11:08:45.81029-07', 1, 16, '8', 'Alarm', 2, 'Added image "Image 5".');
-INSERT INTO django_admin_log VALUES (72, '2010-08-27 11:08:56.746604-07', 1, 16, '8', 'Alarm', 2, 'Deleted image "Image None".');
-INSERT INTO django_admin_log VALUES (73, '2010-08-27 11:11:54.766674-07', 2, 16, '8', 'Alarm', 2, 'Changed status. Added image "Image 6".');
-INSERT INTO django_admin_log VALUES (74, '2010-08-27 11:12:12.395981-07', 1, 16, '4', 'Inspiration: Opened House', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (75, '2010-08-31 08:23:14.125632-07', 2, 16, '9', 'iTV and the Apple Cloud', 1, '');
-INSERT INTO django_admin_log VALUES (76, '2010-09-02 11:20:17.078688-07', 1, 16, '9', 'iTV and the Apple Cloud', 2, 'Changed tags.');
-INSERT INTO django_admin_log VALUES (77, '2010-09-02 14:12:58.758693-07', 2, 26, '3', 'Front page image', 1, '');
-INSERT INTO django_admin_log VALUES (78, '2010-09-02 14:13:08.302485-07', 2, 26, '2', 'Front page image', 2, 'Changed enabled.');
-INSERT INTO django_admin_log VALUES (79, '2010-09-02 14:22:03.824069-07', 2, 26, '4', 'Front page image', 1, '');
-INSERT INTO django_admin_log VALUES (80, '2010-09-08 08:59:19.836661-07', 2, 16, '10', 'Southern Savers', 1, '');
-INSERT INTO django_admin_log VALUES (81, '2010-09-08 12:51:10.271178-07', 2, 16, '10', 'Southern Savers', 2, 'Changed content_markdown. Added image "Image 8". Added image "Image 9". Added image "Image 10". Added image "Image 11".');
-INSERT INTO django_admin_log VALUES (82, '2010-09-08 12:52:14.874845-07', 2, 16, '10', 'Southern Savers', 2, 'Changed subtitle.');
-INSERT INTO django_admin_log VALUES (83, '2010-09-08 12:58:30.257914-07', 2, 16, '10', 'Southern Savers', 2, 'Added image "Image 12".');
-INSERT INTO django_admin_log VALUES (84, '2010-09-08 13:05:35.823142-07', 2, 17, '2', 'Southern Savers', 1, '');
-INSERT INTO django_admin_log VALUES (85, '2010-09-08 13:07:03.362131-07', 2, 17, '2', 'Southern Savers', 2, 'No fields changed.');
-INSERT INTO django_admin_log VALUES (86, '2010-09-08 13:14:05.682707-07', 2, 17, '2', 'Southern Savers', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (87, '2010-09-09 10:57:48.420963-07', 1, 17, '2', 'Southern Savers', 2, 'Added image "Image 17".');
-INSERT INTO django_admin_log VALUES (88, '2010-09-09 11:05:41.590606-07', 1, 17, '2', 'Southern Savers', 2, 'Deleted image "Image None".');
-INSERT INTO django_admin_log VALUES (89, '2010-09-09 12:24:47.255457-07', 2, 17, '2', 'Southern Savers', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (90, '2010-09-09 12:25:27.496246-07', 2, 16, '11', 'yada', 1, '');
-INSERT INTO django_admin_log VALUES (91, '2010-09-09 12:25:57.949412-07', 2, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (92, '2010-09-09 12:26:04.235319-07', 2, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (93, '2010-09-09 12:26:31.226149-07', 2, 16, '11', 'yada', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (94, '2010-09-09 12:31:26.821583-07', 2, 17, '2', 'Southern Savers', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (95, '2010-09-09 12:31:56.135594-07', 2, 17, '2', 'Southern Savers', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (96, '2010-09-09 12:32:10.307735-07', 2, 17, '2', 'Southern Savers', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (97, '2010-09-09 12:32:59.24903-07', 2, 17, '2', 'Southern Savers', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (98, '2010-09-09 12:33:12.926811-07', 2, 17, '2', 'Southern Savers', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (99, '2010-09-09 12:34:05.35602-07', 2, 17, '2', 'Southern Savers', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (100, '2010-09-09 15:16:04.482332-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (101, '2010-09-09 15:18:10.862204-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (102, '2010-09-09 15:26:48.020019-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (103, '2010-09-09 15:30:40.100921-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (104, '2010-09-09 15:31:20.500059-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (105, '2010-09-09 15:36:08.903441-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (106, '2010-09-13 11:00:16.670795-07', 2, 16, '2', 'GVL / PRG', 2, 'Changed is_featured.');
-INSERT INTO django_admin_log VALUES (107, '2010-09-13 11:00:29.759912-07', 2, 19, '1', 'The Scariest Moment', 2, 'Changed is_featured.');
-INSERT INTO django_admin_log VALUES (108, '2010-09-13 11:00:36.603898-07', 2, 17, '2', 'Southern Savers', 2, 'Changed is_featured.');
-INSERT INTO django_admin_log VALUES (109, '2010-09-14 08:55:21.704829-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (110, '2010-09-14 09:01:06.49117-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (111, '2010-09-14 09:01:32.557997-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (112, '2010-09-14 09:07:26.460981-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (113, '2010-09-14 09:11:38.303688-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (114, '2010-09-14 11:47:39.233974-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (115, '2010-09-17 09:01:02.6238-07', 2, 16, '12', 'Outsourcing Surprise & Delight', 1, '');
-INSERT INTO django_admin_log VALUES (116, '2010-09-17 09:02:00.31351-07', 2, 18, '2', 'Outsourcing Surprise & Delight', 1, '');
-INSERT INTO django_admin_log VALUES (117, '2010-09-17 09:02:57.494124-07', 2, 18, '2', 'Outsourcing Surprise & Delight', 3, '');
-INSERT INTO django_admin_log VALUES (118, '2010-09-17 09:03:57.792446-07', 2, 16, '12', 'Outsourcing Surprise & Delight', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (119, '2010-10-06 12:35:09.351107-07', 2, 26, '5', 'Front page image', 1, '');
-INSERT INTO django_admin_log VALUES (120, '2010-10-06 12:35:16.332968-07', 2, 26, '3', 'Front page image', 2, 'Changed enabled.');
-INSERT INTO django_admin_log VALUES (121, '2010-10-09 07:52:13.1653-07', 2, 16, '13', 'Time to stop', 1, '');
-INSERT INTO django_admin_log VALUES (122, '2010-10-09 07:57:24.080544-07', 2, 16, '13', 'Time to stop', 2, 'Changed status. Changed image for image "Image 18".');
-INSERT INTO django_admin_log VALUES (123, '2010-10-10 15:50:40.725889-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (124, '2010-10-10 16:47:53.427204-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (125, '2010-10-10 16:47:54.499034-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (126, '2010-10-10 17:26:45.370123-07', 1, 16, '11', 'yada', 3, '');
-INSERT INTO django_admin_log VALUES (127, '2010-10-25 15:37:58.895524-07', 2, 16, '14', '4 Shots', 1, '');
-INSERT INTO django_admin_log VALUES (128, '2010-10-25 15:38:24.280631-07', 2, 16, '14', '4 Shots', 2, 'Added image "Image 19".');
-INSERT INTO django_admin_log VALUES (129, '2010-10-25 15:39:16.481163-07', 2, 16, '14', '4 Shots', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (130, '2010-10-25 15:39:52.033216-07', 2, 16, '14', '4 Shots', 3, '');
-INSERT INTO django_admin_log VALUES (131, '2010-10-25 15:42:30.312468-07', 2, 16, '15', '4 Shots', 1, '');
-INSERT INTO django_admin_log VALUES (132, '2010-10-25 15:43:44.939141-07', 2, 16, '15', '4 Shots', 2, 'Changed image for image "Image 20".');
-INSERT INTO django_admin_log VALUES (133, '2010-10-25 15:44:13.356744-07', 2, 16, '15', '4 Shots', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (134, '2010-11-11 13:54:10.699998-08', 2, 16, '16', 'Christmas Traditions', 1, '');
-INSERT INTO django_admin_log VALUES (135, '2010-11-11 13:55:30.785627-08', 2, 16, '16', 'Christmas Traditions', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (136, '2010-11-27 12:02:13.820013-08', 1, 3, '3', 'demouser', 1, '');
-INSERT INTO django_admin_log VALUES (137, '2010-11-27 12:02:51.183269-08', 1, 3, '3', 'demouser', 2, 'Changed first_name, is_staff and user_permissions.');
-INSERT INTO django_admin_log VALUES (138, '2010-11-29 13:02:57.287119-08', 2, 16, '17', 'New Illustrations', 1, '');
-INSERT INTO django_admin_log VALUES (139, '2010-12-31 14:09:56.436402-08', 1, 3, '3', 'demouser', 3, '');
-INSERT INTO django_admin_log VALUES (140, '2011-01-25 08:49:26.584422-08', 2, 23, '2', 'The Trappe Door', 1, '');
-INSERT INTO django_admin_log VALUES (141, '2011-01-25 08:49:44.662445-08', 2, 23, '3', 'Somewhat Organic Soap Co.', 1, '');
-INSERT INTO django_admin_log VALUES (142, '2011-01-25 08:49:54.120086-08', 2, 23, '4', 'Southern Savers', 1, '');
-INSERT INTO django_admin_log VALUES (143, '2011-01-25 09:09:25.748053-08', 2, 20, '2', 'The Trappe Door Branding', 1, '');
-INSERT INTO django_admin_log VALUES (144, '2011-01-25 09:10:47.583658-08', 2, 20, '2', 'The Trappe Door', 2, 'Changed title. Changed order for portfolio piece "Image 7". Changed order for portfolio piece "Image 8".');
-INSERT INTO django_admin_log VALUES (145, '2011-01-25 09:32:23.186147-08', 2, 20, '2', 'The Trappe Door', 2, 'Changed image for portfolio piece "Image 8".');
-INSERT INTO django_admin_log VALUES (146, '2011-01-25 09:33:02.68847-08', 2, 20, '2', 'The Trappe Door', 2, 'Changed description.');
-INSERT INTO django_admin_log VALUES (147, '2011-01-25 12:19:06.557716-08', 2, 20, '3', 'Somewhat Organic Soap Co.', 1, '');
-INSERT INTO django_admin_log VALUES (148, '2011-01-25 12:25:28.369693-08', 2, 20, '4', 'Southern Savers', 1, '');
-INSERT INTO django_admin_log VALUES (149, '2011-01-25 12:25:58.796375-08', 2, 20, '4', 'Southern Savers', 2, 'Changed order for portfolio piece "Image 14". Changed order for portfolio piece "Image 15".');
-INSERT INTO django_admin_log VALUES (150, '2011-01-25 12:26:38.922473-08', 2, 20, '4', 'Southern Savers', 2, 'No fields changed.');
-INSERT INTO django_admin_log VALUES (151, '2011-01-25 12:27:05.440079-08', 2, 20, '4', 'Southern Savers', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (152, '2011-01-25 12:27:05.468507-08', 2, 20, '3', 'Somewhat Organic Soap Co.', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (153, '2011-01-25 12:27:05.486203-08', 2, 20, '2', 'The Trappe Door', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (154, '2011-01-25 12:27:47.981387-08', 2, 20, '1', 'Teaser Images', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (155, '2011-01-25 12:39:51.625739-08', 2, 20, '4', 'Southern Savers', 2, 'No fields changed.');
-INSERT INTO django_admin_log VALUES (156, '2011-01-25 12:57:34.63507-08', 2, 17, '2', 'Southern Savers', 2, 'Changed image for image "Image 16".');
-INSERT INTO django_admin_log VALUES (157, '2011-01-25 13:04:20.243961-08', 2, 26, '6', 'Front page image', 1, '');
-INSERT INTO django_admin_log VALUES (158, '2011-01-25 13:04:35.691686-08', 2, 26, '7', 'Front page image', 1, '');
-INSERT INTO django_admin_log VALUES (159, '2011-01-25 13:04:51.081077-08', 2, 26, '8', 'Front page image', 1, '');
-INSERT INTO django_admin_log VALUES (160, '2011-01-25 13:05:09.795225-08', 2, 26, '8', 'Front page image', 2, 'Changed enabled.');
-INSERT INTO django_admin_log VALUES (161, '2011-01-25 13:05:09.839328-08', 2, 26, '7', 'Front page image', 2, 'Changed enabled.');
-INSERT INTO django_admin_log VALUES (162, '2011-01-25 13:05:09.850067-08', 2, 26, '5', 'Front page image', 2, 'Changed enabled.');
-INSERT INTO django_admin_log VALUES (163, '2011-01-25 13:05:09.85997-08', 2, 26, '4', 'Front page image', 2, 'Changed enabled.');
-INSERT INTO django_admin_log VALUES (164, '2011-01-25 13:05:21.47195-08', 2, 26, '8', 'Front page image', 3, '');
-INSERT INTO django_admin_log VALUES (165, '2011-01-25 13:05:21.497798-08', 2, 26, '7', 'Front page image', 3, '');
-INSERT INTO django_admin_log VALUES (166, '2011-01-25 13:07:08.498024-08', 2, 16, '9', 'iTV and the Apple Cloud', 2, 'Changed is_featured.');
-INSERT INTO django_admin_log VALUES (167, '2011-01-25 13:07:08.584611-08', 2, 16, '3', 'Specialty Shops', 2, 'Changed is_featured.');
-INSERT INTO django_admin_log VALUES (168, '2011-01-25 13:07:21.983703-08', 2, 17, '2', 'Southern Savers', 2, 'Changed is_featured.');
-INSERT INTO django_admin_log VALUES (169, '2011-01-25 13:18:04.773997-08', 2, 20, '3', 'Somewhat Organic Soap Co.', 2, 'Deleted portfolio piece "Image None". Deleted portfolio piece "Image None".');
-INSERT INTO django_admin_log VALUES (170, '2011-01-25 13:18:43.442496-08', 2, 20, '4', 'Southern Savers', 2, 'Changed image for portfolio piece "Image 15".');
-INSERT INTO django_admin_log VALUES (171, '2011-01-27 13:55:33.480076-08', 2, 16, '18', 'Panel Discussion', 1, '');
-INSERT INTO django_admin_log VALUES (172, '2011-01-27 13:56:01.216369-08', 2, 16, '18', 'Panel Discussion', 2, 'Changed image_width.');
-INSERT INTO django_admin_log VALUES (173, '2011-01-27 14:01:24.749058-08', 2, 16, '18', 'Panel Discussion', 2, 'Changed image for image "Image 23".');
-INSERT INTO django_admin_log VALUES (174, '2011-01-27 14:07:53.682345-08', 2, 16, '18', 'Panel Discussion', 2, 'Changed image for image "Image 23".');
-INSERT INTO django_admin_log VALUES (175, '2011-01-27 14:18:32.487558-08', 2, 16, '18', 'Panel Discussion', 2, 'Changed image for image "Image 23".');
-INSERT INTO django_admin_log VALUES (176, '2011-01-27 14:19:55.078284-08', 2, 16, '18', 'Panel Discussion', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (177, '2011-01-27 14:24:15.11461-08', 2, 16, '18', 'Panel Discussion', 2, 'Changed image for image "Image 23".');
-INSERT INTO django_admin_log VALUES (178, '2011-01-27 14:26:40.396586-08', 2, 16, '18', 'Panel Discussion', 2, 'Changed image for image "Image 23".');
-INSERT INTO django_admin_log VALUES (179, '2011-01-27 14:40:01.41918-08', 2, 16, '18', 'Panel Discussion', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (180, '2011-01-28 06:12:17.533646-08', 2, 16, '18', 'Panel Discussion', 2, 'Changed image for image "Image 23".');
-INSERT INTO django_admin_log VALUES (181, '2011-01-28 06:13:34.762223-08', 2, 16, '18', 'Panel Discussion', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (182, '2011-01-28 06:14:19.720866-08', 2, 16, '18', 'Panel Discussion', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (183, '2011-01-28 06:16:05.982121-08', 2, 16, '18', 'Panel Discussion', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (184, '2011-01-28 06:36:36.607314-08', 2, 16, '18', 'Panel Discussion', 2, 'Changed content_markdown and status.');
-INSERT INTO django_admin_log VALUES (185, '2011-01-28 06:37:21.061875-08', 2, 16, '18', 'Panel Discussion', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (186, '2011-02-04 11:05:48.014641-08', 2, 23, '5', 'Parachute Clothing', 1, '');
-INSERT INTO django_admin_log VALUES (187, '2011-02-04 13:44:48.288327-08', 2, 20, '5', 'Parachute Clothing', 1, '');
-INSERT INTO django_admin_log VALUES (188, '2011-02-04 13:45:19.619784-08', 2, 20, '5', 'Parachute Clothing', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (189, '2011-02-04 13:46:08.842208-08', 2, 20, '5', 'Parachute Clothing', 2, 'Changed order for portfolio piece "Image 17". Changed order for portfolio piece "Image 18".');
-INSERT INTO django_admin_log VALUES (190, '2011-02-04 13:46:09.923095-08', 2, 20, '5', 'Parachute Clothing', 2, 'No fields changed.');
-INSERT INTO django_admin_log VALUES (191, '2011-02-04 13:52:12.115644-08', 2, 20, '5', 'Parachute Clothing', 2, 'Changed description.');
-INSERT INTO django_admin_log VALUES (192, '2011-02-07 14:23:00.397191-08', 1, 3, '4', 'demouser', 1, '');
-INSERT INTO django_admin_log VALUES (193, '2011-03-23 18:12:49.909794-07', 2, 26, '9', 'Front page image', 1, '');
-INSERT INTO django_admin_log VALUES (194, '2011-03-23 18:13:11.505018-07', 2, 26, '6', 'Front page image', 2, 'Changed enabled.');
-INSERT INTO django_admin_log VALUES (195, '2011-03-23 18:14:32.646109-07', 2, 26, '6', 'Front page image', 2, 'Changed enabled.');
-INSERT INTO django_admin_log VALUES (196, '2011-03-23 18:14:48.141285-07', 2, 26, '9', 'Front page image', 2, 'Changed enabled.');
-INSERT INTO django_admin_log VALUES (197, '2011-03-23 18:15:32.570974-07', 2, 26, '9', 'Front page image', 2, 'Changed image and enabled.');
-INSERT INTO django_admin_log VALUES (198, '2011-03-23 18:15:53.089094-07', 2, 26, '9', 'Front page image', 2, 'Changed enabled.');
-INSERT INTO django_admin_log VALUES (199, '2011-03-23 18:15:53.124095-07', 2, 26, '6', 'Front page image', 2, 'Changed enabled.');
-INSERT INTO django_admin_log VALUES (200, '2011-03-23 18:16:49.257529-07', 2, 26, '10', 'Front page image', 1, '');
-INSERT INTO django_admin_log VALUES (201, '2011-03-30 07:27:08.837416-07', 2, 16, '19', 'Designspiration', 1, '');
-INSERT INTO django_admin_log VALUES (202, '2011-03-30 07:27:48.533827-07', 2, 16, '19', 'Designspiration', 2, 'Changed display_title.');
-INSERT INTO django_admin_log VALUES (203, '2011-03-30 07:29:31.798151-07', 2, 16, '19', 'Designspiration', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (204, '2011-03-30 07:32:17.964885-07', 2, 16, '19', 'Designspiration', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (205, '2011-03-30 07:37:50.116174-07', 2, 16, '19', 'Designspiration', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (206, '2011-03-30 07:38:04.033526-07', 2, 16, '19', 'Designspiration', 2, 'Changed is_featured.');
-INSERT INTO django_admin_log VALUES (207, '2011-03-30 07:38:04.105294-07', 2, 16, '16', 'Christmas Traditions', 2, 'Changed is_featured.');
-INSERT INTO django_admin_log VALUES (208, '2011-04-13 14:21:24.253272-07', 2, 26, '11', 'Front page image', 1, '');
-INSERT INTO django_admin_log VALUES (209, '2011-04-13 14:23:33.423544-07', 2, 26, '12', 'Front page image', 1, '');
-INSERT INTO django_admin_log VALUES (210, '2011-04-13 14:23:55.353791-07', 2, 26, '11', 'Front page image', 2, 'Changed enabled.');
-INSERT INTO django_admin_log VALUES (211, '2011-04-14 07:14:44.441645-07', 2, 26, '11', 'Front page image', 3, '');
-INSERT INTO django_admin_log VALUES (212, '2011-04-14 07:14:44.501664-07', 2, 26, '9', 'Front page image', 3, '');
-INSERT INTO django_admin_log VALUES (213, '2011-04-26 07:58:35.721061-07', 2, 18, '3', 'Today I wish I had a bicycle', 1, '');
-INSERT INTO django_admin_log VALUES (214, '2011-04-26 08:00:14.273582-07', 2, 18, '3', 'Today I wish I had a bicycle', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (215, '2011-04-30 07:59:00.579106-07', 2, 16, '20', 'This Week in Things I Need: ', 1, '');
-INSERT INTO django_admin_log VALUES (216, '2011-04-30 08:03:20.296796-07', 2, 16, '20', 'This Week in Things I Need: ', 2, 'Changed image for image "Image 25".');
-INSERT INTO django_admin_log VALUES (217, '2011-04-30 08:04:33.669112-07', 2, 16, '20', 'This Week in Things I Need: ', 2, 'Changed subtitle.');
-INSERT INTO django_admin_log VALUES (218, '2011-04-30 08:13:21.060828-07', 2, 16, '20', 'This Week in Things I Need: ', 3, '');
-INSERT INTO django_admin_log VALUES (219, '2011-04-30 08:25:26.415623-07', 2, 16, '21', 'Vintage Denim Neckties', 1, '');
-INSERT INTO django_admin_log VALUES (220, '2011-04-30 08:27:21.397635-07', 2, 16, '21', 'Vintage Denim Neckties', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (221, '2011-04-30 08:35:55.078018-07', 2, 19, '3', 'Fortnight', 1, '');
-INSERT INTO django_admin_log VALUES (222, '2011-04-30 08:36:26.340486-07', 2, 19, '3', 'Fortnight', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (223, '2011-05-14 10:45:23.214767-07', 2, 18, '11', 'What''s making me laugh this week', 1, '');
-INSERT INTO django_admin_log VALUES (224, '2011-05-14 10:46:07.541214-07', 2, 18, '11', 'What''s making me laugh this week', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (225, '2011-05-14 10:58:54.771824-07', 2, 18, '2', 'Outsourcing Surprise & Delight', 3, '');
-INSERT INTO django_admin_log VALUES (226, '2011-05-22 11:56:40.653324-07', 2, 19, '4', 'The Art of Living', 1, '');
-INSERT INTO django_admin_log VALUES (227, '2011-05-22 11:57:32.520013-07', 2, 19, '4', 'The Art of Living', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (228, '2011-05-22 11:58:02.594398-07', 2, 19, '4', 'The Art of Living', 2, 'Changed author.');
-INSERT INTO django_admin_log VALUES (229, '2011-05-22 11:58:17.907035-07', 2, 19, '4', 'The Art of Living', 2, 'Changed author.');
-INSERT INTO django_admin_log VALUES (230, '2011-05-22 11:58:46.69806-07', 2, 19, '4', 'The Art of Living', 2, 'Changed author.');
-INSERT INTO django_admin_log VALUES (231, '2011-05-22 11:59:20.471293-07', 2, 19, '4', 'The Art of Living', 2, 'Changed is_featured and status.');
-INSERT INTO django_admin_log VALUES (232, '2011-05-22 12:00:53.033044-07', 2, 19, '4', 'The Art of Living', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (233, '2011-06-03 10:06:08.116881-07', 2, 18, '12', 'Every Once in a while', 1, '');
-INSERT INTO django_admin_log VALUES (234, '2011-06-03 10:06:57.889785-07', 2, 18, '12', 'Every Once in a while,', 2, 'Changed title.');
-INSERT INTO django_admin_log VALUES (235, '2011-06-03 10:07:46.2857-07', 2, 18, '12', 'Every Once in a while', 2, 'Changed title and content_markdown.');
-INSERT INTO django_admin_log VALUES (236, '2011-06-03 10:07:57.392813-07', 2, 18, '12', 'Every Once in a while', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (237, '2011-06-03 10:08:11.192488-07', 2, 18, '12', 'Every Once in a while', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (238, '2011-06-03 10:08:48.70155-07', 2, 18, '12', 'Every Once in a while I can hear a distant motorbike''s high-pitched groaning as it tears down a neighboring street', 2, 'Changed title and content_markdown.');
-INSERT INTO django_admin_log VALUES (239, '2011-06-03 10:09:34.457569-07', 2, 18, '12', 'Fear', 2, 'Changed title and content_markdown.');
-INSERT INTO django_admin_log VALUES (240, '2011-06-03 10:13:36.278992-07', 2, 18, '12', 'Fear', 2, 'Changed content_markdown and status.');
-INSERT INTO django_admin_log VALUES (241, '2011-06-10 06:04:57.544676-07', 2, 19, '5', 'Texting & Driving', 1, '');
-INSERT INTO django_admin_log VALUES (242, '2011-06-10 06:05:56.850212-07', 2, 19, '5', 'Texting & Driving', 2, 'Changed author.');
-INSERT INTO django_admin_log VALUES (243, '2011-06-10 06:08:35.203717-07', 2, 19, '5', 'Texting & Driving', 2, 'Changed author.');
-INSERT INTO django_admin_log VALUES (244, '2011-06-10 06:08:53.185113-07', 2, 19, '5', 'Texting & Driving', 2, 'Changed status.');
-INSERT INTO django_admin_log VALUES (245, '2011-06-10 11:23:42.568125-07', 2, 16, '23', 'Introducing Wren', 1, '');
-INSERT INTO django_admin_log VALUES (246, '2011-06-10 11:30:38.720384-07', 2, 16, '23', 'Introducing Wren', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (247, '2011-06-10 11:31:19.710698-07', 2, 16, '23', 'Introducing Wren', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (248, '2011-06-10 13:23:38.012213-07', 2, 16, '17', 'New Illustrations', 3, '');
-INSERT INTO django_admin_log VALUES (249, '2011-06-10 13:36:45.898865-07', 2, 16, '24', 'Goodbye Old Friend', 1, '');
-INSERT INTO django_admin_log VALUES (250, '2011-06-10 13:37:34.936147-07', 2, 16, '24', 'All Things Must End', 2, 'Changed title, slug and display_title.');
-INSERT INTO django_admin_log VALUES (251, '2011-06-10 13:37:51.284179-07', 2, 16, '24', 'All Things Must End', 2, 'No fields changed.');
-INSERT INTO django_admin_log VALUES (252, '2011-06-14 07:51:11.605315-07', 2, 16, '24', 'All Things Must End', 2, 'Changed image for image "Image 28".');
-INSERT INTO django_admin_log VALUES (253, '2011-06-14 07:54:48.825094-07', 2, 16, '24', 'All Things Must End', 2, 'Changed image for image "Image 28".');
-INSERT INTO django_admin_log VALUES (254, '2011-06-14 07:55:53.202516-07', 2, 16, '24', 'All Things Must End', 2, 'Changed image for image "Image 28".');
-INSERT INTO django_admin_log VALUES (255, '2011-06-14 08:40:23.306337-07', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (256, '2011-06-14 08:57:27.734339-07', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (257, '2011-06-14 08:58:17.954796-07', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (258, '2011-06-14 08:59:42.950196-07', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (259, '2011-06-14 09:06:11.92072-07', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (260, '2011-06-14 09:17:19.812997-07', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (261, '2011-06-14 09:18:14.333568-07', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (262, '2011-06-14 09:20:20.297086-07', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (263, '2011-06-14 09:21:12.853494-07', 2, 16, '24', 'All Things Must End', 2, 'Changed is_featured and status.');
-INSERT INTO django_admin_log VALUES (264, '2011-06-14 09:21:41.77393-07', 2, 16, '18', 'Panel Discussion', 2, 'Changed is_featured.');
-INSERT INTO django_admin_log VALUES (265, '2011-06-14 09:22:02.083239-07', 2, 19, '4', 'The Art of Living', 2, 'Changed is_featured.');
-INSERT INTO django_admin_log VALUES (266, '2011-06-21 06:45:14.566816-07', 2, 16, '23', 'Introducing Wren', 2, 'Changed content_markdown. Changed image for image "Image 27".');
-INSERT INTO django_admin_log VALUES (267, '2011-06-21 13:19:05.276248-07', 2, 16, '23', 'Introducing Wren', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (268, '2011-06-21 13:20:44.287773-07', 2, 16, '23', 'Introducing Wren', 2, 'Changed content_markdown. Changed image for image "Image 27".');
-INSERT INTO django_admin_log VALUES (269, '2011-06-21 13:25:35.488807-07', 2, 16, '23', 'Introducing Wren for Mac', 2, 'Changed title and subtitle.');
-INSERT INTO django_admin_log VALUES (270, '2011-06-21 13:30:23.964082-07', 2, 16, '23', 'Introducing Wren for Mac', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (271, '2011-06-21 13:45:32.471116-07', 2, 16, '23', 'Introducing Wren for Mac', 2, 'Changed content_markdown.');
-INSERT INTO django_admin_log VALUES (272, '2011-06-21 13:46:18.503323-07', 2, 16, '23', 'Introducing Wren for Mac', 2, 'Changed is_featured and status.');
-INSERT INTO django_admin_log VALUES (273, '2011-06-21 13:47:17.423864-07', 2, 16, '23', 'Introducing Wren for Mac', 2, 'Changed date_published.');
-INSERT INTO django_admin_log VALUES (274, '2011-06-21 13:52:00.535218-07', 2, 16, '23', 'Introducing Wren for Mac', 2, 'Changed image for image "Image 27".');
-INSERT INTO django_admin_log VALUES (275, '2011-06-21 13:57:11.911444-07', 2, 16, '23', 'Introducing Wren for Mac', 2, 'No fields changed.');
+INSERT INTO django_admin_log VALUES (1, '2010-08-11 04:57:57.040192+00', 1, 24, '1', 'About (about)', 1, '');
+INSERT INTO django_admin_log VALUES (2, '2010-08-11 04:58:18.982843+00', 1, 7, '1', 'andrewramos.com', 2, 'Changed domain and name.');
+INSERT INTO django_admin_log VALUES (3, '2010-08-11 05:09:37.38298+00', 1, 3, '2', 'andrewramos', 1, '');
+INSERT INTO django_admin_log VALUES (4, '2010-08-11 05:10:18.274587+00', 1, 3, '2', 'andrewramos', 2, 'Changed first_name, last_name, email, is_staff and user_permissions.');
+INSERT INTO django_admin_log VALUES (5, '2010-08-11 05:11:18.493456+00', 1, 3, '2', 'andrew', 2, 'Changed username.');
+INSERT INTO django_admin_log VALUES (6, '2010-08-11 14:00:23.550782+00', 1, 7, '1', 'dev.andrewramos.com', 2, 'Changed domain.');
+INSERT INTO django_admin_log VALUES (7, '2010-08-11 18:48:17.688751+00', 1, 24, '1', 'About (about)', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (8, '2010-08-11 22:47:36.321071+00', 2, 16, '1', 'Glass Bottle Delicacy', 1, '');
+INSERT INTO django_admin_log VALUES (9, '2010-08-11 22:50:55.384262+00', 2, 16, '1', 'Glass Bottle Delicacy', 2, 'No fields changed.');
+INSERT INTO django_admin_log VALUES (10, '2010-08-11 22:52:37.170266+00', 2, 19, '1', 'The Scariest Moment', 1, '');
+INSERT INTO django_admin_log VALUES (11, '2010-08-11 22:53:59.442007+00', 2, 17, '1', 'Southern Savers', 1, '');
+INSERT INTO django_admin_log VALUES (12, '2010-08-11 22:55:07.364823+00', 2, 18, '1', 'Dropbox', 1, '');
+INSERT INTO django_admin_log VALUES (13, '2010-08-11 23:05:46.869333+00', 1, 26, '1', 'Front page image', 1, '');
+INSERT INTO django_admin_log VALUES (14, '2010-08-11 23:08:17.061514+00', 2, 26, '2', 'Front page image', 1, '');
+INSERT INTO django_admin_log VALUES (15, '2010-08-11 23:09:09.484922+00', 2, 26, '2', 'Front page image', 2, 'Changed link.');
+INSERT INTO django_admin_log VALUES (16, '2010-08-11 23:09:51.056709+00', 2, 18, '1', 'Dropbox', 2, 'Changed is_featured.');
+INSERT INTO django_admin_log VALUES (17, '2010-08-11 23:13:35.606115+00', 2, 23, '1', 'Personal', 1, '');
+INSERT INTO django_admin_log VALUES (18, '2010-08-11 23:13:43.277274+00', 2, 20, '1', 'Teaser images', 1, '');
+INSERT INTO django_admin_log VALUES (19, '2010-08-11 23:13:53.741458+00', 2, 20, '1', 'Teaser Images', 2, 'Changed title.');
+INSERT INTO django_admin_log VALUES (20, '2010-08-11 23:16:26.750991+00', 2, 20, '1', 'Teaser Images', 2, 'No fields changed.');
+INSERT INTO django_admin_log VALUES (21, '2010-08-11 23:17:47.459334+00', 2, 16, '2', 'GVL / PRG', 1, '');
+INSERT INTO django_admin_log VALUES (22, '2010-08-11 23:18:22.277148+00', 2, 16, '2', 'GVL / PRG', 2, 'Added image "Image 1".');
+INSERT INTO django_admin_log VALUES (23, '2010-08-11 23:22:21.85273+00', 2, 20, '1', 'Teaser Images', 2, 'Changed case_study.');
+INSERT INTO django_admin_log VALUES (24, '2010-08-11 23:31:52.885106+00', 2, 16, '1', 'Glass Bottle Delicacy', 2, 'Changed content_markdown. Added image "Image 2".');
+INSERT INTO django_admin_log VALUES (25, '2010-08-11 23:32:36.706972+00', 2, 17, '1', 'Southern Savers', 3, '');
+INSERT INTO django_admin_log VALUES (26, '2010-08-11 23:46:15.503845+00', 2, 26, '2', 'Front page image', 2, 'Changed image and link.');
+INSERT INTO django_admin_log VALUES (27, '2010-08-11 23:46:36.014383+00', 2, 26, '1', 'Front page image', 2, 'Changed image and link.');
+INSERT INTO django_admin_log VALUES (28, '2010-08-11 23:51:48.595084+00', 2, 19, '1', 'The Scariest Moment', 2, 'Changed is_featured.');
+INSERT INTO django_admin_log VALUES (29, '2010-08-11 23:51:59.03364+00', 2, 16, '2', 'GVL / PRG', 2, 'Changed is_featured.');
+INSERT INTO django_admin_log VALUES (30, '2010-08-11 23:51:59.082002+00', 2, 16, '1', 'Glass Bottle Delicacy', 2, 'Changed is_featured.');
+INSERT INTO django_admin_log VALUES (31, '2010-08-11 23:54:36.390586+00', 1, 16, '1', 'Glass Bottle Delicacy', 2, 'Changed tags.');
+INSERT INTO django_admin_log VALUES (32, '2010-08-11 23:56:05.379271+00', 1, 16, '1', 'Glass Bottle Delicacy', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (33, '2010-08-12 00:01:50.275473+00', 2, 16, '3', 'Specialty Shops', 1, '');
+INSERT INTO django_admin_log VALUES (34, '2010-08-12 00:04:25.974647+00', 1, 16, '3', 'Specialty Shops', 2, 'Changed tags.');
+INSERT INTO django_admin_log VALUES (35, '2010-08-12 00:22:48.84394+00', 2, 16, '1', 'Glass Bottle Delicacy', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (36, '2010-08-12 00:31:33.395036+00', 2, 16, '1', 'Glass Bottle Delicacy', 2, 'Changed image for image "Image 2".');
+INSERT INTO django_admin_log VALUES (37, '2010-08-12 03:18:03.907399+00', 2, 24, '1', 'About (about)', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (38, '2010-08-12 04:16:40.253129+00', 1, 20, '1', 'Teaser Images', 2, 'Changed image_width.');
+INSERT INTO django_admin_log VALUES (39, '2010-08-12 04:17:00.117561+00', 1, 20, '1', 'Teaser Images', 2, 'Changed image_width.');
+INSERT INTO django_admin_log VALUES (40, '2010-08-12 04:34:58.443227+00', 1, 20, '1', 'Teaser Images', 2, 'Changed order for portfolio piece "Image 1". Changed order for portfolio piece "Image 2".');
+INSERT INTO django_admin_log VALUES (41, '2010-08-12 04:35:33.34505+00', 1, 20, '1', 'Teaser Images', 2, 'Changed order for portfolio piece "Image 2".');
+INSERT INTO django_admin_log VALUES (42, '2010-08-12 04:45:40.34414+00', 1, 16, '2', 'GVL / PRG', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (43, '2010-08-12 04:46:45.197672+00', 1, 16, '3', 'Specialty Shops', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (44, '2010-08-12 04:47:14.387031+00', 1, 16, '3', 'Specialty Shops', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (45, '2010-08-12 04:47:52.22264+00', 1, 16, '3', 'Specialty Shops', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (46, '2010-08-12 05:57:19.080024+00', 1, 20, '1', 'Teaser Images', 2, 'Changed order for portfolio piece "Image 1".');
+INSERT INTO django_admin_log VALUES (47, '2010-08-12 05:57:28.633394+00', 1, 20, '1', 'Teaser Images', 2, 'Changed order for portfolio piece "Image 1".');
+INSERT INTO django_admin_log VALUES (48, '2010-08-12 18:41:08.571966+00', 2, 26, '1', 'Front page image', 2, 'Changed enabled.');
+INSERT INTO django_admin_log VALUES (49, '2010-08-12 19:03:55.426415+00', 2, 20, '1', 'Teaser Images', 2, 'Added portfolio piece "Image 3". Added portfolio piece "Image 4". Added portfolio piece "Image 5".');
+INSERT INTO django_admin_log VALUES (50, '2010-08-12 19:05:31.629594+00', 2, 20, '1', 'Teaser Images', 2, 'Changed order for portfolio piece "Image 3". Changed order for portfolio piece "Image 4". Changed order for portfolio piece "Image 5".');
+INSERT INTO django_admin_log VALUES (51, '2010-08-12 19:09:52.757849+00', 2, 16, '2', 'GVL / PRG', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (52, '2010-08-12 19:10:30.191807+00', 2, 16, '2', 'GVL / PRG', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (53, '2010-08-12 19:13:19.970142+00', 2, 16, '3', 'Specialty Shops', 2, 'Changed content_markdown and tags.');
+INSERT INTO django_admin_log VALUES (54, '2010-08-12 19:14:49.004585+00', 2, 16, '3', 'Specialty Shops', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (55, '2010-08-12 19:36:17.487145+00', 2, 16, '1', 'The Glass Bottle Effect', 2, 'Changed title, content_markdown and tags.');
+INSERT INTO django_admin_log VALUES (56, '2010-08-12 19:43:18.618516+00', 2, 18, '1', 'Dropbox', 2, 'Changed content_markdown and link.');
+INSERT INTO django_admin_log VALUES (57, '2010-08-14 19:33:22.170422+00', 1, 16, '1', 'The Glass Bottle Effect', 2, 'Changed slug.');
+INSERT INTO django_admin_log VALUES (58, '2010-08-14 19:40:30.369821+00', 1, 7, '1', 'andrewramos.com', 2, 'Changed domain.');
+INSERT INTO django_admin_log VALUES (59, '2010-08-14 19:42:04.65026+00', 1, 19, '1', 'The Scariest Moment', 2, 'No fields changed.');
+INSERT INTO django_admin_log VALUES (60, '2010-08-14 19:42:22.570432+00', 1, 16, '3', 'Specialty Shops', 2, 'No fields changed.');
+INSERT INTO django_admin_log VALUES (61, '2010-08-14 19:42:48.530278+00', 1, 19, '1', 'The Scariest Moment', 2, 'No fields changed.');
+INSERT INTO django_admin_log VALUES (62, '2010-08-14 19:43:15.597949+00', 1, 19, '1', 'The Scariest Moment', 2, 'No fields changed.');
+INSERT INTO django_admin_log VALUES (63, '2010-08-18 13:29:41.260368+00', 2, 19, '2', 'Decisions are progress', 1, '');
+INSERT INTO django_admin_log VALUES (64, '2010-08-20 19:00:34.380636+00', 2, 16, '4', 'Inspiration: Opened House', 1, '');
+INSERT INTO django_admin_log VALUES (65, '2010-08-20 19:01:01.751098+00', 2, 16, '4', 'Inspiration: Opened House', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (66, '2010-08-22 04:15:41.460727+00', 1, 19, '2', 'Decisions are progress', 2, 'Changed author.');
+INSERT INTO django_admin_log VALUES (67, '2010-08-26 18:05:59.008351+00', 2, 16, '8', 'Alarm', 1, '');
+INSERT INTO django_admin_log VALUES (68, '2010-08-26 18:06:34.183338+00', 2, 16, '8', 'Alarm', 3, '');
+INSERT INTO django_admin_log VALUES (69, '2010-08-26 18:07:01.638412+00', 2, 16, '8', 'Alarm', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (70, '2010-08-27 17:33:11.351438+00', 1, 3, '1', 'mikemeyer', 2, 'Changed first_name and last_name.');
+INSERT INTO django_admin_log VALUES (71, '2010-08-27 18:08:45.81029+00', 1, 16, '8', 'Alarm', 2, 'Added image "Image 5".');
+INSERT INTO django_admin_log VALUES (72, '2010-08-27 18:08:56.746604+00', 1, 16, '8', 'Alarm', 2, 'Deleted image "Image None".');
+INSERT INTO django_admin_log VALUES (73, '2010-08-27 18:11:54.766674+00', 2, 16, '8', 'Alarm', 2, 'Changed status. Added image "Image 6".');
+INSERT INTO django_admin_log VALUES (74, '2010-08-27 18:12:12.395981+00', 1, 16, '4', 'Inspiration: Opened House', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (75, '2010-08-31 15:23:14.125632+00', 2, 16, '9', 'iTV and the Apple Cloud', 1, '');
+INSERT INTO django_admin_log VALUES (76, '2010-09-02 18:20:17.078688+00', 1, 16, '9', 'iTV and the Apple Cloud', 2, 'Changed tags.');
+INSERT INTO django_admin_log VALUES (77, '2010-09-02 21:12:58.758693+00', 2, 26, '3', 'Front page image', 1, '');
+INSERT INTO django_admin_log VALUES (78, '2010-09-02 21:13:08.302485+00', 2, 26, '2', 'Front page image', 2, 'Changed enabled.');
+INSERT INTO django_admin_log VALUES (79, '2010-09-02 21:22:03.824069+00', 2, 26, '4', 'Front page image', 1, '');
+INSERT INTO django_admin_log VALUES (80, '2010-09-08 15:59:19.836661+00', 2, 16, '10', 'Southern Savers', 1, '');
+INSERT INTO django_admin_log VALUES (81, '2010-09-08 19:51:10.271178+00', 2, 16, '10', 'Southern Savers', 2, 'Changed content_markdown. Added image "Image 8". Added image "Image 9". Added image "Image 10". Added image "Image 11".');
+INSERT INTO django_admin_log VALUES (82, '2010-09-08 19:52:14.874845+00', 2, 16, '10', 'Southern Savers', 2, 'Changed subtitle.');
+INSERT INTO django_admin_log VALUES (83, '2010-09-08 19:58:30.257914+00', 2, 16, '10', 'Southern Savers', 2, 'Added image "Image 12".');
+INSERT INTO django_admin_log VALUES (84, '2010-09-08 20:05:35.823142+00', 2, 17, '2', 'Southern Savers', 1, '');
+INSERT INTO django_admin_log VALUES (85, '2010-09-08 20:07:03.362131+00', 2, 17, '2', 'Southern Savers', 2, 'No fields changed.');
+INSERT INTO django_admin_log VALUES (86, '2010-09-08 20:14:05.682707+00', 2, 17, '2', 'Southern Savers', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (87, '2010-09-09 17:57:48.420963+00', 1, 17, '2', 'Southern Savers', 2, 'Added image "Image 17".');
+INSERT INTO django_admin_log VALUES (88, '2010-09-09 18:05:41.590606+00', 1, 17, '2', 'Southern Savers', 2, 'Deleted image "Image None".');
+INSERT INTO django_admin_log VALUES (89, '2010-09-09 19:24:47.255457+00', 2, 17, '2', 'Southern Savers', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (90, '2010-09-09 19:25:27.496246+00', 2, 16, '11', 'yada', 1, '');
+INSERT INTO django_admin_log VALUES (91, '2010-09-09 19:25:57.949412+00', 2, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (92, '2010-09-09 19:26:04.235319+00', 2, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (93, '2010-09-09 19:26:31.226149+00', 2, 16, '11', 'yada', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (94, '2010-09-09 19:31:26.821583+00', 2, 17, '2', 'Southern Savers', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (95, '2010-09-09 19:31:56.135594+00', 2, 17, '2', 'Southern Savers', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (96, '2010-09-09 19:32:10.307735+00', 2, 17, '2', 'Southern Savers', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (97, '2010-09-09 19:32:59.24903+00', 2, 17, '2', 'Southern Savers', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (98, '2010-09-09 19:33:12.926811+00', 2, 17, '2', 'Southern Savers', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (99, '2010-09-09 19:34:05.35602+00', 2, 17, '2', 'Southern Savers', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (100, '2010-09-09 22:16:04.482332+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (101, '2010-09-09 22:18:10.862204+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (102, '2010-09-09 22:26:48.020019+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (103, '2010-09-09 22:30:40.100921+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (104, '2010-09-09 22:31:20.500059+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (105, '2010-09-09 22:36:08.903441+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (106, '2010-09-13 18:00:16.670795+00', 2, 16, '2', 'GVL / PRG', 2, 'Changed is_featured.');
+INSERT INTO django_admin_log VALUES (107, '2010-09-13 18:00:29.759912+00', 2, 19, '1', 'The Scariest Moment', 2, 'Changed is_featured.');
+INSERT INTO django_admin_log VALUES (108, '2010-09-13 18:00:36.603898+00', 2, 17, '2', 'Southern Savers', 2, 'Changed is_featured.');
+INSERT INTO django_admin_log VALUES (109, '2010-09-14 15:55:21.704829+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (110, '2010-09-14 16:01:06.49117+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (111, '2010-09-14 16:01:32.557997+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (112, '2010-09-14 16:07:26.460981+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (113, '2010-09-14 16:11:38.303688+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (114, '2010-09-14 18:47:39.233974+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (115, '2010-09-17 16:01:02.6238+00', 2, 16, '12', 'Outsourcing Surprise & Delight', 1, '');
+INSERT INTO django_admin_log VALUES (116, '2010-09-17 16:02:00.31351+00', 2, 18, '2', 'Outsourcing Surprise & Delight', 1, '');
+INSERT INTO django_admin_log VALUES (117, '2010-09-17 16:02:57.494124+00', 2, 18, '2', 'Outsourcing Surprise & Delight', 3, '');
+INSERT INTO django_admin_log VALUES (118, '2010-09-17 16:03:57.792446+00', 2, 16, '12', 'Outsourcing Surprise & Delight', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (119, '2010-10-06 19:35:09.351107+00', 2, 26, '5', 'Front page image', 1, '');
+INSERT INTO django_admin_log VALUES (120, '2010-10-06 19:35:16.332968+00', 2, 26, '3', 'Front page image', 2, 'Changed enabled.');
+INSERT INTO django_admin_log VALUES (121, '2010-10-09 14:52:13.1653+00', 2, 16, '13', 'Time to stop', 1, '');
+INSERT INTO django_admin_log VALUES (122, '2010-10-09 14:57:24.080544+00', 2, 16, '13', 'Time to stop', 2, 'Changed status. Changed image for image "Image 18".');
+INSERT INTO django_admin_log VALUES (123, '2010-10-10 22:50:40.725889+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (124, '2010-10-10 23:47:53.427204+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (125, '2010-10-10 23:47:54.499034+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (126, '2010-10-11 00:26:45.370123+00', 1, 16, '11', 'yada', 3, '');
+INSERT INTO django_admin_log VALUES (127, '2010-10-25 22:37:58.895524+00', 2, 16, '14', '4 Shots', 1, '');
+INSERT INTO django_admin_log VALUES (128, '2010-10-25 22:38:24.280631+00', 2, 16, '14', '4 Shots', 2, 'Added image "Image 19".');
+INSERT INTO django_admin_log VALUES (129, '2010-10-25 22:39:16.481163+00', 2, 16, '14', '4 Shots', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (130, '2010-10-25 22:39:52.033216+00', 2, 16, '14', '4 Shots', 3, '');
+INSERT INTO django_admin_log VALUES (131, '2010-10-25 22:42:30.312468+00', 2, 16, '15', '4 Shots', 1, '');
+INSERT INTO django_admin_log VALUES (132, '2010-10-25 22:43:44.939141+00', 2, 16, '15', '4 Shots', 2, 'Changed image for image "Image 20".');
+INSERT INTO django_admin_log VALUES (133, '2010-10-25 22:44:13.356744+00', 2, 16, '15', '4 Shots', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (134, '2010-11-11 21:54:10.699998+00', 2, 16, '16', 'Christmas Traditions', 1, '');
+INSERT INTO django_admin_log VALUES (135, '2010-11-11 21:55:30.785627+00', 2, 16, '16', 'Christmas Traditions', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (136, '2010-11-27 20:02:13.820013+00', 1, 3, '3', 'demouser', 1, '');
+INSERT INTO django_admin_log VALUES (137, '2010-11-27 20:02:51.183269+00', 1, 3, '3', 'demouser', 2, 'Changed first_name, is_staff and user_permissions.');
+INSERT INTO django_admin_log VALUES (138, '2010-11-29 21:02:57.287119+00', 2, 16, '17', 'New Illustrations', 1, '');
+INSERT INTO django_admin_log VALUES (139, '2010-12-31 22:09:56.436402+00', 1, 3, '3', 'demouser', 3, '');
+INSERT INTO django_admin_log VALUES (140, '2011-01-25 16:49:26.584422+00', 2, 23, '2', 'The Trappe Door', 1, '');
+INSERT INTO django_admin_log VALUES (141, '2011-01-25 16:49:44.662445+00', 2, 23, '3', 'Somewhat Organic Soap Co.', 1, '');
+INSERT INTO django_admin_log VALUES (142, '2011-01-25 16:49:54.120086+00', 2, 23, '4', 'Southern Savers', 1, '');
+INSERT INTO django_admin_log VALUES (143, '2011-01-25 17:09:25.748053+00', 2, 20, '2', 'The Trappe Door Branding', 1, '');
+INSERT INTO django_admin_log VALUES (144, '2011-01-25 17:10:47.583658+00', 2, 20, '2', 'The Trappe Door', 2, 'Changed title. Changed order for portfolio piece "Image 7". Changed order for portfolio piece "Image 8".');
+INSERT INTO django_admin_log VALUES (145, '2011-01-25 17:32:23.186147+00', 2, 20, '2', 'The Trappe Door', 2, 'Changed image for portfolio piece "Image 8".');
+INSERT INTO django_admin_log VALUES (146, '2011-01-25 17:33:02.68847+00', 2, 20, '2', 'The Trappe Door', 2, 'Changed description.');
+INSERT INTO django_admin_log VALUES (147, '2011-01-25 20:19:06.557716+00', 2, 20, '3', 'Somewhat Organic Soap Co.', 1, '');
+INSERT INTO django_admin_log VALUES (148, '2011-01-25 20:25:28.369693+00', 2, 20, '4', 'Southern Savers', 1, '');
+INSERT INTO django_admin_log VALUES (149, '2011-01-25 20:25:58.796375+00', 2, 20, '4', 'Southern Savers', 2, 'Changed order for portfolio piece "Image 14". Changed order for portfolio piece "Image 15".');
+INSERT INTO django_admin_log VALUES (150, '2011-01-25 20:26:38.922473+00', 2, 20, '4', 'Southern Savers', 2, 'No fields changed.');
+INSERT INTO django_admin_log VALUES (151, '2011-01-25 20:27:05.440079+00', 2, 20, '4', 'Southern Savers', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (152, '2011-01-25 20:27:05.468507+00', 2, 20, '3', 'Somewhat Organic Soap Co.', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (153, '2011-01-25 20:27:05.486203+00', 2, 20, '2', 'The Trappe Door', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (154, '2011-01-25 20:27:47.981387+00', 2, 20, '1', 'Teaser Images', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (155, '2011-01-25 20:39:51.625739+00', 2, 20, '4', 'Southern Savers', 2, 'No fields changed.');
+INSERT INTO django_admin_log VALUES (156, '2011-01-25 20:57:34.63507+00', 2, 17, '2', 'Southern Savers', 2, 'Changed image for image "Image 16".');
+INSERT INTO django_admin_log VALUES (157, '2011-01-25 21:04:20.243961+00', 2, 26, '6', 'Front page image', 1, '');
+INSERT INTO django_admin_log VALUES (158, '2011-01-25 21:04:35.691686+00', 2, 26, '7', 'Front page image', 1, '');
+INSERT INTO django_admin_log VALUES (159, '2011-01-25 21:04:51.081077+00', 2, 26, '8', 'Front page image', 1, '');
+INSERT INTO django_admin_log VALUES (160, '2011-01-25 21:05:09.795225+00', 2, 26, '8', 'Front page image', 2, 'Changed enabled.');
+INSERT INTO django_admin_log VALUES (161, '2011-01-25 21:05:09.839328+00', 2, 26, '7', 'Front page image', 2, 'Changed enabled.');
+INSERT INTO django_admin_log VALUES (162, '2011-01-25 21:05:09.850067+00', 2, 26, '5', 'Front page image', 2, 'Changed enabled.');
+INSERT INTO django_admin_log VALUES (163, '2011-01-25 21:05:09.85997+00', 2, 26, '4', 'Front page image', 2, 'Changed enabled.');
+INSERT INTO django_admin_log VALUES (164, '2011-01-25 21:05:21.47195+00', 2, 26, '8', 'Front page image', 3, '');
+INSERT INTO django_admin_log VALUES (165, '2011-01-25 21:05:21.497798+00', 2, 26, '7', 'Front page image', 3, '');
+INSERT INTO django_admin_log VALUES (166, '2011-01-25 21:07:08.498024+00', 2, 16, '9', 'iTV and the Apple Cloud', 2, 'Changed is_featured.');
+INSERT INTO django_admin_log VALUES (167, '2011-01-25 21:07:08.584611+00', 2, 16, '3', 'Specialty Shops', 2, 'Changed is_featured.');
+INSERT INTO django_admin_log VALUES (168, '2011-01-25 21:07:21.983703+00', 2, 17, '2', 'Southern Savers', 2, 'Changed is_featured.');
+INSERT INTO django_admin_log VALUES (169, '2011-01-25 21:18:04.773997+00', 2, 20, '3', 'Somewhat Organic Soap Co.', 2, 'Deleted portfolio piece "Image None". Deleted portfolio piece "Image None".');
+INSERT INTO django_admin_log VALUES (170, '2011-01-25 21:18:43.442496+00', 2, 20, '4', 'Southern Savers', 2, 'Changed image for portfolio piece "Image 15".');
+INSERT INTO django_admin_log VALUES (171, '2011-01-27 21:55:33.480076+00', 2, 16, '18', 'Panel Discussion', 1, '');
+INSERT INTO django_admin_log VALUES (172, '2011-01-27 21:56:01.216369+00', 2, 16, '18', 'Panel Discussion', 2, 'Changed image_width.');
+INSERT INTO django_admin_log VALUES (173, '2011-01-27 22:01:24.749058+00', 2, 16, '18', 'Panel Discussion', 2, 'Changed image for image "Image 23".');
+INSERT INTO django_admin_log VALUES (174, '2011-01-27 22:07:53.682345+00', 2, 16, '18', 'Panel Discussion', 2, 'Changed image for image "Image 23".');
+INSERT INTO django_admin_log VALUES (175, '2011-01-27 22:18:32.487558+00', 2, 16, '18', 'Panel Discussion', 2, 'Changed image for image "Image 23".');
+INSERT INTO django_admin_log VALUES (176, '2011-01-27 22:19:55.078284+00', 2, 16, '18', 'Panel Discussion', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (177, '2011-01-27 22:24:15.11461+00', 2, 16, '18', 'Panel Discussion', 2, 'Changed image for image "Image 23".');
+INSERT INTO django_admin_log VALUES (178, '2011-01-27 22:26:40.396586+00', 2, 16, '18', 'Panel Discussion', 2, 'Changed image for image "Image 23".');
+INSERT INTO django_admin_log VALUES (179, '2011-01-27 22:40:01.41918+00', 2, 16, '18', 'Panel Discussion', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (180, '2011-01-28 14:12:17.533646+00', 2, 16, '18', 'Panel Discussion', 2, 'Changed image for image "Image 23".');
+INSERT INTO django_admin_log VALUES (181, '2011-01-28 14:13:34.762223+00', 2, 16, '18', 'Panel Discussion', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (182, '2011-01-28 14:14:19.720866+00', 2, 16, '18', 'Panel Discussion', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (183, '2011-01-28 14:16:05.982121+00', 2, 16, '18', 'Panel Discussion', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (184, '2011-01-28 14:36:36.607314+00', 2, 16, '18', 'Panel Discussion', 2, 'Changed content_markdown and status.');
+INSERT INTO django_admin_log VALUES (185, '2011-01-28 14:37:21.061875+00', 2, 16, '18', 'Panel Discussion', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (186, '2011-02-04 19:05:48.014641+00', 2, 23, '5', 'Parachute Clothing', 1, '');
+INSERT INTO django_admin_log VALUES (187, '2011-02-04 21:44:48.288327+00', 2, 20, '5', 'Parachute Clothing', 1, '');
+INSERT INTO django_admin_log VALUES (188, '2011-02-04 21:45:19.619784+00', 2, 20, '5', 'Parachute Clothing', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (189, '2011-02-04 21:46:08.842208+00', 2, 20, '5', 'Parachute Clothing', 2, 'Changed order for portfolio piece "Image 17". Changed order for portfolio piece "Image 18".');
+INSERT INTO django_admin_log VALUES (190, '2011-02-04 21:46:09.923095+00', 2, 20, '5', 'Parachute Clothing', 2, 'No fields changed.');
+INSERT INTO django_admin_log VALUES (191, '2011-02-04 21:52:12.115644+00', 2, 20, '5', 'Parachute Clothing', 2, 'Changed description.');
+INSERT INTO django_admin_log VALUES (192, '2011-02-07 22:23:00.397191+00', 1, 3, '4', 'demouser', 1, '');
+INSERT INTO django_admin_log VALUES (193, '2011-03-24 01:12:49.909794+00', 2, 26, '9', 'Front page image', 1, '');
+INSERT INTO django_admin_log VALUES (194, '2011-03-24 01:13:11.505018+00', 2, 26, '6', 'Front page image', 2, 'Changed enabled.');
+INSERT INTO django_admin_log VALUES (195, '2011-03-24 01:14:32.646109+00', 2, 26, '6', 'Front page image', 2, 'Changed enabled.');
+INSERT INTO django_admin_log VALUES (196, '2011-03-24 01:14:48.141285+00', 2, 26, '9', 'Front page image', 2, 'Changed enabled.');
+INSERT INTO django_admin_log VALUES (197, '2011-03-24 01:15:32.570974+00', 2, 26, '9', 'Front page image', 2, 'Changed image and enabled.');
+INSERT INTO django_admin_log VALUES (198, '2011-03-24 01:15:53.089094+00', 2, 26, '9', 'Front page image', 2, 'Changed enabled.');
+INSERT INTO django_admin_log VALUES (199, '2011-03-24 01:15:53.124095+00', 2, 26, '6', 'Front page image', 2, 'Changed enabled.');
+INSERT INTO django_admin_log VALUES (200, '2011-03-24 01:16:49.257529+00', 2, 26, '10', 'Front page image', 1, '');
+INSERT INTO django_admin_log VALUES (201, '2011-03-30 14:27:08.837416+00', 2, 16, '19', 'Designspiration', 1, '');
+INSERT INTO django_admin_log VALUES (202, '2011-03-30 14:27:48.533827+00', 2, 16, '19', 'Designspiration', 2, 'Changed display_title.');
+INSERT INTO django_admin_log VALUES (203, '2011-03-30 14:29:31.798151+00', 2, 16, '19', 'Designspiration', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (204, '2011-03-30 14:32:17.964885+00', 2, 16, '19', 'Designspiration', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (205, '2011-03-30 14:37:50.116174+00', 2, 16, '19', 'Designspiration', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (206, '2011-03-30 14:38:04.033526+00', 2, 16, '19', 'Designspiration', 2, 'Changed is_featured.');
+INSERT INTO django_admin_log VALUES (207, '2011-03-30 14:38:04.105294+00', 2, 16, '16', 'Christmas Traditions', 2, 'Changed is_featured.');
+INSERT INTO django_admin_log VALUES (208, '2011-04-13 21:21:24.253272+00', 2, 26, '11', 'Front page image', 1, '');
+INSERT INTO django_admin_log VALUES (209, '2011-04-13 21:23:33.423544+00', 2, 26, '12', 'Front page image', 1, '');
+INSERT INTO django_admin_log VALUES (210, '2011-04-13 21:23:55.353791+00', 2, 26, '11', 'Front page image', 2, 'Changed enabled.');
+INSERT INTO django_admin_log VALUES (211, '2011-04-14 14:14:44.441645+00', 2, 26, '11', 'Front page image', 3, '');
+INSERT INTO django_admin_log VALUES (212, '2011-04-14 14:14:44.501664+00', 2, 26, '9', 'Front page image', 3, '');
+INSERT INTO django_admin_log VALUES (213, '2011-04-26 14:58:35.721061+00', 2, 18, '3', 'Today I wish I had a bicycle', 1, '');
+INSERT INTO django_admin_log VALUES (214, '2011-04-26 15:00:14.273582+00', 2, 18, '3', 'Today I wish I had a bicycle', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (215, '2011-04-30 14:59:00.579106+00', 2, 16, '20', 'This Week in Things I Need: ', 1, '');
+INSERT INTO django_admin_log VALUES (216, '2011-04-30 15:03:20.296796+00', 2, 16, '20', 'This Week in Things I Need: ', 2, 'Changed image for image "Image 25".');
+INSERT INTO django_admin_log VALUES (217, '2011-04-30 15:04:33.669112+00', 2, 16, '20', 'This Week in Things I Need: ', 2, 'Changed subtitle.');
+INSERT INTO django_admin_log VALUES (218, '2011-04-30 15:13:21.060828+00', 2, 16, '20', 'This Week in Things I Need: ', 3, '');
+INSERT INTO django_admin_log VALUES (219, '2011-04-30 15:25:26.415623+00', 2, 16, '21', 'Vintage Denim Neckties', 1, '');
+INSERT INTO django_admin_log VALUES (220, '2011-04-30 15:27:21.397635+00', 2, 16, '21', 'Vintage Denim Neckties', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (221, '2011-04-30 15:35:55.078018+00', 2, 19, '3', 'Fortnight', 1, '');
+INSERT INTO django_admin_log VALUES (222, '2011-04-30 15:36:26.340486+00', 2, 19, '3', 'Fortnight', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (223, '2011-05-14 17:45:23.214767+00', 2, 18, '11', 'What''s making me laugh this week', 1, '');
+INSERT INTO django_admin_log VALUES (224, '2011-05-14 17:46:07.541214+00', 2, 18, '11', 'What''s making me laugh this week', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (225, '2011-05-14 17:58:54.771824+00', 2, 18, '2', 'Outsourcing Surprise & Delight', 3, '');
+INSERT INTO django_admin_log VALUES (226, '2011-05-22 18:56:40.653324+00', 2, 19, '4', 'The Art of Living', 1, '');
+INSERT INTO django_admin_log VALUES (227, '2011-05-22 18:57:32.520013+00', 2, 19, '4', 'The Art of Living', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (228, '2011-05-22 18:58:02.594398+00', 2, 19, '4', 'The Art of Living', 2, 'Changed author.');
+INSERT INTO django_admin_log VALUES (229, '2011-05-22 18:58:17.907035+00', 2, 19, '4', 'The Art of Living', 2, 'Changed author.');
+INSERT INTO django_admin_log VALUES (230, '2011-05-22 18:58:46.69806+00', 2, 19, '4', 'The Art of Living', 2, 'Changed author.');
+INSERT INTO django_admin_log VALUES (231, '2011-05-22 18:59:20.471293+00', 2, 19, '4', 'The Art of Living', 2, 'Changed is_featured and status.');
+INSERT INTO django_admin_log VALUES (232, '2011-05-22 19:00:53.033044+00', 2, 19, '4', 'The Art of Living', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (233, '2011-06-03 17:06:08.116881+00', 2, 18, '12', 'Every Once in a while', 1, '');
+INSERT INTO django_admin_log VALUES (234, '2011-06-03 17:06:57.889785+00', 2, 18, '12', 'Every Once in a while,', 2, 'Changed title.');
+INSERT INTO django_admin_log VALUES (235, '2011-06-03 17:07:46.2857+00', 2, 18, '12', 'Every Once in a while', 2, 'Changed title and content_markdown.');
+INSERT INTO django_admin_log VALUES (236, '2011-06-03 17:07:57.392813+00', 2, 18, '12', 'Every Once in a while', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (237, '2011-06-03 17:08:11.192488+00', 2, 18, '12', 'Every Once in a while', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (238, '2011-06-03 17:08:48.70155+00', 2, 18, '12', 'Every Once in a while I can hear a distant motorbike''s high-pitched groaning as it tears down a neighboring street', 2, 'Changed title and content_markdown.');
+INSERT INTO django_admin_log VALUES (239, '2011-06-03 17:09:34.457569+00', 2, 18, '12', 'Fear', 2, 'Changed title and content_markdown.');
+INSERT INTO django_admin_log VALUES (240, '2011-06-03 17:13:36.278992+00', 2, 18, '12', 'Fear', 2, 'Changed content_markdown and status.');
+INSERT INTO django_admin_log VALUES (241, '2011-06-10 13:04:57.544676+00', 2, 19, '5', 'Texting & Driving', 1, '');
+INSERT INTO django_admin_log VALUES (242, '2011-06-10 13:05:56.850212+00', 2, 19, '5', 'Texting & Driving', 2, 'Changed author.');
+INSERT INTO django_admin_log VALUES (243, '2011-06-10 13:08:35.203717+00', 2, 19, '5', 'Texting & Driving', 2, 'Changed author.');
+INSERT INTO django_admin_log VALUES (244, '2011-06-10 13:08:53.185113+00', 2, 19, '5', 'Texting & Driving', 2, 'Changed status.');
+INSERT INTO django_admin_log VALUES (245, '2011-06-10 18:23:42.568125+00', 2, 16, '23', 'Introducing Wren', 1, '');
+INSERT INTO django_admin_log VALUES (246, '2011-06-10 18:30:38.720384+00', 2, 16, '23', 'Introducing Wren', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (247, '2011-06-10 18:31:19.710698+00', 2, 16, '23', 'Introducing Wren', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (248, '2011-06-10 20:23:38.012213+00', 2, 16, '17', 'New Illustrations', 3, '');
+INSERT INTO django_admin_log VALUES (249, '2011-06-10 20:36:45.898865+00', 2, 16, '24', 'Goodbye Old Friend', 1, '');
+INSERT INTO django_admin_log VALUES (250, '2011-06-10 20:37:34.936147+00', 2, 16, '24', 'All Things Must End', 2, 'Changed title, slug and display_title.');
+INSERT INTO django_admin_log VALUES (251, '2011-06-10 20:37:51.284179+00', 2, 16, '24', 'All Things Must End', 2, 'No fields changed.');
+INSERT INTO django_admin_log VALUES (252, '2011-06-14 14:51:11.605315+00', 2, 16, '24', 'All Things Must End', 2, 'Changed image for image "Image 28".');
+INSERT INTO django_admin_log VALUES (253, '2011-06-14 14:54:48.825094+00', 2, 16, '24', 'All Things Must End', 2, 'Changed image for image "Image 28".');
+INSERT INTO django_admin_log VALUES (254, '2011-06-14 14:55:53.202516+00', 2, 16, '24', 'All Things Must End', 2, 'Changed image for image "Image 28".');
+INSERT INTO django_admin_log VALUES (255, '2011-06-14 15:40:23.306337+00', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (256, '2011-06-14 15:57:27.734339+00', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (257, '2011-06-14 15:58:17.954796+00', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (258, '2011-06-14 15:59:42.950196+00', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (259, '2011-06-14 16:06:11.92072+00', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (260, '2011-06-14 16:17:19.812997+00', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (261, '2011-06-14 16:18:14.333568+00', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (262, '2011-06-14 16:20:20.297086+00', 2, 16, '24', 'All Things Must End', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (263, '2011-06-14 16:21:12.853494+00', 2, 16, '24', 'All Things Must End', 2, 'Changed is_featured and status.');
+INSERT INTO django_admin_log VALUES (264, '2011-06-14 16:21:41.77393+00', 2, 16, '18', 'Panel Discussion', 2, 'Changed is_featured.');
+INSERT INTO django_admin_log VALUES (265, '2011-06-14 16:22:02.083239+00', 2, 19, '4', 'The Art of Living', 2, 'Changed is_featured.');
+INSERT INTO django_admin_log VALUES (266, '2011-06-21 13:45:14.566816+00', 2, 16, '23', 'Introducing Wren', 2, 'Changed content_markdown. Changed image for image "Image 27".');
+INSERT INTO django_admin_log VALUES (267, '2011-06-21 20:19:05.276248+00', 2, 16, '23', 'Introducing Wren', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (268, '2011-06-21 20:20:44.287773+00', 2, 16, '23', 'Introducing Wren', 2, 'Changed content_markdown. Changed image for image "Image 27".');
+INSERT INTO django_admin_log VALUES (269, '2011-06-21 20:25:35.488807+00', 2, 16, '23', 'Introducing Wren for Mac', 2, 'Changed title and subtitle.');
+INSERT INTO django_admin_log VALUES (270, '2011-06-21 20:30:23.964082+00', 2, 16, '23', 'Introducing Wren for Mac', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (271, '2011-06-21 20:45:32.471116+00', 2, 16, '23', 'Introducing Wren for Mac', 2, 'Changed content_markdown.');
+INSERT INTO django_admin_log VALUES (272, '2011-06-21 20:46:18.503323+00', 2, 16, '23', 'Introducing Wren for Mac', 2, 'Changed is_featured and status.');
+INSERT INTO django_admin_log VALUES (273, '2011-06-21 20:47:17.423864+00', 2, 16, '23', 'Introducing Wren for Mac', 2, 'Changed date_published.');
+INSERT INTO django_admin_log VALUES (274, '2011-06-21 20:52:00.535218+00', 2, 16, '23', 'Introducing Wren for Mac', 2, 'Changed image for image "Image 27".');
+INSERT INTO django_admin_log VALUES (275, '2011-06-21 20:57:11.911444+00', 2, 16, '23', 'Introducing Wren for Mac', 2, 'No fields changed.');
 
 
 --
@@ -2163,172 +2154,172 @@ INSERT INTO django_content_type VALUES (28, 'Tagged Item', 'taggit', 'taggeditem
 
 INSERT INTO django_session VALUES ('42472dd8e346f83e62e1483a9221c0dc', 'ZjliOWE5MjY3Yzc4YzJjZTUzNzc0ZGFiYmM2MzA1MmMzYjBmMDY0YzqAAn1xAVUKdGVzdGNvb2tp
 ZXECVQZ3b3JrZWRxA3Mu
-', '2011-06-29 06:59:02.17116-07');
+', '2011-06-29 13:59:02.17116+00');
 INSERT INTO django_session VALUES ('9f5a8247b3b968c5a84b5108fc226fdf', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2010-10-01 08:59:19.932123-07');
+', '2010-10-01 15:59:19.932123+00');
 INSERT INTO django_session VALUES ('1e990133e7873ca737f9d5eea979e5f5', 'gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjc0ZjYwMWVhMWQ0MjdjMTM3MGFmMzFiOTRi
 NDgzZTE5
-', '2010-10-06 14:48:09.923295-07');
+', '2010-10-06 21:48:09.923295+00');
 INSERT INTO django_session VALUES ('d526d6ffa8348f005a3509bc4a359744', 'gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjc0ZjYwMWVhMWQ0MjdjMTM3MGFmMzFiOTRi
 NDgzZTE5
-', '2010-10-10 00:36:37.356451-07');
+', '2010-10-10 07:36:37.356451+00');
 INSERT INTO django_session VALUES ('c1ec87c1a8fde0024b887f32184e486d', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwF1LjQwYzA5MzM5NDY4YTE1YzQ2Zjk0
 MTRiNTJkZWQzNDVj
-', '2010-10-11 15:31:59.317199-07');
+', '2010-10-11 22:31:59.317199+00');
 INSERT INTO django_session VALUES ('3066c3f8fd1fa28ba9acb5135bce3309', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2010-08-25 05:42:38.775523-07');
+', '2010-08-25 12:42:38.775523+00');
 INSERT INTO django_session VALUES ('f8001c27b732cf2ce225d35faabadfa3', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwF1LjQwYzA5MzM5NDY4YTE1YzQ2Zjk0
 MTRiNTJkZWQzNDVj
-', '2010-08-25 07:00:11.74173-07');
+', '2010-08-25 14:00:11.74173+00');
 INSERT INTO django_session VALUES ('6ac98b304fa940bd1fa3160f2b07f2cf', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2010-08-25 15:39:22.649285-07');
+', '2010-08-25 22:39:22.649285+00');
 INSERT INTO django_session VALUES ('958688a683e9b06a7194f4ea7fbbc64b', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2010-10-11 19:51:36.400822-07');
+', '2010-10-12 02:51:36.400822+00');
 INSERT INTO django_session VALUES ('d255f98c1f9620d96bb332e4ef1357e2', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwF1LjQwYzA5MzM5NDY4YTE1YzQ2Zjk0
 MTRiNTJkZWQzNDVj
-', '2010-08-28 12:33:00.906558-07');
+', '2010-08-28 19:33:00.906558+00');
 INSERT INTO django_session VALUES ('8bb294a0fea9d6602a4b869852bc62b5', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2010-09-09 11:02:17.394277-07');
+', '2010-09-09 18:02:17.394277+00');
 INSERT INTO django_session VALUES ('b348f3a7167b213fd915765c82683e36', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2010-09-09 11:09:04.014495-07');
+', '2010-09-09 18:09:04.014495+00');
 INSERT INTO django_session VALUES ('20200ff0ad38717c78d7adabd3c842f1', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2010-09-14 08:14:57.854883-07');
+', '2010-09-14 15:14:57.854883+00');
 INSERT INTO django_session VALUES ('7b6e27a1f441b929d3d3b379da82cc73', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwF1LjQwYzA5MzM5NDY4YTE1YzQ2Zjk0
 MTRiNTJkZWQzNDVj
-', '2010-09-16 11:20:00.802124-07');
+', '2010-09-16 18:20:00.802124+00');
 INSERT INTO django_session VALUES ('3868ccba17c2965f58dde2bc863f45c6', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2010-10-20 12:34:16.341819-07');
+', '2010-10-20 19:34:16.341819+00');
 INSERT INTO django_session VALUES ('7310c58dd8a6bd35c339957486140441', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2010-11-08 15:37:11.324399-08');
+', '2010-11-08 23:37:11.324399+00');
 INSERT INTO django_session VALUES ('fe75f959a5165d164ce1ae4317d3e609', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2010-11-25 13:53:14.234348-08');
+', '2010-11-25 21:53:14.234348+00');
 INSERT INTO django_session VALUES ('e22fe5e75ff33c32c889c7ee3777b72f', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwN1LjdkNjRhNWY1YTBiMDBlM2Q4NGQ1
 OTNiYmViOTU5MjA1
-', '2010-12-11 12:03:04.113323-08');
+', '2010-12-11 20:03:04.113323+00');
 INSERT INTO django_session VALUES ('3d7d708c9ce9a3036775332d9d81db36', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwF1LjQwYzA5MzM5NDY4YTE1YzQ2Zjk0
 MTRiNTJkZWQzNDVj
-', '2010-12-09 16:36:53.142369-08');
+', '2010-12-10 00:36:53.142369+00');
 INSERT INTO django_session VALUES ('f2ca194c3b66f1a0b8e3c50d1f22f0dd', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2010-12-13 12:55:23.865139-08');
+', '2010-12-13 20:55:23.865139+00');
 INSERT INTO django_session VALUES ('038bfa11dd601ec0f0b6b6925b1d959f', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwN1LjdkNjRhNWY1YTBiMDBlM2Q4NGQ1
 OTNiYmViOTU5MjA1
-', '2010-12-12 04:45:26.231269-08');
+', '2010-12-12 12:45:26.231269+00');
 INSERT INTO django_session VALUES ('5d3ab661c500e824e3d938e8ab0472ec', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwN1LjdkNjRhNWY1YTBiMDBlM2Q4NGQ1
 OTNiYmViOTU5MjA1
-', '2010-12-13 06:29:14.794977-08');
+', '2010-12-13 14:29:14.794977+00');
 INSERT INTO django_session VALUES ('2bc8b35eff75bbfe160cf472aed6209f', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwN1LjdkNjRhNWY1YTBiMDBlM2Q4NGQ1
 OTNiYmViOTU5MjA1
-', '2010-12-20 07:42:52.085555-08');
+', '2010-12-20 15:42:52.085555+00');
 INSERT INTO django_session VALUES ('e03b89a2ff715fb1ac76e7787d95b721', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwN1LjdkNjRhNWY1YTBiMDBlM2Q4NGQ1
 OTNiYmViOTU5MjA1
-', '2010-12-13 10:17:14.667482-08');
+', '2010-12-13 18:17:14.667482+00');
 INSERT INTO django_session VALUES ('0c37d13120e27a0a8226a44ca51ba1e4', 'gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjc0ZjYwMWVhMWQ0MjdjMTM3MGFmMzFiOTRi
 NDgzZTE5
-', '2010-12-28 08:09:53.517683-08');
+', '2010-12-28 16:09:53.517683+00');
 INSERT INTO django_session VALUES ('dd38111ef9895c4648674d8a006b30f6', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwF1LjQwYzA5MzM5NDY4YTE1YzQ2Zjk0
 MTRiNTJkZWQzNDVj
-', '2011-01-13 16:39:51.49867-08');
+', '2011-01-14 00:39:51.49867+00');
 INSERT INTO django_session VALUES ('c391bd5b1dba7ca803b47325ea149ffd', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2011-02-07 15:30:01.355455-08');
+', '2011-02-07 23:30:01.355455+00');
 INSERT INTO django_session VALUES ('ad3b6624d0c808219b15ab562253c7ab', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwF1LjQwYzA5MzM5NDY4YTE1YzQ2Zjk0
 MTRiNTJkZWQzNDVj
-', '2011-02-08 12:54:05.123602-08');
+', '2011-02-08 20:54:05.123602+00');
 INSERT INTO django_session VALUES ('5a14f99817716318a954b68abf26857c', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2011-02-08 08:49:02.38547-08');
+', '2011-02-08 16:49:02.38547+00');
 INSERT INTO django_session VALUES ('960da62d6cde9210ec4e770ab6a88d84', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2011-03-23 13:24:28.827384-07');
+', '2011-03-23 20:24:28.827384+00');
 INSERT INTO django_session VALUES ('3f5788af30ef9773071d5af64ed286a0', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2011-04-06 18:12:25.30398-07');
+', '2011-04-07 01:12:25.30398+00');
 INSERT INTO django_session VALUES ('877c4533570a639dbcef184bb274c26a', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2011-04-27 14:19:38.514907-07');
+', '2011-04-27 21:19:38.514907+00');
 INSERT INTO django_session VALUES ('f4e2092dddffe5a241e94b0c8d9cbeb3', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwJ1LjRhY2NkMWFmMTU4MTUzYjM1NzQ4
 YjllMmJiOGMxYjJl
-', '2011-05-10 07:49:12.979451-07');
+', '2011-05-10 14:49:12.979451+00');
 INSERT INTO django_session VALUES ('8dd3fc177963c23c6c149a397b603485', 'gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k
 cy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwF1LjQwYzA5MzM5NDY4YTE1YzQ2Zjk0
 MTRiNTJkZWQzNDVj
-', '2011-05-14 09:39:48.832177-07');
+', '2011-05-14 16:39:48.832177+00');
 INSERT INTO django_session VALUES ('a66390e0540ceb50cb25a22bab74eb50', 'MWY5YjA3YThiYmRlMTUyZTFiNzcxNzNjMjE5NzA1YTA1OWI5ZDdhYTqAAn1xAShVEl9hdXRoX3Vz
 ZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED
 VQ1fYXV0aF91c2VyX2lkcQRLAnUu
-', '2011-06-17 09:57:03.534687-07');
+', '2011-06-17 16:57:03.534687+00');
 INSERT INTO django_session VALUES ('f1006b8095f72dbead67ab00ea5aec0f', 'MWY5YjA3YThiYmRlMTUyZTFiNzcxNzNjMjE5NzA1YTA1OWI5ZDdhYTqAAn1xAShVEl9hdXRoX3Vz
 ZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED
 VQ1fYXV0aF91c2VyX2lkcQRLAnUu
-', '2011-07-01 15:40:38.55321-07');
+', '2011-07-01 22:40:38.55321+00');
 INSERT INTO django_session VALUES ('144a630eebaa1146e35be475fedcab66', 'NmJjZDYwMTc2ZGUxM2Y0NTdkOGQwYjYwOGVkZjc2OTY3ZTQzZGVlYjqAAn1xAShVEl9hdXRoX3Vz
 ZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED
 VQ1fYXV0aF91c2VyX2lkcQRLAXUu
-', '2011-07-07 21:30:38.356214-07');
+', '2011-07-08 04:30:38.356214+00');
 INSERT INTO django_session VALUES ('fc937f8d3d40b680bed9888c31fc5362', 'MWY5YjA3YThiYmRlMTUyZTFiNzcxNzNjMjE5NzA1YTA1OWI5ZDdhYTqAAn1xAShVEl9hdXRoX3Vz
 ZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED
 VQ1fYXV0aF91c2VyX2lkcQRLAnUu
-', '2011-05-24 08:18:41.815472-07');
+', '2011-05-24 15:18:41.815472+00');
 INSERT INTO django_session VALUES ('b2d64624c97f655a609048a8b0690305', 'NmJjZDYwMTc2ZGUxM2Y0NTdkOGQwYjYwOGVkZjc2OTY3ZTQzZGVlYjqAAn1xAShVEl9hdXRoX3Vz
 ZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED
 VQ1fYXV0aF91c2VyX2lkcQRLAXUu
-', '2011-05-26 15:21:31.220343-07');
+', '2011-05-26 22:21:31.220343+00');
 INSERT INTO django_session VALUES ('65db757dfd15084a9eb818fa11e25e60', 'ZjliOWE5MjY3Yzc4YzJjZTUzNzc0ZGFiYmM2MzA1MmMzYjBmMDY0YzqAAn1xAVUKdGVzdGNvb2tp
 ZXECVQZ3b3JrZWRxA3Mu
-', '2011-05-26 15:24:02.155921-07');
+', '2011-05-26 22:24:02.155921+00');
 INSERT INTO django_session VALUES ('7ef16573b2dbb0b51a8ddb05c6878443', 'ZjliOWE5MjY3Yzc4YzJjZTUzNzc0ZGFiYmM2MzA1MmMzYjBmMDY0YzqAAn1xAVUKdGVzdGNvb2tp
 ZXECVQZ3b3JrZWRxA3Mu
-', '2011-05-26 15:24:02.77894-07');
+', '2011-05-26 22:24:02.77894+00');
 INSERT INTO django_session VALUES ('7a8eb88be2b1e9446f64c390a88f2c08', 'ZjliOWE5MjY3Yzc4YzJjZTUzNzc0ZGFiYmM2MzA1MmMzYjBmMDY0YzqAAn1xAVUKdGVzdGNvb2tp
 ZXECVQZ3b3JrZWRxA3Mu
-', '2011-05-26 15:24:03.301011-07');
+', '2011-05-26 22:24:03.301011+00');
 INSERT INTO django_session VALUES ('30be037726463b3a29720af8d2293035', 'ZjliOWE5MjY3Yzc4YzJjZTUzNzc0ZGFiYmM2MzA1MmMzYjBmMDY0YzqAAn1xAVUKdGVzdGNvb2tp
 ZXECVQZ3b3JrZWRxA3Mu
-', '2011-05-26 15:24:03.823802-07');
+', '2011-05-26 22:24:03.823802+00');
 INSERT INTO django_session VALUES ('f0002b30a669cc23c2098ba9965f582b', 'MWY5YjA3YThiYmRlMTUyZTFiNzcxNzNjMjE5NzA1YTA1OWI5ZDdhYTqAAn1xAShVEl9hdXRoX3Vz
 ZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED
 VQ1fYXV0aF91c2VyX2lkcQRLAnUu
-', '2011-05-27 10:42:43.149931-07');
+', '2011-05-27 17:42:43.149931+00');
 
 
 --
@@ -2342,39 +2333,39 @@ INSERT INTO django_site VALUES (1, 'andrewramos.com', 'AndrewRamos.com');
 -- Data for Name: easy_thumbnails_source; Type: TABLE DATA; Schema: public; Owner: andrewramos
 --
 
-INSERT INTO easy_thumbnails_source VALUES (1, 'uploads/front-page/shot_1281221339.png', '2010-08-11 16:05:46-07', 1, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (2, 'uploads/front-page/Process-2.jpg', '2010-08-11 16:08:17-07', 1, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (3, 'uploads/portfolio/Start-Copy.jpg', '2010-08-11 16:13:43-07', 1, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (4, 'uploads/portfolio/Shopping-Cart.jpg', '2010-08-11 16:13:43-07', 1, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (5, 'uploads/blog/Travel.jpg', '2010-08-11 16:18:22-07', 1, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (6, 'uploads/blog/Glass_Bottle.jpg', '2010-08-11 16:31:52-07', 1, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (7, 'uploads/front-page/shot_1281106568.png', '2010-08-11 16:46:15-07', 1, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (8, 'uploads/front-page/shot_1279813053.png', '2010-08-11 16:46:36-07', 1, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (9, 'uploads/blog/Saturday-Market-peaches.jpg', '2010-08-11 17:01:50-07', 1, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (10, 'uploads/blog/Glass-Bottle.jpg', '2010-08-11 17:31:33-07', 1, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (11, 'uploads/portfolio/Coupons.jpg', '2010-08-12 12:03:55-07', 1, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (12, 'uploads/portfolio/Max.jpg', '2010-08-12 12:03:55-07', 1, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (13, 'uploads/portfolio/Volume.jpg', '2010-08-12 12:03:55-07', 1, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (14, 'uploads/blog/edstrom-house-exterior.jpg', '2010-08-20 12:00:34-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (15, 'uploads/blog/putin-large.jpg', '2010-08-27 11:08:45-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (16, 'uploads/blog/Alarm-Clock.jpg', '2010-08-27 11:11:54-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (17, 'uploads/blog/Apple-Cloud.jpg', '2010-08-31 08:23:14-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (18, 'uploads/front-page/New_iTunes_Icon.png', '2010-09-02 14:12:58-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (19, 'uploads/front-page/Screen_shot_2010-09-02_at_4.49.35_PM.png', '2010-09-02 14:22:03-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (20, 'uploads/front-page/Screen_shot_2010-09-02_at_4.49.35_PM.png', '2010-09-02 14:22:03-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (21, 'uploads/blog/SS-sketches.jpg', '2010-09-08 12:51:10-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (22, 'uploads/blog/SS-logo.jpg', '2010-09-08 12:51:10-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (23, 'uploads/blog/SS-learning.jpg', '2010-09-08 12:51:10-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (24, 'uploads/blog/SS-martin.jpg', '2010-09-08 12:51:10-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (25, 'uploads/blog/SS-sketches2.jpg', '2010-09-08 12:58:30-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (26, 'uploads/blog/SS-logo_1.jpg', '2010-09-08 13:05:35-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (27, 'uploads/blog/SS-sketches_1.jpg', '2010-09-08 13:05:35-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (28, 'uploads/blog/SS-learning_1.jpg', '2010-09-08 13:05:35-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (29, 'uploads/blog/SS-martin_1.jpg', '2010-09-08 13:05:35-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (30, 'uploads/blog/avatard-dribbble.png', '2010-09-09 10:57:48-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (31, 'uploads/front-page/Screen_shot_2010-10-06_at_3.29.21_PM.png', '2010-10-06 12:35:09-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (32, 'uploads/blog/Traffic-Light.jpg', '2010-10-09 07:52:13-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_source VALUES (33, 'uploads/blog/Traffic-Light_1.jpg', '2010-10-09 07:57:24-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (1, 'uploads/front-page/shot_1281221339.png', '2010-08-11 23:05:46+00', 1, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (2, 'uploads/front-page/Process-2.jpg', '2010-08-11 23:08:17+00', 1, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (3, 'uploads/portfolio/Start-Copy.jpg', '2010-08-11 23:13:43+00', 1, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (4, 'uploads/portfolio/Shopping-Cart.jpg', '2010-08-11 23:13:43+00', 1, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (5, 'uploads/blog/Travel.jpg', '2010-08-11 23:18:22+00', 1, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (6, 'uploads/blog/Glass_Bottle.jpg', '2010-08-11 23:31:52+00', 1, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (7, 'uploads/front-page/shot_1281106568.png', '2010-08-11 23:46:15+00', 1, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (8, 'uploads/front-page/shot_1279813053.png', '2010-08-11 23:46:36+00', 1, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (9, 'uploads/blog/Saturday-Market-peaches.jpg', '2010-08-12 00:01:50+00', 1, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (10, 'uploads/blog/Glass-Bottle.jpg', '2010-08-12 00:31:33+00', 1, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (11, 'uploads/portfolio/Coupons.jpg', '2010-08-12 19:03:55+00', 1, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (12, 'uploads/portfolio/Max.jpg', '2010-08-12 19:03:55+00', 1, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (13, 'uploads/portfolio/Volume.jpg', '2010-08-12 19:03:55+00', 1, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (14, 'uploads/blog/edstrom-house-exterior.jpg', '2010-08-20 19:00:34+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (15, 'uploads/blog/putin-large.jpg', '2010-08-27 18:08:45+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (16, 'uploads/blog/Alarm-Clock.jpg', '2010-08-27 18:11:54+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (17, 'uploads/blog/Apple-Cloud.jpg', '2010-08-31 15:23:14+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (18, 'uploads/front-page/New_iTunes_Icon.png', '2010-09-02 21:12:58+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (19, 'uploads/front-page/Screen_shot_2010-09-02_at_4.49.35_PM.png', '2010-09-02 21:22:03+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (20, 'uploads/front-page/Screen_shot_2010-09-02_at_4.49.35_PM.png', '2010-09-02 21:22:03+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (21, 'uploads/blog/SS-sketches.jpg', '2010-09-08 19:51:10+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (22, 'uploads/blog/SS-logo.jpg', '2010-09-08 19:51:10+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (23, 'uploads/blog/SS-learning.jpg', '2010-09-08 19:51:10+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (24, 'uploads/blog/SS-martin.jpg', '2010-09-08 19:51:10+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (25, 'uploads/blog/SS-sketches2.jpg', '2010-09-08 19:58:30+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (26, 'uploads/blog/SS-logo_1.jpg', '2010-09-08 20:05:35+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (27, 'uploads/blog/SS-sketches_1.jpg', '2010-09-08 20:05:35+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (28, 'uploads/blog/SS-learning_1.jpg', '2010-09-08 20:05:35+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (29, 'uploads/blog/SS-martin_1.jpg', '2010-09-08 20:05:35+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (30, 'uploads/blog/avatard-dribbble.png', '2010-09-09 17:57:48+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (31, 'uploads/front-page/Screen_shot_2010-10-06_at_3.29.21_PM.png', '2010-10-06 19:35:09+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (32, 'uploads/blog/Traffic-Light.jpg', '2010-10-09 14:52:13+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_source VALUES (33, 'uploads/blog/Traffic-Light_1.jpg', '2010-10-09 14:57:24+00', 3, 'df2a8819fc7f348e9715cca951e8e5df');
 
 
 --
@@ -2491,69 +2482,69 @@ sb.');
 -- Data for Name: easy_thumbnails_thumbnail; Type: TABLE DATA; Schema: public; Owner: andrewramos
 --
 
-INSERT INTO easy_thumbnails_thumbnail VALUES (1, 'resized/uploads/front-page/r_shot_1281221339.png.100x100_q85.png', '2010-08-11 16:05:47-07', 1, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (2, 'resized/uploads/front-page/r_shot_1281221339.png.220x800_q85.png', '2010-08-11 16:07:38-07', 1, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (3, 'resized/uploads/front-page/r_Process-2.jpg.100x100_q85.png', '2010-08-11 16:08:18-07', 2, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (4, 'resized/uploads/front-page/r_Process-2.jpg.220x800_q85.png', '2010-08-11 16:08:26-07', 2, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (5, 'resized/uploads/portfolio/r_Start-Copy.jpg.100x100_q85.png', '2010-08-11 16:13:46-07', 3, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (6, 'resized/uploads/portfolio/r_Shopping-Cart.jpg.100x100_q85.png', '2010-08-11 16:13:46-07', 4, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (7, 'resized/uploads/portfolio/r_Shopping-Cart.jpg.480x440_q85_crop_upscale.png', '2010-08-11 16:13:58-07', 4, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (8, 'resized/uploads/portfolio/r_Start-Copy.jpg.480x440_q85_crop_upscale.png', '2010-08-11 16:13:58-07', 3, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (9, 'resized/uploads/blog/r_Travel.jpg.700x440_q85_crop_upscale.png', '2010-08-11 16:18:27-07', 5, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (10, 'resized/uploads/blog/r_Travel.jpg.100x100_q85.png', '2010-08-11 16:18:35-07', 5, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (11, 'resized/uploads/blog/r_Glass_Bottle.jpg.480x440_q85_crop_upscale.png', '2010-08-11 16:31:57-07', 6, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (12, 'resized/uploads/front-page/r_shot_1281106568.png.100x100_q85.png', '2010-08-11 16:46:15-07', 7, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (13, 'resized/uploads/front-page/r_shot_1279813053.png.100x100_q85.png', '2010-08-11 16:46:36-07', 8, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (14, 'resized/uploads/front-page/r_shot_1281106568.png.220x800_q85.png', '2010-08-11 16:46:39-07', 7, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (15, 'resized/uploads/front-page/r_shot_1279813053.png.220x800_q85.png', '2010-08-11 16:46:39-07', 8, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (16, 'resized/uploads/blog/r_Glass_Bottle.jpg.100x100_q85.png', '2010-08-11 16:54:26-07', 6, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (17, 'resized/uploads/blog/r_Saturday-Market-peaches.jpg.700x440_q85_crop_upscale.png', '2010-08-11 17:01:54-07', 9, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (18, 'resized/uploads/blog/r_Saturday-Market-peaches.jpg.100x100_q85.png', '2010-08-11 17:04:17-07', 9, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (19, 'resized/uploads/blog/r_Glass-Bottle.jpg.480x440_q85_crop_upscale.png', '2010-08-11 17:31:38-07', 10, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (20, 'resized/uploads/portfolio/r_Shopping-Cart.jpg.700x440_q85_crop_upscale.png', '2010-08-11 21:16:52-07', 4, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (21, 'resized/uploads/portfolio/r_Start-Copy.jpg.700x440_q85_crop_upscale.png', '2010-08-11 21:16:52-07', 3, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (22, 'resized/uploads/portfolio/r_Coupons.jpg.480x440_q85_crop_upscale.png', '2010-08-12 12:04:05-07', 11, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (23, 'resized/uploads/portfolio/r_Max.jpg.480x440_q85_crop_upscale.png', '2010-08-12 12:04:06-07', 12, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (24, 'resized/uploads/portfolio/r_Volume.jpg.480x440_q85_crop_upscale.png', '2010-08-12 12:04:06-07', 13, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (25, 'resized/uploads/portfolio/r_Coupons.jpg.100x100_q85.png', '2010-08-12 12:04:54-07', 11, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (26, 'resized/uploads/portfolio/r_Max.jpg.100x100_q85.png', '2010-08-12 12:04:54-07', 12, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (27, 'resized/uploads/portfolio/r_Volume.jpg.100x100_q85.png', '2010-08-12 12:04:54-07', 13, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (28, 'resized/uploads/blog/r_Glass-Bottle.jpg.100x100_q85.png', '2010-08-12 12:15:41-07', 10, 2, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (29, 'resized/uploads/blog/r_edstrom-house-exterior.jpg.480x440_q85_crop_upscale.png', '2010-08-20 12:01:07-07', 14, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (30, 'resized/uploads/blog/r_putin-large.jpg.100x100_q85.png', '2010-08-27 11:08:48-07', 15, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (31, 'resized/uploads/blog/r_edstrom-house-exterior.jpg.100x100_q85.png', '2010-08-27 11:10:58-07', 14, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (32, 'resized/uploads/blog/r_Alarm-Clock.jpg.700x440_q85_crop_upscale.png', '2010-08-27 11:12:03-07', 16, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (33, 'resized/uploads/blog/r_Alarm-Clock.jpg.100x100_q85.png', '2010-08-27 11:20:39-07', 16, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (34, 'resized/uploads/blog/r_Apple-Cloud.jpg.700x440_q85_crop_upscale.png', '2010-08-31 08:23:21-07', 17, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (35, 'resized/uploads/blog/r_Apple-Cloud.jpg.100x100_q85.png', '2010-09-02 11:20:08-07', 17, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (36, 'resized/uploads/front-page/r_New_iTunes_Icon.png.100x100_q85.png', '2010-09-02 14:12:59-07', 18, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (37, 'resized/uploads/front-page/r_New_iTunes_Icon.png.220x800_q85.png', '2010-09-02 14:13:13-07', 18, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (38, 'resized/uploads/front-page/r_Screen_shot_2010-09-02_at_4.49.35_PM.png.100x100_q85.png', '2010-09-02 14:22:04-07', 19, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (39, 'resized/uploads/front-page/r_Screen_shot_2010-09-02_at_4.49.35_PM.png.220x800_q85.png', '2010-09-02 14:22:04-07', 20, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (40, 'resized/uploads/blog/r_SS-sketches.jpg.700x440_q85_crop_upscale.png', '2010-09-08 12:51:15-07', 21, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (41, 'resized/uploads/blog/r_SS-logo.jpg.700x440_q85_crop_upscale.png', '2010-09-08 12:51:15-07', 22, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (42, 'resized/uploads/blog/r_SS-learning.jpg.700x440_q85_crop_upscale.png', '2010-09-08 12:51:16-07', 23, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (43, 'resized/uploads/blog/r_SS-martin.jpg.700x440_q85_crop_upscale.png', '2010-09-08 12:51:16-07', 24, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (44, 'resized/uploads/blog/r_SS-sketches.jpg.100x100_q85.png', '2010-09-08 12:51:46-07', 21, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (45, 'resized/uploads/blog/r_SS-logo.jpg.100x100_q85.png', '2010-09-08 12:51:46-07', 22, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (46, 'resized/uploads/blog/r_SS-learning.jpg.100x100_q85.png', '2010-09-08 12:51:46-07', 23, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (47, 'resized/uploads/blog/r_SS-martin.jpg.100x100_q85.png', '2010-09-08 12:51:47-07', 24, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (48, 'resized/uploads/blog/r_SS-sketches2.jpg.700x440_q85_crop_upscale.png', '2010-09-08 12:58:33-07', 25, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (49, 'resized/uploads/blog/r_SS-logo_1.jpg.700x440_q85_crop_upscale.png', '2010-09-08 13:05:41-07', 26, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (50, 'resized/uploads/blog/r_SS-sketches_1.jpg.700x440_q85_crop_upscale.png', '2010-09-08 13:05:41-07', 27, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (51, 'resized/uploads/blog/r_SS-learning_1.jpg.700x440_q85_crop_upscale.png', '2010-09-08 13:05:41-07', 28, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (52, 'resized/uploads/blog/r_SS-martin_1.jpg.700x440_q85_crop_upscale.png', '2010-09-08 13:05:41-07', 29, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (53, 'resized/uploads/blog/r_SS-logo_1.jpg.100x100_q85.png', '2010-09-08 13:05:55-07', 26, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (54, 'resized/uploads/blog/r_SS-sketches_1.jpg.100x100_q85.png', '2010-09-08 13:05:55-07', 27, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (55, 'resized/uploads/blog/r_SS-learning_1.jpg.100x100_q85.png', '2010-09-08 13:05:55-07', 28, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (56, 'resized/uploads/blog/r_SS-martin_1.jpg.100x100_q85.png', '2010-09-08 13:05:55-07', 29, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (57, 'resized/uploads/blog/r_avatard-dribbble.png.100x100_q85.png', '2010-09-09 10:57:49-07', 30, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (58, 'resized/uploads/blog/r_avatard-dribbble.png.700x440_q85_crop_upscale.png', '2010-09-09 10:58:31-07', 30, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (59, 'resized/uploads/front-page/r_Screen_shot_2010-10-06_at_3.29.21_PM.png.100x100_q85.png', '2010-10-06 12:35:10-07', 31, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (60, 'resized/uploads/front-page/r_Screen_shot_2010-10-06_at_3.29.21_PM.png.220x800_q85.png', '2010-10-06 12:35:27-07', 31, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (61, 'resized/uploads/blog/r_Traffic-Light.jpg.480x440_q85_crop_upscale.png', '2010-10-09 07:52:17-07', 32, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (62, 'resized/uploads/blog/r_Traffic-Light.jpg.100x100_q85.png', '2010-10-09 07:55:56-07', 32, 4, 'df2a8819fc7f348e9715cca951e8e5df');
-INSERT INTO easy_thumbnails_thumbnail VALUES (63, 'resized/uploads/blog/r_Traffic-Light_1.jpg.480x440_q85_crop_upscale.png', '2010-10-09 07:57:45-07', 33, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (1, 'resized/uploads/front-page/r_shot_1281221339.png.100x100_q85.png', '2010-08-11 23:05:47+00', 1, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (2, 'resized/uploads/front-page/r_shot_1281221339.png.220x800_q85.png', '2010-08-11 23:07:38+00', 1, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (3, 'resized/uploads/front-page/r_Process-2.jpg.100x100_q85.png', '2010-08-11 23:08:18+00', 2, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (4, 'resized/uploads/front-page/r_Process-2.jpg.220x800_q85.png', '2010-08-11 23:08:26+00', 2, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (5, 'resized/uploads/portfolio/r_Start-Copy.jpg.100x100_q85.png', '2010-08-11 23:13:46+00', 3, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (6, 'resized/uploads/portfolio/r_Shopping-Cart.jpg.100x100_q85.png', '2010-08-11 23:13:46+00', 4, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (7, 'resized/uploads/portfolio/r_Shopping-Cart.jpg.480x440_q85_crop_upscale.png', '2010-08-11 23:13:58+00', 4, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (8, 'resized/uploads/portfolio/r_Start-Copy.jpg.480x440_q85_crop_upscale.png', '2010-08-11 23:13:58+00', 3, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (9, 'resized/uploads/blog/r_Travel.jpg.700x440_q85_crop_upscale.png', '2010-08-11 23:18:27+00', 5, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (10, 'resized/uploads/blog/r_Travel.jpg.100x100_q85.png', '2010-08-11 23:18:35+00', 5, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (11, 'resized/uploads/blog/r_Glass_Bottle.jpg.480x440_q85_crop_upscale.png', '2010-08-11 23:31:57+00', 6, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (12, 'resized/uploads/front-page/r_shot_1281106568.png.100x100_q85.png', '2010-08-11 23:46:15+00', 7, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (13, 'resized/uploads/front-page/r_shot_1279813053.png.100x100_q85.png', '2010-08-11 23:46:36+00', 8, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (14, 'resized/uploads/front-page/r_shot_1281106568.png.220x800_q85.png', '2010-08-11 23:46:39+00', 7, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (15, 'resized/uploads/front-page/r_shot_1279813053.png.220x800_q85.png', '2010-08-11 23:46:39+00', 8, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (16, 'resized/uploads/blog/r_Glass_Bottle.jpg.100x100_q85.png', '2010-08-11 23:54:26+00', 6, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (17, 'resized/uploads/blog/r_Saturday-Market-peaches.jpg.700x440_q85_crop_upscale.png', '2010-08-12 00:01:54+00', 9, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (18, 'resized/uploads/blog/r_Saturday-Market-peaches.jpg.100x100_q85.png', '2010-08-12 00:04:17+00', 9, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (19, 'resized/uploads/blog/r_Glass-Bottle.jpg.480x440_q85_crop_upscale.png', '2010-08-12 00:31:38+00', 10, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (20, 'resized/uploads/portfolio/r_Shopping-Cart.jpg.700x440_q85_crop_upscale.png', '2010-08-12 04:16:52+00', 4, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (21, 'resized/uploads/portfolio/r_Start-Copy.jpg.700x440_q85_crop_upscale.png', '2010-08-12 04:16:52+00', 3, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (22, 'resized/uploads/portfolio/r_Coupons.jpg.480x440_q85_crop_upscale.png', '2010-08-12 19:04:05+00', 11, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (23, 'resized/uploads/portfolio/r_Max.jpg.480x440_q85_crop_upscale.png', '2010-08-12 19:04:06+00', 12, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (24, 'resized/uploads/portfolio/r_Volume.jpg.480x440_q85_crop_upscale.png', '2010-08-12 19:04:06+00', 13, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (25, 'resized/uploads/portfolio/r_Coupons.jpg.100x100_q85.png', '2010-08-12 19:04:54+00', 11, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (26, 'resized/uploads/portfolio/r_Max.jpg.100x100_q85.png', '2010-08-12 19:04:54+00', 12, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (27, 'resized/uploads/portfolio/r_Volume.jpg.100x100_q85.png', '2010-08-12 19:04:54+00', 13, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (28, 'resized/uploads/blog/r_Glass-Bottle.jpg.100x100_q85.png', '2010-08-12 19:15:41+00', 10, 2, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (29, 'resized/uploads/blog/r_edstrom-house-exterior.jpg.480x440_q85_crop_upscale.png', '2010-08-20 19:01:07+00', 14, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (30, 'resized/uploads/blog/r_putin-large.jpg.100x100_q85.png', '2010-08-27 18:08:48+00', 15, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (31, 'resized/uploads/blog/r_edstrom-house-exterior.jpg.100x100_q85.png', '2010-08-27 18:10:58+00', 14, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (32, 'resized/uploads/blog/r_Alarm-Clock.jpg.700x440_q85_crop_upscale.png', '2010-08-27 18:12:03+00', 16, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (33, 'resized/uploads/blog/r_Alarm-Clock.jpg.100x100_q85.png', '2010-08-27 18:20:39+00', 16, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (34, 'resized/uploads/blog/r_Apple-Cloud.jpg.700x440_q85_crop_upscale.png', '2010-08-31 15:23:21+00', 17, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (35, 'resized/uploads/blog/r_Apple-Cloud.jpg.100x100_q85.png', '2010-09-02 18:20:08+00', 17, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (36, 'resized/uploads/front-page/r_New_iTunes_Icon.png.100x100_q85.png', '2010-09-02 21:12:59+00', 18, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (37, 'resized/uploads/front-page/r_New_iTunes_Icon.png.220x800_q85.png', '2010-09-02 21:13:13+00', 18, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (38, 'resized/uploads/front-page/r_Screen_shot_2010-09-02_at_4.49.35_PM.png.100x100_q85.png', '2010-09-02 21:22:04+00', 19, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (39, 'resized/uploads/front-page/r_Screen_shot_2010-09-02_at_4.49.35_PM.png.220x800_q85.png', '2010-09-02 21:22:04+00', 20, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (40, 'resized/uploads/blog/r_SS-sketches.jpg.700x440_q85_crop_upscale.png', '2010-09-08 19:51:15+00', 21, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (41, 'resized/uploads/blog/r_SS-logo.jpg.700x440_q85_crop_upscale.png', '2010-09-08 19:51:15+00', 22, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (42, 'resized/uploads/blog/r_SS-learning.jpg.700x440_q85_crop_upscale.png', '2010-09-08 19:51:16+00', 23, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (43, 'resized/uploads/blog/r_SS-martin.jpg.700x440_q85_crop_upscale.png', '2010-09-08 19:51:16+00', 24, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (44, 'resized/uploads/blog/r_SS-sketches.jpg.100x100_q85.png', '2010-09-08 19:51:46+00', 21, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (45, 'resized/uploads/blog/r_SS-logo.jpg.100x100_q85.png', '2010-09-08 19:51:46+00', 22, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (46, 'resized/uploads/blog/r_SS-learning.jpg.100x100_q85.png', '2010-09-08 19:51:46+00', 23, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (47, 'resized/uploads/blog/r_SS-martin.jpg.100x100_q85.png', '2010-09-08 19:51:47+00', 24, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (48, 'resized/uploads/blog/r_SS-sketches2.jpg.700x440_q85_crop_upscale.png', '2010-09-08 19:58:33+00', 25, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (49, 'resized/uploads/blog/r_SS-logo_1.jpg.700x440_q85_crop_upscale.png', '2010-09-08 20:05:41+00', 26, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (50, 'resized/uploads/blog/r_SS-sketches_1.jpg.700x440_q85_crop_upscale.png', '2010-09-08 20:05:41+00', 27, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (51, 'resized/uploads/blog/r_SS-learning_1.jpg.700x440_q85_crop_upscale.png', '2010-09-08 20:05:41+00', 28, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (52, 'resized/uploads/blog/r_SS-martin_1.jpg.700x440_q85_crop_upscale.png', '2010-09-08 20:05:41+00', 29, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (53, 'resized/uploads/blog/r_SS-logo_1.jpg.100x100_q85.png', '2010-09-08 20:05:55+00', 26, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (54, 'resized/uploads/blog/r_SS-sketches_1.jpg.100x100_q85.png', '2010-09-08 20:05:55+00', 27, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (55, 'resized/uploads/blog/r_SS-learning_1.jpg.100x100_q85.png', '2010-09-08 20:05:55+00', 28, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (56, 'resized/uploads/blog/r_SS-martin_1.jpg.100x100_q85.png', '2010-09-08 20:05:55+00', 29, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (57, 'resized/uploads/blog/r_avatard-dribbble.png.100x100_q85.png', '2010-09-09 17:57:49+00', 30, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (58, 'resized/uploads/blog/r_avatard-dribbble.png.700x440_q85_crop_upscale.png', '2010-09-09 17:58:31+00', 30, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (59, 'resized/uploads/front-page/r_Screen_shot_2010-10-06_at_3.29.21_PM.png.100x100_q85.png', '2010-10-06 19:35:10+00', 31, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (60, 'resized/uploads/front-page/r_Screen_shot_2010-10-06_at_3.29.21_PM.png.220x800_q85.png', '2010-10-06 19:35:27+00', 31, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (61, 'resized/uploads/blog/r_Traffic-Light.jpg.480x440_q85_crop_upscale.png', '2010-10-09 14:52:17+00', 32, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (62, 'resized/uploads/blog/r_Traffic-Light.jpg.100x100_q85.png', '2010-10-09 14:55:56+00', 32, 4, 'df2a8819fc7f348e9715cca951e8e5df');
+INSERT INTO easy_thumbnails_thumbnail VALUES (63, 'resized/uploads/blog/r_Traffic-Light_1.jpg.480x440_q85_crop_upscale.png', '2010-10-09 14:57:45+00', 33, 4, 'df2a8819fc7f348e9715cca951e8e5df');
 
 
 --
@@ -2577,54 +2568,98 @@ INSERT INTO portfolio_client VALUES (5, 'Parachute Clothing');
 -- Data for Name: portfolio_portfoliopiece; Type: TABLE DATA; Schema: public; Owner: andrewramos
 --
 
-INSERT INTO portfolio_portfoliopiece VALUES (2, 'uploads/portfolio/Shopping-Cart.jpg', 20, 1, '2010-08-11 16:13:43.275679-07', '2010-08-11 21:35:33.341876-07', 2);
-INSERT INTO portfolio_portfoliopiece VALUES (1, 'uploads/portfolio/Start-Copy.jpg', 20, 1, '2010-08-11 16:13:43.23667-07', '2010-08-11 22:57:28.62863-07', 1);
-INSERT INTO portfolio_portfoliopiece VALUES (3, 'uploads/portfolio/Coupons.jpg', 20, 1, '2010-08-12 12:03:55.378647-07', '2010-08-12 12:05:31.616478-07', 3);
-INSERT INTO portfolio_portfoliopiece VALUES (4, 'uploads/portfolio/Max.jpg', 20, 1, '2010-08-12 12:03:55.422491-07', '2010-08-12 12:05:31.621599-07', 4);
-INSERT INTO portfolio_portfoliopiece VALUES (5, 'uploads/portfolio/Volume.jpg', 20, 1, '2010-08-12 12:03:55.425008-07', '2010-08-12 12:05:31.626694-07', 5);
-INSERT INTO portfolio_portfoliopiece VALUES (6, 'uploads/portfolio/TTD1.jpg', 20, 2, '2011-01-25 09:09:25.729252-08', '2011-01-25 09:09:25.729321-08', 1);
-INSERT INTO portfolio_portfoliopiece VALUES (7, 'uploads/portfolio/TTD2.jpg', 20, 2, '2011-01-25 09:09:25.742553-08', '2011-01-25 09:10:47.572661-08', 2);
-INSERT INTO portfolio_portfoliopiece VALUES (8, 'uploads/portfolio/TTD3_1.jpg', 20, 2, '2011-01-25 09:09:25.746087-08', '2011-01-25 09:32:23.182768-08', 3);
-INSERT INTO portfolio_portfoliopiece VALUES (9, 'uploads/portfolio/SOS-1b.jpg', 20, 3, '2011-01-25 12:19:06.542502-08', '2011-01-25 12:19:06.542548-08', 1);
-INSERT INTO portfolio_portfoliopiece VALUES (10, 'uploads/portfolio/SOS-2.jpg', 20, 3, '2011-01-25 12:19:06.546793-08', '2011-01-25 12:19:06.546845-08', 2);
-INSERT INTO portfolio_portfoliopiece VALUES (13, 'uploads/portfolio/SS-logo.jpg', 20, 4, '2011-01-25 12:25:28.362894-08', '2011-01-25 12:25:28.362947-08', 1);
-INSERT INTO portfolio_portfoliopiece VALUES (14, 'uploads/portfolio/SS-learning.jpg', 20, 4, '2011-01-25 12:25:28.366232-08', '2011-01-25 12:25:58.788276-08', 2);
-INSERT INTO portfolio_portfoliopiece VALUES (15, 'uploads/portfolio/SS-martin_1.jpg', 20, 4, '2011-01-25 12:25:28.368605-08', '2011-01-25 13:18:43.439566-08', 3);
-INSERT INTO portfolio_portfoliopiece VALUES (16, 'uploads/portfolio/Parachute1.jpg', 20, 5, '2011-02-04 13:44:48.250106-08', '2011-02-04 13:44:48.250183-08', 1);
-INSERT INTO portfolio_portfoliopiece VALUES (17, 'uploads/portfolio/Parachute2.jpg', 20, 5, '2011-02-04 13:44:48.283448-08', '2011-02-04 13:46:08.833588-08', 2);
-INSERT INTO portfolio_portfoliopiece VALUES (18, 'uploads/portfolio/Parachute3.jpg', 20, 5, '2011-02-04 13:44:48.286859-08', '2011-02-04 13:46:08.83945-08', 3);
+INSERT INTO portfolio_portfoliopiece VALUES (2, 'uploads/portfolio/Shopping-Cart.jpg', 20, 1, '2010-08-11 23:13:43.275679+00', '2010-08-12 04:35:33.341876+00', 2);
+INSERT INTO portfolio_portfoliopiece VALUES (1, 'uploads/portfolio/Start-Copy.jpg', 20, 1, '2010-08-11 23:13:43.23667+00', '2010-08-12 05:57:28.62863+00', 1);
+INSERT INTO portfolio_portfoliopiece VALUES (3, 'uploads/portfolio/Coupons.jpg', 20, 1, '2010-08-12 19:03:55.378647+00', '2010-08-12 19:05:31.616478+00', 3);
+INSERT INTO portfolio_portfoliopiece VALUES (4, 'uploads/portfolio/Max.jpg', 20, 1, '2010-08-12 19:03:55.422491+00', '2010-08-12 19:05:31.621599+00', 4);
+INSERT INTO portfolio_portfoliopiece VALUES (5, 'uploads/portfolio/Volume.jpg', 20, 1, '2010-08-12 19:03:55.425008+00', '2010-08-12 19:05:31.626694+00', 5);
+INSERT INTO portfolio_portfoliopiece VALUES (6, 'uploads/portfolio/TTD1.jpg', 20, 2, '2011-01-25 17:09:25.729252+00', '2011-01-25 17:09:25.729321+00', 1);
+INSERT INTO portfolio_portfoliopiece VALUES (7, 'uploads/portfolio/TTD2.jpg', 20, 2, '2011-01-25 17:09:25.742553+00', '2011-01-25 17:10:47.572661+00', 2);
+INSERT INTO portfolio_portfoliopiece VALUES (8, 'uploads/portfolio/TTD3_1.jpg', 20, 2, '2011-01-25 17:09:25.746087+00', '2011-01-25 17:32:23.182768+00', 3);
+INSERT INTO portfolio_portfoliopiece VALUES (9, 'uploads/portfolio/SOS-1b.jpg', 20, 3, '2011-01-25 20:19:06.542502+00', '2011-01-25 20:19:06.542548+00', 1);
+INSERT INTO portfolio_portfoliopiece VALUES (10, 'uploads/portfolio/SOS-2.jpg', 20, 3, '2011-01-25 20:19:06.546793+00', '2011-01-25 20:19:06.546845+00', 2);
+INSERT INTO portfolio_portfoliopiece VALUES (13, 'uploads/portfolio/SS-logo.jpg', 20, 4, '2011-01-25 20:25:28.362894+00', '2011-01-25 20:25:28.362947+00', 1);
+INSERT INTO portfolio_portfoliopiece VALUES (14, 'uploads/portfolio/SS-learning.jpg', 20, 4, '2011-01-25 20:25:28.366232+00', '2011-01-25 20:25:58.788276+00', 2);
+INSERT INTO portfolio_portfoliopiece VALUES (15, 'uploads/portfolio/SS-martin_1.jpg', 20, 4, '2011-01-25 20:25:28.368605+00', '2011-01-25 21:18:43.439566+00', 3);
+INSERT INTO portfolio_portfoliopiece VALUES (16, 'uploads/portfolio/Parachute1.jpg', 20, 5, '2011-02-04 21:44:48.250106+00', '2011-02-04 21:44:48.250183+00', 1);
+INSERT INTO portfolio_portfoliopiece VALUES (17, 'uploads/portfolio/Parachute2.jpg', 20, 5, '2011-02-04 21:44:48.283448+00', '2011-02-04 21:46:08.833588+00', 2);
+INSERT INTO portfolio_portfoliopiece VALUES (18, 'uploads/portfolio/Parachute3.jpg', 20, 5, '2011-02-04 21:44:48.286859+00', '2011-02-04 21:46:08.83945+00', 3);
 
 
 --
 -- Data for Name: portfolio_project; Type: TABLE DATA; Schema: public; Owner: andrewramos
 --
 
-INSERT INTO portfolio_project VALUES (2, 'The Trappe Door', 'Identity', 'trappe-door-branding', 2, 'p', 'f', NULL, '2011-01-25 09:09:25.659888-08', '2011-01-25 12:27:05.480123-08');
-INSERT INTO portfolio_project VALUES (1, 'Teaser Images', '', 'teaser-images', 1, 'd', 'p', NULL, '2010-08-11 16:13:43.160903-07', '2011-01-25 12:27:47.97157-08');
-INSERT INTO portfolio_project VALUES (3, 'Somewhat Organic Soap Co.', 'Identity', 'somewhat-organic-soap-co', 3, 'p', 'f', NULL, '2011-01-25 12:19:06.536287-08', '2011-01-25 13:18:04.758877-08');
-INSERT INTO portfolio_project VALUES (4, 'Southern Savers', 'Identity', 'southern-savers', 4, 'p', 'f', 2, '2011-01-25 12:25:28.35775-08', '2011-01-25 13:18:43.426977-08');
-INSERT INTO portfolio_project VALUES (5, 'Parachute Clothing', 'Identity, Website', 'parachute-clothing', 5, 'p', 'f', NULL, '2011-02-04 13:44:48.183705-08', '2011-02-04 13:52:12.088292-08');
+INSERT INTO portfolio_project VALUES (2, 'The Trappe Door', 'Identity', 'trappe-door-branding', 2, 'p', 'f', NULL, '2011-01-25 17:09:25.659888+00', '2011-01-25 20:27:05.480123+00');
+INSERT INTO portfolio_project VALUES (1, 'Teaser Images', '', 'teaser-images', 1, 'd', 'p', NULL, '2010-08-11 23:13:43.160903+00', '2011-01-25 20:27:47.97157+00');
+INSERT INTO portfolio_project VALUES (3, 'Somewhat Organic Soap Co.', 'Identity', 'somewhat-organic-soap-co', 3, 'p', 'f', NULL, '2011-01-25 20:19:06.536287+00', '2011-01-25 21:18:04.758877+00');
+INSERT INTO portfolio_project VALUES (4, 'Southern Savers', 'Identity', 'southern-savers', 4, 'p', 'f', 2, '2011-01-25 20:25:28.35775+00', '2011-01-25 21:18:43.426977+00');
+INSERT INTO portfolio_project VALUES (5, 'Parachute Clothing', 'Identity, Website', 'parachute-clothing', 5, 'p', 'f', NULL, '2011-02-04 21:44:48.183705+00', '2011-02-04 21:52:12.088292+00');
 
 
 --
 -- Data for Name: south_migrationhistory; Type: TABLE DATA; Schema: public; Owner: andrewramos
 --
 
-INSERT INTO south_migrationhistory VALUES (1, 'blog', '0001_initial', '2011-06-28 03:54:16.910535-07');
-INSERT INTO south_migrationhistory VALUES (2, 'portfolio', '0001_initial', '2011-06-28 03:54:16.917434-07');
-INSERT INTO south_migrationhistory VALUES (3, 'content', '0001_initial', '2011-06-28 03:54:16.92165-07');
+-- INSERT INTO south_migrationhistory VALUES (1, 'easy_thumbnails', '0001_initial', '2010-08-11 08:43:36.714022+00');
+-- INSERT INTO south_migrationhistory VALUES (2, 'easy_thumbnails', '0002_filename_indexes', '2010-08-11 08:43:36.757648+00');
+-- INSERT INTO south_migrationhistory VALUES (3, 'blog', '0001_initial', '2010-08-11 08:43:37.073414+00');
+-- INSERT INTO south_migrationhistory VALUES (4, 'portfolio', '0001_initial', '2010-08-11 08:43:37.463286+00');
+-- INSERT INTO south_migrationhistory VALUES (5, 'content', '0001_initial', '2010-08-11 08:43:37.848809+00');
+-- INSERT INTO south_migrationhistory VALUES (6, 'portfolio', '0002_auto__add_field_portfoliopiece_order', '2010-08-12 08:33:49.388459+00');
+-- INSERT INTO south_migrationhistory VALUES (7, 'easy_thumbnails', '0003_auto__add_storagenew', '2011-05-14 01:41:06.689708+00');
+-- INSERT INTO south_migrationhistory VALUES (8, 'easy_thumbnails', '0004_auto__add_field_source_storage_new__add_field_thumbnail_storage_new', '2011-05-14 01:41:06.986676+00');
+-- INSERT INTO south_migrationhistory VALUES (9, 'easy_thumbnails', '0005_storage_fks_null', '2011-05-14 01:41:07.42705+00');
+-- INSERT INTO south_migrationhistory VALUES (10, 'easy_thumbnails', '0006_copy_storage', '2011-05-14 01:41:07.500399+00');
+-- INSERT INTO south_migrationhistory VALUES (11, 'easy_thumbnails', '0007_storagenew_fks_not_null', '2011-05-14 01:41:07.640433+00');
+-- INSERT INTO south_migrationhistory VALUES (12, 'easy_thumbnails', '0008_auto__del_field_source_storage__del_field_thumbnail_storage', '2011-05-14 01:41:07.678411+00');
+-- INSERT INTO south_migrationhistory VALUES (13, 'easy_thumbnails', '0009_auto__del_storage', '2011-05-14 01:41:07.738566+00');
+-- INSERT INTO south_migrationhistory VALUES (14, 'easy_thumbnails', '0010_rename_storage', '2011-05-14 01:41:07.780439+00');
+-- INSERT INTO south_migrationhistory VALUES (15, 'easy_thumbnails', '0011_auto__add_field_source_storage_hash__add_field_thumbnail_storage_hash', '2011-05-14 01:41:07.881189+00');
+-- INSERT INTO south_migrationhistory VALUES (16, 'easy_thumbnails', '0012_build_storage_hashes', '2011-05-14 01:41:07.927854+00');
+-- INSERT INTO south_migrationhistory VALUES (17, 'blog', '0002_auto__del_field_article_tags__del_field_shortpost_tags__del_field_quot', '2011-05-14 01:48:47.746441+00');
+-- INSERT INTO south_migrationhistory VALUES (18, 'content', '0002_auto__del_emailmessage__del_staticpage', '2011-05-14 01:48:47.99986+00');
 
 
 --
 -- Data for Name: tagging_tag; Type: TABLE DATA; Schema: public; Owner: andrewramos
 --
 
+-- INSERT INTO tagging_tag VALUES (1, 'Coca Cola');
+-- INSERT INTO tagging_tag VALUES (2, 'Coke');
+-- INSERT INTO tagging_tag VALUES (3, 'Not Real');
+-- INSERT INTO tagging_tag VALUES (4, 'Test');
+-- INSERT INTO tagging_tag VALUES (5, 'coca cola');
+-- INSERT INTO tagging_tag VALUES (6, 'coke');
+-- INSERT INTO tagging_tag VALUES (7, 'Branding');
+-- INSERT INTO tagging_tag VALUES (8, 'branding');
+-- INSERT INTO tagging_tag VALUES (9, 'illustration');
+-- INSERT INTO tagging_tag VALUES (10, 'presentation');
+-- INSERT INTO tagging_tag VALUES (11, 'Apple');
+-- INSERT INTO tagging_tag VALUES (12, 'apple');
+-- INSERT INTO tagging_tag VALUES (13, 'case study');
+-- INSERT INTO tagging_tag VALUES (14, 'identity');
+-- INSERT INTO tagging_tag VALUES (15, 'Two Over Zero');
 
 
 --
 -- Data for Name: tagging_taggeditem; Type: TABLE DATA; Schema: public; Owner: andrewramos
 --
 
+-- INSERT INTO tagging_taggeditem VALUES (3, 3, 17, 1);
+-- INSERT INTO tagging_taggeditem VALUES (4, 4, 17, 1);
+-- INSERT INTO tagging_taggeditem VALUES (8, 8, 16, 3);
+-- INSERT INTO tagging_taggeditem VALUES (9, 9, 16, 3);
+-- INSERT INTO tagging_taggeditem VALUES (10, 8, 16, 1);
+-- INSERT INTO tagging_taggeditem VALUES (11, 10, 16, 1);
+-- INSERT INTO tagging_taggeditem VALUES (13, 12, 16, 9);
+-- INSERT INTO tagging_taggeditem VALUES (14, 13, 16, 10);
+-- INSERT INTO tagging_taggeditem VALUES (15, 14, 16, 10);
+-- INSERT INTO tagging_taggeditem VALUES (16, 9, 16, 10);
+-- INSERT INTO tagging_taggeditem VALUES (17, 13, 17, 2);
+-- INSERT INTO tagging_taggeditem VALUES (18, 14, 17, 2);
+-- INSERT INTO tagging_taggeditem VALUES (19, 9, 17, 2);
+-- INSERT INTO tagging_taggeditem VALUES (20, 15, 16, 17);
 
 
 --
@@ -3370,12 +3405,12 @@ ALTER TABLE ONLY auth_user_user_permissions
 
 
 --
--- Name: public; Type: ACL; Schema: -; Owner: michael
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
 
 REVOKE ALL ON SCHEMA public FROM PUBLIC;
-REVOKE ALL ON SCHEMA public FROM michael;
-GRANT ALL ON SCHEMA public TO michael;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
