@@ -1,6 +1,4 @@
---
--- PostgreSQL database dump
---
+
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -9,14 +7,11 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 SET escape_string_warning = off;
 
---
--- Name: plpgsql; Type: PROCEDURAL LANGUAGE; Schema: -; Owner: michael
---
-
-CREATE OR REPLACE PROCEDURAL LANGUAGE plpgsql;
 
 
-ALTER PROCEDURAL LANGUAGE plpgsql OWNER TO michael;
+
+
+
 
 SET search_path = public, pg_catalog;
 
@@ -24,9 +19,6 @@ SET default_tablespace = '';
 
 SET default_with_oids = false;
 
---
--- Name: auth_group; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE auth_group (
     id integer NOT NULL,
@@ -34,11 +26,8 @@ CREATE TABLE auth_group (
 );
 
 
-ALTER TABLE public.auth_group OWNER TO andrewramos;
 
---
--- Name: auth_group_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE auth_group_id_seq
     START WITH 1
@@ -48,25 +37,16 @@ CREATE SEQUENCE auth_group_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_group_id_seq OWNER TO andrewramos;
 
---
--- Name: auth_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE auth_group_id_seq OWNED BY auth_group.id;
 
 
---
--- Name: auth_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('auth_group_id_seq', 1, false);
 
 
---
--- Name: auth_group_permissions; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE auth_group_permissions (
     id integer NOT NULL,
@@ -75,11 +55,8 @@ CREATE TABLE auth_group_permissions (
 );
 
 
-ALTER TABLE public.auth_group_permissions OWNER TO andrewramos;
 
---
--- Name: auth_group_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE auth_group_permissions_id_seq
     START WITH 1
@@ -89,25 +66,16 @@ CREATE SEQUENCE auth_group_permissions_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_group_permissions_id_seq OWNER TO andrewramos;
 
---
--- Name: auth_group_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE auth_group_permissions_id_seq OWNED BY auth_group_permissions.id;
 
 
---
--- Name: auth_group_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('auth_group_permissions_id_seq', 1, false);
 
 
---
--- Name: auth_message; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE auth_message (
     id integer NOT NULL,
@@ -116,11 +84,8 @@ CREATE TABLE auth_message (
 );
 
 
-ALTER TABLE public.auth_message OWNER TO andrewramos;
 
---
--- Name: auth_message_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE auth_message_id_seq
     START WITH 1
@@ -130,25 +95,16 @@ CREATE SEQUENCE auth_message_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_message_id_seq OWNER TO andrewramos;
 
---
--- Name: auth_message_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 
 
---
--- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('auth_message_id_seq', 1, false);
 
 
---
--- Name: auth_permission; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE auth_permission (
     id integer NOT NULL,
@@ -158,11 +114,8 @@ CREATE TABLE auth_permission (
 );
 
 
-ALTER TABLE public.auth_permission OWNER TO andrewramos;
 
---
--- Name: auth_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE auth_permission_id_seq
     START WITH 1
@@ -172,25 +125,16 @@ CREATE SEQUENCE auth_permission_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_permission_id_seq OWNER TO andrewramos;
 
---
--- Name: auth_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE auth_permission_id_seq OWNED BY auth_permission.id;
 
 
---
--- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('auth_permission_id_seq', 84, true);
 
 
---
--- Name: auth_user; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE auth_user (
     id integer NOT NULL,
@@ -207,11 +151,8 @@ CREATE TABLE auth_user (
 );
 
 
-ALTER TABLE public.auth_user OWNER TO andrewramos;
 
---
--- Name: auth_user_groups; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
+
 
 CREATE TABLE auth_user_groups (
     id integer NOT NULL,
@@ -220,11 +161,8 @@ CREATE TABLE auth_user_groups (
 );
 
 
-ALTER TABLE public.auth_user_groups OWNER TO andrewramos;
 
---
--- Name: auth_user_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE auth_user_groups_id_seq
     START WITH 1
@@ -234,25 +172,16 @@ CREATE SEQUENCE auth_user_groups_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_user_groups_id_seq OWNER TO andrewramos;
 
---
--- Name: auth_user_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE auth_user_groups_id_seq OWNED BY auth_user_groups.id;
 
 
---
--- Name: auth_user_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('auth_user_groups_id_seq', 1, false);
 
 
---
--- Name: auth_user_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
 
 CREATE SEQUENCE auth_user_id_seq
     START WITH 1
@@ -262,25 +191,16 @@ CREATE SEQUENCE auth_user_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_user_id_seq OWNER TO andrewramos;
 
---
--- Name: auth_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE auth_user_id_seq OWNED BY auth_user.id;
 
 
---
--- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('auth_user_id_seq', 4, true);
 
 
---
--- Name: auth_user_user_permissions; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE auth_user_user_permissions (
     id integer NOT NULL,
@@ -289,11 +209,8 @@ CREATE TABLE auth_user_user_permissions (
 );
 
 
-ALTER TABLE public.auth_user_user_permissions OWNER TO andrewramos;
 
---
--- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE auth_user_user_permissions_id_seq
     START WITH 1
@@ -303,25 +220,16 @@ CREATE SEQUENCE auth_user_user_permissions_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_user_user_permissions_id_seq OWNER TO andrewramos;
 
---
--- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE auth_user_user_permissions_id_seq OWNED BY auth_user_user_permissions.id;
 
 
---
--- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('auth_user_user_permissions_id_seq', 201, true);
 
 
---
--- Name: blog_article; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE blog_article (
     id integer NOT NULL,
@@ -341,11 +249,8 @@ CREATE TABLE blog_article (
 );
 
 
-ALTER TABLE public.blog_article OWNER TO andrewramos;
 
---
--- Name: blog_article_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE blog_article_id_seq
     START WITH 1
@@ -355,25 +260,16 @@ CREATE SEQUENCE blog_article_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.blog_article_id_seq OWNER TO andrewramos;
 
---
--- Name: blog_article_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE blog_article_id_seq OWNED BY blog_article.id;
 
 
---
--- Name: blog_article_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('blog_article_id_seq', 24, true);
 
 
---
--- Name: blog_casestudy; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE blog_casestudy (
     id integer NOT NULL,
@@ -391,11 +287,8 @@ CREATE TABLE blog_casestudy (
 );
 
 
-ALTER TABLE public.blog_casestudy OWNER TO andrewramos;
 
---
--- Name: blog_casestudy_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE blog_casestudy_id_seq
     START WITH 1
@@ -405,25 +298,16 @@ CREATE SEQUENCE blog_casestudy_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.blog_casestudy_id_seq OWNER TO andrewramos;
 
---
--- Name: blog_casestudy_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE blog_casestudy_id_seq OWNED BY blog_casestudy.id;
 
 
---
--- Name: blog_casestudy_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('blog_casestudy_id_seq', 2, true);
 
 
---
--- Name: blog_image; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE blog_image (
     id integer NOT NULL,
@@ -434,11 +318,8 @@ CREATE TABLE blog_image (
 );
 
 
-ALTER TABLE public.blog_image OWNER TO andrewramos;
 
---
--- Name: blog_image_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE blog_image_id_seq
     START WITH 1
@@ -448,25 +329,16 @@ CREATE SEQUENCE blog_image_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.blog_image_id_seq OWNER TO andrewramos;
 
---
--- Name: blog_image_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE blog_image_id_seq OWNED BY blog_image.id;
 
 
---
--- Name: blog_image_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('blog_image_id_seq', 28, true);
 
 
---
--- Name: blog_quote; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE blog_quote (
     id integer NOT NULL,
@@ -483,11 +355,8 @@ CREATE TABLE blog_quote (
 );
 
 
-ALTER TABLE public.blog_quote OWNER TO andrewramos;
 
---
--- Name: blog_quote_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE blog_quote_id_seq
     START WITH 1
@@ -497,25 +366,16 @@ CREATE SEQUENCE blog_quote_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.blog_quote_id_seq OWNER TO andrewramos;
 
---
--- Name: blog_quote_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE blog_quote_id_seq OWNED BY blog_quote.id;
 
 
---
--- Name: blog_quote_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('blog_quote_id_seq', 5, true);
 
 
---
--- Name: blog_shortpost; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE blog_shortpost (
     id integer NOT NULL,
@@ -532,11 +392,8 @@ CREATE TABLE blog_shortpost (
 );
 
 
-ALTER TABLE public.blog_shortpost OWNER TO andrewramos;
 
---
--- Name: blog_shortpost_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE blog_shortpost_id_seq
     START WITH 1
@@ -546,25 +403,16 @@ CREATE SEQUENCE blog_shortpost_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.blog_shortpost_id_seq OWNER TO andrewramos;
 
---
--- Name: blog_shortpost_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE blog_shortpost_id_seq OWNED BY blog_shortpost.id;
 
 
---
--- Name: blog_shortpost_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('blog_shortpost_id_seq', 12, true);
 
 
---
--- Name: content_frontpagecontent; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE content_frontpagecontent (
     id integer NOT NULL,
@@ -574,11 +422,8 @@ CREATE TABLE content_frontpagecontent (
 );
 
 
-ALTER TABLE public.content_frontpagecontent OWNER TO andrewramos;
 
---
--- Name: content_frontpagecontent_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE content_frontpagecontent_id_seq
     START WITH 1
@@ -588,25 +433,16 @@ CREATE SEQUENCE content_frontpagecontent_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.content_frontpagecontent_id_seq OWNER TO andrewramos;
 
---
--- Name: content_frontpagecontent_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE content_frontpagecontent_id_seq OWNED BY content_frontpagecontent.id;
 
 
---
--- Name: content_frontpagecontent_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('content_frontpagecontent_id_seq', 12, true);
 
 
---
--- Name: django_admin_log; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE django_admin_log (
     id integer NOT NULL,
@@ -621,11 +457,8 @@ CREATE TABLE django_admin_log (
 );
 
 
-ALTER TABLE public.django_admin_log OWNER TO andrewramos;
 
---
--- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE django_admin_log_id_seq
     START WITH 1
@@ -635,25 +468,16 @@ CREATE SEQUENCE django_admin_log_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_admin_log_id_seq OWNER TO andrewramos;
 
---
--- Name: django_admin_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
 
 
---
--- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('django_admin_log_id_seq', 275, true);
 
 
---
--- Name: django_content_type; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE django_content_type (
     id integer NOT NULL,
@@ -663,11 +487,8 @@ CREATE TABLE django_content_type (
 );
 
 
-ALTER TABLE public.django_content_type OWNER TO andrewramos;
 
---
--- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE django_content_type_id_seq
     START WITH 1
@@ -677,25 +498,16 @@ CREATE SEQUENCE django_content_type_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_content_type_id_seq OWNER TO andrewramos;
 
---
--- Name: django_content_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE django_content_type_id_seq OWNED BY django_content_type.id;
 
 
---
--- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('django_content_type_id_seq', 28, true);
 
 
---
--- Name: django_session; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE django_session (
     session_key character varying(40) NOT NULL,
@@ -704,11 +516,8 @@ CREATE TABLE django_session (
 );
 
 
-ALTER TABLE public.django_session OWNER TO andrewramos;
 
---
--- Name: django_site; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
+
 
 CREATE TABLE django_site (
     id integer NOT NULL,
@@ -717,11 +526,8 @@ CREATE TABLE django_site (
 );
 
 
-ALTER TABLE public.django_site OWNER TO andrewramos;
 
---
--- Name: django_site_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE django_site_id_seq
     START WITH 1
@@ -731,25 +537,16 @@ CREATE SEQUENCE django_site_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_site_id_seq OWNER TO andrewramos;
 
---
--- Name: django_site_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE django_site_id_seq OWNED BY django_site.id;
 
 
---
--- Name: django_site_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('django_site_id_seq', 1, true);
 
 
---
--- Name: easy_thumbnails_source; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE easy_thumbnails_source (
     id integer NOT NULL,
@@ -760,11 +557,8 @@ CREATE TABLE easy_thumbnails_source (
 );
 
 
-ALTER TABLE public.easy_thumbnails_source OWNER TO andrewramos;
 
---
--- Name: easy_thumbnails_source_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE easy_thumbnails_source_id_seq
     START WITH 1
@@ -774,25 +568,16 @@ CREATE SEQUENCE easy_thumbnails_source_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.easy_thumbnails_source_id_seq OWNER TO andrewramos;
 
---
--- Name: easy_thumbnails_source_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE easy_thumbnails_source_id_seq OWNED BY easy_thumbnails_source.id;
 
 
---
--- Name: easy_thumbnails_source_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('easy_thumbnails_source_id_seq', 49, true);
 
 
---
--- Name: easy_thumbnails_storage; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE easy_thumbnails_storage (
     id integer NOT NULL,
@@ -801,11 +586,8 @@ CREATE TABLE easy_thumbnails_storage (
 );
 
 
-ALTER TABLE public.easy_thumbnails_storage OWNER TO andrewramos;
 
---
--- Name: easy_thumbnails_storage_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE easy_thumbnails_storage_id_seq
     START WITH 1
@@ -815,25 +597,16 @@ CREATE SEQUENCE easy_thumbnails_storage_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.easy_thumbnails_storage_id_seq OWNER TO andrewramos;
 
---
--- Name: easy_thumbnails_storage_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE easy_thumbnails_storage_id_seq OWNED BY easy_thumbnails_storage.id;
 
 
---
--- Name: easy_thumbnails_storage_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('easy_thumbnails_storage_id_seq', 4, true);
 
 
---
--- Name: easy_thumbnails_thumbnail; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE easy_thumbnails_thumbnail (
     id integer NOT NULL,
@@ -845,11 +618,8 @@ CREATE TABLE easy_thumbnails_thumbnail (
 );
 
 
-ALTER TABLE public.easy_thumbnails_thumbnail OWNER TO andrewramos;
 
---
--- Name: easy_thumbnails_thumbnail_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE easy_thumbnails_thumbnail_id_seq
     START WITH 1
@@ -859,25 +629,16 @@ CREATE SEQUENCE easy_thumbnails_thumbnail_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.easy_thumbnails_thumbnail_id_seq OWNER TO andrewramos;
 
---
--- Name: easy_thumbnails_thumbnail_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE easy_thumbnails_thumbnail_id_seq OWNED BY easy_thumbnails_thumbnail.id;
 
 
---
--- Name: easy_thumbnails_thumbnail_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('easy_thumbnails_thumbnail_id_seq', 63, true);
 
 
---
--- Name: portfolio_category; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE portfolio_category (
     id integer NOT NULL,
@@ -889,11 +650,8 @@ CREATE TABLE portfolio_category (
 );
 
 
-ALTER TABLE public.portfolio_category OWNER TO andrewramos;
 
---
--- Name: portfolio_category_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE portfolio_category_id_seq
     START WITH 1
@@ -903,25 +661,16 @@ CREATE SEQUENCE portfolio_category_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.portfolio_category_id_seq OWNER TO andrewramos;
 
---
--- Name: portfolio_category_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE portfolio_category_id_seq OWNED BY portfolio_category.id;
 
 
---
--- Name: portfolio_category_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('portfolio_category_id_seq', 1, false);
 
 
---
--- Name: portfolio_client; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE portfolio_client (
     id integer NOT NULL,
@@ -929,11 +678,8 @@ CREATE TABLE portfolio_client (
 );
 
 
-ALTER TABLE public.portfolio_client OWNER TO andrewramos;
 
---
--- Name: portfolio_client_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE portfolio_client_id_seq
     START WITH 1
@@ -943,25 +689,16 @@ CREATE SEQUENCE portfolio_client_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.portfolio_client_id_seq OWNER TO andrewramos;
 
---
--- Name: portfolio_client_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE portfolio_client_id_seq OWNED BY portfolio_client.id;
 
 
---
--- Name: portfolio_client_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('portfolio_client_id_seq', 5, true);
 
 
---
--- Name: portfolio_portfoliopiece; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE portfolio_portfoliopiece (
     id integer NOT NULL,
@@ -975,11 +712,8 @@ CREATE TABLE portfolio_portfoliopiece (
 );
 
 
-ALTER TABLE public.portfolio_portfoliopiece OWNER TO andrewramos;
 
---
--- Name: portfolio_portfoliopiece_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE portfolio_portfoliopiece_id_seq
     START WITH 1
@@ -989,25 +723,16 @@ CREATE SEQUENCE portfolio_portfoliopiece_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.portfolio_portfoliopiece_id_seq OWNER TO andrewramos;
 
---
--- Name: portfolio_portfoliopiece_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE portfolio_portfoliopiece_id_seq OWNED BY portfolio_portfoliopiece.id;
 
 
---
--- Name: portfolio_portfoliopiece_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('portfolio_portfoliopiece_id_seq', 18, true);
 
 
---
--- Name: portfolio_project; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE portfolio_project (
     id integer NOT NULL,
@@ -1023,11 +748,8 @@ CREATE TABLE portfolio_project (
 );
 
 
-ALTER TABLE public.portfolio_project OWNER TO andrewramos;
 
---
--- Name: portfolio_project_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE portfolio_project_id_seq
     START WITH 1
@@ -1037,25 +759,16 @@ CREATE SEQUENCE portfolio_project_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.portfolio_project_id_seq OWNER TO andrewramos;
 
---
--- Name: portfolio_project_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE portfolio_project_id_seq OWNED BY portfolio_project.id;
 
 
---
--- Name: portfolio_project_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('portfolio_project_id_seq', 5, true);
 
 
---
--- Name: south_migrationhistory; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE south_migrationhistory (
     id integer NOT NULL,
@@ -1065,11 +778,8 @@ CREATE TABLE south_migrationhistory (
 );
 
 
-ALTER TABLE public.south_migrationhistory OWNER TO andrewramos;
 
---
--- Name: south_migrationhistory_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE south_migrationhistory_id_seq
     START WITH 1
@@ -1079,25 +789,16 @@ CREATE SEQUENCE south_migrationhistory_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.south_migrationhistory_id_seq OWNER TO andrewramos;
 
---
--- Name: south_migrationhistory_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE south_migrationhistory_id_seq OWNED BY south_migrationhistory.id;
 
 
---
--- Name: south_migrationhistory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('south_migrationhistory_id_seq', 3, true);
 
 
---
--- Name: tagging_tag; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE tagging_tag (
     id integer NOT NULL,
@@ -1105,11 +806,8 @@ CREATE TABLE tagging_tag (
 );
 
 
-ALTER TABLE public.tagging_tag OWNER TO andrewramos;
 
---
--- Name: tagging_tag_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE tagging_tag_id_seq
     START WITH 1
@@ -1119,25 +817,16 @@ CREATE SEQUENCE tagging_tag_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.tagging_tag_id_seq OWNER TO andrewramos;
 
---
--- Name: tagging_tag_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE tagging_tag_id_seq OWNED BY tagging_tag.id;
 
 
---
--- Name: tagging_tag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('tagging_tag_id_seq', 15, true);
 
 
---
--- Name: tagging_taggeditem; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE tagging_taggeditem (
     id integer NOT NULL,
@@ -1148,11 +837,8 @@ CREATE TABLE tagging_taggeditem (
 );
 
 
-ALTER TABLE public.tagging_taggeditem OWNER TO andrewramos;
 
---
--- Name: tagging_taggeditem_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE tagging_taggeditem_id_seq
     START WITH 1
@@ -1162,25 +848,16 @@ CREATE SEQUENCE tagging_taggeditem_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.tagging_taggeditem_id_seq OWNER TO andrewramos;
 
---
--- Name: tagging_taggeditem_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE tagging_taggeditem_id_seq OWNED BY tagging_taggeditem.id;
 
 
---
--- Name: tagging_taggeditem_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('tagging_taggeditem_id_seq', 20, true);
 
 
---
--- Name: taggit_tag; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE taggit_tag (
     id integer NOT NULL,
@@ -1189,11 +866,8 @@ CREATE TABLE taggit_tag (
 );
 
 
-ALTER TABLE public.taggit_tag OWNER TO andrewramos;
 
---
--- Name: taggit_tag_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE taggit_tag_id_seq
     START WITH 1
@@ -1203,25 +877,16 @@ CREATE SEQUENCE taggit_tag_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.taggit_tag_id_seq OWNER TO andrewramos;
 
---
--- Name: taggit_tag_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE taggit_tag_id_seq OWNED BY taggit_tag.id;
 
 
---
--- Name: taggit_tag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('taggit_tag_id_seq', 1, false);
 
 
---
--- Name: taggit_taggeditem; Type: TABLE; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE TABLE taggit_taggeditem (
     id integer NOT NULL,
@@ -1231,11 +896,8 @@ CREATE TABLE taggit_taggeditem (
 );
 
 
-ALTER TABLE public.taggit_taggeditem OWNER TO andrewramos;
 
---
--- Name: taggit_taggeditem_id_seq; Type: SEQUENCE; Schema: public; Owner: andrewramos
---
+
 
 CREATE SEQUENCE taggit_taggeditem_id_seq
     START WITH 1
@@ -1245,239 +907,137 @@ CREATE SEQUENCE taggit_taggeditem_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.taggit_taggeditem_id_seq OWNER TO andrewramos;
 
---
--- Name: taggit_taggeditem_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: andrewramos
---
+
 
 ALTER SEQUENCE taggit_taggeditem_id_seq OWNED BY taggit_taggeditem.id;
 
 
---
--- Name: taggit_taggeditem_id_seq; Type: SEQUENCE SET; Schema: public; Owner: andrewramos
---
 
 SELECT pg_catalog.setval('taggit_taggeditem_id_seq', 1, false);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE auth_group ALTER COLUMN id SET DEFAULT nextval('auth_group_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE auth_group_permissions ALTER COLUMN id SET DEFAULT nextval('auth_group_permissions_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE auth_message ALTER COLUMN id SET DEFAULT nextval('auth_message_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE auth_permission ALTER COLUMN id SET DEFAULT nextval('auth_permission_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE auth_user ALTER COLUMN id SET DEFAULT nextval('auth_user_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE auth_user_groups ALTER COLUMN id SET DEFAULT nextval('auth_user_groups_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE auth_user_user_permissions ALTER COLUMN id SET DEFAULT nextval('auth_user_user_permissions_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE blog_article ALTER COLUMN id SET DEFAULT nextval('blog_article_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE blog_casestudy ALTER COLUMN id SET DEFAULT nextval('blog_casestudy_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE blog_image ALTER COLUMN id SET DEFAULT nextval('blog_image_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE blog_quote ALTER COLUMN id SET DEFAULT nextval('blog_quote_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE blog_shortpost ALTER COLUMN id SET DEFAULT nextval('blog_shortpost_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE content_frontpagecontent ALTER COLUMN id SET DEFAULT nextval('content_frontpagecontent_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE django_admin_log ALTER COLUMN id SET DEFAULT nextval('django_admin_log_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE django_content_type ALTER COLUMN id SET DEFAULT nextval('django_content_type_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE django_site ALTER COLUMN id SET DEFAULT nextval('django_site_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE easy_thumbnails_source ALTER COLUMN id SET DEFAULT nextval('easy_thumbnails_source_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE easy_thumbnails_storage ALTER COLUMN id SET DEFAULT nextval('easy_thumbnails_storage_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE easy_thumbnails_thumbnail ALTER COLUMN id SET DEFAULT nextval('easy_thumbnails_thumbnail_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE portfolio_category ALTER COLUMN id SET DEFAULT nextval('portfolio_category_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE portfolio_client ALTER COLUMN id SET DEFAULT nextval('portfolio_client_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE portfolio_portfoliopiece ALTER COLUMN id SET DEFAULT nextval('portfolio_portfoliopiece_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE portfolio_project ALTER COLUMN id SET DEFAULT nextval('portfolio_project_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE south_migrationhistory ALTER COLUMN id SET DEFAULT nextval('south_migrationhistory_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE tagging_tag ALTER COLUMN id SET DEFAULT nextval('tagging_tag_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE tagging_taggeditem ALTER COLUMN id SET DEFAULT nextval('tagging_taggeditem_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE taggit_tag ALTER COLUMN id SET DEFAULT nextval('taggit_tag_id_seq'::regclass);
 
 
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE taggit_taggeditem ALTER COLUMN id SET DEFAULT nextval('taggit_taggeditem_id_seq'::regclass);
 
 
---
--- Data for Name: auth_group; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 
 
---
--- Data for Name: auth_group_permissions; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 
 
---
--- Data for Name: auth_message; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 
 
---
--- Data for Name: auth_permission; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO auth_permission VALUES (1, 'Can add permission', 1, 'add_permission');
 INSERT INTO auth_permission VALUES (2, 'Can change permission', 1, 'change_permission');
@@ -1565,24 +1125,15 @@ INSERT INTO auth_permission VALUES (83, 'Can change Tagged Item', 28, 'change_ta
 INSERT INTO auth_permission VALUES (84, 'Can delete Tagged Item', 28, 'delete_taggeditem');
 
 
---
--- Data for Name: auth_user; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO auth_user VALUES (1, 'mikemeyer', 'Michael', 'Meyer', '[REDACTED]', '[REDACTED]', true, true, true, '2011-06-23 21:30:38.33026-07', '2010-08-10 21:43:32-07');
 INSERT INTO auth_user VALUES (4, 'demouser', '', '', '', '[REDACTED]', false, true, false, '2011-02-07 14:23:00.231517-08', '2011-02-07 14:23:00.231536-08');
 INSERT INTO auth_user VALUES (2, 'andrew', 'Andrew', 'Ramos', '[REDACTED]', '[REDACTED]', true, true, false, '2011-06-17 15:40:38.531654-07', '2010-08-10 22:09:37-07');
 
 
---
--- Data for Name: auth_user_groups; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 
 
---
--- Data for Name: auth_user_user_permissions; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO auth_user_user_permissions VALUES (64, 2, 13);
 INSERT INTO auth_user_user_permissions VALUES (65, 2, 14);
@@ -1649,9 +1200,6 @@ INSERT INTO auth_user_user_permissions VALUES (125, 2, 77);
 INSERT INTO auth_user_user_permissions VALUES (126, 2, 78);
 
 
---
--- Data for Name: blog_article; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO blog_article VALUES (1, 'The Glass Bottle Effect', 'glass-bottle-effect', 'The presentation of a product is so important. How it looks and feels conveys a level of quality about the product and what you can expect from it. But even how you''re introduced to it can play into your evaluation of the product or brand. While in Prague this last summer, we noticed there seemed to be much less advertising than what we are used to Stateside. Instead of brands being able to *tell* me how good they were, they had to *prove* it to me.
 
@@ -1664,9 +1212,9 @@ INSERT INTO blog_article VALUES (9, 'iTV and the Apple Cloud', 'apple-cloud', 'A
 There are a few areas it stumbles in though, one being storage. I rarely watch a tv show a second time, but also have a hard time deleting that content, so it sits on the device taking up valuable space. Movies take up even more space and we only watch them a few times a year. I see a disconnect there. Is there any real value in owning the physical data, whether disc or digital? Personally, I have no interest in having tv shows and movies stored locally. I suppose you could argue music is a little different since you may listen to it more often than you would watch videos, but even then the music I''m listening to right now is streaming via Pandora. If the rumors are true, we''ll soon be able to upload our music, tv shows and movies to an account on the Apple Cloud and then access it from a computer, iTV, iPad, etc while having the *option* to save it to a device if needed. You then have access to all your purchased content, without sacrificing hard drive space. With companies like Pandora and Hulu leading the way, the idea of local media storage is quickly becoming a thing of the past.
 ', '<p>As an Apple TV user for the last two years, it''s been particularly interesting to hear the speculation of an updated device. Overall, I''ve enjoyed the experience of the Apple TV. It has a relatively limited offering, but what it does, it does well. It''s allowed us to comfortably ditch cable for the last two years and still enjoy the shows we like, when we want them—with no commercials. The tv shows and movies are ready to watch within seconds, so it''s all around pretty enjoyable. </p>
 <p>There are a few areas it stumbles in though, one being storage. I rarely watch a tv show a second time, but also have a hard time deleting that content, so it sits on the device taking up valuable space. Movies take up even more space and we only watch them a few times a year. I see a disconnect there. Is there any real value in owning the physical data, whether disc or digital? Personally, I have no interest in having tv shows and movies stored locally. I suppose you could argue music is a little different since you may listen to it more often than you would watch videos, but even then the music I''m listening to right now is streaming via Pandora. If the rumors are true, we''ll soon be able to upload our music, tv shows and movies to an account on the Apple Cloud and then access it from a computer, iTV, iPad, etc while having the <em>option</em> to save it to a device if needed. You then have access to all your purchased content, without sacrificing hard drive space. With companies like Pandora and Hulu leading the way, the idea of local media storage is quickly becoming a thing of the past.</p>', false, '2010-08-31 08:23:13.644829-07', '2011-01-25 13:07:08.134102-08', '2010-08-31 08:16:50-07', 'p', '', true, '', 'f');
-INSERT INTO blog_article VALUES (3, 'Specialty Shops', 'specialty-shops', 'Most Saturday mornings I can be found at my city''s Downtown Market. Loads of fresh food available directly from the local farmers themselves. I was thinking this week how each booth there is like it''s own little specialty shop: They''re focused on a small niche, passionate about what they are doing, and are intensely focused on providing value to their customers. I love that. Other shops or stores may offer more products--they may even cost less--but that doesn''t mean it''s valuable. Honestly, It''s tough to match the passion for quality and the deep desire to make something better that comes with running a small shop. 
+INSERT INTO blog_article VALUES (3, 'Specialty Shops', 'specialty-shops', 'Most Saturday mornings I can be found at my city''s Downtown Market. Loads of fresh food available directly from the local farmers themselves. I was thinking this week how each booth there is like it''s own little specialty shop: They''re focused on a small niche, passionate about what they are doing, and are intensely focused on providing value to their customers. I love that. Other shops or stores may offer more productfor quality and the deep desire to make something better that comes with running a small shop. 
 
-The same thing goes for my business. I don''t want to be the shop that offers everything possible. Generic products and ideas wrapped with a shiny ribbon of business jargon. I want to provide a niche offering of identity and illustration that''s focused on the client, meeting them where they are at and helping them move forward. Carefully crafting a brand that pays attention to the small things, all those little details that add up to so much—because that''s *worth* something. Because that *is* valuable.', '<p>Most Saturday mornings I can be found at my city''s Downtown Market. Loads of fresh food available directly from the local farmers themselves. I was thinking this week how each booth there is like it''s own little specialty shop: They''re focused on a small niche, passionate about what they are doing, and are intensely focused on providing value to their customers. I love that. Other shops or stores may offer more products--they may even cost less--but that doesn''t mean it''s valuable. Honestly, It''s tough to match the passion for quality and the deep desire to make something better that comes with running a small shop. </p>
+The same thing goes for my business. I don''t want to be the shop that offers everything possible. Generic products and ideas wrapped with a shiny ribbon of business jargon. I want to provide a niche offering of identity and illustration that''s focused on the client, meeting them where they are at and helping them move forward. Carefully crafting a brand that pays attention to the small things, all those little details that add up to so much—because that''s *worth* something. Because that *is* valuable.', '<p>Most Saturday mornings I can be found at my city''s Downtown Market. Loads of fresh food available directly from the local farmers themselves. I was thinking this week how each booth there is like it''s own little specialty shop: They''re focused on a small niche, passionate about what they are doing, and are intensely focused on providing value to their customers. I love that. Other shops or stores may offer more productand the deep desire to make something better that comes with running a small shop. </p>
 <p>The same thing goes for my business. I don''t want to be the shop that offers everything possible. Generic products and ideas wrapped with a shiny ribbon of business jargon. I want to provide a niche offering of identity and illustration that''s focused on the client, meeting them where they are at and helping them move forward. Carefully crafting a brand that pays attention to the small things, all those little details that add up to so much—because that''s <em>worth</em> something. Because that <em>is</em> valuable.</p>', false, '2010-08-11 17:01:50.258669-07', '2011-01-25 13:07:08.526992-08', '2010-08-08 16:58:49-07', 'p', '', true, '', 'f');
 INSERT INTO blog_article VALUES (8, 'Alarm', 'alarm', '', '', false, '2010-08-26 11:05:58.991378-07', '2010-08-27 11:11:54.742254-07', '2010-08-26 11:05:09-07', 'p', '', false, '', 'f');
 INSERT INTO blog_article VALUES (4, 'Inspiration: Opened House', 'inspiration-opened-house', '[Via](http://www.dwell.com/articles/Opened-House.html)', '<p><a href="http://www.dwell.com/articles/Opened-House.html">Via</a></p>', false, '2010-08-20 12:00:34.249118-07', '2010-08-27 11:12:12.266877-07', '2010-08-20 11:56:02-07', 'p', '', false, '', 'p');
@@ -1737,9 +1285,6 @@ Fast-forward four years and life looks a bit different. Goals have changed, my b
 <p>Fast-forward four years and life looks a bit different. Goals have changed, my business is growing (read: <em>I have no time</em>) and weeks are passing faster than you can spend them. My once prominent dream of a restored CRX has been overshadowed by new and exciting things. The rebuilt D16 engine that was last swapped in will now power a pretty little red 3rd Gen hatchback, and all the parts I had sourced have gone to new homes. All that''s left is the Si emblem that once adorned the back hatch, a memento of my younger days and my first car.</p>', true, '2011-06-10 13:36:45.525904-07', '2011-06-14 09:21:12.04629-07', '2011-06-10 13:23:47-07', 'p', '', true, '', 'f');
 
 
---
--- Data for Name: blog_casestudy; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO blog_casestudy VALUES (2, 'Southern Savers', 'southern-savers', 'Southern Savers is a site that makes saving money on groceries easy and rewarding. When Jenny Martin decided it was time to give the brand a new look, she first tapped Matthew Smith of Squared Eye for the web design, who then brought me in for the identity and illustration. What a great project to work on! Jenny has done such a good job of building up this business and works so hard to make saving money easy for the rest of us. She''s passionate about her work and loves what she does so I was thrilled to be a part of the project.
 
@@ -1774,9 +1319,6 @@ Print Collateral: <a href="http://www.elizabethramos.com/">Elizabeth Ramos</a><b
 Project Management: <a href="http://www.twitter.com/jaminjantz">Jamin Jantz</a><br><br></p>', false, '2010-09-08 13:05:35.562288-07', '2011-01-25 13:07:21.52122-08', '2010-09-08 12:52:58-07', 'p', '', 'f');
 
 
---
--- Data for Name: blog_image; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO blog_image VALUES (1, 'uploads/blog/Travel.jpg', 16, 2);
 INSERT INTO blog_image VALUES (3, 'uploads/blog/Saturday-Market-peaches.jpg', 16, 3);
@@ -1803,9 +1345,6 @@ INSERT INTO blog_image VALUES (28, 'uploads/blog/GoodbyeCRX_3.jpg', 16, 24);
 INSERT INTO blog_image VALUES (27, 'uploads/blog/Wren-Launch2.jpg', 16, 23);
 
 
---
--- Data for Name: blog_quote; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO blog_quote VALUES (2, 'Decisions are progress', 'decisions-are-progress', 'You can''t build on top of "We''ll decide later," but you can build on top of "Done." Decisions are progress.', '<p>You can''t build on top of "We''ll decide later," but you can build on top of "Done." Decisions are progress.</p>', false, '2010-08-18 06:29:41.14096-07', '2010-08-21 21:15:41.340785-07', '2010-08-18 06:24:29-07', 'p', ' <a href="http://37signals.com/rework/">Rework</a>, 37 Signals');
 INSERT INTO blog_quote VALUES (1, 'The Scariest Moment', 'scariest-moment', 'The scariest moment is always just before you start.', '<p>The scariest moment is always just before you start.</p>', false, '2010-08-11 15:52:37.077108-07', '2010-09-13 11:00:29.494973-07', '2010-08-06 15:51:07-07', 'p', 'Stephen King');
@@ -1814,9 +1353,6 @@ INSERT INTO blog_quote VALUES (5, 'Texting & Driving', 'texting-driving', 'Maybe
 INSERT INTO blog_quote VALUES (4, 'The Art of Living', 'the-art-of-living', 'A master in the art of living draws no sharp distinction between his work and his play; his labor and his leisure; his mind and his body; his education and his recreation. He hardly knows which is which. He simply pursues his vision of excellence through whatever he is doing, and leaves others to determine whether he is working or playing. To himself, he always appears to be doing both.', '<p>A master in the art of living draws no sharp distinction between his work and his play; his labor and his leisure; his mind and his body; his education and his recreation. He hardly knows which is which. He simply pursues his vision of excellence through whatever he is doing, and leaves others to determine whether he is working or playing. To himself, he always appears to be doing both.</p>', false, '2011-05-22 11:56:39.262025-07', '2011-06-14 09:22:01.042328-07', '2011-05-22 11:55:03-07', 'p', 'François Auguste René Chateaubriand');
 
 
---
--- Data for Name: blog_shortpost; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO blog_shortpost VALUES (1, 'Dropbox', 'dropbox', 'If you haven''t tried Dropbox yet, I highly recommend it. It''s a great way to share files with others and backup your work. Also, sign up via this link and we''ll both get some complimentary MBs:', '<p>If you haven''t tried Dropbox yet, I highly recommend it. It''s a great way to share files with others and backup your work. Also, sign up via this link and we''ll both get some complimentary MBs:</p>', true, '2010-08-11 15:55:07.325778-07', '2010-08-12 12:43:18.529578-07', '2010-08-09 15:54:08-07', 'p', 'http://tiny.cc/morespace');
 INSERT INTO blog_shortpost VALUES (3, 'Today I wish I had a bicycle', 'today-i-wish-i-had-bicycle', 'Not because the weather is particularly beautiful, although it is a fine day out. And not for the sake of exercise, even though it''s a great benefit. Today I simply want to feel the wind rushing against my face as I peddle as fast and hard as I''m able, stopping only when I''m completely out of breath. Today a car feels like cheating, like I''m missing the point of movement.', '<p>Not because the weather is particularly beautiful, although it is a fine day out. And not for the sake of exercise, even though it''s a great benefit. Today I simply want to feel the wind rushing against my face as I peddle as fast and hard as I''m able, stopping only when I''m completely out of breath. Today a car feels like cheating, like I''m missing the point of movement.</p>', false, '2011-04-26 07:58:34.571282-07', '2011-04-26 08:00:14.140928-07', '2011-04-26 07:49:27-07', 'p', '');
@@ -1828,9 +1364,6 @@ In my mind, I fear the smoke monster is coming.', '<p>Every once in a while, I c
 In my mind, I fear the smoke monster is coming.</p>', false, '2011-06-03 10:06:06.901961-07', '2011-06-03 10:13:35.934263-07', '2011-06-03 09:57:14-07', 'p', '');
 
 
---
--- Data for Name: content_frontpagecontent; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO content_frontpagecontent VALUES (1, 'uploads/front-page/shot_1279813053.png', 'http://dribbble.com/shots/37234-Keys', false);
 INSERT INTO content_frontpagecontent VALUES (2, 'uploads/front-page/shot_1281106568.png', 'http://dribbble.com/shots/42521-The-Trappe-Door-Identity-In-Progress', false);
@@ -1842,9 +1375,6 @@ INSERT INTO content_frontpagecontent VALUES (10, 'uploads/front-page/Screen_shot
 INSERT INTO content_frontpagecontent VALUES (12, 'uploads/front-page/Screen_shot_2011-04-13_at_3.41.07_PM_1.png', 'http://drbl.in/bcQD', true);
 
 
---
--- Data for Name: django_admin_log; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO django_admin_log VALUES (1, '2010-08-10 21:57:57.040192-07', 1, 24, '1', 'About (about)', 1, '');
 INSERT INTO django_admin_log VALUES (2, '2010-08-10 21:58:18.982843-07', 1, 7, '1', 'andrewramos.com', 2, 'Changed domain and name.');
@@ -2123,9 +1653,6 @@ INSERT INTO django_admin_log VALUES (274, '2011-06-21 13:52:00.535218-07', 2, 16
 INSERT INTO django_admin_log VALUES (275, '2011-06-21 13:57:11.911444-07', 2, 16, '23', 'Introducing Wren for Mac', 2, 'No fields changed.');
 
 
---
--- Data for Name: django_content_type; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO django_content_type VALUES (1, 'permission', 'auth', 'permission');
 INSERT INTO django_content_type VALUES (2, 'group', 'auth', 'group');
@@ -2157,9 +1684,6 @@ INSERT INTO django_content_type VALUES (27, 'Tag', 'taggit', 'tag');
 INSERT INTO django_content_type VALUES (28, 'Tagged Item', 'taggit', 'taggeditem');
 
 
---
--- Data for Name: django_session; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO django_session VALUES ('42472dd8e346f83e62e1483a9221c0dc', 'ZjliOWE5MjY3Yzc4YzJjZTUzNzc0ZGFiYmM2MzA1MmMzYjBmMDY0YzqAAn1xAVUKdGVzdGNvb2tp
 ZXECVQZ3b3JrZWRxA3Mu
@@ -2331,16 +1855,10 @@ VQ1fYXV0aF91c2VyX2lkcQRLAnUu
 ', '2011-05-27 10:42:43.149931-07');
 
 
---
--- Data for Name: django_site; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO django_site VALUES (1, 'andrewramos.com', 'AndrewRamos.com');
 
 
---
--- Data for Name: easy_thumbnails_source; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO easy_thumbnails_source VALUES (1, 'uploads/front-page/shot_1281221339.png', '2010-08-11 16:05:46-07', 1, 'df2a8819fc7f348e9715cca951e8e5df');
 INSERT INTO easy_thumbnails_source VALUES (2, 'uploads/front-page/Process-2.jpg', '2010-08-11 16:08:17-07', 1, 'df2a8819fc7f348e9715cca951e8e5df');
@@ -2377,9 +1895,6 @@ INSERT INTO easy_thumbnails_source VALUES (32, 'uploads/blog/Traffic-Light.jpg',
 INSERT INTO easy_thumbnails_source VALUES (33, 'uploads/blog/Traffic-Light_1.jpg', '2010-10-09 07:57:24-07', 3, 'df2a8819fc7f348e9715cca951e8e5df');
 
 
---
--- Data for Name: easy_thumbnails_storage; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO easy_thumbnails_storage VALUES (1, '83f1ae0d72fa22720588d828bdf569ab', 'ccopy_reg
 _reconstructor
@@ -2487,9 +2002,6 @@ p9
 sb.');
 
 
---
--- Data for Name: easy_thumbnails_thumbnail; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO easy_thumbnails_thumbnail VALUES (1, 'resized/uploads/front-page/r_shot_1281221339.png.100x100_q85.png', '2010-08-11 16:05:47-07', 1, 2, 'df2a8819fc7f348e9715cca951e8e5df');
 INSERT INTO easy_thumbnails_thumbnail VALUES (2, 'resized/uploads/front-page/r_shot_1281221339.png.220x800_q85.png', '2010-08-11 16:07:38-07', 1, 2, 'df2a8819fc7f348e9715cca951e8e5df');
@@ -2556,15 +2068,9 @@ INSERT INTO easy_thumbnails_thumbnail VALUES (62, 'resized/uploads/blog/r_Traffi
 INSERT INTO easy_thumbnails_thumbnail VALUES (63, 'resized/uploads/blog/r_Traffic-Light_1.jpg.480x440_q85_crop_upscale.png', '2010-10-09 07:57:45-07', 33, 4, 'df2a8819fc7f348e9715cca951e8e5df');
 
 
---
--- Data for Name: portfolio_category; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 
 
---
--- Data for Name: portfolio_client; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO portfolio_client VALUES (1, 'Personal');
 INSERT INTO portfolio_client VALUES (2, 'The Trappe Door');
@@ -2573,9 +2079,6 @@ INSERT INTO portfolio_client VALUES (4, 'Southern Savers');
 INSERT INTO portfolio_client VALUES (5, 'Parachute Clothing');
 
 
---
--- Data for Name: portfolio_portfoliopiece; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO portfolio_portfoliopiece VALUES (2, 'uploads/portfolio/Shopping-Cart.jpg', 20, 1, '2010-08-11 16:13:43.275679-07', '2010-08-11 21:35:33.341876-07', 2);
 INSERT INTO portfolio_portfoliopiece VALUES (1, 'uploads/portfolio/Start-Copy.jpg', 20, 1, '2010-08-11 16:13:43.23667-07', '2010-08-11 22:57:28.62863-07', 1);
@@ -2595,9 +2098,6 @@ INSERT INTO portfolio_portfoliopiece VALUES (17, 'uploads/portfolio/Parachute2.j
 INSERT INTO portfolio_portfoliopiece VALUES (18, 'uploads/portfolio/Parachute3.jpg', 20, 5, '2011-02-04 13:44:48.286859-08', '2011-02-04 13:46:08.83945-08', 3);
 
 
---
--- Data for Name: portfolio_project; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO portfolio_project VALUES (2, 'The Trappe Door', 'Identity', 'trappe-door-branding', 2, 'p', 'f', NULL, '2011-01-25 09:09:25.659888-08', '2011-01-25 12:27:05.480123-08');
 INSERT INTO portfolio_project VALUES (1, 'Teaser Images', '', 'teaser-images', 1, 'd', 'p', NULL, '2010-08-11 16:13:43.160903-07', '2011-01-25 12:27:47.97157-08');
@@ -2606,780 +2106,470 @@ INSERT INTO portfolio_project VALUES (4, 'Southern Savers', 'Identity', 'souther
 INSERT INTO portfolio_project VALUES (5, 'Parachute Clothing', 'Identity, Website', 'parachute-clothing', 5, 'p', 'f', NULL, '2011-02-04 13:44:48.183705-08', '2011-02-04 13:52:12.088292-08');
 
 
---
--- Data for Name: south_migrationhistory; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 INSERT INTO south_migrationhistory VALUES (1, 'blog', '0001_initial', '2011-06-28 03:54:16.910535-07');
 INSERT INTO south_migrationhistory VALUES (2, 'portfolio', '0001_initial', '2011-06-28 03:54:16.917434-07');
 INSERT INTO south_migrationhistory VALUES (3, 'content', '0001_initial', '2011-06-28 03:54:16.92165-07');
 
 
---
--- Data for Name: tagging_tag; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 
 
---
--- Data for Name: tagging_taggeditem; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 
 
---
--- Data for Name: taggit_tag; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 
 
---
--- Data for Name: taggit_taggeditem; Type: TABLE DATA; Schema: public; Owner: andrewramos
---
 
 
 
---
--- Name: auth_group_name_key; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY auth_group
     ADD CONSTRAINT auth_group_name_key UNIQUE (name);
 
 
---
--- Name: auth_group_permissions_group_id_key; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY auth_group_permissions
     ADD CONSTRAINT auth_group_permissions_group_id_key UNIQUE (group_id, permission_id);
 
 
---
--- Name: auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY auth_group_permissions
     ADD CONSTRAINT auth_group_permissions_pkey PRIMARY KEY (id);
 
 
---
--- Name: auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY auth_group
     ADD CONSTRAINT auth_group_pkey PRIMARY KEY (id);
 
 
---
--- Name: auth_message_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY auth_message
     ADD CONSTRAINT auth_message_pkey PRIMARY KEY (id);
 
 
---
--- Name: auth_permission_content_type_id_key; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY auth_permission
     ADD CONSTRAINT auth_permission_content_type_id_key UNIQUE (content_type_id, codename);
 
 
---
--- Name: auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY auth_permission
     ADD CONSTRAINT auth_permission_pkey PRIMARY KEY (id);
 
 
---
--- Name: auth_user_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY auth_user_groups
     ADD CONSTRAINT auth_user_groups_pkey PRIMARY KEY (id);
 
 
---
--- Name: auth_user_groups_user_id_key; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY auth_user_groups
     ADD CONSTRAINT auth_user_groups_user_id_key UNIQUE (user_id, group_id);
 
 
---
--- Name: auth_user_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY auth_user
     ADD CONSTRAINT auth_user_pkey PRIMARY KEY (id);
 
 
---
--- Name: auth_user_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY auth_user_user_permissions
     ADD CONSTRAINT auth_user_user_permissions_pkey PRIMARY KEY (id);
 
 
---
--- Name: auth_user_user_permissions_user_id_key; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY auth_user_user_permissions
     ADD CONSTRAINT auth_user_user_permissions_user_id_key UNIQUE (user_id, permission_id);
 
 
---
--- Name: auth_user_username_key; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY auth_user
     ADD CONSTRAINT auth_user_username_key UNIQUE (username);
 
 
---
--- Name: blog_article_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY blog_article
     ADD CONSTRAINT blog_article_pkey PRIMARY KEY (id);
 
 
---
--- Name: blog_article_slug_key; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY blog_article
     ADD CONSTRAINT blog_article_slug_key UNIQUE (slug);
 
 
---
--- Name: blog_casestudy_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY blog_casestudy
     ADD CONSTRAINT blog_casestudy_pkey PRIMARY KEY (id);
 
 
---
--- Name: blog_casestudy_slug_key; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY blog_casestudy
     ADD CONSTRAINT blog_casestudy_slug_key UNIQUE (slug);
 
 
---
--- Name: blog_image_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY blog_image
     ADD CONSTRAINT blog_image_pkey PRIMARY KEY (id);
 
 
---
--- Name: blog_quote_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY blog_quote
     ADD CONSTRAINT blog_quote_pkey PRIMARY KEY (id);
 
 
---
--- Name: blog_quote_slug_key; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY blog_quote
     ADD CONSTRAINT blog_quote_slug_key UNIQUE (slug);
 
 
---
--- Name: blog_shortpost_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY blog_shortpost
     ADD CONSTRAINT blog_shortpost_pkey PRIMARY KEY (id);
 
 
---
--- Name: blog_shortpost_slug_key; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY blog_shortpost
     ADD CONSTRAINT blog_shortpost_slug_key UNIQUE (slug);
 
 
---
--- Name: content_frontpagecontent_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY content_frontpagecontent
     ADD CONSTRAINT content_frontpagecontent_pkey PRIMARY KEY (id);
 
 
---
--- Name: django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY django_admin_log
     ADD CONSTRAINT django_admin_log_pkey PRIMARY KEY (id);
 
 
---
--- Name: django_content_type_app_label_key; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY django_content_type
     ADD CONSTRAINT django_content_type_app_label_key UNIQUE (app_label, model);
 
 
---
--- Name: django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY django_content_type
     ADD CONSTRAINT django_content_type_pkey PRIMARY KEY (id);
 
 
---
--- Name: django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY django_session
     ADD CONSTRAINT django_session_pkey PRIMARY KEY (session_key);
 
 
---
--- Name: django_site_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY django_site
     ADD CONSTRAINT django_site_pkey PRIMARY KEY (id);
 
 
---
--- Name: easy_thumbnails_source_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY easy_thumbnails_source
     ADD CONSTRAINT easy_thumbnails_source_pkey PRIMARY KEY (id);
 
 
---
--- Name: easy_thumbnails_storage_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY easy_thumbnails_storage
     ADD CONSTRAINT easy_thumbnails_storage_pkey PRIMARY KEY (id);
 
 
---
--- Name: easy_thumbnails_thumbnail_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY easy_thumbnails_thumbnail
     ADD CONSTRAINT easy_thumbnails_thumbnail_pkey PRIMARY KEY (id);
 
 
---
--- Name: portfolio_category_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY portfolio_category
     ADD CONSTRAINT portfolio_category_pkey PRIMARY KEY (id);
 
 
---
--- Name: portfolio_client_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY portfolio_client
     ADD CONSTRAINT portfolio_client_pkey PRIMARY KEY (id);
 
 
---
--- Name: portfolio_portfoliopiece_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY portfolio_portfoliopiece
     ADD CONSTRAINT portfolio_portfoliopiece_pkey PRIMARY KEY (id);
 
 
---
--- Name: portfolio_project_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY portfolio_project
     ADD CONSTRAINT portfolio_project_pkey PRIMARY KEY (id);
 
 
---
--- Name: south_migrationhistory_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY south_migrationhistory
     ADD CONSTRAINT south_migrationhistory_pkey PRIMARY KEY (id);
 
 
---
--- Name: tagging_tag_name_key; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY tagging_tag
     ADD CONSTRAINT tagging_tag_name_key UNIQUE (name);
 
 
---
--- Name: tagging_tag_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY tagging_tag
     ADD CONSTRAINT tagging_tag_pkey PRIMARY KEY (id);
 
 
---
--- Name: tagging_taggeditem_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY tagging_taggeditem
     ADD CONSTRAINT tagging_taggeditem_pkey PRIMARY KEY (id);
 
 
---
--- Name: tagging_taggeditem_tag_id_key; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY tagging_taggeditem
     ADD CONSTRAINT tagging_taggeditem_tag_id_key UNIQUE (tag_id, content_type_id, object_id);
 
 
---
--- Name: taggit_tag_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY taggit_tag
     ADD CONSTRAINT taggit_tag_pkey PRIMARY KEY (id);
 
 
---
--- Name: taggit_tag_slug_key; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY taggit_tag
     ADD CONSTRAINT taggit_tag_slug_key UNIQUE (slug);
 
 
---
--- Name: taggit_taggeditem_pkey; Type: CONSTRAINT; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 ALTER TABLE ONLY taggit_taggeditem
     ADD CONSTRAINT taggit_taggeditem_pkey PRIMARY KEY (id);
 
 
---
--- Name: auth_group_permissions_group_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX auth_group_permissions_group_id ON auth_group_permissions USING btree (group_id);
 
 
---
--- Name: auth_group_permissions_permission_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX auth_group_permissions_permission_id ON auth_group_permissions USING btree (permission_id);
 
 
---
--- Name: auth_message_user_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX auth_message_user_id ON auth_message USING btree (user_id);
 
 
---
--- Name: auth_permission_content_type_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX auth_permission_content_type_id ON auth_permission USING btree (content_type_id);
 
 
---
--- Name: auth_user_groups_group_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX auth_user_groups_group_id ON auth_user_groups USING btree (group_id);
 
 
---
--- Name: auth_user_groups_user_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX auth_user_groups_user_id ON auth_user_groups USING btree (user_id);
 
 
---
--- Name: auth_user_user_permissions_permission_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX auth_user_user_permissions_permission_id ON auth_user_user_permissions USING btree (permission_id);
 
 
---
--- Name: auth_user_user_permissions_user_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX auth_user_user_permissions_user_id ON auth_user_user_permissions USING btree (user_id);
 
 
---
--- Name: blog_image_content_type_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX blog_image_content_type_id ON blog_image USING btree (content_type_id);
 
 
---
--- Name: django_admin_log_content_type_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX django_admin_log_content_type_id ON django_admin_log USING btree (content_type_id);
 
 
---
--- Name: django_admin_log_user_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX django_admin_log_user_id ON django_admin_log USING btree (user_id);
 
 
---
--- Name: easy_thumbnails_source_name; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX easy_thumbnails_source_name ON easy_thumbnails_source USING btree (name);
 
 
---
--- Name: easy_thumbnails_source_storage_new_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX easy_thumbnails_source_storage_new_id ON easy_thumbnails_source USING btree (storage_id);
 
 
---
--- Name: easy_thumbnails_storagenew_hash; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX easy_thumbnails_storagenew_hash ON easy_thumbnails_storage USING btree (hash);
 
 
---
--- Name: easy_thumbnails_storagenew_hash_like; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX easy_thumbnails_storagenew_hash_like ON easy_thumbnails_storage USING btree (hash varchar_pattern_ops);
 
 
---
--- Name: easy_thumbnails_thumbnail_name; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX easy_thumbnails_thumbnail_name ON easy_thumbnails_thumbnail USING btree (name);
 
 
---
--- Name: easy_thumbnails_thumbnail_source_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX easy_thumbnails_thumbnail_source_id ON easy_thumbnails_thumbnail USING btree (source_id);
 
 
---
--- Name: easy_thumbnails_thumbnail_storage_new_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX easy_thumbnails_thumbnail_storage_new_id ON easy_thumbnails_thumbnail USING btree (storage_id);
 
 
---
--- Name: portfolio_category_content_type_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX portfolio_category_content_type_id ON portfolio_category USING btree (content_type_id);
 
 
---
--- Name: portfolio_portfoliopiece_content_type_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX portfolio_portfoliopiece_content_type_id ON portfolio_portfoliopiece USING btree (content_type_id);
 
 
---
--- Name: portfolio_project_case_study_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX portfolio_project_case_study_id ON portfolio_project USING btree (case_study_id);
 
 
---
--- Name: portfolio_project_client_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX portfolio_project_client_id ON portfolio_project USING btree (client_id);
 
 
---
--- Name: portfolio_project_slug; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX portfolio_project_slug ON portfolio_project USING btree (slug);
 
 
---
--- Name: portfolio_project_slug_like; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX portfolio_project_slug_like ON portfolio_project USING btree (slug varchar_pattern_ops);
 
 
---
--- Name: tagging_taggeditem_content_type_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX tagging_taggeditem_content_type_id ON tagging_taggeditem USING btree (content_type_id);
 
 
---
--- Name: tagging_taggeditem_object_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX tagging_taggeditem_object_id ON tagging_taggeditem USING btree (object_id);
 
 
---
--- Name: tagging_taggeditem_tag_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX tagging_taggeditem_tag_id ON tagging_taggeditem USING btree (tag_id);
 
 
---
--- Name: taggit_taggeditem_content_type_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX taggit_taggeditem_content_type_id ON taggit_taggeditem USING btree (content_type_id);
 
 
---
--- Name: taggit_taggeditem_object_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX taggit_taggeditem_object_id ON taggit_taggeditem USING btree (object_id);
 
 
---
--- Name: taggit_taggeditem_tag_id; Type: INDEX; Schema: public; Owner: andrewramos; Tablespace: 
---
 
 CREATE INDEX taggit_taggeditem_tag_id ON taggit_taggeditem USING btree (tag_id);
 
 
---
--- Name: auth_group_permissions_permission_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY auth_group_permissions
     ADD CONSTRAINT auth_group_permissions_permission_id_fkey FOREIGN KEY (permission_id) REFERENCES auth_permission(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: auth_message_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY auth_message
     ADD CONSTRAINT auth_message_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: auth_user_groups_group_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY auth_user_groups
     ADD CONSTRAINT auth_user_groups_group_id_fkey FOREIGN KEY (group_id) REFERENCES auth_group(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: auth_user_user_permissions_permission_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY auth_user_user_permissions
     ADD CONSTRAINT auth_user_user_permissions_permission_id_fkey FOREIGN KEY (permission_id) REFERENCES auth_permission(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: case_study_id_refs_id_2a8846430c478604; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY portfolio_project
     ADD CONSTRAINT case_study_id_refs_id_2a8846430c478604 FOREIGN KEY (case_study_id) REFERENCES blog_casestudy(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: client_id_refs_id_4c30a54fdcc44ebe; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY portfolio_project
     ADD CONSTRAINT client_id_refs_id_4c30a54fdcc44ebe FOREIGN KEY (client_id) REFERENCES portfolio_client(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: content_type_id_refs_id_547e0b2bfe6df27f; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY portfolio_portfoliopiece
     ADD CONSTRAINT content_type_id_refs_id_547e0b2bfe6df27f FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: content_type_id_refs_id_669a34ef66f6ddaf; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY portfolio_category
     ADD CONSTRAINT content_type_id_refs_id_669a34ef66f6ddaf FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: content_type_id_refs_id_728de91f; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY auth_permission
     ADD CONSTRAINT content_type_id_refs_id_728de91f FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: content_type_id_refs_id_7cab9e513e9dc5c4; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY blog_image
     ADD CONSTRAINT content_type_id_refs_id_7cab9e513e9dc5c4 FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: django_admin_log_content_type_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY django_admin_log
     ADD CONSTRAINT django_admin_log_content_type_id_fkey FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: django_admin_log_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY django_admin_log
     ADD CONSTRAINT django_admin_log_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: group_id_refs_id_3cea63fe; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY auth_group_permissions
     ADD CONSTRAINT group_id_refs_id_3cea63fe FOREIGN KEY (group_id) REFERENCES auth_group(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: source_id_refs_id_38c628a45bffe8f5; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY easy_thumbnails_thumbnail
     ADD CONSTRAINT source_id_refs_id_38c628a45bffe8f5 FOREIGN KEY (source_id) REFERENCES easy_thumbnails_source(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: storage_new_id_refs_id_41bc24c3806913c9; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY easy_thumbnails_thumbnail
     ADD CONSTRAINT storage_new_id_refs_id_41bc24c3806913c9 FOREIGN KEY (storage_id) REFERENCES easy_thumbnails_storage(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: storage_new_id_refs_id_5cebe21bafd2e07f; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY easy_thumbnails_source
     ADD CONSTRAINT storage_new_id_refs_id_5cebe21bafd2e07f FOREIGN KEY (storage_id) REFERENCES easy_thumbnails_storage(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: tagging_taggeditem_content_type_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY tagging_taggeditem
     ADD CONSTRAINT tagging_taggeditem_content_type_id_fkey FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: tagging_taggeditem_tag_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY tagging_taggeditem
     ADD CONSTRAINT tagging_taggeditem_tag_id_fkey FOREIGN KEY (tag_id) REFERENCES tagging_tag(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: taggit_taggeditem_content_type_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY taggit_taggeditem
     ADD CONSTRAINT taggit_taggeditem_content_type_id_fkey FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: taggit_taggeditem_tag_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY taggit_taggeditem
     ADD CONSTRAINT taggit_taggeditem_tag_id_fkey FOREIGN KEY (tag_id) REFERENCES taggit_tag(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: user_id_refs_id_831107f1; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY auth_user_groups
     ADD CONSTRAINT user_id_refs_id_831107f1 FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: user_id_refs_id_f2045483; Type: FK CONSTRAINT; Schema: public; Owner: andrewramos
---
 
 ALTER TABLE ONLY auth_user_user_permissions
     ADD CONSTRAINT user_id_refs_id_f2045483 FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
 
 
---
--- Name: public; Type: ACL; Schema: -; Owner: michael
---
-
-REVOKE ALL ON SCHEMA public FROM PUBLIC;
-REVOKE ALL ON SCHEMA public FROM michael;
-GRANT ALL ON SCHEMA public TO michael;
-GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
---
--- PostgreSQL database dump complete
---
+
 
