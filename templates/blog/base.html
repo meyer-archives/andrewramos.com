@@ -28,13 +28,13 @@
 <a name="top" id="top"></a>
 
 <div id="header-menu">
-    <a class="archives-link" href="{% url blog-archives %}">Archives</a>
+    <a class="archives-link" href="{% url blog_archives %}">Archives</a>
     <a class="rss-link" href="http://feeds.feedburner.com/andrewramos">RSS Feed</a>
-    <!--
-    <form id="search-form" action="/search/" method="get" accept-charset="utf-8">
+
+    <form id="search-form" action="{% url haystack_search %}" method="get" accept-charset="utf-8">
         <div id="search-input"><input type="text" name="q" placeholder="Search" autocapitalize="off" autocorrect="off" {% if request.GET.q %} value="{{ request.GET.q }}"{% endif %}></div>
     </form>
-    -->
+
 </div>
 
 {% block blog_content %}

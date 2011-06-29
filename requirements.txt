@@ -16,6 +16,7 @@ easy-thumbnails
 fabric
 gondor
 pycrypto
+pysolr
 python-dateutil
 psycopg2
 smartypants

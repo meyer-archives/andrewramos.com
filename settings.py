@@ -97,8 +97,7 @@ INSTALLED_APPS = (
 	'shorturls',
 	'typogrify',
 	'django_extensions',
-	# 'haystack',
-	# 'memcache_status',
+	'haystack',
 	'pagination',
 	'fabtastic',
 	'athumb',
@@ -155,11 +154,27 @@ SHORTEN_MODELS = {
 	'q': 'blog.quote',
 }
 
-# HAYSTACK_SEARCH_ENGINE = 'whoosh'
-# HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'search_index')
-# HAYSTACK_SITECONF = 'search_sites'
-# HAYSTACK_XAPIAN_PATH = os.path.join(PROJECT_ROOT, 'xapian_index')
-# HAYSTACK_SEARCH_ENGINE = 'xapian'
+HAYSTACK_CONNECTIONS = {
+	'default': {
+		'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+		'URL': 'http://localhost:8983/solr/core0',
+		'TIMEOUT': 60 * 5,
+		'INCLUDE_SPELLING': True,
+	},
+}
+
+HAYSTACK_SEARCH_ENGINE = 'solr'
+HAYSTACK_SOLR_URL = 'http://localhost:8983/solr/core0'
+HAYSTACK_SITECONF = 'search_sites'
+
+HAYSTACK_CONNECTIONS = {
+	'default': {
+		'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+		'URL': 'http://localhost:8983/solr/core0',
+		'TIMEOUT': 60 * 5,
+		'INCLUDE_SPELLING': True,
+	},
+}
 
 # CACHES = {
 # 	'default': {

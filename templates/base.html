@@ -1,6 +1,6 @@
 {% load handy_utils media %}
-{% url home-url as home_url %}
-{% url blog-home as blog_url %}
+{% url home_url as home_url %}
+{% url blog_home as blog_url %}
 {% url portfolio_home as portfolio_url %}
 {% url about_url as about_url %}
 <!DOCTYPE HTML>
@@ -8,9 +8,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>Andrew Ramos{% block page_title %}{% endblock %}</title>
-	{% css "all.css" %}
+
 	<link rel="alternate" type="application/rss+xml" title="AndrewRamos.com RSS" href="http://feeds.feedburner.com/andrewramos">
 	<link rel="shortcut icon" href="{% media_url "images/favicon.ico" %}" />
+
+	{% css "all.css" %}
 	<!-- iPhone/iPad -->
 	<meta name="format-detection" content="telephone=no">
 {% if request.ipad %}
@@ -26,7 +28,7 @@
 
 	{% js "all.js" %}
 
-{% if request.ipad %}
+{% if not request.ios5 and request.ipad %}
 	{% js "touchscroll.min.js" %}
 	<script>
 	$(document).ready(function(){
@@ -59,9 +61,6 @@
 			<li{% is_current request blog_url ' class="current"' %}><a href="{{ blog_url }}">The Blog</a></li>
 			<li{% is_current request portfolio_url ' class="current"' %}><a href="{{ portfolio_url }}">Portfolio</a></li>
 			<li{% is_current request about_url ' class="current"' %}><a href="{{ about_url }}">About</a></li>
-{% comment %}
-			<li><a href="{{ contact }}">Contact</a></li>
-{% endcomment %}
 		</ul>
 		<p id="copyright-notice">&copy; {% now "Y" %} Andrew Ramos</p>
 	</div>

@@ -40,12 +40,14 @@ class MobileMiddleware(object):
 					request.mobile = True
 
 					# iOS 5 check
-					if 'OS 5_' in s:
+					if 'os 5_' in s:
 						request.ios5 = True
 				else:
 					for ua in search_strings:
 						if ua in s:
 							request.mobile = True
+
+		print 'iOS5?', request.ios5
 
 		if request.mobile:
 			if settings.TEMPLATE_DIRS != settings.MOBILE_TEMPLATE_DIRS:
