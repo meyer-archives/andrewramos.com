@@ -13,6 +13,7 @@ django-memcache-status
 django-taggit
 docutils
 easy-thumbnails
+fabric
 gondor
 pycrypto
 python-dateutil
