@@ -52,8 +52,7 @@
 		})();
 	</script>
 </head>
-<body class="{% if request.ipad %}ipad{% endif %}{% if request.iphone %}iphone{% endif %} {% block bodyclass %}{% endblock %}" id="{% block bodyid %}page-generic{% endblock %}">
-
+<body class="{% if request.ios5 %}ios5 {% endif %}{% if request.ipad %}ipad{% endif %}{% if request.iphone %}iphone{% endif %} {% block bodyclass %}{% endblock %}" id="{% block bodyid %}page-generic{% endblock %}">
 <div id="container">
 	<div id="header">
 		<h1><a href="{{ home_url }}"><span>The Notebook of Andrew Ramos</span></a></h1>

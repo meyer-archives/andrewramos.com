@@ -13,7 +13,8 @@ body{
 	-webkit-text-size-adjust: none;
 	/* iOS 5, you sexy beast */
 	-webkit-overflow-scrolling: touch;
-	overflow: scroll;
+	overflow-x: scroll;
+	overflow-y: hidden;
 }
 
 body.ipad{
@@ -30,11 +31,27 @@ body,html,#container{
 	margin-top: 0;
 }
 
-body.iphone,body.iphone #container{
+/*
+
+body.iphone,
+body.iphone #container{
 	height: auto;
 	overflow: visible;
 	min-height: 100%;
 }
+
+body.iphone #content{
+	min-height: 100%;
+	height: auto;
+}
+
+body.iphone #wrapper{
+	overflow: hidden;
+	min-height: 100%;
+	height: auto;
+}
+*/
+
 
 @font-face {
 	font-family: 'ar-heading';
@@ -179,12 +196,6 @@ p#copyright-notice{
 	padding-left: 56px;
 	overflow-y: scroll;
 	overflow-x: hidden;
-}
-
-body.iphone #wrapper{
-	overflow: hidden;
-	min-height: 100%;
-	height: auto;
 }
 
 body.ipad #wrapper::-webkit-scrollbar{
@@ -335,11 +346,6 @@ body.draft-page{
 
 	padding-bottom: 1px;
 	height: 100%;
-}
-
-body.iphone #content{
-	min-height: 100%;
-	height: auto;
 }
 
 #content.show-contact-form{
