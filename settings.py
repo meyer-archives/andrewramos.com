@@ -37,8 +37,8 @@ FIXTURE_DIRS = (
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, "media")
 STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
 
-MEDIA_URL = 'http://andrewramos.s3.amazonaws.com/media/'
-STATIC_URL = 'http://andrewramos.s3.amazonaws.com/static/'
+MEDIA_URL = 'http://andrewramos.s3.amazonaws.com/'
+STATIC_URL = 'http://andrewramos.s3.amazonaws.com/'
 
 ADMIN_MEDIA_PREFIX = 'http://andrewramos.s3.amazonaws.com/admin/'
 
