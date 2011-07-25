@@ -114,7 +114,7 @@ DEFAULT_FILE_STORAGE = 'athumb.backends.s3boto.S3BotoStorage_AllPublic'
 
 AWS_ACCESS_KEY_ID = '[REDACTED]'
 AWS_SECRET_ACCESS_KEY = '[REDACTED]'
-AWS_STORAGE_BUCKET_NAME = 'andrewramos'
+AWS_STORAGE_BUCKET_NAME = 'media.andrewramos.com'
 
 DJANGO_STATIC_CLOSURE_COMPILER = 'closure --warning_level QUIET --third_party'
 DJANGO_STATIC_YUI_COMPRESSOR = 'yuicompressor'
@@ -123,7 +123,7 @@ MEDIASYNC = {
 	'BACKEND': 'mediasync.backends.s3',
 	'AWS_KEY': AWS_ACCESS_KEY_ID,
 	'AWS_SECRET': AWS_SECRET_ACCESS_KEY,
-	'AWS_BUCKET': 'andrewramos',
+	'AWS_BUCKET': 'media.andrewramos.com',
 	'SERVE_REMOTE': True,
 	'EMULATE_COMBO': False,
 	'DOCTYPE': 'html5',
