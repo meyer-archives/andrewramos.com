@@ -63,7 +63,6 @@ MIDDLEWARE_CLASSES = (
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
 	'django.contrib.auth.backends.RemoteUserBackend',
 	'django.contrib.messages.middleware.MessageMiddleware',
-#	 'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 	'mobile.middleware.MobileMiddleware',
 	'pagination.middleware.PaginationMiddleware',
 	'django.middleware.cache.FetchFromCacheMiddleware',
@@ -163,10 +162,6 @@ HAYSTACK_CONNECTIONS = {
 	},
 }
 
-HAYSTACK_SEARCH_ENGINE = 'solr'
-HAYSTACK_SOLR_URL = 'http://localhost:8983/solr/core0'
-HAYSTACK_SITECONF = 'search_sites'
-
 HAYSTACK_CONNECTIONS = {
 	'default': {
 		'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
@@ -175,13 +170,6 @@ HAYSTACK_CONNECTIONS = {
 		'INCLUDE_SPELLING': True,
 	},
 }
-
-# CACHES = {
-# 	'default': {
-# 		'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-# 		'LOCATION': '127.0.0.1:11211',
-# 	}
-# }
 
 MEDIA_CACHE_BUSTER = '1'
 

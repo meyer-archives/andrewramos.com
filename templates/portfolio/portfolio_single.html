@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load shorturl thumbnail typogrify %}
+{% load shorturl thumbnail typogrify_tags %}
 {% block page_title %}{{ block.super }} &rsaquo; {{ project.title|smartypants }}{% endblock %}
 {% block content %}
 {% if project.status == 'd' %}
