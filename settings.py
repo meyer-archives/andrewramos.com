@@ -96,7 +96,7 @@ INSTALLED_APPS = (
 	'shorturls',
 	'typogrify',
 	'django_extensions',
-	'haystack',
+#	'haystack',
 	'pagination',
 	'fabtastic',
 	'athumb',
