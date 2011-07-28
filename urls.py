@@ -17,4 +17,5 @@ urlpatterns = patterns('',
 	# url(r'^xmlrpc/$', 'rpc4django.views.serve_rpc_request'),
 	url(r'^about/$', direct_to_template, {'template': 'about.html'}, name='about-url'),
 	url(r'^robots\.txt$', direct_to_template, {'template': 'robots.txt', 'mimetype': 'text/plain'}),
+	url(r'^googled3585815de49d1b8\.html$', direct_to_template, {'template': 'google.html',}),
 )
