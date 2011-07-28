@@ -37,8 +37,8 @@ FIXTURE_DIRS = (
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, "media")
 STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
 
-MEDIA_URL = 'http://andrewramos.s3.amazonaws.com/'
-STATIC_URL = 'http://andrewramos.s3.amazonaws.com/'
+MEDIA_URL = 'http://media.andrewramos.com/media/'
+STATIC_URL = 'http://media.andrewramos.com/static/'
 
 ADMIN_MEDIA_PREFIX = 'http://andrewramos.s3.amazonaws.com/admin/'
 
@@ -127,7 +127,7 @@ MEDIASYNC = {
 	'EMULATE_COMBO': False,
 	'DOCTYPE': 'html5',
 	'EXPIRATION_DAYS': 365 * 10,
-	'AWS_BUCKET_CNAME': False,
+	'AWS_BUCKET_CNAME': True,
 	'CSS_PATH': 'css',
 	'JS_PATH': 'js',
 	'JOINED': {
