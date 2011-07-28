@@ -16,4 +16,5 @@ urlpatterns = patterns('',
 #	url(r'^blog/search/', include('haystack.urls')),
 	# url(r'^xmlrpc/$', 'rpc4django.views.serve_rpc_request'),
 	url(r'^about/$', direct_to_template, {'template': 'about.html'}, name='about-url'),
+	url(r'^robots\.txt$', direct_to_template, {'template': 'robots.txt', 'mimetype': 'text/plain'}),
 )
