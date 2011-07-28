@@ -43,7 +43,7 @@ class LatestEntriesFeed(Feed):
         content = []
         if item._meta.verbose_name == "article":
             for image in item.images.all():
-                content.append('<p><img src="%s%s"></p>' % ('http://andrewramos.s3.amazonaws.com/', image.image))
+                content.append('<p><img src="%s%s"></p>' % ('http://media.andrewramos.com/', image.image))
             content.append(smartypants.smartyPants(item.content))
             return "".join(content)
         elif item._meta.verbose_name == "short post":

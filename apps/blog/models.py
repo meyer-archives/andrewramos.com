@@ -95,7 +95,7 @@ class Article(BlogPost):
 
 	@models.permalink
 	def get_absolute_url(self):
-		return ('article_single',[str(self.slug)])
+		return ('article-single',[str(self.slug)])
 
 class CaseStudy(BlogPost):
 	"""Case Study"""
@@ -105,7 +105,7 @@ class CaseStudy(BlogPost):
 
 	@models.permalink
 	def get_absolute_url(self):
-		return ('casestudy_single',[str(self.slug)])
+		return ('casestudy-single',[str(self.slug)])
 
 	class Meta:
 		verbose_name_plural = "case studies"
@@ -116,7 +116,7 @@ class ShortPost(BlogPost):
 
 	@models.permalink
 	def get_absolute_url(self):
-		return ('shortpost_single',[str(self.slug)])
+		return ('shortpost-single',[str(self.slug)])
 
 class Quote(BlogPost):
 	"""Quote post type"""
@@ -124,4 +124,4 @@ class Quote(BlogPost):
 
 	@models.permalink
 	def get_absolute_url(self):
-		return ('quote_single',[str(self.slug)])
+		return ('quote-single',[str(self.slug)])
