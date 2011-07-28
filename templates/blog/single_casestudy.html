@@ -1,4 +1,4 @@
-{% load typogrify_tags thumbnail handy_utils %}
+{% load typogrify_tags markup thumbnail handy_utils %}
 
 {% if entry.status == 'd' %}
     <div class="draft-warning">
@@ -34,7 +34,7 @@
         <h2>{{ entry.title }}</h2>
     </div>
     <div class="entry-body">
-        {{ entry.content|typogrify }}
+        {{ entry.content_markdown|markdown|typogrify }}
 
         {% if tags %}
         <p class="tag-list">{% for tag in tags %}{% if not forloop.first %}, {% endif %}<a href="/blog/tags/{{tag.name|slugify}}/">#{{ tag.name|camelcase }}</a>{% endfor %}</p>

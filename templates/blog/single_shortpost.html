@@ -1,4 +1,4 @@
-{% load typogrify_tags thumbnail handy_utils %}
+{% load typogrify_tags markup thumbnail handy_utils %}
 
 {% if entry.status == 'd' %}
     <div class="draft-warning">
@@ -20,7 +20,7 @@
         <h2>{{ entry.title }}.</h2>
     {% endif %}
     {% endwith %}
-    <p>{{ entry.content|typogrify }}</p>
+    <p>{{ entry.content_markdown|markdown|typogrify }}</p>
     {% if entry.link %}<a class="short-post-link" href="{{ entry.link }}">{{ entry.link }}</a>{% endif %}
 </div>
 

@@ -1,4 +1,4 @@
-{% load typogrify_tags thumbnail handy_utils %}
+{% load typogrify_tags markup thumbnail handy_utils %}
 
 {% if entry.status == 'd' %}
     <div class="draft-warning">
@@ -12,7 +12,7 @@
     <a class="post-edit-link" href="{% url admin:blog_quote_change entry.id %}">Edit</a>
     {% endif %}
 
-    <div class="entry-body">{{ entry.content|typogrify }}</div>
+    <div class="entry-body">{{ entry.content_markdown|markdown|typogrify }}</div>
 {% if entry.author %}
     <p class="author">{{ entry.author|typogrify }}</p>
 {% endif %}
