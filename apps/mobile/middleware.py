@@ -12,13 +12,7 @@ class MobileMiddleware(object):
 		request.ipad = False
 		request.mobile_device = False
 		request.ios5 = False
-
-#         if request.GET.has_key('mobile'):
-#             request.session['enable_mobile'] = request.GET.get('mobile')
-
-		request.enable_mobile = True #request.session.get('enable_mobile', 'false').lower() == 'true'
-		
-#        print('request.enable_mobile: %s' % request.enable_mobile)
+		request.enable_mobile = True
 
 		# Parse useragent, check for mobile user
 		if request.enable_mobile:
@@ -55,5 +49,5 @@ class MobileMiddleware(object):
 		else:
 			if settings.TEMPLATE_DIRS != settings.SITE_TEMPLATE_DIRS:
 				settings.TEMPLATE_DIRS = settings.SITE_TEMPLATE_DIRS
-				
+
 		return None

@@ -2,14 +2,14 @@
 
 {% if entry.status == 'd' %}
     <div class="draft-warning">
-        <p>This post is a draft and is not visible to site visitors. <a href="{% url admin:blog_article_change entry.id %}">Fix that problem.</a></p>
+        <p>This post is a draft and is not visible to site visitors. <a href="{% url 'admin:blog_article_change' entry.id %}">Fix that problem.</a></p>
     </div>
 {% endif %}
 
 <div class="entry article">
 
 {% if request.user.is_authenticated %}
-<a class="post-edit-link" href="{% url admin:blog_article_change entry.id %}">Edit</a>
+<a class="post-edit-link" href="{% url 'admin:blog_article_change' entry.id %}">Edit</a>
 {% endif %}
 
 {% if entry.images.all %}
@@ -47,7 +47,7 @@
     </div>
 
 {% if request.user.is_authenticated %}
-<p class="edit-link"><a class="post-edit-link" href="{% url admin:blog_article_change entry.id %}">Edit</a></p>
+<p class="edit-link"><a class="post-edit-link" href="{% url 'admin:blog_article_change' entry.id %}">Edit</a></p>
 {% endif %}
 
 </div>

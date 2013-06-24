@@ -5,7 +5,7 @@
 
 {% block blog_content %}
 
-<form method="get" action="{% url haystack_search %}">
+<form method="get" action="{% url 'haystack_search' %}">
 
 {% if query %}
 <ul class="result-list search">

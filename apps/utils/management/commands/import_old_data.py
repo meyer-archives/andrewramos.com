@@ -10,7 +10,7 @@ class Command(BaseCommand):
 	help = 'Imports data from db.sql'
 
 	def handle(self, *args, **options):
-		custom_file = os.path.join(settings.PROJECT_ROOT, "db.sql")
+		custom_file = os.path.join(settings.PROJECT_PATH, "db.sql")
 
 		fp = open(custom_file, 'U')
 		cursor = connection.cursor()

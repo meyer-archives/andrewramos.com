@@ -1,7 +1,7 @@
 Django
 BeautifulSoup
 Markdown
-PIL
+#PIL
 South
 django-athumb
 django-extensions
@@ -13,13 +13,12 @@ django-typogrify
 docutils
 easy-thumbnails
 fabric
-gondor
 pycrypto
 pysolr
 python-dateutil
 psycopg2
 smartypants
--e git+http://github.com/mikemeyer/django-shorturls.git#egg=django-shorturls
+-e git+http://github.com/meyer/django-shorturls.git#egg=django-shorturls
 # -e git+http://github.com/toastdriven/django-haystack.git#egg=django-haystack
 wsgiref
 werkzeug

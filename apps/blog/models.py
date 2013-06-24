@@ -112,7 +112,7 @@ class CaseStudy(BlogPost):
 
 class ShortPost(BlogPost):
 	"""Short post with an optional link"""
-	link = models.URLField(blank=True, verify_exists=False,help_text='Optional link to append to the end of the post.')
+	link = models.URLField(blank=True, help_text='Optional link to append to the end of the post.')
 
 	@models.permalink
 	def get_absolute_url(self):

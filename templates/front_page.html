@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load thumbnail typogrify_tags media %}
+{% load thumbnail typogrify_tags %}
 {% block bodyid %}front-page{% endblock %}
 {% block content %}
 
@@ -10,27 +10,27 @@
 
 <div id="feature-container">
 	<div id="featured-posts">
-	<h2>Recommended Blog Articles</h2>
-	<ul>
-	{% for post in featured_posts %}
-		<li><a href="{{ post.get_absolute_url }}">{{ post.title|typogrify }}</a></li>
-	{% empty %}
-		<li class="empty">No posts have been&nbsp;featured.</li>
-	{% endfor %}
-	</ul>
-	<a class="rss-link" href="http://feeds.feedburner.com/andrewramos">RSS Feed</a>
+		<h2>Recommended Blog Articles</h2>
+		<ul>
+{% for post in featured_posts %}
+			<li><a href="{{ post.get_absolute_url }}">{{ post.title|typogrify }}</a></li>
+{% empty %}
+			<li class="empty">No posts have been&nbsp;featured.</li>
+{% endfor %}
+		</ul>
+		<a class="rss-link" href="{% url 'rss-feed' %}">RSS Feed</a>
 	</div>
 
 	<div id="featured-content">
 		<h2>Work in Progress</h2>
 		<ul>
-	{% for item in featured_content %}
-		<li{% if forloop.first %} class="first"{% endif %}>
-			{% if item.link %}<a href="{{ item.link }}"{% else %}<span{% endif %}{% if item.link %}><img src="{% thumbnail item.image "220" %}"></a>{% else %}></span>{% endif %}
-		</li>
-	{% empty %}
-		<li class="first empty">No work in progress has been&nbsp;featured.</li>
-	{% endfor %}
+{% for item in featured_content %}
+			<li{% if forloop.first %} class="first"{% endif %}>
+				{% if item.link %}<a href="{{ item.link }}"{% else %}<span{% endif %}{% if item.link %}><img src="{% thumbnail item.image "220" %}"></a>{% else %}></span>{% endif %}
+			</li>
+{% empty %}
+			<li class="first empty">No work in progress has been&nbsp;featured.</li>
+{% endfor %}
 		</ul>
 	</div>
 </div>

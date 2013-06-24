@@ -2,7 +2,7 @@
 {% load pagination_tags shorturl %}
 {% block blog_content %}
 
-{% autopaginate entries 30 %}
+{# {% autopaginate entries 30 %} #}
 
 <ul class="entry-list" id="infinite">
 {% for entry in entries %}
